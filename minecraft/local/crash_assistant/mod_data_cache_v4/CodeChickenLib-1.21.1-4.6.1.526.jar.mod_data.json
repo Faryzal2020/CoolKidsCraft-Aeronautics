@@ -1,1 +1,0 @@
-{"jarName":"CodeChickenLib-1.21.1-4.6.1.526.jar","modId":"codechickenlib","name":"CodeChicken Lib","version":"4.6.1.526","mixinConfigs":["mixins.codechickenlib.json"],"jarJarMods":[{"jarName":"Quack-0.4.10.115.jar","mixinConfigs":[],"jarJarMods":[],"pathFromJarJar":"/META-INF/jarjar/"}],"curseForgeHash":872213290,"modrinthHash":"6a278b5a2788c2fee7ae52d17f24187332d436b2"}

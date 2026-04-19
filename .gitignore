@@ -27,3 +27,10 @@
 /minecraft/usercache.json
 /minecraft/usernamecache.json
 /minecraft/WaypointData.dat
+/minecraft/local/kubejs/export
+/minecraft/local/kubejs/exported_packs
+/minecraft/local/kubejs/local_server_scripts
+/minecraft/local/kubejs/local_startup_scripts
+/minecraft/local/crash_assistant
+/minecraft/local/ftbchunks
+/minecraft/local/kubejstweaks
