@@ -1,0 +1,18 @@
+filename = 'journeymap-neoforge-1.21.1-6.0.0-beta.60.jar'
+name = 'JourneyMap'
+side = 'server'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = 'journeymap-1.21.1-6.0.0-beta.60+neoforge'
+
+[download]
+hash = '0dac47d19815ac44f49435e37ae58c7f42be7082'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7854356
+project-id = 32274

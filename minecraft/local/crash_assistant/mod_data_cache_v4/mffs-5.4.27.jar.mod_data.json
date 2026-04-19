@@ -1,0 +1,1 @@
+{"jarName":"mffs-5.4.27.jar","modId":"mffs","name":"Modular Force Field System","version":"5.4.27","mixinConfigs":["mffs.mixins.json"],"jarJarMods":[{"jarName":"streamex-0.8.4.jar","mixinConfigs":[],"jarJarMods":[],"pathFromJarJar":"/META-INF/jarjar/"}],"curseForgeHash":2654783436,"modrinthHash":"d43b2a586cddde88345f80440af28f71c72e46f0"}

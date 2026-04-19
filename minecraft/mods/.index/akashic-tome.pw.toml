@@ -1,0 +1,18 @@
+filename = 'AkashicTome-1.8-30.jar'
+name = 'Akashic Tome'
+side = 'server'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'AkashicTome-1.8-30.jar'
+
+[download]
+hash = '6493e575f295e18fac1f7c5399c05c53caa1f7ce'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7773841
+project-id = 250577

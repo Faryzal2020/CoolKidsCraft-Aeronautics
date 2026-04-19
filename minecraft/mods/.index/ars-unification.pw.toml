@@ -1,0 +1,73 @@
+filename = 'ars_unification-1.2.18.jar'
+name = 'Ars Unification'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Ars Unification 1.2.18 for 1.21.1'
+
+[download]
+hash = '7e1ed50f6f29dcbf04c08363c5b2174adcb205e4'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7433366
+project-id = 1165429
+
+[[x-prismlauncher-dependencies]]
+addonId = '580555'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '231951'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '238222'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1023517'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1096161'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '268560'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '236307'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '398521'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '405388'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '228404'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '64578'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '223794'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '401955'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '361026'
+type = 'OPTIONAL'

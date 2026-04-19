@@ -1,0 +1,29 @@
+filename = 'relics-1.21.1-0.11.14.jar'
+name = 'Relics'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = 'relics-1.21.1-0.11.14.jar'
+
+[download]
+hash = '7d4c14db31ecba9029cb0e016989b84c1212acf3'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7892241
+project-id = 445274
+
+[[x-prismlauncher-dependencies]]
+addonId = '916747'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '309927'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '422301'
+type = 'OPTIONAL'

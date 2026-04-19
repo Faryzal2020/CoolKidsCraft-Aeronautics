@@ -1,0 +1,18 @@
+filename = 'ExtremeSoundMuffler-3.55_NeoForge-1.21.jar'
+name = 'Extreme sound muffler - (Neo)Forge'
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Extreme sound muffler 3.55 - NeoForge 1.21.1'
+
+[download]
+hash = 'b17090ea6a7c302c648f7bab12b37bbb3dd786f0'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7690930
+project-id = 363363

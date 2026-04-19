@@ -1,0 +1,21 @@
+filename = 'ars_technica-1.21.1-2.7.6.jar'
+name = 'Ars Technica'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Ars Technica 2.7.6 for 1.21.1'
+
+[download]
+hash = 'adb2641d538375f6eff6a22f0196bb330ab0b171'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7642730
+project-id = 1096161
+
+[[x-prismlauncher-dependencies]]
+addonId = '328085'
+type = 'REQUIRED'

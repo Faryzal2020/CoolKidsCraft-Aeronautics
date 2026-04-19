@@ -1,0 +1,14 @@
+#7E7 biomeswevegone:allium_shrubland
+#3F4 biomeswevegone:aspen_boreal
+#556 minecraft:beach
+#6D8 regions_unexplored:boreal_taiga
+#3D6 minecraft:cold_ocean
+#109 minecraft:deep_cold_ocean
+#6DD regions_unexplored:grassy_beach
+#561 regions_unexplored:gravel_beach
+#6FD regions_unexplored:maple_forest
+#4D4 regions_unexplored:muddy_river
+#4F1 minecraft:ocean
+#5FF minecraft:river
+#77B regions_unexplored:temperate_grove
+#2FD biomeswevegone:zelkova_forest

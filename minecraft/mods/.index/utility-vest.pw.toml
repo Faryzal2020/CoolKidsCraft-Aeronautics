@@ -1,0 +1,21 @@
+filename = 'utilityvest-1.2.6.jar'
+name = 'Utility Vest'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = '[Neoforge] Utility Vest 1.2.6-1.21.1'
+
+[download]
+hash = 'ca7237fdf876343117561d745ac10de534f35a42'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7832732
+project-id = 1284144
+
+[[x-prismlauncher-dependencies]]
+addonId = '309927'
+type = 'REQUIRED'

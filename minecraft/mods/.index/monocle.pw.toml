@@ -1,0 +1,25 @@
+filename = 'monocle-0.2.3.ms.jar'
+name = 'Monocle'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'monocle-0.2.3.ms.jar'
+
+[download]
+hash = '13fbaf958af07b2cc48ced3ec41b5139684b2332'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7657778
+project-id = 1007288
+
+[[x-prismlauncher-dependencies]]
+addonId = '455508'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '908741'
+type = 'REQUIRED'

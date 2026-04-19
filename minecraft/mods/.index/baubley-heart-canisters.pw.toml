@@ -1,0 +1,21 @@
+filename = 'baubley-heart-canisters-1.21.1-1.4.0.jar'
+name = 'Baubley Heart Canisters'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'baubley-heart-canisters-1.21.1-1.4.0.jar'
+
+[download]
+hash = 'ccaae33c804d4897039b55a98e9da608b15fee8b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7773889
+project-id = 282947
+
+[[x-prismlauncher-dependencies]]
+addonId = '309927'
+type = 'REQUIRED'

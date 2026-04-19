@@ -1,0 +1,21 @@
+filename = 'jupiter-2.3.7-1.21.1-neoforge.jar'
+name = 'Jupiter'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Jupiter 2.3.7 for 1.21.1 Neoforge'
+
+[download]
+hash = '569fb484ea5c8e8d690945ad4cd132131a719751'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7738312
+project-id = 1072905
+
+[[x-prismlauncher-dependencies]]
+addonId = '348521'
+type = 'OPTIONAL'

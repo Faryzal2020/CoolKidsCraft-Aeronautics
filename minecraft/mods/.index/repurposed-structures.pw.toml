@@ -1,0 +1,18 @@
+filename = 'repurposed_structures-7.5.18+1.21.1-neoforge.jar'
+name = 'Repurposed Structures (Neoforge/Forge)'
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Repurposed Structures v7.5.18 (1.21.1 MC Neoforge)'
+
+[download]
+hash = '545fafd13197186038191d99c378ac4c04a6504c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7663509
+project-id = 368293

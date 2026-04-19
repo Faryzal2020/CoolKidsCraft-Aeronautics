@@ -1,0 +1,29 @@
+filename = 'sophisticatedstorageinmotion-1.21.1-0.10.27.208.jar'
+name = 'Sophisticated Storage in Motion'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'sophisticatedstorageinmotion-1.21.1-0.10.27.208.jar'
+
+[download]
+hash = '5a25f3f0361578bc5829a8467551a95f51bf8810'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7843243
+project-id = 1166930
+
+[[x-prismlauncher-dependencies]]
+addonId = '619320'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '238222'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '618298'
+type = 'REQUIRED'

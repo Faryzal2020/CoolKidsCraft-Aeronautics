@@ -1,0 +1,18 @@
+filename = 'Byzantine-1.21.1-48.jar'
+name = 'Byzantine Styles Pack for Minecolonies'
+side = 'server'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.4', '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'Byzantine-1.21.1-48.jar'
+
+[download]
+hash = 'd0d45e9bbed5b0a9af4e7551a39f2b819457c284'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7820056
+project-id = 974855
