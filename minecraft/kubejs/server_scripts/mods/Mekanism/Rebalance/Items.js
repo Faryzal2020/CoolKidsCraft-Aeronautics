@@ -1,11 +1,10 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
 
     //Upgrades
     allthemods.replaceInput(
-        { output: ['mekanism:upgrade_speed', 'mekanism:upgrade_energy', 'mekanism:upgrade_filter', 'mekanism:upgrade_chemical', 'mekanism:upgrade_stone_generator' ] }, // Arg 1: the filter
+        { output: ['mekanism:upgrade_speed', 'mekanism:upgrade_energy', 'mekanism:upgrade_filter', 'mekanism:upgrade_chemical', 'mekanism:upgrade_stone_generator'] }, // Arg 1: the filter
         '#c:glass_blocks/cheap',
         'mekanism:structural_glass'
     )
@@ -127,5 +126,3 @@ ServerEvents.recipes(allthemods => {
     )
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

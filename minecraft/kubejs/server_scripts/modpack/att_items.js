@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
   // Dragon Soul
@@ -11,18 +10,18 @@ ServerEvents.recipes(allthemods => {
     N: ['hostilenetworks:data_model[hostilenetworks:data_model="hostilenetworks:ender_dragon",hostilenetworks:data=1255]', 'hostilenetworks:data_model[hostilenetworks:data_model="hostilenetworks:ender_dragon",hostilenetworks:data=1254]'],
     I: 'allthemodium:piglich_heart_block',
     B: 'productivebees:spawn_egg_configurable_bee[entity_data={id:"productivebees:configurable_bee",type:"productivebees:soul_lava"}]',
-	  G: 'cataclysm:abyssal_sacrifice',
+    G: 'cataclysm:abyssal_sacrifice',
     E: Platform.isLoaded("eternal_starlight") ? 'eternal_starlight:chain_of_souls' : 'ftbquests:missing_item[ftbquests:missing_item="eternal_starlight:chain_of_souls"]'
   }).id('allthemods:allthetweaks/dragon_soul')
 
- // Improbable Probability Device
- allthemods.shaped('allthetweaks:improbable_probability_device', ['ABA', 'CGC', 'FDF'], {
-  A: 'mekanism:pellet_antimatter',
-  B: 'ae2:singularity',
-  C: Ingredient.of(['megacells:portable_item_cell_256m', 'modern_industrialization:blastproof_casing']),
-  D: 'pneumaticcraft:aerial_interface',
-  F: 'ironfurnaces:million_furnace', 
-  G: 'irons_spellbooks:lightning_upgrade_orb'
+  // Improbable Probability Device
+  allthemods.shaped('allthetweaks:improbable_probability_device', ['ABA', 'CGC', 'FDF'], {
+    A: 'mekanism:pellet_antimatter',
+    B: 'ae2:singularity',
+    C: Ingredient.of(['megacells:portable_item_cell_256m', 'modern_industrialization:blastproof_casing']),
+    D: 'pneumaticcraft:aerial_interface',
+    F: 'ironfurnaces:million_furnace',
+    G: 'irons_spellbooks:lightning_upgrade_orb'
   }).id('allthemods:allthetweaks/improbable_probability_device')
 
   // Dimensional Seed Recipe
@@ -64,41 +63,41 @@ ServerEvents.recipes(allthemods => {
     I: 'mekanism:ultimate_fluid_tank'
   }).id('allthemods:allthetweaks/philosophers_fuel')
 
- // Nexium Emitter
- allthemods.shaped('allthetweaks:nexium_emitter', ['A B', ' CF', 'GED'], {
-  A: 'powah:player_transmitter_nitro',
-  B: 'ae2wtlib:wireless_universal_terminal[ae2wtlib:has_ex_pattern_access_terminal={},ae2wtlib:has_pattern_encoding_terminal={},ae2wtlib:has_crafting_terminal={},ae2wtlib:has_pattern_access_terminal={},ae2:stored_energy=6400000.0d]',
-  F: [Item.of('mekanism:module_gravitational_modulating_unit')],
-  D: Ingredient.of(['modern_industrialization:large_advanced_motor',"create:mechanical_arm"]),
-  E: 'immersiveengineering:tesla_coil',
-  C: 'advanced_ae:quantum_multi_threader',
-  G: 'aeinfinitybooster:infinity_card'
-}).id('allthemods:allthetweaks/nexium_emitter')
+  // Nexium Emitter
+  allthemods.shaped('allthetweaks:nexium_emitter', ['A B', ' CF', 'GED'], {
+    A: 'powah:player_transmitter_nitro',
+    B: 'ae2wtlib:wireless_universal_terminal[ae2wtlib:has_ex_pattern_access_terminal={},ae2wtlib:has_pattern_encoding_terminal={},ae2wtlib:has_crafting_terminal={},ae2wtlib:has_pattern_access_terminal={},ae2:stored_energy=6400000.0d]',
+    F: [Item.of('mekanism:module_gravitational_modulating_unit')],
+    D: Ingredient.of(['modern_industrialization:large_advanced_motor', "create:mechanical_arm"]),
+    E: 'immersiveengineering:tesla_coil',
+    C: 'advanced_ae:quantum_multi_threader',
+    G: 'aeinfinitybooster:infinity_card'
+  }).id('allthemods:allthetweaks/nexium_emitter')
 
-// Oblivion Shard
-allthemods.shaped('allthetweaks:oblivion_shard', ['DAB', 'ECF', 'BGD'], {
-  A: 'forbidden_arcanus:eternal_stella',
-  C: 'mekanismtools:refined_obsidian_paxel',
-  B: 'allthemodium:allthemodium_ingot',
-  D: 'mininggadgets:mininggadget_simple',
-  E: 'cataclysm:meat_shredder',
-  G: 'twilightforest:snow_queen_trophy',
-  F: 'cataclysm:void_forge'
-}).id('allthemods:allthetweaks/oblivion_shard')
+  // Oblivion Shard
+  allthemods.shaped('allthetweaks:oblivion_shard', ['DAB', 'ECF', 'BGD'], {
+    A: 'forbidden_arcanus:eternal_stella',
+    C: 'mekanismtools:refined_obsidian_paxel',
+    B: 'allthemodium:allthemodium_ingot',
+    D: 'mininggadgets:mininggadget_simple',
+    E: 'cataclysm:meat_shredder',
+    G: 'twilightforest:snow_queen_trophy',
+    F: 'cataclysm:void_forge'
+  }).id('allthemods:allthetweaks/oblivion_shard')
 
 
-// Pulsating Black Hole
-allthemods.shaped('allthetweaks:pulsating_black_hole', ['ABC', 'DEF', 'GHI'], {
-  A: 'oritech:nuke',
-  B: 'ae2:quantum_ring',
-  C: 'pneumaticcraft:micromissiles',
-  D: 'justdirethings:paradoxmachine',
-  E: 'pocketstorage:psu_4',
-  F: 'occultism:stable_wormhole',
-  G: 'rootsclassic:crystal_staff',
-  H: 'industrialforegoing:mycelial_explosive',
-  I: 'allthecompressed:nether_star_block_1x'
-}).id('allthemods:pressure/allthetweaks/pulsating_black_hole')
+  // Pulsating Black Hole
+  allthemods.shaped('allthetweaks:pulsating_black_hole', ['ABC', 'DEF', 'GHI'], {
+    A: 'oritech:nuke',
+    B: 'ae2:quantum_ring',
+    C: 'pneumaticcraft:micromissiles',
+    D: 'justdirethings:paradoxmachine',
+    E: 'pocketstorage:psu_4',
+    F: 'occultism:stable_wormhole',
+    G: 'rootsclassic:crystal_staff',
+    H: 'industrialforegoing:mycelial_explosive',
+    I: 'allthecompressed:nether_star_block_1x'
+  }).id('allthemods:pressure/allthetweaks/pulsating_black_hole')
 
   // Creative Essence
   allthemods.shaped('mysticalagradditions:creative_essence', ['CAC', 'ABA', 'CAC'], {
@@ -110,5 +109,4 @@ allthemods.shaped('allthetweaks:pulsating_black_hole', ['ABC', 'DEF', 'GHI'], {
 })
 
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

@@ -1,8 +1,7 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
-    allthemods.remove({id: 'minecraft:cake'})
+    allthemods.remove({ id: 'minecraft:cake' })
 
     allthemods.shaped(
         Item.of('minecraft:sculk', 1), // arg 1: output
@@ -31,7 +30,7 @@ ServerEvents.recipes(allthemods => {
     )
 
 
-    function enchanting_apparatus(output, pedestalItems, reagent, nbt, sourceCost, id){
+    function enchanting_apparatus(output, pedestalItems, reagent, nbt, sourceCost, id) {
         let recipe = {
             "type": "ars_nouveau:enchanting_apparatus",
             "keepNbtOfReagent": nbt,
@@ -67,22 +66,21 @@ ServerEvents.recipes(allthemods => {
     }
 
     enchanting_apparatus(
-        {item: 'minecraft:sculk_shrieker'},
+        { item: 'minecraft:sculk_shrieker' },
         [
-            {item: 'minecraft:sculk_catalyst'},
-            {item: 'minecraft:sculk'},
-            {item: 'minecraft:sculk_catalyst'},
-            {item: 'minecraft:sculk'},
-            {item: 'minecraft:sculk_catalyst'},
-            {item: 'minecraft:sculk'},
-            {item: 'minecraft:sculk_catalyst'},
-            {item: 'minecraft:sculk'}],
-        {item: 'deeperdarker:heart_of_the_deep'},
+            { item: 'minecraft:sculk_catalyst' },
+            { item: 'minecraft:sculk' },
+            { item: 'minecraft:sculk_catalyst' },
+            { item: 'minecraft:sculk' },
+            { item: 'minecraft:sculk_catalyst' },
+            { item: 'minecraft:sculk' },
+            { item: 'minecraft:sculk_catalyst' },
+            { item: 'minecraft:sculk' }],
+        { item: 'deeperdarker:heart_of_the_deep' },
         false,
         1000,
         'sculk_shrieker'
     );
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

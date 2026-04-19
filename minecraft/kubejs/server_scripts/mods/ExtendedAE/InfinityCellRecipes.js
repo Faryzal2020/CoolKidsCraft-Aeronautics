@@ -1,23 +1,22 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
 
-    function cell(output, item, typeA, typeB, component){
+    function cell(output, item, typeA, typeB, component) {
         allthemods.shaped(output, [
-                'GIG',
-                'XCY',
-                'AVU'
-            ], {
-                G: 'ae2:quartz_glass',
-                I: item,
-                X: typeA,
-                C: component,
-                Y: typeB,
-                A: 'allthemodium:unobtainium_allthemodium_alloy_ingot',
-                V: 'allthemodium:unobtainium_vibranium_alloy_ingot',
-                U: 'allthemodium:vibranium_allthemodium_alloy_ingot'
-            }
+            'GIG',
+            'XCY',
+            'AVU'
+        ], {
+            G: 'ae2:quartz_glass',
+            I: item,
+            X: typeA,
+            C: component,
+            Y: typeB,
+            A: 'allthemodium:unobtainium_allthemodium_alloy_ingot',
+            V: 'allthemodium:unobtainium_vibranium_alloy_ingot',
+            U: 'allthemodium:vibranium_allthemodium_alloy_ingot'
+        }
         )
     }
 
@@ -62,5 +61,4 @@ ServerEvents.recipes(allthemods => {
     cell('kubejs:pink_cell', 'allthecompressed:pink_concrete_6x', 'minecraft:lava_bucket', 'minecraft:water_bucket', 'megacells:cell_component_256m')
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 const seedID = [
     'mysticalagriculture:allthemodium_seeds',
@@ -35,7 +34,7 @@ ServerEvents.tags('item', allthemods => {
         'mysticalagriculture:entro_essence',
         'mysticalagriculture:sky_steel_essence',
         'mysticalagriculture:xychorium_gem_essence'
-      ])
+    ])
 })
 
 ServerEvents.tags('block', allthemods => {
@@ -53,5 +52,4 @@ ServerEvents.tags('block', allthemods => {
     }
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

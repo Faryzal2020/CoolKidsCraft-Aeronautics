@@ -1,10 +1,9 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
-    allthemods.remove({id: 'mysticalagriculture:essence/common/niter'})
+    allthemods.remove({ id: 'mysticalagriculture:essence/common/niter' })
 
-    allthemods.remove({input: 'mysticalagriculture:rubber_essence'})
+    allthemods.remove({ input: 'mysticalagriculture:rubber_essence' })
     allthemods.shaped('4x industrialforegoing:dryrubber', ['   ', 'AAA', '   '], {
         A: 'mysticalagriculture:rubber_essence'
     }).id('allthemods:essence/industrialforegoing/rubber')
@@ -27,11 +26,11 @@ ServerEvents.recipes(allthemods => {
             'BSB',
             'PRP'
         ], {
-            B: 'productivebees:configurable_comb[productivebees:bee_type="productivebees:withered"]',
-            P: 'hostilenetworks:prediction[hostilenetworks:data_model="hostilenetworks:wither"]',
-            R: 'reliquary:witherless_rose',
-            S: 'minecraft:wither_skeleton_skull',
-        }
+        B: 'productivebees:configurable_comb[productivebees:bee_type="productivebees:withered"]',
+        P: 'hostilenetworks:prediction[hostilenetworks:data_model="hostilenetworks:wither"]',
+        R: 'reliquary:witherless_rose',
+        S: 'minecraft:wither_skeleton_skull',
+    }
     ).id('allthemods:mysticalagradditions/withering_soul')
 
     allthemods.shaped('enderio:enderman_head',
@@ -52,29 +51,29 @@ ServerEvents.recipes(allthemods => {
     }).id('allthemods:essence/minecraft/warped_wart_block')
 
     // Moss Blocks
-    allthemods.shaped('8x minecraft:moss_block', ['NNN', 'NDN', 'NNN'],{
+    allthemods.shaped('8x minecraft:moss_block', ['NNN', 'NDN', 'NNN'], {
         N: 'mysticalagriculture:nature_essence',
         D: 'mysticalagriculture:dirt_essence'
     }).id('allthemods:essence/minecraft/moss_block')
 
     // Shroomlights
-    allthemods.shaped('6x minecraft:shroomlight', ['AGA', 'GAG', 'AGA'],{
+    allthemods.shaped('6x minecraft:shroomlight', ['AGA', 'GAG', 'AGA'], {
         A: 'mysticalagriculture:nether_essence',
         G: 'mysticalagriculture:glowstone_essence'
     }).id('allthemods:essence/minecraft/shroomlight')
 
     // Froglights
-    allthemods.shaped('8x minecraft:ochre_froglight', ['NDG', 'GDN', 'NDG'],{
+    allthemods.shaped('8x minecraft:ochre_froglight', ['NDG', 'GDN', 'NDG'], {
         N: 'mysticalagriculture:nature_essence',
         D: 'mysticalagriculture:dye_essence',
         G: 'mysticalagriculture:glowstone_essence'
     }).id('allthemods:essence/minecraft/ochre_froglight')
-    allthemods.shaped('8x minecraft:pearlescent_froglight', ['DDD', 'GNG', 'NGN'],{
+    allthemods.shaped('8x minecraft:pearlescent_froglight', ['DDD', 'GNG', 'NGN'], {
         N: 'mysticalagriculture:nature_essence',
         D: 'mysticalagriculture:dye_essence',
         G: 'mysticalagriculture:glowstone_essence'
     }).id('allthemods:essence/minecraft/pearlescent_froglight')
-    allthemods.shaped('8x minecraft:verdant_froglight', ['NGD', 'GND', 'NGD'],{
+    allthemods.shaped('8x minecraft:verdant_froglight', ['NGD', 'GND', 'NGD'], {
         N: 'mysticalagriculture:nature_essence',
         D: 'mysticalagriculture:dye_essence',
         G: 'mysticalagriculture:glowstone_essence'
@@ -164,31 +163,31 @@ ServerEvents.recipes(allthemods => {
     //Xychorium Gems
     allthemods.shaped('5x xycraft_world:xychorium_gem_light',
         ['XX ',
-         'X  ',
-         '   '],{X: 'mysticalagriculture:xychorium_gem_essence'}).id('allthemods:essence/xycraft/gem_light').noMirror()
+            'X  ',
+            '   '], { X: 'mysticalagriculture:xychorium_gem_essence' }).id('allthemods:essence/xycraft/gem_light').noMirror()
     allthemods.shaped('5x xycraft_world:xychorium_gem_dark',
         [' XX',
-         '  X',
-         '   '],{X: 'mysticalagriculture:xychorium_gem_essence'}).id('allthemods:essence/xycraft/gem_dark').noMirror()
+            '  X',
+            '   '], { X: 'mysticalagriculture:xychorium_gem_essence' }).id('allthemods:essence/xycraft/gem_dark').noMirror()
     allthemods.shaped('5x xycraft_world:xychorium_gem_red',
         ['   ',
-         'X  ',
-         'XX '],{X: 'mysticalagriculture:xychorium_gem_essence'}).id('allthemods:essence/xycraft/gem_red').noMirror()
+            'X  ',
+            'XX '], { X: 'mysticalagriculture:xychorium_gem_essence' }).id('allthemods:essence/xycraft/gem_red').noMirror()
     allthemods.shaped('5x xycraft_world:xychorium_gem_green',
         ['   ',
-         '  X',
-         ' XX'],{X: 'mysticalagriculture:xychorium_gem_essence'}).id('allthemods:essence/xycraft/gem_green').noMirror()
+            '  X',
+            ' XX'], { X: 'mysticalagriculture:xychorium_gem_essence' }).id('allthemods:essence/xycraft/gem_green').noMirror()
     allthemods.shaped('5x xycraft_world:xychorium_gem_blue',
         [' X ',
-         ' X ',
-         ' X '],{X: 'mysticalagriculture:xychorium_gem_essence'}).id('allthemods:essence/xycraft/gem_blue').noMirror()
+            ' X ',
+            ' X '], { X: 'mysticalagriculture:xychorium_gem_essence' }).id('allthemods:essence/xycraft/gem_blue').noMirror()
 
     function addInfustion(seed, item, essence) {
         allthemods.custom(
             {
                 type: 'mysticalagriculture:infusion',
                 input: {
-                    item:  'mysticalagriculture:prosperity_seed_base'
+                    item: 'mysticalagriculture:prosperity_seed_base'
                 },
                 ingredients: [
                     {
@@ -230,69 +229,68 @@ ServerEvents.recipes(allthemods => {
         {
             type: "mysticalagriculture:soul_extraction",
             input: {
-              tag: "c:foods/raw_fish"
+                tag: "c:foods/raw_fish"
             },
             result: {
-              type: "mysticalagriculture:fish",
-              souls: 0.5
+                type: "mysticalagriculture:fish",
+                souls: 0.5
             }
         })
 
     // 2 Tall flower recipes
     allthemods.shaped(
-    Item.of('minecraft:rose_bush', 2),
-  [
-    'ABA',
-    'BCA', 
-    'BAA'
-  ],
-  {
-    A: 'mysticalagriculture:nature_essence',
-    B: 'mysticalagriculture:dye_essence',
-    C: 'minecraft:red_dye'
-  }
-)
+        Item.of('minecraft:rose_bush', 2),
+        [
+            'ABA',
+            'BCA',
+            'BAA'
+        ],
+        {
+            A: 'mysticalagriculture:nature_essence',
+            B: 'mysticalagriculture:dye_essence',
+            C: 'minecraft:red_dye'
+        }
+    )
     allthemods.shaped(
-    Item.of('minecraft:peony', 2),
-  [
-    'BAA',
-    'ACA', 
-    'BAB'
-  ],
-  {
-    A: 'mysticalagriculture:nature_essence',
-    B: 'mysticalagriculture:dye_essence',
-    C: 'minecraft:pink_dye'
-  }
-)
+        Item.of('minecraft:peony', 2),
+        [
+            'BAA',
+            'ACA',
+            'BAB'
+        ],
+        {
+            A: 'mysticalagriculture:nature_essence',
+            B: 'mysticalagriculture:dye_essence',
+            C: 'minecraft:pink_dye'
+        }
+    )
     allthemods.shaped(
-    Item.of('minecraft:sunflower', 2),
-  [
-    'AAB',
-    'BCA', 
-    'ABA'
-  ],
-  {
-    A: 'mysticalagriculture:nature_essence',
-    B: 'mysticalagriculture:dye_essence',
-    C: 'minecraft:yellow_dye'
-  }
-)
+        Item.of('minecraft:sunflower', 2),
+        [
+            'AAB',
+            'BCA',
+            'ABA'
+        ],
+        {
+            A: 'mysticalagriculture:nature_essence',
+            B: 'mysticalagriculture:dye_essence',
+            C: 'minecraft:yellow_dye'
+        }
+    )
     allthemods.shaped(
-    Item.of('minecraft:lilac', 2),
-  [
-    'ABA',
-    'ACB', 
-    'BAA'
-  ],
-  {
-    A: 'mysticalagriculture:nature_essence',
-    B: 'mysticalagriculture:dye_essence',
-    C: 'minecraft:magenta_dye'
-  }
-)
+        Item.of('minecraft:lilac', 2),
+        [
+            'ABA',
+            'ACB',
+            'BAA'
+        ],
+        {
+            A: 'mysticalagriculture:nature_essence',
+            B: 'mysticalagriculture:dye_essence',
+            C: 'minecraft:magenta_dye'
+        }
+    )
 
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

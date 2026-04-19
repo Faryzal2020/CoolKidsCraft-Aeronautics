@@ -1,22 +1,21 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
     // Target = block underneath
     // Adjacent = blocks around target
     // Catalyst = block underneath target
-    function extractor({output, id, target, adjacent, catalyst, directions, ticks, waterlogged}) {
+    function extractor({ output, id, target, adjacent, catalyst, directions, ticks, waterlogged }) {
         let recipe = {
             "type": "xycraft_machines:extractor",
             "adjacent": [],
-          "target": rule(target.type, target.block),
+            "target": rule(target.type, target.block),
             "output": {
                 "count": output.count || 1,
                 "id": output.item
             },
             "ticks": ticks,
-            
-        };        
+
+        };
 
         if (catalyst) {
             recipe.catalyst = rule(catalyst.type, catalyst.block);
@@ -34,56 +33,56 @@ ServerEvents.recipes(allthemods => {
             recipe.output.components = output.components;
         }
 
-        if(adjacent) {
+        if (adjacent) {
             adjacent.forEach(adj => {
                 recipe.adjacent.push(rule(adj.type, adj.block));
             });
         }
 
-        if(id) {
+        if (id) {
             allthemods.custom(recipe).id(`allthemods:xycraft/extractor/${output.item.split(":").pop()}_${id}`);
         } else {
             allthemods.custom(recipe).id(`allthemods:xycraft/extractor/${output.item.split(":").pop()}`);
         }
     }
 
-    function rule (type, block, property) {
+    function rule(type, block, property) {
 
-        switch(type) {
-            case "xycraft_core:block_tag_rule" :
+        switch (type) {
+            case "xycraft_core:block_tag_rule":
                 return {
                     "predicate_type": type,
                     "tag": block
                 }
-            case "xycraft_core:block_rule" :
+            case "xycraft_core:block_rule":
                 return {
                     "predicate_type": type,
                     "block": block
                 }
-            case "xycraft_core:fluid_type_rule" :
+            case "xycraft_core:fluid_type_rule":
                 return {
                     "predicate_type": type,
                     "fluid_type": block
                 }
-            case "xycraft_core:fluid_tag_rule" :
+            case "xycraft_core:fluid_tag_rule":
                 return {
                     "predicate_type": type,
                     "tag": block
                 }
-            case "xycraft_core:block_state_rule" :
+            case "xycraft_core:block_state_rule":
                 return {
                     "predicate_type": type,
                     "block_state": block
                 }
-            case "xycraft_core:property_rule" :
+            case "xycraft_core:property_rule":
                 return {
                     "predicate_type": type,
-                    "propery":property.propery,
+                    "propery": property.propery,
                     "value": property.value
                 }
-            case "xycraft_core:fuzzy_block_state_rule" :
+            case "xycraft_core:fuzzy_block_state_rule":
                 return {
-                    "predicate_type" : type,
+                    "predicate_type": type,
                     "block": block.block,
                     "properties": block.properties
                 }
@@ -91,7 +90,7 @@ ServerEvents.recipes(allthemods => {
     }
 
     extractor({
-        output: { item:"biomeswevegone:black_ice", count: 1 },
+        output: { item: "biomeswevegone:black_ice", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:packed_ice" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "biomeswevegone:black_sand" },
@@ -102,26 +101,26 @@ ServerEvents.recipes(allthemods => {
         catalyst: { type: "xycraft_core:block_rule", block: "biomeswevegone:black_sand" },
         ticks: 40,
         waterlogged: 'minecraft:water'
-})
+    })
 
     extractor({
-        output: { item:"minecraft:spore_blossom", count: 1 },
+        output: { item: "minecraft:spore_blossom", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:moss_block" },
-        catalyst: {type: "xycraft_core:block_rule", block: "minecraft:spore_blossom" },
+        catalyst: { type: "xycraft_core:block_rule", block: "minecraft:spore_blossom" },
         ticks: 50,
         waterlogged: 'minecraft:water',
         directions: ["down"]
     })
 
     extractor({
-        output: { item:"minecraft:sculk", count: 1 },
+        output: { item: "minecraft:sculk", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:sculk" },
-        catalyst: {type: "xycraft_core:block_rule", block: "minecraft:sculk_catalyst" },
+        catalyst: { type: "xycraft_core:block_rule", block: "minecraft:sculk_catalyst" },
         ticks: 50,
     })
 
     extractor({
-        output: { item:"xycraft_world:xychorium_gem_blue", count: 1 },
+        output: { item: "xycraft_world:xychorium_gem_blue", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "xycraft_world:xychorium_storage_blue" },
@@ -134,7 +133,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"xycraft_world:xychorium_gem_green", count: 1 },
+        output: { item: "xycraft_world:xychorium_gem_green", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "xycraft_world:xychorium_storage_green" },
@@ -147,7 +146,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"xycraft_world:xychorium_gem_red", count: 1 },
+        output: { item: "xycraft_world:xychorium_gem_red", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "xycraft_world:xychorium_storage_red" },
@@ -160,7 +159,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"xycraft_world:xychorium_gem_dark", count: 1 },
+        output: { item: "xycraft_world:xychorium_gem_dark", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "xycraft_world:xychorium_storage_dark" },
@@ -173,7 +172,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"xycraft_world:xychorium_gem_light", count: 1 },
+        output: { item: "xycraft_world:xychorium_gem_light", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "xycraft_world:xychorium_storage_light" },
@@ -186,7 +185,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"fluxnetworks:flux_dust", count: 1 },
+        output: { item: "fluxnetworks:flux_dust", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
@@ -199,7 +198,7 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"fluxnetworks:flux_dust", count: 1 }, id: "bedrock",
+        output: { item: "fluxnetworks:flux_dust", count: 1 }, id: "bedrock",
         target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
         adjacent: [
             { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
@@ -212,13 +211,12 @@ ServerEvents.recipes(allthemods => {
     })
 
     extractor({
-        output: { item:"mysticalagriculture:soulstone_cobble", count: 1 },
+        output: { item: "mysticalagriculture:soulstone_cobble", count: 1 },
         target: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_cobble" },
-        catalyst: {type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_smooth" },
+        catalyst: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_smooth" },
         ticks: 30,
         directions: ["down"]
     })
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

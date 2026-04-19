@@ -1,10 +1,9 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 // Standardizing salt use in some of Pam's recipes.
 
 ServerEvents.recipes(allthemods => {
-  
+
   ;["pamhc2foodcore:friesitem",
     "pamhc2foodextended:gritsitem",
     "pamhc2foodextended:misopasteitem",
@@ -59,7 +58,7 @@ ServerEvents.recipes(allthemods => {
         '#c:dusts/salt'
       )
     })
-  
+
   // use to list recipe ids and avoid using resource intenside "input"
   // allthemods.forEachRecipe(
   //   { input: 'pamhc2foodcore:saltitem' }, recipe => {
@@ -77,5 +76,4 @@ ServerEvents.tags('item', event => {
 })
 
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

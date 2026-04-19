@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
 
@@ -102,15 +101,15 @@ ServerEvents.recipes(allthemods => {
     );
     for (let i = 3; i < 10; i++) {
         energizing(
-            { item: `allthecompressed:vibranium_allthemodium_alloy_block_${i-2}x` },
+            { item: `allthecompressed:vibranium_allthemodium_alloy_block_${i - 2}x` },
             [
-                { item: `allthecompressed:allthemodium_block_${i-2}x`},
-                { item: `allthecompressed:piglich_heart_block_${i-2}x` },
+                { item: `allthecompressed:allthemodium_block_${i - 2}x` },
+                { item: `allthecompressed:piglich_heart_block_${i - 2}x` },
                 { item: `allthecompressed:nitro_crystal_block_${i}x` },
-                { item: `allthecompressed:piglich_heart_block_${i-2}x` },
-                { item: `allthecompressed:vibranium_block_${i-2}x` }],
-             9000000000 * Math.pow(3, i - 2),
-            `vibranium_allthemodium_alloy_block_${i-2}x`
+                { item: `allthecompressed:piglich_heart_block_${i - 2}x` },
+                { item: `allthecompressed:vibranium_block_${i - 2}x` }],
+            9000000000 * Math.pow(3, i - 2),
+            `vibranium_allthemodium_alloy_block_${i - 2}x`
         );
     }
 
@@ -222,5 +221,4 @@ ServerEvents.recipes(allthemods => {
 
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

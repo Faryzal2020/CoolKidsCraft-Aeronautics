@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
 
@@ -8,13 +7,13 @@ ServerEvents.recipes(allthemods => {
             'AUA',
             'AMA',
             'HEH'
-            ], {
-                A: alloy,
-                U: unique,
-                M: 'mekanism:module_base',
-                H: 'mekanism:hdpe_sheet',
-                E: extra
-            }
+        ], {
+            A: alloy,
+            U: unique,
+            M: 'mekanism:module_base',
+            H: 'mekanism:hdpe_sheet',
+            E: extra
+        }
         )
     }
 
@@ -23,14 +22,14 @@ ServerEvents.recipes(allthemods => {
             'TUT',
             'CMC',
             'BEB'
-            ], {
-                T: top,
-                U: unique,
-                C: center,
-                M: 'mekanism:module_base',
-                B: bottom,
-                E: extra
-            }
+        ], {
+            T: top,
+            U: unique,
+            C: center,
+            M: 'mekanism:module_base',
+            B: bottom,
+            E: extra
+        }
         )
     }
 
@@ -125,13 +124,13 @@ ServerEvents.recipes(allthemods => {
     )
     //Vein Mining Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_vein_mining_unit'},
+        { output: 'mekanism:module_vein_mining_unit' },
         'mekanism:pellet_polonium',
         'mekanism:enriched_gold'
     )
     //Teleporation Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_teleportation_unit'},
+        { output: 'mekanism:module_teleportation_unit' },
         'mekanism:pellet_antimatter',
         'mekanism:pellet_polonium'
     )
@@ -145,36 +144,36 @@ ServerEvents.recipes(allthemods => {
     )
     //Inhalation Purification Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_inhalation_purification_unit'},
+        { output: 'mekanism:module_inhalation_purification_unit' },
         'mekanism:pellet_polonium',
         'mekanism:enriched_carbon'
     )
     //Vision Enhancement Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_vision_enhancement_unit'},
+        { output: 'mekanism:module_vision_enhancement_unit' },
         'mekanism:pellet_polonium',
         'mekanism:enriched_diamond'
     )
     allthemods.replaceInput(
-        {output: 'mekanism:module_vision_enhancement_unit'},
+        { output: 'mekanism:module_vision_enhancement_unit' },
         'minecraft:emerald',
         'mekanism:ultimate_control_circuit'
     )
     //Nutritional Injection Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_nutritional_injection_unit'},
+        { output: 'mekanism:module_nutritional_injection_unit' },
         'mekanism:pellet_polonium',
         'mekanism:hdpe_sheet'
     )
     //Dosimeter Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_dosimeter_unit'},
+        { output: 'mekanism:module_dosimeter_unit' },
         'mekanism:alloy_infused',
         'mekanism:alloy_reinforced'
     )
     //Geiger Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_geiger_unit'},
+        { output: 'mekanism:module_geiger_unit' },
         'mekanism:alloy_infused',
         'mekanism:alloy_reinforced'
     )
@@ -240,7 +239,7 @@ ServerEvents.recipes(allthemods => {
     )
     //Hydrostatic Repulsor Unit
     allthemods.replaceInput(
-        {output: 'mekanism:module_hydrostatic_repulsor_unit'},
+        { output: 'mekanism:module_hydrostatic_repulsor_unit' },
         'mekanism:pellet_polonium',
         'mekanism:hdpe_sheet'
     )
@@ -316,5 +315,3 @@ ServerEvents.recipes(allthemods => {
     )
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

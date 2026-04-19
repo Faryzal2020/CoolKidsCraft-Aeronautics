@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 StartupEvents.registry('item', allthemods => {
     allthemods.create('allthemodium_drill')
@@ -18,7 +17,7 @@ StartupEvents.registry('item', allthemods => {
         .texture('kubejs:item/allthemodium_bolt')
         .maxStackSize(64)
         .displayName('Allthemodium Bolt');
-        
+
     allthemods.create('vibranium_drill')
         .texture('kubejs:item/vibranium_drill')
         .maxStackSize(64)
@@ -35,7 +34,7 @@ StartupEvents.registry('item', allthemods => {
         .texture('kubejs:item/vibranium_bolt')
         .maxStackSize(64)
         .displayName('Vibranium Bolt');
-            
+
     allthemods.create('unobtainium_drill')
         .texture('kubejs:item/unobtainium_drill')
         .maxStackSize(64)
@@ -54,5 +53,3 @@ StartupEvents.registry('item', allthemods => {
         .displayName('Unobtainium Bolt');
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

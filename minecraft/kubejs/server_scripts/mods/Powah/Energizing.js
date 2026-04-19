@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.tags('item', allthemods => {
     allthemods.add('c:storage_blocks/blaze_powder', 'kubejs:blaze_powder_block')
@@ -31,11 +30,11 @@ ServerEvents.recipes(allthemods => {
     // ])
 
     function bulk_energizing(input, input_number, output, energy, id) {
-        allthemods.remove({id: `powah:energizing/${id}`})
+        allthemods.remove({ id: `powah:energizing/${id}` })
         let loop = 0
         let ingredients = []
         while (loop <= 5) {
-            for(let item = 1;item <= input_number; item++ ){
+            for (let item = 1; item <= input_number; item++) {
                 ingredients.push({ tag: input });
             }
             allthemods.custom(
@@ -44,8 +43,8 @@ ServerEvents.recipes(allthemods => {
                     energy: energy * (ingredients.length / input_number),
                     ingredients: ingredients,
                     result: {
-                    count: (loop + input_number) / input_number,
-                    id: output
+                        count: (loop + input_number) / input_number,
+                        id: output
                     }
                 }
             ).id(`kubejs:energizing/${(loop + input_number) / input_number}x_${id}`)
@@ -63,7 +62,7 @@ ServerEvents.recipes(allthemods => {
             }
         };
 
-        for(let item = 1;item <= input.count; item++ ){
+        for (let item = 1; item <= input.count; item++) {
 
             let ingredients = {}
 
@@ -86,9 +85,8 @@ ServerEvents.recipes(allthemods => {
     bulk_energizing('c:ingots/uranium', 1, 'powah:uraninite', 30000, 'uraninite_from_uranium')
     bulk_energizing('c:raw_materials/uraninite', 1, 'powah:uraninite', 2000, 'uraninite_from_raw')
     bulk_energizing('c:storage_blocks/uranium', 1, 'powah:uraninite_block', 270000, 'uraninite_from_uranium_block')
-    energizing({tag: 'c:storage_blocks/blaze_powder', count: 4 }, {item: 'powah:blazing_crystal_block'},1080000, 'blazing_crystal_from_powder_block')
-    energizing({tag: 'c:storage_blocks/blaze_rod', count: 1}, {item: 'powah:blazing_crystal_block'},1080000, 'blazing_crystal_from_block')
+    energizing({ tag: 'c:storage_blocks/blaze_powder', count: 4 }, { item: 'powah:blazing_crystal_block' }, 1080000, 'blazing_crystal_from_powder_block')
+    energizing({ tag: 'c:storage_blocks/blaze_rod', count: 1 }, { item: 'powah:blazing_crystal_block' }, 1080000, 'blazing_crystal_from_block')
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

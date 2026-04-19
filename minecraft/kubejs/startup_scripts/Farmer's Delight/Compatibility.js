@@ -14,11 +14,9 @@ let stews = [
 
 ItemEvents.modification(allthemods => {
     stews.forEach(stew => {
-          allthemods.modify(stew, item => {
-              item.maxStackSize = 16
-          })
+        allthemods.modify(stew, item => {
+            item.maxStackSize = 16
+        })
     })
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

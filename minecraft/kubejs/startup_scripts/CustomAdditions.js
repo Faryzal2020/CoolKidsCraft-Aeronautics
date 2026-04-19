@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 const $BuiltInRegistries = Java.loadClass("net.minecraft.core.registries.BuiltInRegistries")
 
@@ -17,7 +16,7 @@ StartupEvents.registry('block', allthemods => {
 })
 
 StartupEvents.registry('item', allthemods => {
-    
+
     if (Platform.isLoaded("eternal_starlight")) {
         allthemods.create('starlight_prediction').displayName('Generalized Starlight Prediction');
     }
@@ -38,14 +37,14 @@ StartupEvents.registry('item', allthemods => {
     allthemods.create('tertium_enchanting_base').texture('minecraft:item/enchanted_book').color(0xEB7114)
     allthemods.create('imperium_enchanting_base').texture('minecraft:item/enchanted_book').color(0x5555FF)
     allthemods.create('supremium_enchanting_base').texture('minecraft:item/enchanted_book').color(0xFF5555)
-	
-	allthemods.create('fire_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/fire_eye')
-	allthemods.create('fire_pearl').texture('kubejs:item/fire_pearl')
-	allthemods.create('lightning_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/lightning_eye')
-	allthemods.create('lightning_pearl').texture('kubejs:item/lightning_pearl')
-	allthemods.create('ice_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/ice_eye')
+
+    allthemods.create('fire_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/fire_eye')
+    allthemods.create('fire_pearl').texture('kubejs:item/fire_pearl')
+    allthemods.create('lightning_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/lightning_eye')
+    allthemods.create('lightning_pearl').texture('kubejs:item/lightning_pearl')
+    allthemods.create('ice_eye').use((level, player, hand) => global.iceAndFirePearls(level, player, hand)).texture('kubejs:item/ice_eye')
     allthemods.create('ice_pearl').texture('kubejs:item/ice_pearl')
-    
+
     allthemods.create("allthemodium_solar_sail_package").displayName("Allthemodium Solar Sail Package").component("dysoncubeproject:sphere_component_solar_sail", Java.cast("java.lang.Integer", 64))
     allthemods.create("allthemodium_beam_package").displayName("Allthemodium Beam Package").component("dysoncubeproject:sphere_component_beam", Java.cast("java.lang.Integer", 16))
 
@@ -94,7 +93,7 @@ global.iceAndFirePearls = (/** @type {$ServerLevel_}} */ level, /** @type {$Play
     targets.forEach(dragon => {
         if (dragon.dragonType == thisType && !dragon.isModelDead() && !dragon.isTame()) {
             let dist = dragon.distanceToEntity(player)
-            if (currentMinDist == 0 || dist < currentMinDist ){
+            if (currentMinDist == 0 || dist < currentMinDist) {
                 closest = dragon
             }
         }
@@ -120,7 +119,7 @@ global.iceAndFirePearls = (/** @type {$ServerLevel_}} */ level, /** @type {$Play
 
         let f = $Mth.lerp(level.random.nextFloat(), 0.33, 0.5)
         level["playSound(net.minecraft.world.entity.Entity,net.minecraft.core.BlockPos,net.minecraft.sounds.SoundEvent,net.minecraft.sounds.SoundSource,float,float)"](null, player.block.pos, "minecraft:entity.ender_eye.launch", "neutral", 1, f)
-        
+
         if (!player.isCreative()) {
             mainItemStack.consume(1, player);
         }
@@ -162,8 +161,8 @@ StartupEvents.modifyCreativeTab('ironfurnaces:ironfurnaces_tab', allthemods => {
 })
 
 StartupEvents.postInit((allthemods) => {
-  $BuiltInRegistries.BLOCK.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
-  $BuiltInRegistries.ITEM.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
+    $BuiltInRegistries.BLOCK.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
+    $BuiltInRegistries.ITEM.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
 
     const colors = [
         'white',
@@ -218,7 +217,7 @@ StartupEvents.postInit((allthemods) => {
         $BuiltInRegistries.BLOCK.addAlias(`antiblocksrechiseled:pressure_plate_wool_${color}`, `luminax:dim_${color}_pressure_plate`)
         $BuiltInRegistries.ITEM.addAlias(`antiblocksrechiseled:pressure_plate_wool_${color}`, `luminax:dim_${color}_pressure_plate`)
     })
-    
+
     // EnderIO removed those
     $BuiltInRegistries.ITEM.addAlias("enderio:wood_gear", "minecraft:oak_planks")
     $BuiltInRegistries.ITEM.addAlias("enderio:stone_gear", "minecraft:cobblestone")
@@ -233,5 +232,4 @@ StartupEvents.postInit((allthemods) => {
 })
 
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

@@ -1,108 +1,107 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
     //Modularium Plates
-        if (Platform.isLoaded('modular_machinery_reborn')) {
-            allthemods.recipes.modern_industrialization.compressor(2, 200)
-                .itemIn('modular_machinery_reborn:modularium')
-                .itemOut('kubejs:modularium_plate')
+    if (Platform.isLoaded('modular_machinery_reborn')) {
+        allthemods.recipes.modern_industrialization.compressor(2, 200)
+            .itemIn('modular_machinery_reborn:modularium')
+            .itemOut('kubejs:modularium_plate')
 
-            allthemods.custom(
-                {
-                    type: 'immersiveengineering:metal_press',
-                    energy: 2400,
-                    input: {
+        allthemods.custom(
+            {
+                type: 'immersiveengineering:metal_press',
+                energy: 2400,
+                input: {
                     item: 'modular_machinery_reborn:modularium'
-                    },
-                    mold: 'immersiveengineering:mold_plate',
-                    result: {
+                },
+                mold: 'immersiveengineering:mold_plate',
+                result: {
                     item: 'kubejs:modularium_plate'
-                    }
                 }
-            )
+            }
+        )
 
-            allthemods.shaped('modular_machinery_reborn:blueprint', 
-                [
-                    'plp',
-                    'pwp',
-                    'ppp'
-                ],
-                {
-                    p: 'kubejs:modularium_plate',
-                    l: 'actuallyadditions:lens_of_color',
-                    w: 'actuallyadditions:laser_wrench'
-                }
-            )
-            allthemods.remove({id: /modular_machinery_reborn:.*input.*/})
-            allthemods.remove({id: /modular_machinery_reborn:.*output.*/})
-            allthemods.remove({id: /modular_machinery_reborn:casing.*/})
-            allthemods.remove({id: /modular_machinery_reborn:.*ingot/})
-            allthemods.remove({id: /modular_machinery_reborn_ars:.*input.*/})
-            allthemods.remove({id: /modular_machinery_reborn_ars:.*output.*/})
-            allthemods.remove({id: /modular_machinery_reborn_mekanism:.*input.*/})
-            allthemods.remove({id: /modular_machinery_reborn_mekanism:.*output.*/})
+        allthemods.shaped('modular_machinery_reborn:blueprint',
+            [
+                'plp',
+                'pwp',
+                'ppp'
+            ],
+            {
+                p: 'kubejs:modularium_plate',
+                l: 'actuallyadditions:lens_of_color',
+                w: 'actuallyadditions:laser_wrench'
+            }
+        )
+        allthemods.remove({ id: /modular_machinery_reborn:.*input.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn:.*output.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn:casing.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn:.*ingot/ })
+        allthemods.remove({ id: /modular_machinery_reborn_ars:.*input.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn_ars:.*output.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn_mekanism:.*input.*/ })
+        allthemods.remove({ id: /modular_machinery_reborn_mekanism:.*output.*/ })
 
-        } else {
-            allthemods.recipes.modern_industrialization.compressor(2, 200)
-                .itemIn('kubejs:modularium')
-                .itemOut('kubejs:modularium_plate')
+    } else {
+        allthemods.recipes.modern_industrialization.compressor(2, 200)
+            .itemIn('kubejs:modularium')
+            .itemOut('kubejs:modularium_plate')
 
-            allthemods.custom(
-                {
-                    type: 'immersiveengineering:metal_press',
-                    energy: 2400,
-                    input: {
+        allthemods.custom(
+            {
+                type: 'immersiveengineering:metal_press',
+                energy: 2400,
+                input: {
                     item: 'kubejs:modularium'
-                    },
-                    mold: 'immersiveengineering:mold_plate',
-                    result: {
+                },
+                mold: 'immersiveengineering:mold_plate',
+                result: {
                     item: 'kubejs:modularium_plate'
-                    }
                 }
-            )
-        }
-    
+            }
+        )
+    }
 
 
-        allthemods.custom(
-            {
-                type: 'industrialforegoing:fluid_extractor',
-                breakChance: 0.05,
-                defaultRecipe: false,
-                input: {
-                  item: 'productivetrees:soul_tree_log'
-                },
-                output: {
-                  amount: 2,
-                  id: 'kubejs:unrefined_liquid_souls'
-                },
-                result: {
-                  Name: 'productivetrees:soul_tree_stripped_log',
-                  Properties: {
+
+    allthemods.custom(
+        {
+            type: 'industrialforegoing:fluid_extractor',
+            breakChance: 0.05,
+            defaultRecipe: false,
+            input: {
+                item: 'productivetrees:soul_tree_log'
+            },
+            output: {
+                amount: 2,
+                id: 'kubejs:unrefined_liquid_souls'
+            },
+            result: {
+                Name: 'productivetrees:soul_tree_stripped_log',
+                Properties: {
                     axis: 'y'
-                  }
                 }
             }
-        )
-    
-        allthemods.custom(
-            {
-                type: 'industrialforegoing:fluid_extractor',
-                breakChance: 0.1,
-                defaultRecipe: false,
-                input: {
-                  item: 'productivetrees:soul_tree_stripped_log',
-                },
-                output: {
-                  amount: 1,
-                  id: 'kubejs:unrefined_liquid_souls'
-                },
-                result: {
-                  Name: 'minecraft:air'
-                }
+        }
+    )
+
+    allthemods.custom(
+        {
+            type: 'industrialforegoing:fluid_extractor',
+            breakChance: 0.1,
+            defaultRecipe: false,
+            input: {
+                item: 'productivetrees:soul_tree_stripped_log',
+            },
+            output: {
+                amount: 1,
+                id: 'kubejs:unrefined_liquid_souls'
+            },
+            result: {
+                Name: 'minecraft:air'
             }
-        )
+        }
+    )
 
     //Removal
 
@@ -188,5 +187,3 @@ ServerEvents.generateData('after_mods', allthemods => {
     )
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
 
@@ -20,7 +19,7 @@ ServerEvents.recipes(allthemods => {
     essenceCircle('3x actuallyadditions:black_quartz', 'black_quartz')
 
     // infusion seed crafting
-    function seedCrafting(output, middle, item1, item2, item3, item4, item5, item6, item7, item8){
+    function seedCrafting(output, middle, item1, item2, item3, item4, item5, item6, item7, item8) {
         allthemods.custom({
             type: 'mysticalagriculture:infusion',
             input: { item: middle },
@@ -46,5 +45,3 @@ ServerEvents.recipes(allthemods => {
 
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

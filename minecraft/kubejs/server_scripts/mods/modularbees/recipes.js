@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
   allthemods.remove({ id: 'modularbees:electrode_copper' })
@@ -24,11 +23,11 @@ ServerEvents.recipes(allthemods => {
       ' BN',
       'I  '
     ], {
-      N: '#c:ingots/netherite',
-      G: '#c:storage_blocks/gold',
-      B: "#c:storage_blocks/copper",
-      I: '#c:ingots/copper'
-    }).id('allthemods:modularbees/electrode_copper')
+    N: '#c:ingots/netherite',
+    G: '#c:storage_blocks/gold',
+    B: "#c:storage_blocks/copper",
+    I: '#c:ingots/copper'
+  }).id('allthemods:modularbees/electrode_copper')
 
   allthemods.shaped(
     Item.of('modularbees:electrode_iron'),
@@ -37,11 +36,11 @@ ServerEvents.recipes(allthemods => {
       ' BN',
       'I  '
     ], {
-      N: 'modularbees:electrode_copper',
-      G: '#c:storage_blocks/gold',
-      B: "#c:storage_blocks/iron",
-      I: '#c:ingots/iron'
-    }).id('allthemods:modularbees/electrode_iron')
+    N: 'modularbees:electrode_copper',
+    G: '#c:storage_blocks/gold',
+    B: "#c:storage_blocks/iron",
+    I: '#c:ingots/iron'
+  }).id('allthemods:modularbees/electrode_iron')
 
   allthemods.shaped(
     Item.of('modularbees:electrode_gold'),
@@ -50,11 +49,11 @@ ServerEvents.recipes(allthemods => {
       ' BN',
       'I  '
     ], {
-      N: 'modularbees:electrode_iron',
-      G: '#c:storage_blocks/gold',
-      B: "#c:storage_blocks/gold",
-      I: '#c:ingots/gold'
-    }).id('allthemods:modularbees/electrode_gold')
+    N: 'modularbees:electrode_iron',
+    G: '#c:storage_blocks/gold',
+    B: "#c:storage_blocks/gold",
+    I: '#c:ingots/gold'
+  }).id('allthemods:modularbees/electrode_gold')
 
   allthemods.shaped(
     Item.of('modularbees:scented_plank', 4),
@@ -63,10 +62,10 @@ ServerEvents.recipes(allthemods => {
       'PPP',
       'NHN'
     ], {
-      N: '#c:nuggets/allthemodium',
-      H: 'minecraft:honey_block',
-      P: '#minecraft:planks'
-    }).id('allthemods:modularbees/scented_plank')
+    N: '#c:nuggets/allthemodium',
+    H: 'minecraft:honey_block',
+    P: '#minecraft:planks'
+  }).id('allthemods:modularbees/scented_plank')
 
   allthemods.shaped(
     Item.of('modularbees:modular_beehive_core'),
@@ -75,12 +74,12 @@ ServerEvents.recipes(allthemods => {
       'UBU',
       'PAP'
     ], {
-      P: 'modularbees:scented_plank',
-      O: 'productivelib:upgrade_productivity_4',
-      U: '#c:ingots/unobtainium',
-      B: 'minecraft:iron_bars',
-      A: 'productivelib:upgrade_adult',
-    }).id('allthemods:modularbees/modular_beehive_core')
+    P: 'modularbees:scented_plank',
+    O: 'productivelib:upgrade_productivity_4',
+    U: '#c:ingots/unobtainium',
+    B: 'minecraft:iron_bars',
+    A: 'productivelib:upgrade_adult',
+  }).id('allthemods:modularbees/modular_beehive_core')
 
   allthemods.shaped(
     Item.of('modularbees:modular_beehive_part'),
@@ -89,9 +88,9 @@ ServerEvents.recipes(allthemods => {
       'PVP',
       'PPP'
     ], {
-      P: 'modularbees:scented_plank',
-      V: '#c:ingots/vibranium'
-    }).id('allthemods:modularbees/modular_beehive_part')
+    P: 'modularbees:scented_plank',
+    V: '#c:ingots/vibranium'
+  }).id('allthemods:modularbees/modular_beehive_part')
 
   allthemods.shaped(
     Item.of('modularbees:modular_beehive_feeder'),
@@ -100,9 +99,9 @@ ServerEvents.recipes(allthemods => {
       'PFP',
       ' P '
     ], {
-      P: 'modularbees:modular_beehive_part',
-      F: 'productivebees:feeder'
-    }).id('allthemods:modularbees/modular_beehive_feeder')
+    P: 'modularbees:modular_beehive_part',
+    F: 'productivebees:feeder'
+  }).id('allthemods:modularbees/modular_beehive_feeder')
 
   allthemods.shaped(
     Item.of('modularbees:modular_beehive_alveary'),
@@ -111,10 +110,10 @@ ServerEvents.recipes(allthemods => {
       'PNP',
       'EPE'
     ], {
-      E: '#productivebees:expansion_boxes',
-      P: 'modularbees:modular_beehive_part',
-      N: '#c:nuggets/vibranium'
-    }).id('allthemods:modularbees/modular_beehive_alveary')
+    E: '#productivebees:expansion_boxes',
+    P: 'modularbees:modular_beehive_part',
+    N: '#c:nuggets/vibranium'
+  }).id('allthemods:modularbees/modular_beehive_alveary')
 
   allthemods.shaped(
     Item.of('modularbees:modular_beehive_overclocker'),
@@ -123,11 +122,9 @@ ServerEvents.recipes(allthemods => {
       'BOB',
       'PBP'
     ], {
-      P: 'modularbees:modular_beehive_part',
-      B: 'minecraft:iron_bars',
-      O: 'productivelib:upgrade_productivity_4'
-    }).id('allthemods:modularbees/modular_beehive_overclocker')
+    P: 'modularbees:modular_beehive_part',
+    B: 'minecraft:iron_bars',
+    O: 'productivelib:upgrade_productivity_4'
+  }).id('allthemods:modularbees/modular_beehive_overclocker')
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

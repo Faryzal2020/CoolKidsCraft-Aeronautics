@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 ServerEvents.recipes(event => {
     event.remove(
         [
@@ -8,7 +7,7 @@ ServerEvents.recipes(event => {
             'modern_industrialization:quarry/stainless_steel',
             'modern_industrialization:quarry/titanium'
         ]
-    ) 
+    )
 
     let addQuarry = (id, eu, duration, inputItem, inputChance, outputs) => {
         event.custom(
@@ -26,14 +25,14 @@ ServerEvents.recipes(event => {
         ).id(`atm:quarry/electric/${id}`)
     }
 
-    addQuarry('test', 2, 100, 'minecraft:dirt', 0.01, 
+    addQuarry('test', 2, 100, 'minecraft:dirt', 0.01,
         [
             { item: 'minecraft:cobblestone', amount: 1, probability: 0.2 },
             { item: 'minecraft:stone', amount: 1, probability: 0.5 }
         ]
     )
 
-    addQuarry('bronze', 4, 600, 'modern_industrialization:bronze_drill', 0.04, 
+    addQuarry('bronze', 4, 600, 'modern_industrialization:bronze_drill', 0.04,
         [
             { item: 'minecraft:iron_ore', amount: 1, probability: 0.4 },
             { item: 'minecraft:coal_ore', amount: 1, probability: 0.4 },
@@ -79,5 +78,4 @@ ServerEvents.recipes(event => {
     )
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

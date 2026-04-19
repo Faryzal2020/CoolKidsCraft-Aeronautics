@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.tags('item', allthemods => {
     //regions_unexplored
@@ -55,10 +54,10 @@ ServerEvents.recipes(allthemods => {
     let logsTag = Ingredient.of("#minecraft:logs")
 
     /** @type {$HashMap_<string, $UnknownKubeRecipe_>}} */
-    let prodSawmillRecipes = allthemods.findRecipes({type: "productivetrees:sawmill"}).stream().collect($Collectors.toMap(r => r.json.asMap().output.get("id").asString, r => r))
+    let prodSawmillRecipes = allthemods.findRecipes({ type: "productivetrees:sawmill" }).stream().collect($Collectors.toMap(r => r.json.asMap().output.get("id").asString, r => r))
     /** @type {$HashMap_<string, $UnknownKubeRecipe_>}} */
-    let mekSawmillRecipes = allthemods.findRecipes({type: "mekanism:sawing"}).stream().filter(r => r.json.asMap().main_output != undefined && logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, Ingredient.of(r.json.asMap().input.has("ingredient") ? r.json.asMap().input.get("ingredient") : r.json.asMap().input), false)).collect($Collectors.toMap(r => r.json.asMap().main_output.get("id").asString, r => r))
-    
+    let mekSawmillRecipes = allthemods.findRecipes({ type: "mekanism:sawing" }).stream().filter(r => r.json.asMap().main_output != undefined && logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, Ingredient.of(r.json.asMap().input.has("ingredient") ? r.json.asMap().input.get("ingredient") : r.json.asMap().input), false)).collect($Collectors.toMap(r => r.json.asMap().main_output.get("id").asString, r => r))
+
     function mekSawing(output, input, extraOutput, id) {
         if (mekSawmillRecipes.containsKey(output.id)) {
             // console.info("Already exists a mek recipe for " + output.id)
@@ -88,21 +87,20 @@ ServerEvents.recipes(allthemods => {
         }).id(`allthemods:productivetrees/sawing/${id}`);
     }
 
-    allthemods.forEachRecipe({type: "minecraft:crafting_shapeless", output: "#minecraft:planks"}, recipe => {
+    allthemods.forEachRecipe({ type: "minecraft:crafting_shapeless", output: "#minecraft:planks" }, recipe => {
         /** @type {$Ingredient_} */
         let firstIngredient = recipe.get("ingredients").getFirst()
         /** @type {$ItemStackKJS_} */
         let output = recipe.get("result")
-        if (!logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, firstIngredient, false)){
+        if (!logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, firstIngredient, false)) {
             console.info("Ingredient is not a log tag: " + Ingredient.of(firstIngredient).toJson())
             return
         }
-        
-        mekSawing(output.withCount(6), firstIngredient, {chance: 0.25, item: "mekanism:sawdust"}, recipe.getId().split(":")[0] + "/" + recipe.getId().split(":")[1])
+
+        mekSawing(output.withCount(6), firstIngredient, { chance: 0.25, item: "mekanism:sawdust" }, recipe.getId().split(":")[0] + "/" + recipe.getId().split(":")[1])
         prodSawing(firstIngredient, output.withCount(6), Item.of("2x productivetrees:sawdust"), recipe.getId().split(":")[0] + "/" + recipe.getId().split(":")[1])
     })
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 

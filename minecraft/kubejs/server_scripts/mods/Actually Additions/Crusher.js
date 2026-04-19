@@ -1,49 +1,50 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
     function addAACrusher(input, output, num, bonus) {
-        if(bonus !== 0){
-        allthemods.custom(
-            {
-                type: 'actuallyadditions:crushing',
-                ingredient: Ingredient.of(input).toJson(),
-                result: [
-                    {
-                        result: {
-                            count: num,
-                            id: output
+        if (bonus !== 0) {
+            allthemods.custom(
+                {
+                    type: 'actuallyadditions:crushing',
+                    ingredient: Ingredient.of(input).toJson(),
+                    result: [
+                        {
+                            result: {
+                                count: num,
+                                id: output
+                            }
+                        },
+                        {
+                            chance: bonus,
+                            result: {
+                                count: 1,
+                                id: output
+                            }
                         }
-                    },
-                    {
-                        chance: bonus,
-                        result: {
-                            count: 1,
-                            id: output
+                    ]
+                }
+            )
+        }
+        else {
+            allthemods.custom(
+                {
+                    type: 'actuallyadditions:crushing',
+                    ingredient: Ingredient.of(input).toJson(),
+                    result: [
+                        {
+                            result: {
+                                count: num,
+                                id: output
+                            }
+                        },
+                        {
+                            chance: bonus,
+                            result: {}
                         }
-                    }
-                ]
-            }
-        )}
-        else{
-        allthemods.custom(
-            {
-                type: 'actuallyadditions:crushing',
-                ingredient: Ingredient.of(input).toJson(),
-                result: [
-                    {
-                        result: {
-                            count: num,
-                            id: output
-                        }
-                    },
-                    {
-                        chance: bonus,
-                        result: {}
-                    }
-                ]
-            }
-        )}        
+                    ]
+                }
+            )
+        }
     }
 
     //addAACrusher(input, output, num, bonus)
@@ -95,8 +96,6 @@ ServerEvents.recipes(allthemods => {
     //Xycraft World
     global.xycraftColours.forEach(colour => {
         addAACrusher(`#c:ores/xychorium_${colour}`, `xycraft_world:xychorium_gem_${colour}`, 4, 0)
-      })
+    })
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

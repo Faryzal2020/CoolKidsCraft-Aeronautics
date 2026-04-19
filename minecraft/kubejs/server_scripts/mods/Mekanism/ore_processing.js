@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 
 ServerEvents.recipes(allthemods => {
@@ -37,14 +36,14 @@ ServerEvents.recipes(allthemods => {
                 enriching(`c:dirty_dusts/${material}`, `allthemodium:${material}_dust`, `allthemodium:processing/${material}/dust/from_dirty_dust`);
             }
             if (mod === 'alltheores') {
-                allthemods.remove({id: `mekanism:processing/${material}/slurry/dirty/from_raw_block`})
-                allthemods.remove({id: `mekanism:processing/${material}/slurry/dirty/from_raw_ore`})
-                allthemods.remove({id: `mekanism:processing/${material}/slurry/dirty/from_ore`})
-                allthemods.remove({id: `mekanism:processing/${material}/crystal/from_slurry`})
-                allthemods.remove({id: `mekanism:processing/${material}/shard/from_crystal`})
-                allthemods.remove({id: `mekanism:processing/${material}/dirty_dust/from_clump`})
-                allthemods.remove({id: `mekanism:processing/${material}/dust/from_dirty_dust`})
-                
+                allthemods.remove({ id: `mekanism:processing/${material}/slurry/dirty/from_raw_block` })
+                allthemods.remove({ id: `mekanism:processing/${material}/slurry/dirty/from_raw_ore` })
+                allthemods.remove({ id: `mekanism:processing/${material}/slurry/dirty/from_ore` })
+                allthemods.remove({ id: `mekanism:processing/${material}/crystal/from_slurry` })
+                allthemods.remove({ id: `mekanism:processing/${material}/shard/from_crystal` })
+                allthemods.remove({ id: `mekanism:processing/${material}/dirty_dust/from_clump` })
+                allthemods.remove({ id: `mekanism:processing/${material}/dust/from_dirty_dust` })
+
                 washing(`alltheores:dirty_${material}`, `alltheores:clean_${material}`, `alltheores:processing/${material}/slurry/from_dirty`);
                 injecting(`c:crystals/${material}`, `alltheores:${material}_shard`, `alltheores:processing/${material}/shard/from_crystal`);
                 crushing(`c:clumps/${material}`, `alltheores:dirty_${material}_dust`, `alltheores:processing/${material}/dirty_dust/from_clump`);
@@ -125,22 +124,21 @@ ServerEvents.recipes(allthemods => {
             }
         ).id(id)
     }
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_raw_block`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_raw_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/clean`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/crystal/from_slurry`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_raw_block`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_raw_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_shard`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/dirty_dust/from_clump`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_raw_block`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_raw_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_ore`})
-  allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_crystal`})
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_raw_block` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_raw_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/dirty/from_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/slurry/clean` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/crystal/from_slurry` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_raw_block` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_raw_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/clump/from_shard` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/dirty_dust/from_clump` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_raw_block` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_raw_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_ore` })
+    allthemods.remove({ id: `xycraft_machines:compat/mek/processing/aluminum/shard/from_crystal` })
 
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+

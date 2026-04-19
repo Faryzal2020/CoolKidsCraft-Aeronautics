@@ -1,13 +1,12 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
-    allthemods.replaceInput({output: 'advanced_ae:quantum_helmet'}, 'minecraft:netherite_helmet', 'allthemodium:unobtainium_helmet' )
-    allthemods.replaceInput({output: 'advanced_ae:quantum_chestplate'}, 'minecraft:netherite_chestplate', 'allthemodium:unobtainium_chestplate' )
-    allthemods.replaceInput({output: 'advanced_ae:quantum_leggings'}, 'minecraft:netherite_leggings', 'allthemodium:unobtainium_leggings' )
-    allthemods.replaceInput({output: 'advanced_ae:quantum_boots'}, 'minecraft:netherite_boots', 'allthemodium:unobtainium_boots' )
+    allthemods.replaceInput({ output: 'advanced_ae:quantum_helmet' }, 'minecraft:netherite_helmet', 'allthemodium:unobtainium_helmet')
+    allthemods.replaceInput({ output: 'advanced_ae:quantum_chestplate' }, 'minecraft:netherite_chestplate', 'allthemodium:unobtainium_chestplate')
+    allthemods.replaceInput({ output: 'advanced_ae:quantum_leggings' }, 'minecraft:netherite_leggings', 'allthemodium:unobtainium_leggings')
+    allthemods.replaceInput({ output: 'advanced_ae:quantum_boots' }, 'minecraft:netherite_boots', 'allthemodium:unobtainium_boots')
 
-    allthemods.replaceInput({output: 'advanced_ae:strength_card'}, 'minecraft:netherite_sword', 'allthemodium:vibranium_sword' )
+    allthemods.replaceInput({ output: 'advanced_ae:strength_card' }, 'minecraft:netherite_sword', 'allthemodium:vibranium_sword')
 
     allthemods.remove('advanced_ae:magnet_card')
     allthemods.shaped(Item.of('advanced_ae:magnet_card'),
@@ -42,5 +41,3 @@ ServerEvents.recipes(allthemods => {
     )
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.

@@ -1,5 +1,4 @@
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
+
 
 ServerEvents.recipes(allthemods => {
     // input[], input_fluid, processing_time, output, outputfluid
@@ -8,7 +7,7 @@ ServerEvents.recipes(allthemods => {
     dissolution_chamber([
         '#c:glass_blocks/colorless'
     ],
-        "2700x industrialforegoing:pink_slime", 
+        "2700x industrialforegoing:pink_slime",
         200,
         "industrialforegoing:pink_slime_block"
     )
@@ -23,7 +22,7 @@ ServerEvents.recipes(allthemods => {
         'minecraft:sculk_catalyst',
         '#c:gears/netherite',
     ],
-        "1000x justdirethings:unstable_portal_fluid_source", 
+        "1000x justdirethings:unstable_portal_fluid_source",
         200,
         "industrialforegoingsouls:soul_laser_base"
     )
@@ -38,7 +37,7 @@ ServerEvents.recipes(allthemods => {
         'minecraft:echo_shard',
         '#industrialforegoing:machine_frame/simple',
     ],
-        "20x justdirethings:unstable_portal_fluid_source", 
+        "20x justdirethings:unstable_portal_fluid_source",
         50,
         "4x industrialforegoingsouls:soul_surge"
     )
@@ -53,7 +52,7 @@ ServerEvents.recipes(allthemods => {
         '#c:gears/iron',
         '#c:plastics',
     ],
-        "20x industrialforegoing:pink_slime", 
+        "20x industrialforegoing:pink_slime",
         20,
         "32x industrialforegoingsouls:soul_network_pipe"
     )
@@ -67,5 +66,3 @@ ServerEvents.recipes(allthemods => {
     ).id("industrialforegoing:dissolution_chamber/xp_bottles")
 })
 
-// This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 10.
-// As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
