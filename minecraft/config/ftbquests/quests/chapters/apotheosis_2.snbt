@@ -456,8 +456,7 @@
 			shape: "gear"
 			tasks: [{
 				id: "66A1606D1C71B9A0"
-				item: { count: 1, id: "evilcraft:spirit_reanimator" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 0.5d
 			y: 4.0d

@@ -1094,8 +1094,7 @@
 			}]
 			tasks: [{
 				id: "344776799E44852E"
-				item: { components: { "minecraft:enchantments": { levels: { "minecraft:looting": 2 } } }, count: 1, id: "evilcraft:vein_sword" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 0.0d
 			y: 2.0d

@@ -1187,15 +1187,6 @@
 			id: "00AC7CC291A3E590"
 			rewards: [
 				{
-					count: 3
-					id: "06BC8229172DFBC9"
-					item: {
-						count: 1
-						id: "evilcraft:lightning_grenade"
-					}
-					type: "item"
-				}
-				{
 					id: "0696C63DF38690BA"
 					type: "xp_levels"
 					xp_levels: 1
@@ -1204,8 +1195,7 @@
 			size: 1.25d
 			tasks: [{
 				id: "6A6A11C94DE3BA18"
-				item: { count: 1, id: "evilcraft:lightning_bomb" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 8.0d
 			y: -2.0d
@@ -1486,29 +1476,6 @@
 			id: "263C9A0FC04472AB"
 			rewards: [
 				{
-					id: "6CBE081AC55CF0CF"
-					item: {
-						count: 1
-						id: "generatorgalore:magmatic_generator_8x"
-					}
-					type: "item"
-				}
-				{
-					id: "2A3E7F685CA9AF65"
-					item: {
-						components: {
-							"cyclopscore:capacity": 16000
-							"cyclopscore:fluid_content": {
-								amount: 16000
-								id: "minecraft:lava"
-							}
-						}
-						count: 1
-						id: "evilcraft:dark_tank"
-					}
-					type: "item"
-				}
-				{
 					id: "3AE3D23CB413001B"
 					type: "xp_levels"
 					xp_levels: 1
@@ -1517,8 +1484,7 @@
 			size: 1.25d
 			tasks: [{
 				id: "2FFF1FAD3E5A2D2A"
-				item: { count: 1, id: "generatorgalore:magmatic_generator_64x" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 10.0d
 			y: 10.0d
@@ -1557,17 +1523,6 @@
 			id: "54BAF833344F0AAE"
 			rewards: [
 				{
-					id: "5F670C4EE028CFCD"
-					item: {
-						components: {
-							"cyclopscore:capacity": 16000
-						}
-						count: 1
-						id: "evilcraft:dark_tank"
-					}
-					type: "item"
-				}
-				{
 					id: "22D9DDDE41F920BF"
 					type: "xp_levels"
 					xp_levels: 1
@@ -1576,8 +1531,7 @@
 			size: 1.25d
 			tasks: [{
 				id: "7693F09361C9A893"
-				item: { components: { "cyclopscore:capacity": 16000, "cyclopscore:fluid_content": { amount: 16000, id: "justdirethings:refined_t4_fluid_source" } }, count: 1, id: "evilcraft:dark_tank" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 10.0d
 			y: 0.0d
@@ -2460,15 +2414,6 @@
 			id: "5A6831E0BD2F6AB5"
 			rewards: [
 				{
-					count: 4
-					id: "778D98CE6B531660"
-					item: {
-						count: 1
-						id: "evilcraft:blood_orb_filled"
-					}
-					type: "item"
-				}
-				{
 					id: "1DF86E63F6FD3C11"
 					type: "xp_levels"
 					xp_levels: 1
@@ -2476,10 +2421,8 @@
 			]
 			size: 1.25d
 			tasks: [{
-				count: 2L
 				id: "4A670DB3BE52940A"
-				item: { count: 1, id: "evilcraft:piercing_vengeance_focus" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 8.0d
 			y: 0.0d
@@ -2490,15 +2433,6 @@
 			id: "73BE1EB3E69814E9"
 			rewards: [
 				{
-					count: 5
-					id: "7CC401B6B0043922"
-					item: {
-						count: 1
-						id: "evilcraft:condensed_blood"
-					}
-					type: "item"
-				}
-				{
 					id: "237B032463BDF2D6"
 					type: "xp_levels"
 					xp_levels: 1
@@ -2507,8 +2441,7 @@
 			size: 1.25d
 			tasks: [{
 				id: "153EE95889C75AF0"
-				item: { count: 1, id: "evilcraft:mace_of_destruction" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 10.0d
 			y: -2.0d
@@ -3316,19 +3249,10 @@
 		}
 		{
 			icon: {
-				id: "evilcraft:condensed_blood"
+				id: "minecraft:bookshelf"
 			}
 			id: "3F5B5D6B788E0A73"
 			rewards: [
-				{
-					count: 3
-					id: "17AE3958527A6B92"
-					item: {
-						count: 1
-						id: "evilcraft:dark_gem"
-					}
-					type: "item"
-				}
 				{
 					id: "4F7446244FFB8094"
 					type: "xp"
@@ -3339,8 +3263,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "1ACDF9B8AED8F168"
-				item: { count: 1, id: "evilcraft:dark_gem" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 12.0d
 			y: 1.0d

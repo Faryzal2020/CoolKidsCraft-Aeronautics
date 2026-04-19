@@ -247,15 +247,6 @@
 					type: "item"
 				}
 				{
-					count: 5
-					id: "24A41AF8FE9C72C4"
-					item: {
-						count: 1
-						id: "evilcraft:condensed_blood"
-					}
-					type: "item"
-				}
-				{
 					id: "2427C456ABA6E77B"
 					item: {
 						count: 1
@@ -828,8 +819,7 @@
 			size: 1.5d
 			tasks: [{
 				id: "377C33C915788F16"
-				item: { components: { "cyclopscore:fluid_content": { amount: 1000, id: "evilcraft:blood" } }, count: 1, id: "evilcraft:creative_blood_drop" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 7.5d
 			y: 7.5d

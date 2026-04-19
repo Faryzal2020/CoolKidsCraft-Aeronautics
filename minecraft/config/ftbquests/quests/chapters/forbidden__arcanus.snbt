@@ -1709,19 +1709,13 @@
 			rewards: [
 				{
 					id: "41E402E2F1F009DA"
-					item: {
-						count: 1
-						id: "evilcraft:spiked_plate"
-					}
-					type: "item"
+					type: "xp_levels"
+					xp_levels: 2
 				}
 				{
 					id: "7690E53BA1502C24"
-					item: {
-						count: 1
-						id: "evilcraft:sanguinary_pedestal_1"
-					}
-					type: "item"
+					type: "xp_levels"
+					xp_levels: 2
 				}
 			]
 			shape: "hexagon"
@@ -1729,13 +1723,11 @@
 			tasks: [
 				{
 					id: "5E798DAD9D07FD3C"
-					item: { count: 1, id: "evilcraft:spiked_plate" }
-					type: "item"
+					type: "checkmark"
 				}
 				{
 					id: "20C0F821D7BFE975"
-					item: { count: 1, id: "evilcraft:sanguinary_pedestal_1" }
-					type: "item"
+					type: "checkmark"
 				}
 			]
 			x: 33.5d
@@ -1991,19 +1983,14 @@
 			hide_until_deps_visible: true
 			id: "0447551EF7FB171B"
 			rewards: [{
-				count: 3
 				id: "4845CAB57EA0D693"
-				item: {
-					count: 1
-					id: "evilcraft:bucket_blood"
-				}
-				type: "item"
+				type: "xp_levels"
+				xp_levels: 2
 			}]
 			size: 1.3d
 			tasks: [{
 				id: "334111AC1B4E07FB"
-				item: { count: 1, id: "evilcraft:bucket_blood" }
-				type: "item"
+				type: "checkmark"
 			}]
 			x: 32.5d
 			y: 0.5d
