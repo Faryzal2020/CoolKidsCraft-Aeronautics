@@ -8,6 +8,7 @@ minecraft/config/ars_nouveau/search_index
 minecraft/config/crash_assistant
 minecraft/config/incontrol
 minecraft/config/iris.properties
+minecraft/config/ftbchunks-client.snbt
 minecraft/downloads
 minecraft/dynamic-data-pack-cache
 minecraft/dynamic-resource-pack-cache
@@ -38,3 +39,4 @@ minecraft/simplebackups
 minecraft/usercache.json
 minecraft/usernamecache.json
 dist
+instance.cfg

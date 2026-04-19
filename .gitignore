@@ -35,10 +35,11 @@
 /minecraft/local/kubejstweaks
 /minecraft/saves
 /minecraft/TrashSlotSaveState.json
-/instance.cfg
+instance.cfg
 /minecraft/config/iris.properties
 /minecraft/config/incontrol
 /minecraft/config/ars_nouveau/search_index
 /minecraft/config/crash_assistant
+/minecraft/config/ftbchunks-client.snbt
 /flame/overrides.txt
 /dist
