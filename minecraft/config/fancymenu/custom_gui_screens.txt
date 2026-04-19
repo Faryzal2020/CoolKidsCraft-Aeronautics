@@ -4,7 +4,7 @@ overridden_screens {
 }
 
 custom_gui {
-  identifier = menu.allthemods.main_menu
+  identifier = menu.coolkidscraft.main_menu
   title = Main Menu
   allow_esc = true
   transparent_world_background = true

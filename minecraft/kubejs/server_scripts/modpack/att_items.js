@@ -97,7 +97,7 @@ allthemods.shaped('allthetweaks:pulsating_black_hole', ['ABC', 'DEF', 'GHI'], {
   F: 'occultism:stable_wormhole',
   G: 'rootsclassic:crystal_staff',
   H: 'industrialforegoing:mycelial_explosive',
-  I: 'allthecompressed:nether_star_1x'
+  I: 'allthecompressed:nether_star_block_1x'
 }).id('allthemods:pressure/allthetweaks/pulsating_black_hole')
 
   // Creative Essence

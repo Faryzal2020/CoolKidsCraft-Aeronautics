@@ -93,9 +93,6 @@ ServerEvents.tags('item', allthemods => {
 
   // More books
   allthemods.add('minecraft:bookshelf_books', 'patchouli:guide_book')
-  if (Platform.isLoaded('evilcraft')) {
-    allthemods.add('minecraft:bookshelf_books', 'evilcraft:origins_of_darkness')
-  }
   allthemods.add('minecraft:bookshelf_books', 'ae2:guide')
   allthemods.add('minecraft:bookshelf_books', 'powah:book')
   allthemods.add('minecraft:bookshelf_books', 'actuallyadditions:booklet')
@@ -121,9 +118,9 @@ ServerEvents.tags('item', allthemods => {
     "modern_industrialization:runic_crucible",
     "modern_industrialization:runic_enchanter"
   ])
-  
+
   // Trial Vault Repeatability for Decrepit Keys
-  allthemods.add("repeatable_trial_vaults:can_reset_trial_vaults","irons_spellbooks:decrepit_key")
+  allthemods.add("repeatable_trial_vaults:can_reset_trial_vaults", "irons_spellbooks:decrepit_key")
 })
 
 ServerEvents.tags('entity_type', allthemods => {
@@ -145,7 +142,7 @@ ServerEvents.tags('entity_type', allthemods => {
     "cataclysm:the_harbinger",
     "cataclysm:the_leviathan",
     "cataclysm:the_prowler",
-    "cataclysm:wadjet",        
+    "cataclysm:wadjet",
     "#neoforge:bosses"
   ])
 
@@ -155,7 +152,7 @@ ServerEvents.tags('entity_type', allthemods => {
       "eternal_starlight:the_gatekeeper"
     ])
   }
-    
+
   allthemods.add('allthemods:jank_blacklist', [
     "@iceandfire",
     'ars_nouveau:animated_block',
@@ -170,10 +167,9 @@ ServerEvents.tags('entity_type', allthemods => {
     "forbidden_arcanus:corrupt_lost_soul",
     "forbidden_arcanus:lost_soul",
     "forbidden_arcanus:enchanted_lost_soul",
-    Platform.isLoaded('evilcraft') ? "evilcraft:vengeance_spirit" : null,
     "the_bumblezone:bee_queen"
   ].filter(i => i != null))
-  
+
   allthemods.add('ars_nouveau:jar_blacklist', "the_bumblezone:bee_queen")
   allthemods.add('apothic_spawners:blacklisted_from_spawners', '#allthemods:jank_blacklist')
   allthemods.add('enderio:soul_vial_blacklist', '#allthemods:jank_blacklist')
@@ -204,7 +200,7 @@ ServerEvents.tags('block_entity_type', allthemods => {
   allthemods.remove('packingtape:blacklist/problematic', ["extrastorage:block_16384k_fluid", "extrastorage:block_65536k_fluid", "extrastorage:block_262144k_fluid", "extrastorage:block_1048576k_fluid"]);
 });
 
-  // Fix dyenamicandfriends handled in its own script if needed, or removed
+// Fix dyenamicandfriends handled in its own script if needed, or removed
 
 ServerEvents.tags('worldgen/biome', allthemods => {
   // JustDireThings
@@ -212,7 +208,7 @@ ServerEvents.tags('worldgen/biome', allthemods => {
 });
 
 ServerEvents.tags('mob_effect', allthemods => {
-  
+
   allthemods.add('irons_spellbooks:cleanse_immune', [
     "cataclysm:ghost_sickness"
   ]);

@@ -20,7 +20,7 @@
 	// The server promo button text shown when hovering it.
 	"serverPromoButtonTextOnHover": "Need a Server?",
 	// The URL that's being navigated to when clicking the server promo button.
-	"serverPromoButtonClickURL": "https://www.akliz.net/allthemods",
+	"serverPromoButtonClickURL": "",
 	// Whether the splash text should be hidden on the main menu.
 	"hideSplashText": true,
 	// Whether experimental/beta mod loader text should be removed from the main menu.

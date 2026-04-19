@@ -7,7 +7,7 @@ ServerEvents.recipes(allthemods => {
             'AAA',
             'BPB',
             'AAA'
-        ],{
+        ], {
         A: 'hostilenetworks:end_prediction',
         P: 'hostilenetworks:prediction[hostilenetworks:data_model="hostilenetworks:wither"]',
         B: 'minecraft:dragon_breath'
@@ -61,11 +61,6 @@ ServerEvents.generateData('after_mods', allthemods => {
                 {
                     "id": "minecraft:end_crystal",
                     "count": 1
-                },
-                {
-                    "id": "evilcraft:ender_tear",
-                    "optional": true,
-                    "count": 4
                 },
                 {
                     "id": "reliquary:nebulous_heart",

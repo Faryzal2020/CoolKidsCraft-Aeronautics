@@ -9,9 +9,7 @@ ServerEvents.recipes(allthemods => {
                 "energy": energy,
                 "input": Ingredient.of(input).toJson(),
                 "result": {
-                    "basePredicate": {
-                        "item": output.item
-                    },
+                    "item": output.item,
                     "count": output.count
                 }
             }

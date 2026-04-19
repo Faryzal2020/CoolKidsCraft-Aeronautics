@@ -10,7 +10,7 @@ StartupEvents.postInit(event => {
     let currentVersion = new $DefaultArtifactVersion($BccInstance.betterStatus.version())
     KJSTweaks.curseForgeGetEndpoint("v1/mods/" + modPackId + "/files?pageSize=1", Client, response => {
       let displayName = response.get("data").get(0).get("displayName").getAsString()
-      let cfLatestVersionStr = displayName.toLowerCase($Locale.ROOT).replace("all the mods 10-", "").replace(".zip", "")
+      let cfLatestVersionStr = displayName.toLowerCase($Locale.ROOT).replace("", "").replace(".zip", "")
       let cfLatestVersion = new $DefaultArtifactVersion(cfLatestVersionStr)
       console.log("Pack Version is: " + currentVersion)
       console.log("CF Version is: " + cfLatestVersion)

@@ -62,9 +62,7 @@ ServerEvents.recipes(allthemods => {
         type: 'immersiveengineering:cloche',
         results: [
           {
-            basePredicate: {
-                item: Crop.getEssenceItem().getId()
-            },
+            item: Crop.getEssenceItem().getId(),
             count: 2
           }
         ],

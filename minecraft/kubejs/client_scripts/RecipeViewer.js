@@ -136,23 +136,11 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         "mifa:speed_addon_8"]
     )
 
-    if (Platform.isLoaded('stevescarts')) {
-        allthemods.remove(["stevescarts:module_creative_engine", "stevescarts:module_creative_hull", "stevescarts:upgrade_creative_mode"])
-    }
 
     if (Platform.isLoaded("hyperbox")) {
         allthemods.remove("hyperbox:hyperbox")
     }
 
-    if (Platform.isLoaded('evilcraft')) {
-        allthemods.remove(stack => {
-            if (stack.id == "evilcraft:dark_tank") {
-                let component = stack.get("cyclopscore:fluid_content")
-                if (component) return true
-            }
-            return false
-        })
-    }
 
 })
 

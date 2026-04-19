@@ -20,7 +20,7 @@ ServerEvents.recipes(allthemods => {
 
         allthemods.shapeless('modern_industrialization:runic_energy_input_hatch', 'modular_machinery_reborn:energyinputhatch_ultimate')
     }
-    
+
     let runic_controllers = [
         {
             id: 'modern_industrialization:auto_forge',
@@ -67,7 +67,6 @@ ServerEvents.recipes(allthemods => {
         allthemods.recipes.modern_industrialization.auto_forge(512, 300)
             .fluidIn(`${item.aureal}x kubejs:liquid_aureal`)
             .fluidIn(`${item.souls}x kubejs:liquid_souls`)
-            .fluidIn(`${item.blood}x evilcraft:blood`)
             .fluidIn(`${item.xp}x #c:experience`)
             .itemIn('forbidden_arcanus:mundabitur_dust')
             .itemIn(item.main)
@@ -138,7 +137,6 @@ ServerEvents.recipes(allthemods => {
         allthemods.recipes.modern_industrialization.auto_forge(512, 150)
             .fluidIn(`${item.aureal}x kubejs:liquid_aureal`)
             .fluidIn(`${item.souls}x kubejs:liquid_souls`)
-            .fluidIn(`${item.blood}x evilcraft:blood`)
             .fluidIn(`${item.xp}x #c:experience`)
             .itemIn('forbidden_arcanus:mundabitur_dust')
             .itemIn(item.top)
@@ -155,7 +153,6 @@ ServerEvents.recipes(allthemods => {
     allthemods.recipes.modern_industrialization.auto_forge(512, 300)
         .fluidIn(`5000x kubejs:liquid_aureal`)
         .fluidIn(`2500x kubejs:liquid_souls`)
-        .fluidIn(`7500x evilcraft:blood`)
         .fluidIn(`10000x #c:experience`)
         .itemIn('mekanism:ultimate_control_circuit')
         .itemIn('enderio:sentient_ender')
@@ -168,8 +165,8 @@ ServerEvents.recipes(allthemods => {
         .itemIn('mekanism:ultimate_control_circuit')
         .itemOut(`forbidden_arcanus:corrupted_arcane_crystal`)
 
-    allthemods.remove({id: 'forbidden_arcanus:corrupted_arcane_crystal_block_from_corrupted_arcane_crystal'})
-    allthemods.remove({id: 'forbidden_arcanus:corrupted_arcane_crystal_from_corrupted_arcane_crystal_block'})
+    allthemods.remove({ id: 'forbidden_arcanus:corrupted_arcane_crystal_block_from_corrupted_arcane_crystal' })
+    allthemods.remove({ id: 'forbidden_arcanus:corrupted_arcane_crystal_from_corrupted_arcane_crystal_block' })
 })
 
 ServerEvents.generateData('after_mods', allthemods => {

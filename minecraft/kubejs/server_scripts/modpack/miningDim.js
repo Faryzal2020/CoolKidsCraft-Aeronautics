@@ -4,7 +4,6 @@
 var miningDimOres = [
   { path: 'runic_stone', id: 'allthemodium:runic_stone', min: 65, max: 250, size: 4, count: 1, stoneReplaces: "forbidden_arcanus:runic_stone", deepslateReplaces: "forbidden_arcanus:runic_deepslate", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'arcane_crystal_ore', id: 'allthemodium:arcane_crystal_ore', min: 65, max: 250, size: 4, count: 1, stoneReplaces: "forbidden_arcanus:arcane_crystal_ore", deepslateReplaces: "forbidden_arcanus:deepslate_arcane_crystal_ore", endStoneReplaces: null, netherrackReplaces: null },
-  { path: 'dark_ore', id: 'allthemodium:dark_ore', min: 65, max: 129, size: 2, count: 1, stoneReplaces: "evilcraft:dark_ore", deepslateReplaces: "evilcraft:dark_ore_deepslate", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'uraninite_ore', id: 'allthemodium:uraninite_ore', min: 65, max: 250, size: 8, count: 8, stoneReplaces: "powah:uraninite_ore", deepslateReplaces: "powah:deepslate_uraninite_ore", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'inferium_ore', id: 'allthemodium:inferium_ore', min: 65, max: 250, size: 8, count: 16, stoneReplaces: "mysticalagriculture:inferium_ore", deepslateReplaces: "mysticalagriculture:deepslate_inferium_ore", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'aggra_inferium_ore', id: 'allthemodium:aggra_inferium_ore', min: -63, max: 63, size: 8, count: 16, stoneReplaces: null, deepslateReplaces: null, endStoneReplaces: "mysticalagradditions:end_inferium_ore", netherrackReplaces: "mysticalagradditions:nether_inferium_ore" },

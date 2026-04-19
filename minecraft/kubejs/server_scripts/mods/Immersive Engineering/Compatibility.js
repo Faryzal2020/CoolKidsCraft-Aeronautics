@@ -11,9 +11,7 @@ ServerEvents.recipes(allthemods => {
         input: Ingredient.of(input).toJson(),
         results: [
         {
-          basePredicate: {
-            item: output.item
-          },
+          item: output.item,
           count: output.count || 1
         }
         ],
@@ -70,15 +68,11 @@ ServerEvents.recipes(allthemods => {
         },
         results: [
           {
-            basePredicate: {
-              item: `${mod}${crop.result}`
-            },
+            item: `${mod}${crop.result}`,
             count: crop.count || 2
           },
           {
-            basePredicate: {
-              item: `${mod}${crop.seed}`
-            },
+            item: `${mod}${crop.seed}`,
             chance: crop.chance || 0.25
           }
         ],

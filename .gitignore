@@ -18,7 +18,6 @@
 /minecraft/screenshots
 /minecraft/server-resource-packs
 /minecraft/simplebackups
-/minecraft/icon.png
 /minecraft/imgui.ini
 /minecraft/observable_announce
 /minecraft/options.txt
@@ -35,3 +34,10 @@
 /minecraft/local/ftbchunks
 /minecraft/local/kubejstweaks
 /minecraft/saves
+/minecraft/TrashSlotSaveState.json
+/instance.cfg
+/minecraft/config/iris.properties
+/minecraft/config/incontrol
+/minecraft/config/ars_nouveau/search_index
+/minecraft/config/crash_assistant
+/flame/overrides.txt
