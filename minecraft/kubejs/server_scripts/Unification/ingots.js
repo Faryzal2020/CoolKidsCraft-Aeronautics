@@ -7,7 +7,6 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ id: 'railcraft:brass_ingot_crafted_with_ingots' })
     allthemods.remove({ id: 'silentgear:bronze_ingot' })
     allthemods.remove({ id: 'mysticalagriculture:essence/extremereactors2/yellorium_ingot' })
-    allthemods.remove({ id: 'modern_industrialization:materials/bronze_dust' })
 
     // Smelting
     allthemods.remove({ id: 'deeperdarker:coal_from_smelting_gloomslate_coal_ore' })
@@ -26,13 +25,6 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ id: 'deeperdarker:lapis_lazuli_from_blasting_gloomslate_lapis_ore' })
     allthemods.remove({ id: 'deeperdarker:diamond_from_smelting_gloomslate_diamond_ore' })
     allthemods.remove({ id: 'deeperdarker:diamond_from_blasting_gloomslate_diamond_ore' })
-    allthemods.remove({ id: 'mekanism:processing/lead/ingot/from_ore_smelting' })
-    allthemods.remove({ id: 'mekanism:processing/lead/ingot/from_ore_blasting' })
-    allthemods.remove({ id: 'mekanism:processing/osmium/ingot/from_ore_smelting' })
-    allthemods.remove({ id: 'mekanism:processing/osmium/ingot/from_ore_blasting' })
-    allthemods.remove({ id: 'mekanism:processing/tin/ingot/from_ore_smelting' })
-    allthemods.remove({ id: 'mekanism:processing/tin/ingot/from_ore_blasting' })
-    allthemods.remove({ id: 'immersiveengineering:smelting/ingot_uranium' })
     allthemods.remove({ id: 'bigreactors:blasting/yellorium_from_ore' })
 })
 

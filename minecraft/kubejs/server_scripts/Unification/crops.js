@@ -78,9 +78,6 @@ ServerEvents.tags('item', allthemods => {
     tags = ['c:fruits/pear', 'rftoolsutility:living/living', 'extended_industrialization:farmer_plantable', 'c:fruits', 'diet:fruits', 'rftoolsutility:living/highyield', 'c:crops/pear', 'c:vinegar_ingredients', 'c:vinegar_ingredients/pear', 'c:crops']
     tags.forEach(tag => { allthemods.add(tag, 'herbsandharvest:pear') })
 
-    tags = ['extended_industrialization:farmer_plantable', 'c:crops', 'c:vegetables/pea', 'rftoolsutility:living/highyield', 'c:salad_ingredients/peas', 'c:crops/pea', 'c:salad_ingredients/pea', 'c:salad_ingredients', 'c:flour_plants/peas', 'c:seeds/pea', 'c:flour_plants/pea', 'c:vegetables/peas', 'c:flour_plants', 'c:crops/peas', 'rftoolsutility:living/living', 'c:vegetables']
-    tags.forEach(tag => { allthemods.add(tag, 'herbsandharvest:peas') })
-
     tags = ['rftoolsutility:living/highyield', 'c:fruits', 'c:paper_plants/pineapple', 'extended_industrialization:farmer_plantable', 'c:crops/pineapple', 'rftoolsutility:living/living', 'c:fruits/pineapple', 'c:paper_plants', 'c:crops']
     tags.forEach(tag => { allthemods.add(tag, 'herbsandharvest:pineapple') })
 

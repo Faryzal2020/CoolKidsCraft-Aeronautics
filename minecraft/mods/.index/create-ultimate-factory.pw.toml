@@ -1,0 +1,21 @@
+filename = 'create_ultimate_factory-2.2.3-neoforge-1.21.1.jar'
+name = 'Create: Ultimate Factory'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'create_ultimate_factory-2.2.3-neoforge-1.21.1.jar'
+
+[download]
+hash = 'd774573b4f2c31d809c0a1a91c65e2bc6aa97a4c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7636508
+project-id = 978125
+
+[[x-prismlauncher-dependencies]]
+addonId = '328085'
+type = 'REQUIRED'

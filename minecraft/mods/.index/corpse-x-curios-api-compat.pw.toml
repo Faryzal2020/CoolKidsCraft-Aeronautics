@@ -1,0 +1,21 @@
+filename = 'corpsecurioscompat-1.21.1-NeoForge-4.0.1.jar'
+name = 'Corpse x Curios API Compat'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = 'corpsecurioscompat-1.21.1-NeoForge-4.0.1.jar'
+
+[download]
+hash = '821d83bb4414e93721563e9ed7670976bc2afab1'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7891800
+project-id = 1138130
+
+[[x-prismlauncher-dependencies]]
+addonId = '1264423'
+type = 'REQUIRED'

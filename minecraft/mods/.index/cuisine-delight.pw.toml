@@ -1,0 +1,57 @@
+filename = 'cuisinedelight-1.2.7.jar'
+name = 'Cuisine Delight'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'cuisinedelight-1.2.7.jar'
+
+[download]
+hash = 'e8fd24bdaa3cfe3de0190b5177abe955c937358f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7732678
+project-id = 893541
+
+[[x-prismlauncher-dependencies]]
+addonId = '227639'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '689630'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '556448'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '426558'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '415438'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '398521'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '496394'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '871735'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '841262'
+type = 'OPTIONAL'
+
+[[x-prismlauncher-dependencies]]
+addonId = '662675'
+type = 'OPTIONAL'

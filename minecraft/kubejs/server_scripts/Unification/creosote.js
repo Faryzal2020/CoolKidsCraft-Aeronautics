@@ -1,6 +1,6 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(allthemods => {/*
     allthemods.custom({
         "type": "modern_industrialization:mixer",
         "eu": 2,
@@ -104,9 +104,9 @@ ServerEvents.recipes(allthemods => {
             }
         ],
         "time": 100
-    }).id("oritech:centrifuge/fluid/compat/immersiveengineering/treated_planks")
+    }).id("oritech:centrifuge/fluid/compat/immersiveengineering/treated_planks")*/
 })
-
+/*
 let $Tags = Java.loadClass("dev.latvian.mods.kubejs.util.Tags")
 let $FluidFuel = Java.loadClass("aztech.modern_industrialization.api.datamaps.FluidFuel")
 
@@ -115,5 +115,5 @@ ServerEvents.generateData("after_mods", event => {
     event.dataMap(fluidFuels, mapFile => {
         mapFile.addTag($Tags.fluid("c:creosote"), new $FluidFuel(160))
     })
-})
+})*/
 

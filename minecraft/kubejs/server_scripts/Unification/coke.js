@@ -1,5 +1,5 @@
 
-
+/*
 ServerEvents.recipes(allthemods => {
     allthemods.remove(
         [
@@ -61,4 +61,4 @@ ServerEvents.tags('fluid', allthemods => {
     allthemods.add('c:crude_oil', 'modern_industrialization:crude_oil')
     allthemods.add('c:fuels/crude_oil', 'modern_industrialization:crude_oil')
 })
-
+*/

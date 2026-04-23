@@ -1,0 +1,21 @@
+filename = 'create-central-kitchen-2.3.0.jar'
+name = 'Create: Central Kitchen'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = 'Create: Central Kitchen 2.3.0 for Create 1.21.1-6.0.9'
+
+[download]
+hash = '93ec8d7d6a77f3ee8ba1533c81563cdbcc261293'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7714245
+project-id = 820977
+
+[[x-prismlauncher-dependencies]]
+addonId = '1216624'
+type = 'REQUIRED'

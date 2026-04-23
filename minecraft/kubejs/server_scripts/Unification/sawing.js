@@ -48,59 +48,5 @@ ServerEvents.tags('item', allthemods => {
     ])
 })
 
-const $Collectors = Java.loadClass('java.util.stream.Collectors')
-
-ServerEvents.recipes(allthemods => {
-    let logsTag = Ingredient.of("#minecraft:logs")
-
-    /** @type {$HashMap_<string, $UnknownKubeRecipe_>}} */
-    let prodSawmillRecipes = allthemods.findRecipes({ type: "productivetrees:sawmill" }).stream().collect($Collectors.toMap(r => r.json.asMap().output.get("id").asString, r => r))
-    /** @type {$HashMap_<string, $UnknownKubeRecipe_>}} */
-    let mekSawmillRecipes = allthemods.findRecipes({ type: "mekanism:sawing" }).stream().filter(r => r.json.asMap().main_output != undefined && logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, Ingredient.of(r.json.asMap().input.has("ingredient") ? r.json.asMap().input.get("ingredient") : r.json.asMap().input), false)).collect($Collectors.toMap(r => r.json.asMap().main_output.get("id").asString, r => r))
-
-    function mekSawing(output, input, extraOutput, id) {
-        if (mekSawmillRecipes.containsKey(output.id)) {
-            // console.info("Already exists a mek recipe for " + output.id)
-            return
-        }
-        let recipe = {
-            "type": "mekanism:sawing",
-            "input": input,
-            "main_output": output,
-            "secondary_chance": extraOutput.chance,
-            "secondary_output": Item.of(extraOutput.item)
-        };
-
-        allthemods.custom(recipe).id(`allthemods:mekanism/sawing/${id}`);
-    }
-
-    function prodSawing(log, planks, secondary, id) {
-        if (prodSawmillRecipes.containsKey(planks.id)) {
-            // console.info("Already exists a prod tree recipe for " + planks.id)
-            return
-        }
-        allthemods.custom({
-            "type": "productivetrees:sawmill",
-            "input": log,
-            "output": planks,
-            "secondary": secondary
-        }).id(`allthemods:productivetrees/sawing/${id}`);
-    }
-
-    allthemods.forEachRecipe({ type: "minecraft:crafting_shapeless", output: "#minecraft:planks" }, recipe => {
-        /** @type {$Ingredient_} */
-        let firstIngredient = recipe.get("ingredients").getFirst()
-        /** @type {$ItemStackKJS_} */
-        let output = recipe.get("result")
-        if (!logsTag["matches(dev.latvian.mods.kubejs.recipe.filter.RecipeMatchContext,net.minecraft.world.item.crafting.Ingredient,boolean)"](null, firstIngredient, false)) {
-            console.info("Ingredient is not a log tag: " + Ingredient.of(firstIngredient).toJson())
-            return
-        }
-
-        mekSawing(output.withCount(6), firstIngredient, { chance: 0.25, item: "mekanism:sawdust" }, recipe.getId().split(":")[0] + "/" + recipe.getId().split(":")[1])
-        prodSawing(firstIngredient, output.withCount(6), Item.of("2x productivetrees:sawdust"), recipe.getId().split(":")[0] + "/" + recipe.getId().split(":")[1])
-    })
-})
-
 
 

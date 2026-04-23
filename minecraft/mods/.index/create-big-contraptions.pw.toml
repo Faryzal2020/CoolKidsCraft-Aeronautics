@@ -1,0 +1,18 @@
+filename = 'bigcontraptions-neoforge-1.0.jar'
+name = 'Create: Big Contraptions'
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'bigcontraptions-neoforge-1.0.jar'
+
+[download]
+hash = 'cf1af44de7042f26fce74549130e1eb7d937ced8'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7073839
+project-id = 877334

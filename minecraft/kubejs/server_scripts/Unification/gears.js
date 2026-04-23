@@ -2,14 +2,6 @@
 
 ServerEvents.recipes(allthemods => {
 
-    allthemods.remove({ id: 'modern_industrialization:materials/aluminum/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/tin/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/steel/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/invar/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/bronze/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/iron/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/copper/craft/gear' })
-    allthemods.remove({ id: 'modern_industrialization:materials/gold/craft/gear' })
     allthemods.remove({ id: 'railcraft:lead_gear' })
     allthemods.remove({ id: 'railcraft:nickel_gear' })
     allthemods.remove({ id: 'railcraft:silver_gear' })

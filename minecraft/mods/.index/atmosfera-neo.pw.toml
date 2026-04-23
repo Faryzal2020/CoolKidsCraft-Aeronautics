@@ -1,0 +1,21 @@
+filename = 'atmosfera-1.21.1-NeoForge-1.0.0.jar'
+name = 'Atmosfera Neo'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'atmosfera-1.21.1-NeoForge-1.0.0.jar'
+
+[download]
+hash = 'c9b4feadaf26094d4c49159ae9d4c890a6561992'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7859070
+project-id = 1499605
+
+[[x-prismlauncher-dependencies]]
+addonId = '667299'
+type = 'REQUIRED'

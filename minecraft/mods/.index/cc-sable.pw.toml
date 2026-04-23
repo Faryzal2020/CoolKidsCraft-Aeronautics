@@ -1,0 +1,25 @@
+filename = 'cc_sable-neoforge-1.2.2.jar'
+name = 'CC: Sable'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'CC: Sable 1.2.2'
+
+[download]
+hash = 'dfdbd2bb9bb5e2e5c2208a25a79cdd2001d56086'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7957365
+project-id = 1475663
+
+[[x-prismlauncher-dependencies]]
+addonId = '419699'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '282001'
+type = 'REQUIRED'
