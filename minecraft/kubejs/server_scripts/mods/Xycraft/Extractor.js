@@ -184,31 +184,33 @@ ServerEvents.recipes(allthemods => {
         ticks: 10,
     })
 
-    extractor({
-        output: { item: "fluxnetworks:flux_dust", count: 1 },
-        target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
-        adjacent: [
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" }
-        ],
-        catalyst: { type: "xycraft_core:block_rule", block: "fluxnetworks:flux_block" },
-        ticks: 5,
-    })
+    if (Platform.isLoaded('appflux')) {
+        extractor({
+            output: { item: "fluxnetworks:flux_dust", count: 1 },
+            target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
+            adjacent: [
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" }
+            ],
+            catalyst: { type: "xycraft_core:block_rule", block: "fluxnetworks:flux_block" },
+            ticks: 5,
+        })
 
-    extractor({
-        output: { item: "fluxnetworks:flux_dust", count: 1 }, id: "bedrock",
-        target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
-        adjacent: [
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
-            { type: "xycraft_core:block_rule", block: "minecraft:obsidian" }
-        ],
-        catalyst: { type: "xycraft_core:block_rule", block: "minecraft:bedrock" },
-        ticks: 5,
-    })
+        extractor({
+            output: { item: "fluxnetworks:flux_dust", count: 1 }, id: "bedrock",
+            target: { type: "xycraft_core:block_rule", block: "appflux:charged_redstone_block" },
+            adjacent: [
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" },
+                { type: "xycraft_core:block_rule", block: "minecraft:obsidian" }
+            ],
+            catalyst: { type: "xycraft_core:block_rule", block: "minecraft:bedrock" },
+            ticks: 5,
+        })
+    }
 
     if (Platform.isLoaded('mysticalagriculture')) {
         extractor({

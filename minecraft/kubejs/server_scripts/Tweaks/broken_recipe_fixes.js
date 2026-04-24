@@ -1,10 +1,12 @@
 
 ServerEvents.recipes(allthemods => {
     // Remove broken recipes from Create Things and Misc
+    // These are removed because they contain 'deleted_mod_element' and cause errors during recipe scans.
     allthemods.remove({ id: 'create_things_and_misc:schematic_chair' })
     allthemods.remove({ id: 'create_things_and_misc:copper_scaffolding_craft' })
 
     // Remove broken recipes from Exposure Expanded
+    // These are removed because they reference missing registry items.
     const exposureBroken = [
         'exposure_expanded:instant_hires_black_and_white_slide',
         'exposure_expanded:instant_gameboy_slide',

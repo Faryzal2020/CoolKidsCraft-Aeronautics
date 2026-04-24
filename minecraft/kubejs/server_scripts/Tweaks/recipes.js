@@ -27,8 +27,6 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.replaceInput({ mod: "railcraft" }, "railcraft:steel_shovel", "mekanismtools:steel_shovel")
-
     // Concrete from Concrete Powder using Water Buckets
     const colors = [
         'white', 'yellow', 'orange', 'red', 'pink', 'magenta', 'purple', 'light_blue', 'cyan', 'blue', 'lime', 'green', 'brown', 'light_gray', 'gray', 'black'

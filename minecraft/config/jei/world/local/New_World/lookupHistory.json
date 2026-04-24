@@ -1,0 +1,7 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"exposure_expanded:cga_film"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"exposure_expanded:c64_film"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"exposure_expanded:nes_film"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"exposure_expanded:gameboy_film"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

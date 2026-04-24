@@ -57,41 +57,55 @@ ServerEvents.recipes(allthemods => {
     addAACrusher('minecraft:stone', 'minecraft:cobblestone', 1, 0)
 
     //AE2
-    addAACrusher('#ae2:all_certus_quartz', 'ae2:certus_quartz_dust', 1, 0.5)
-    addAACrusher('ae2:fluix_crystal', 'ae2:fluix_dust', 1, 0.5)
-    addAACrusher('ae2:sky_stone_block', 'ae2:sky_dust', 1, 0.5)
-    addAACrusher('#c:ender_pearls', 'ae2:ender_dust', 1, 0.5)
+    if (Platform.isLoaded('ae2')) {
+        addAACrusher('#ae2:all_certus_quartz', 'ae2:certus_quartz_dust', 1, 0.5)
+        addAACrusher('ae2:fluix_crystal', 'ae2:fluix_dust', 1, 0.5)
+        addAACrusher('ae2:sky_stone_block', 'ae2:sky_dust', 1, 0.5)
+        addAACrusher('#c:ender_pearls', 'ae2:ender_dust', 1, 0.5)
+    }
 
     //Silent Gear
-    addAACrusher('silentgear:raw_crimson_iron', 'silentgear:crimson_iron_dust', 1, 0.5)
-    addAACrusher('silentgear:raw_azure_silver', 'silentgear:azure_silver_dust', 1, 0.5)
-    addAACrusher('#c:ores/bort', 'silentgear:bort', 3, 0.5)
+    if (Platform.isLoaded('silentgear')) {
+        addAACrusher('silentgear:raw_crimson_iron', 'silentgear:crimson_iron_dust', 1, 0.5)
+        addAACrusher('silentgear:raw_azure_silver', 'silentgear:azure_silver_dust', 1, 0.5)
+        addAACrusher('#c:ores/bort', 'silentgear:bort', 3, 0.5)
+    }
 
     //Occultism
     addAACrusher('occultism:raw_iesnium', 'occultism:iesnium_dust', 1, 0.5)
 
     //Modern Industrialization
-    addAACrusher('modern_industrialization:raw_antimony', 'modern_industrialization:antimony_dust', 1, 0.5)
-    addAACrusher('modern_industrialization:raw_tungsten', 'modern_industrialization:tungsten_dust', 1, 0.5)
+    if (Platform.isLoaded('modern_industrialization')) {
+        addAACrusher('modern_industrialization:raw_antimony', 'modern_industrialization:antimony_dust', 1, 0.5)
+        addAACrusher('modern_industrialization:raw_tungsten', 'modern_industrialization:tungsten_dust', 1, 0.5)
+    }
 
     //ATO
     addAACrusher('#c:ores/sulfur', 'alltheores:sulfur', 4, 0.5)
     addAACrusher('#c:ores/salt', 'alltheores:salt', 4, 0.5)
 
     //Mystical Agriculture
-    addAACrusher('#c:ores/prosperity', 'mysticalagriculture:prosperity_shard', 3, 0.5)
-    addAACrusher('#c:ores/inferium', 'mysticalagriculture:inferium_essence', 3, 0.5)
+    if (Platform.isLoaded('mysticalagriculture')) {
+        addAACrusher('#c:ores/prosperity', 'mysticalagriculture:prosperity_shard', 3, 0.5)
+        addAACrusher('#c:ores/inferium', 'mysticalagriculture:inferium_essence', 3, 0.5)
+    }
 
     //Theurgy
-    addAACrusher('#c:ores/sal_ammoniac', 'theurgy:sal_ammoniac_crystal', 3, 0.5)
+    if (Platform.isLoaded('theurgy')) {
+        addAACrusher('#c:ores/sal_ammoniac', 'theurgy:sal_ammoniac_crystal', 3, 0.5)
+    }
 
     //Powah
-    addAACrusher('#c:ores/uraninite_poor', 'powah:uraninite_raw', 2, 0)
-    addAACrusher('#c:ores/uraninite_regular', 'powah:uraninite_raw', 4, 0)
-    addAACrusher('#c:ores/uraninite_dense', 'powah:uraninite_raw', 6, 0)
+    if (Platform.isLoaded('powah')) {
+        addAACrusher('#c:ores/uraninite_poor', 'powah:uraninite_raw', 2, 0)
+        addAACrusher('#c:ores/uraninite_regular', 'powah:uraninite_raw', 4, 0)
+        addAACrusher('#c:ores/uraninite_dense', 'powah:uraninite_raw', 6, 0)
+    }
 
     //Iron's Spellbooks
-    addAACrusher('#c:ores/mithril', 'irons_spellbooks:raw_mithril', 4, 0.5)
+    if (Platform.isLoaded('irons_spellbooks')) {
+        addAACrusher('#c:ores/mithril', 'irons_spellbooks:raw_mithril', 4, 0.5)
+    }
 
     //Xycraft World
     global.xycraftColours.forEach(colour => {
