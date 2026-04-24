@@ -60,8 +60,10 @@ ServerEvents.recipes(allthemods => {
     squeezer('#c:ores/sulfur', 'alltheores:sulfur');
     squeezer('#c:ores/arcane_crystal', 'forbidden_arcanus:arcane_crystal');
     squeezer('#c:ores/runic', 'forbidden_arcanus:rune');
-    squeezer('#c:ores/inferium', 'mysticalagriculture:inferium_essence');
-    squeezer('#c:ores/prosperity', 'mysticalagriculture:prosperity_shard');
+    if (Platform.isLoaded('mysticalagriculture')) {
+        squeezer('#c:ores/inferium', 'mysticalagriculture:inferium_essence');
+        squeezer('#c:ores/prosperity', 'mysticalagriculture:prosperity_shard');
+    }
     squeezer('#c:ores/bort', 'silentgear:bort');
     if (Platform.isLoaded('theurgy')) {
         squeezer('#c:ores/sal_ammoniac', 'theurgy:sal_ammoniac_crystal');

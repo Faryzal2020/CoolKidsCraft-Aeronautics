@@ -1,0 +1,53 @@
+
+
+ServerEvents.recipes(allthemods => {
+    function awakenedEssenceCrafting(essenceCount, input, ingredients, result) {
+        allthemods.custom(
+            {
+                "type": "mysticalagriculture:awakening",
+                "essences": [
+                    {
+                        "id": "mysticalagriculture:air_essence",
+                        "count": essenceCount
+                    },
+                    {
+                        "id": "mysticalagriculture:earth_essence",
+                        "count": essenceCount
+                    },
+                    {
+                        "id": "mysticalagriculture:water_essence",
+                        "count": essenceCount
+                    },
+                    {
+                        "id": "mysticalagriculture:fire_essence",
+                        "count": essenceCount
+                    }
+                ],
+                "input": {
+                    "item": input
+                },
+                "ingredients": [
+                    {
+                        "item": ingredients.item1
+                    },
+                    {
+                        "item": ingredients.item2
+                    },
+                    {
+                        "item": ingredients.item3
+                    },
+                    {
+                        "item": ingredients.item4
+                    }
+                ],
+                "result": {
+                    "id": result
+                }
+            }
+        ).id('allthemods:mysticalagriculture/awakening/' + result.split(':').pop());
+    }
+
+    allthemods.remove({ output: 'reliquary:fertile_lily_pad' })
+    awakenedEssenceCrafting(40, 'minecraft:lily_pad', { item1: 'allthemodium:vibranium_plate', item2: 'reliquary:fertile_essence', item3: 'reliquary:fertile_essence', item4: 'reliquary:fertile_essence' }, 'reliquary:fertile_lily_pad')
+})
+

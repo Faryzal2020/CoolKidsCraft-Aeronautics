@@ -210,13 +210,15 @@ ServerEvents.recipes(allthemods => {
         ticks: 5,
     })
 
-    extractor({
-        output: { item: "mysticalagriculture:soulstone_cobble", count: 1 },
-        target: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_cobble" },
-        catalyst: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_smooth" },
-        ticks: 30,
-        directions: ["down"]
-    })
+    if (Platform.isLoaded('mysticalagriculture')) {
+        extractor({
+            output: { item: "mysticalagriculture:soulstone_cobble", count: 1 },
+            target: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_cobble" },
+            catalyst: { type: "xycraft_core:block_rule", block: "mysticalagriculture:soulstone_smooth" },
+            ticks: 30,
+            directions: ["down"]
+        })
+    }
 })
 
 

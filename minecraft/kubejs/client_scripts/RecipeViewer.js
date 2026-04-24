@@ -54,7 +54,6 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         "bigreactors:basic_turbinecreativesteamgenerator",
         "bigreactors:reinforced_turbinecreativesteamgenerator",
         "enderio:creative_power",
-        "mysticalagriculture:creative_soulium_dagger",
         "modularrouters:creative_module",
         "pneumaticcraft:creative_upgrade",
         "quarryplus:creative_generator",
@@ -82,6 +81,10 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
 
     if (Platform.isLoaded("hyperbox")) {
         allthemods.remove("hyperbox:hyperbox")
+    }
+
+    if (Platform.isLoaded("mysticalagriculture")) {
+        allthemods.remove("mysticalagriculture:creative_soulium_dagger")
     }
 
 

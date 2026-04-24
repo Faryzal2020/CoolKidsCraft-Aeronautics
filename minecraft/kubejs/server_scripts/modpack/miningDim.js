@@ -126,8 +126,13 @@ ServerEvents.generateData('after_mods', allthemods => {
     allthemods.json(`allthemodium:neoforge/biome_modifier/allthemodium/dim_ores/${path}.json`, jsonForge)
   }
   miningDimOres.filter(ore => {
-    let mod = ore.stoneReplaces ? ore.stoneReplaces.split(':')[0] : null
-    if (mod && !Platform.isLoaded(mod)) return false
+    const replaces = [ore.stoneReplaces, ore.deepslateReplaces, ore.endStoneReplaces, ore.netherrackReplaces]
+    for (let replace of replaces) {
+      if (replace) {
+        let mod = replace.split(':')[0]
+        if (mod !== 'minecraft' && !Platform.isLoaded(mod)) return false
+      }
+    }
     return true
   }).forEach(ore => {
     addMiningDimOre(ore.path, ore.id, ore.min, ore.max, ore.size, ore.count, ore.stoneReplaces, ore.deepslateReplaces, ore.endStoneReplaces, ore.netherrackReplaces);
