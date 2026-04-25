@@ -42,28 +42,6 @@ KubeJSTweaks.beforeRecipes(event => {
       }
     })
 
-  // Simple key renaming to match current changes
-  event.getEntry(/^createaddition:compat\/immersiveengineering\/rolling\//)
-    .forEach(entry => {
-      entry.renameKey("result", "results", true)
-      entry.renameKey("input", "ingredients", true)
-    })
-
-  // Simple key renaming to match current changes
-  event.getEntry("createaddition:compat/ae2/charged_certus_quartz")
-    .forEach(entry => {
-      entry.renameKey("result", "results", true)
-      entry.renameKey("ingredient", "ingredients", true)
-    })
-
-  // this is the way now with biome_predicates
-  event.getEntry("createaddition:compat/immersiveengineering/sphalerite")
-    .forEach(entry => {
-      entry.json().add("biome_predicates", [
-        ["minecraft:is_overworld"]
-      ])
-    })
-
   // Scans items on result and add them back as conditions, izi fix
   event.getEntry(/^farmingforblockheads:market\//)
     .forEach(entry => {
@@ -205,7 +183,7 @@ KubeJSTweaks.beforeRecipes(event => {
           let tag = ing.get("tag")
           if (tag != null) {
             if (tag.getAsString().endsWith("_dyes")) {
-              let color = tag.getAsString().replace("c:","").replace("_dyes","")
+              let color = tag.getAsString().replace("c:", "").replace("_dyes", "")
               ing["addProperty(java.lang.String,java.lang.String)"]("tag", "c:dyes/" + color)
             }
           }
@@ -221,7 +199,7 @@ KubeJSTweaks.beforeRecipes(event => {
           let tag = key.get("tag")
           if (tag != null) {
             if (tag.getAsString().endsWith("_dyes")) {
-              let color = tag.getAsString().replace("c:","").replace("_dyes","")
+              let color = tag.getAsString().replace("c:", "").replace("_dyes", "")
               key["addProperty(java.lang.String,java.lang.String)"]("tag", "c:dyes/" + color)
             }
           }
@@ -229,9 +207,9 @@ KubeJSTweaks.beforeRecipes(event => {
       }
     })
 
-  event.getEntry(["pneumaticcraft:block_heat_properties/createlowheated/basic_burner_empowered","pneumaticcraft:block_heat_properties/createlowheated/basic_burner_lit"])
+  event.getEntry(["pneumaticcraft:block_heat_properties/createlowheated/basic_burner_empowered", "pneumaticcraft:block_heat_properties/createlowheated/basic_burner_lit"])
     .forEach(entry => {
-      entry.json().add("neoforge:conditions", [{ "type": "neoforge:mod_loaded", "modid": "createlowheated"}])
+      entry.json().add("neoforge:conditions", [{ "type": "neoforge:mod_loaded", "modid": "createlowheated" }])
     })
 
   console.log(`Fixing recipes took ${timer.stop().elapsed("milliseconds")} ms...`)

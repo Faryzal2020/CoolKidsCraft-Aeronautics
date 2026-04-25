@@ -1,0 +1,11 @@
+/starterkit
+/sk list
+/sk add default
+/sk add vibraniumsword
+/sk give MayanoTopgun86 default
+/sk add elytra
+/sk give MayanoTopgun86 default
+/sk add pistol
+/sk deactivate default
+/sk add shotgun
+/sk list

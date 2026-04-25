@@ -2,12 +2,17 @@
 ServerEvents.recipes(allthemods => {
     // Remove broken recipes from Create Things and Misc
     // These are removed because they contain 'deleted_mod_element' and cause errors during recipe scans.
+
+    /* commented out because these does not solve the problem from the source and cause more problems
     allthemods.remove({ id: 'create_things_and_misc:schematic_chair' })
     allthemods.remove({ id: 'create_things_and_misc:copper_scaffolding_craft' })
     allthemods.remove({ id: 'create_things_and_misc:deleted_mod_element' })
+    */
 
     // Remove broken recipes from Exposure Expanded
     // These are removed because they reference missing registry items.
+
+    /* commented out because these does not solve the problem from the source and cause more problems
     const exposureBroken = [
         'exposure_expanded:instant_hires_black_and_white_slide',
         'exposure_expanded:instant_gameboy_slide',
@@ -17,6 +22,7 @@ ServerEvents.recipes(allthemods => {
         'exposure_expanded:instant_hires_color_slide'
     ]
     exposureBroken.forEach(id => allthemods.remove({ id: id }))
+    */
 
     // Remove recipes broken by missing AppFlux
     allthemods.remove({ id: 'allthemods:xycraft/extractor/flux_dust_bedrock' })
@@ -28,9 +34,5 @@ ServerEvents.recipes(allthemods => {
     allthemods.remove({ id: 'integrateddynamics:kjs/7dmyq49bh8bv55lmrpjb0yzm' })
     allthemods.remove({ id: 'enderio:kjs/4loq85ylg3sm69hye7abxk7q0' })
     allthemods.remove({ id: 'actuallyadditions:kjs/222et4enola6281pym4gztc9a' })
-
-    // Other broken recipes from logs
-    allthemods.remove({ id: 'create_things_and_misc:netheriteportablewithlecraft' }) // Invalid smithing template
-    allthemods.remove({ id: 'actuallyadditions:compat/mekanism/smooth_black_quartz_block_from_crushing' }) // Unknown recipe type
 })
 
