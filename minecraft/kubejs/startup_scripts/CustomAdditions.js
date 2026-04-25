@@ -51,7 +51,10 @@ StartupEvents.registry('item', allthemods => {
     if (!Platform.isLoaded('modular_machinery_reborn')) {
         allthemods.create('modularium').color(0xe64200).texture('minecraft:item/iron_ingot')
     }
+
+    allthemods.create('create_things_and_misc:deleted_mod_element').displayName('Deleted Mod Element')
 })
+
 
 let $Stopwatch = Java.loadClass("com.google.common.base.Stopwatch")
 let currentStopwatch = null

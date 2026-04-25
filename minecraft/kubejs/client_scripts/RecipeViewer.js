@@ -17,7 +17,9 @@ RecipeViewerEvents.removeEntriesCompletely('item', allthemods => {
     }
 
     allthemods.remove("supplementaries:faucet")
+    allthemods.remove("create_things_and_misc:deleted_mod_element")
 })
+
 
 // RecipeViewerEvents.removeEntriesCompletely('mekanism:chemical', allthemods => {
 //
