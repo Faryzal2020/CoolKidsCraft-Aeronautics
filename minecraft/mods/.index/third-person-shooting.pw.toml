@@ -1,0 +1,25 @@
+filename = 'tp_shooting-1.21.1-5.1.1+tacz1.1.6-neoforge.jar'
+name = 'Third Person Shooting: Zero'
+side = ''
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'tp_shooting-1.21.1-5.1.1+tacz1.1.6-neoforge.jar'
+
+[download]
+hash = '8f45db94719a3d6d02ad21af343a1fc1c00fc306'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7034967
+project-id = 969378
+
+[[x-prismlauncher-dependencies]]
+addonId = '243190'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '1264058'
+type = 'REQUIRED'

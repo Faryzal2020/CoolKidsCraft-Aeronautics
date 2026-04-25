@@ -1,0 +1,18 @@
+filename = 'berezka_api-1.2.9-beta.7-neoforge-1.21.1.jar'
+name = "Berezka's library"
+side = ''
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'beta'
+x-prismlauncher-version-number = 'Berezka API 1.2.9 beta7 for NeoForge 1.21.1'
+
+[download]
+hash = 'ec5cc98c6f2e5aae6e3780777e836f8764df9c4b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7978078
+project-id = 1160598

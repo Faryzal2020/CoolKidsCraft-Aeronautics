@@ -1,0 +1,25 @@
+filename = 'gunsmithlib-1.21.1-5.9.3-neoforge-modular.jar'
+name = 'Gunsmith Lib'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'gunsmithlib-1.21.1-5.9.3-neoforge-modular.jar'
+
+[download]
+hash = '76a78742565869e15d249441f185d975d31904a8'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 7845133
+project-id = 1264058
+
+[[x-prismlauncher-dependencies]]
+addonId = '1353462'
+type = 'REQUIRED'
+
+[[x-prismlauncher-dependencies]]
+addonId = '979809'
+type = 'OPTIONAL'

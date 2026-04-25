@@ -6,7 +6,6 @@ const runicYEET = [
 ]
 
 RecipeViewerEvents.removeEntriesCompletely('item', allthemods => {
-    allthemods.remove('quarryplus:adv_quarry')
     allthemods.remove('allthetweaks:greg_star')
     allthemods.remove('allthetweaks:greg_star_block')
 
@@ -56,7 +55,6 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         "enderio:creative_power",
         "modularrouters:creative_module",
         "pneumaticcraft:creative_upgrade",
-        "quarryplus:creative_generator",
         "rftoolspower:dimensionalcell_creative",
         "xycraft_machines:item_selector",
         "xycraft_machines:fluid_selector",

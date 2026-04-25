@@ -27,5 +27,21 @@ ServerEvents.recipes(allthemods => {
             P: 'dysoncubeproject:beam_package'
         }
     )
+
+    // Beams
+    allthemods.remove({ output: 'dysoncubeproject:beam' })
+    allthemods.shaped(
+        Item.of('dysoncubeproject:beam', 1),
+        [
+            'ABA',
+            'CBC',
+            'ABA'
+        ],
+        {
+            A: 'minecraft:iron_nugget',
+            B: '#c:ingots/steel',
+            C: 'minecraft:iron_bars'
+        }
+    ).id('allthemods:dysoncubeproject/beam')
 })
 
