@@ -1,8 +1,7 @@
 
 
 var miningDimOres = [
-  { path: 'runic_stone', id: 'allthemodium:runic_stone', min: 65, max: 250, size: 4, count: 1, stoneReplaces: "forbidden_arcanus:runic_stone", deepslateReplaces: "forbidden_arcanus:runic_deepslate", endStoneReplaces: null, netherrackReplaces: null },
-  { path: 'arcane_crystal_ore', id: 'allthemodium:arcane_crystal_ore', min: 65, max: 250, size: 4, count: 1, stoneReplaces: "forbidden_arcanus:arcane_crystal_ore", deepslateReplaces: "forbidden_arcanus:deepslate_arcane_crystal_ore", endStoneReplaces: null, netherrackReplaces: null },
+
   { path: 'uraninite_ore', id: 'allthemodium:uraninite_ore', min: 65, max: 250, size: 8, count: 8, stoneReplaces: "powah:uraninite_ore", deepslateReplaces: "powah:deepslate_uraninite_ore", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'inferium_ore', id: 'allthemodium:inferium_ore', min: 65, max: 250, size: 8, count: 16, stoneReplaces: "mysticalagriculture:inferium_ore", deepslateReplaces: "mysticalagriculture:deepslate_inferium_ore", endStoneReplaces: null, netherrackReplaces: null },
   { path: 'aggra_inferium_ore', id: 'allthemodium:aggra_inferium_ore', min: -63, max: 63, size: 8, count: 16, stoneReplaces: null, deepslateReplaces: null, endStoneReplaces: "mysticalagradditions:end_inferium_ore", netherrackReplaces: "mysticalagradditions:nether_inferium_ore" },
@@ -20,7 +19,7 @@ var miningDimOres = [
   { path: 'fluorite_ore', id: 'allthemodium:fluorite_ore', min: -63, max: 250, size: 8, count: 3, stoneReplaces: "alltheores:fluorite_ore", deepslateReplaces: "alltheores:deepslate_fluorite_ore", endStoneReplaces: "alltheores:end_fluorite_ore", netherrackReplaces: "alltheores:nether_fluorite_ore" },
   { path: 'cinnabar_ore', id: 'allthemodium:cinnabar_ore', min: -63, max: 250, size: 8, count: 2, stoneReplaces: "alltheores:cinnabar_ore", deepslateReplaces: "alltheores:deepslate_cinnabar_ore", endStoneReplaces: "alltheores:end_cinnabar_ore", netherrackReplaces: "alltheores:nether_cinnabar_ore" },
   { path: 'salt_ore', id: 'allthemodium:salt_ore', min: -63, max: 250, size: 6, count: 8, stoneReplaces: "alltheores:salt_ore", deepslateReplaces: "alltheores:deepslate_salt_ore", endStoneReplaces: "alltheores:end_salt_ore", netherrackReplaces: "alltheores:nether_salt_ore" },
-  { path: 'stella_arcanum', id: 'allthemodium:stella_arcanum', min: -63, max: 250, size: 2, count: 1, stoneReplaces: "forbidden_arcanus:stella_arcanum", deepslateReplaces: "forbidden_arcanus:stella_arcanum", endStoneReplaces: "forbidden_arcanus:stella_arcanum", netherrackReplaces: "forbidden_arcanus:stella_arcanum" },
+
   { path: 'dimensionalshard', id: 'allthemodium:dimensionalshard', min: -63, max: 250, size: 12, count: 2, stoneReplaces: "rftoolsbase:dimensionalshard_overworld", deepslateReplaces: null, endStoneReplaces: "rftoolsbase:dimensionalshard_end", netherrackReplaces: "rftoolsbase:dimensionalshard_nether" },
   { path: 'crimson_iron_ore', id: 'allthemodium:crimson_iron_ore', min: -63, max: 63, size: 8, count: 3, stoneReplaces: null, deepslateReplaces: null, endStoneReplaces: null, netherrackReplaces: "silentgear:crimson_iron_ore" },
   { path: 'azure_silver_ore', id: 'allthemodium:azure_silver_ore', min: -63, max: 63, size: 8, count: 3, stoneReplaces: null, deepslateReplaces: null, endStoneReplaces: "silentgear:azure_silver_ore", netherrackReplaces: null },

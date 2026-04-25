@@ -15,7 +15,7 @@
 	#Supported values: mclo.gs / gnomebot.dev
 	upload_to = "gnomebot.dev"
 	#Show gui on minecraft crashed on modloading and FML error screen displayed.
-	show_on_fml_error_screen = true
+	show_on_fml_error_screen = false
 	#Close old CrashAssistantApp if it's still running when starting a new instance of Minecraft, to avoid confusing player with window from old crash.
 	kill_old_app = true
 	#If options.txt doesn't exist, the default language will be used.
@@ -168,7 +168,7 @@
 #Also you can see diff by running '/crash_assistant modlist diff' command.
 [modpack_modlist]
 	#Enable feature.
-	enabled = true
+	enabled = false
 	#nicknames of players, who considered as modpack creator.
 	#Only this players can overwrite modlist.json
 	#If this feature is enabled and this array is empty, will be appended with nickname of current player.
@@ -199,7 +199,7 @@
 [too_many_changes_warning]
 	#Set to the positive integer to enable feature. Set to negative integer to disable.
 	#How many changes end user should make for warning to be displayed.
-	count = 5
+	count = -1
 	#With this option, you can select the formulation of this warning, currently supported:
 	#   - NOTIFY: Just saying to the end user that what they made many changes and adding random mods or clicking
 	#the "Update All" button is not a good idea without proper testing. It is expected to crash.
@@ -211,7 +211,7 @@
 #Analysing logs for most common reasons of crashes and displaying recommendations with fixes.
 [analysis]
 	#Enable feature.
-	enabled = true
+	enabled = false
 	#By default if CA work in modpack mode and ran by the end user it won't display analysis if it blames mod which was part of original modpack.
 	#And will blame only mods which were added/updated by end users. By enabling this option you can bypass this and it will blame any mods.
 	trigger_on_original_modpack_mods = false
@@ -228,7 +228,7 @@
 #Here you can enable or disable showing some analysis tools for end user.
 [analysis_tools]
 	#Enable feature.
-	enabled = true
+	enabled = false
 	#Here you can disable some Analysis tools by class names.
 	#List of them can be found here: dev.kostromdan.mods.crash_assistant.app.gui.analysis
 	#For example "MCreatorModDetectorGUI"

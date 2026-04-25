@@ -58,8 +58,7 @@ ServerEvents.recipes(allthemods => {
     squeezer('#c:ores/ruby', 'alltheores:ruby');
     squeezer('#c:ores/sapphire', 'alltheores:sapphire');
     squeezer('#c:ores/sulfur', 'alltheores:sulfur');
-    squeezer('#c:ores/arcane_crystal', 'forbidden_arcanus:arcane_crystal');
-    squeezer('#c:ores/runic', 'forbidden_arcanus:rune');
+
     if (Platform.isLoaded('mysticalagriculture')) {
         squeezer('#c:ores/inferium', 'mysticalagriculture:inferium_essence');
         squeezer('#c:ores/prosperity', 'mysticalagriculture:prosperity_shard');

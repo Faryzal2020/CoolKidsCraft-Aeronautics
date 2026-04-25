@@ -92,31 +92,8 @@ ServerEvents.tags('item', allthemods => {
 
   // More books
   allthemods.add('minecraft:bookshelf_books', 'patchouli:guide_book')
-  allthemods.add('minecraft:bookshelf_books', 'ae2:guide')
   allthemods.add('minecraft:bookshelf_books', 'powah:book')
   allthemods.add('minecraft:bookshelf_books', 'actuallyadditions:booklet')
-
-  // Forbiden Arcanus Stellar Blacklist
-  allthemods.add('forbidden_arcanus:modifier/eternal_incompatible', [
-    'ars_additions:undying_charm',
-    'modularbees:electrode_copper',
-    'modularbees:electrode_iron',
-    'modularbees:electrode_gold',
-    'modularbees:electrode_netherite',
-    "modern_industrialization:forge_hammer",
-    "modern_industrialization:iron_hammer",
-    "modern_industrialization:steel_hammer",
-    "modern_industrialization:netherite_hammer",
-    "modern_industrialization:diamond_hammer"
-  ])
-
-  // Overdrive
-  allthemods.add("industrialization_overdrive:multi_processing_array_blacklist", [
-    "modern_industrialization:auto_forge",
-    "modern_industrialization:star_altar",
-    "modern_industrialization:runic_crucible",
-    "modern_industrialization:runic_enchanter"
-  ])
 
   // Trial Vault Repeatability for Decrepit Keys
   allthemods.add("repeatable_trial_vaults:can_reset_trial_vaults", "irons_spellbooks:decrepit_key")
@@ -163,9 +140,6 @@ ServerEvents.tags('entity_type', allthemods => {
     '#c:bosses',
     "@occultism",
     "@productivebees",
-    "forbidden_arcanus:corrupt_lost_soul",
-    "forbidden_arcanus:lost_soul",
-    "forbidden_arcanus:enchanted_lost_soul",
     "the_bumblezone:bee_queen"
   ].filter(i => i != null))
 

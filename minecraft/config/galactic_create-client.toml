@@ -1,0 +1,8 @@
+#Galactic Create Client Configuration
+[client]
+	#Enable star map rotation animation in the spacecraft GUI
+	starMapAnimation = true
+	#Show oxygen level overlay on the HUD when not in breathable atmosphere
+	oxygenHudOverlay = true
+	#Show dust/debris particles in low gravity environments
+	showGravityParticles = true

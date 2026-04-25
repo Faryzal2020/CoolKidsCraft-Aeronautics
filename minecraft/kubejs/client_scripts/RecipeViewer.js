@@ -1,17 +1,13 @@
 // This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMod 10.
 // As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
 
-const runicYEET = [
-    'forbidden_arcanus:corrupted_arcane_crystal_block'
-]
+
 
 RecipeViewerEvents.removeEntriesCompletely('item', allthemods => {
     allthemods.remove('allthetweaks:greg_star')
     allthemods.remove('allthetweaks:greg_star_block')
 
-    for (let i = 1; i < 10; i++) {
-        allthemods.remove(`allthecompressed:greg_star_block_${i}x`)
-    }
+
 
     //allthemods.remove('relics:researching_table')
 
@@ -32,12 +28,7 @@ RecipeViewerEvents.removeEntriesCompletely('item', allthemods => {
 RecipeViewerEvents.removeRecipes(event => {
     event.remove(["xycraft_machines:extractor/enderio/grains_of_infinity"])
 })
-
 RecipeViewerEvents.removeEntries('item', allthemods => {
-    for (let yeet of runicYEET) {
-        allthemods.remove(yeet)
-    }
-
     // From JEI blacklist.json
     allthemods.remove([
         "railcraft:steel_sword",
@@ -60,17 +51,6 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         "xycraft_machines:fluid_selector",
         "ftbquests:stage_barrier",
         "ftbquests:barrier",
-        "forbidden_arcanus:draco_arcanus_boots",
-        "forbidden_arcanus:draco_arcanus_leggings",
-        "forbidden_arcanus:draco_arcanus_chestplate",
-        "forbidden_arcanus:draco_arcanus_helmet",
-        "forbidden_arcanus:draco_arcanus_scepter",
-        "forbidden_arcanus:draco_arcanus_hoe",
-        "forbidden_arcanus:draco_arcanus_axe",
-        "forbidden_arcanus:draco_arcanus_pickaxe",
-        "forbidden_arcanus:draco_arcanus_shovel",
-        "forbidden_arcanus:draco_arcanus_sword",
-        "forbidden_arcanus:draco_arcanus_staff",
         "naturesaura:multiblock_maker",
         "mininggadgets:upgrade_battery_creative",
         "twilightforest:uncrafting_table"]

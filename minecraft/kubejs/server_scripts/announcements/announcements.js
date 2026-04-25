@@ -27,6 +27,7 @@ function addAnnouncement(/** @type {string} */version, /** @type {import("net.mi
   announcements.computeIfAbsent(new $DefaultArtifactVersion(version), (key) => Utils.newList()).addLast(typeof component == "string" ? Text.of(component) : component)
 }
 
+/*
 PlayerEvents.loggedIn(event => {
   if (currentVersion == null) return
   let currentDismissed = event.player.persistentData.getString("LastDismissedAnnouncementVersion")
@@ -60,6 +61,9 @@ PlayerEvents.loggedIn(event => {
     event.player.tell(message)
   }
 })
+*/
+
+
 
 ServerEvents.basicPublicCommand("dismiss_announcements", event => {
   let player = event.player

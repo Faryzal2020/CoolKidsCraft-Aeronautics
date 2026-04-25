@@ -1,0 +1,38 @@
+#Galactic Create Server Configuration
+[server]
+
+	#Atmosphere & Survival
+	[server.atmosphere]
+		#Max oxygen stored in an oxygen tank (ticks of air supply). Default = 6000 (~5 minutes)
+		# Default: 6000
+		# Range: 100 ~ 72000
+		oxygenTankCapacity = 6000
+		#Moon gravity multiplier (1.0 = normal, 0.16 = real moon, 0.20 = enhanced)
+		# Default: 0.2
+		# Range: 0.01 ~ 2.0
+		moonGravity = 0.2
+		#Mars gravity multiplier
+		# Default: 0.38
+		# Range: 0.01 ~ 2.0
+		marsGravity = 0.38
+		#Enable alien mob spawning on dimension surfaces
+		alienSpawning = true
+
+	#Create Machines
+	[server.machines]
+		#Minimum RPM for the Galactic Centrifuge to operate
+		# Default: 32
+		# Range: 1 ~ 1024
+		centrifugeMinRPM = 32
+		#Minimum RPM for the Atmospheric Compressor to operate
+		# Default: 64
+		# Range: 1 ~ 1024
+		compressorMinRPM = 64
+		#RPM at which the Warp Drive Flywheel enables spacecraft launch
+		# Default: 512
+		# Range: 64 ~ 4096
+		warpFlywheelWarpRPM = 512
+		#Amount of rocket propellant (mB) consumed per jump gate activation
+		# Default: 5000
+		# Range: 0 ~ 100000
+		jumpGateFuelCost = 5000

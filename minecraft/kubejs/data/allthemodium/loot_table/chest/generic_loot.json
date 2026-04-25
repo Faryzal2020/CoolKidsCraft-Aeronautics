@@ -221,20 +221,6 @@
           "type": "item",
           "name": "minecraft:golden_apple",
           "weight": 1
-        },
-        {
-          "type": "item",
-          "name": "forbidden_arcanus:divine_pact",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 1
-              }
-            }
-          ],
-          "weight": 5
         }
       ]
     }

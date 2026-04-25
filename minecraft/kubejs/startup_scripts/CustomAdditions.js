@@ -134,22 +134,7 @@ global.iceAndFirePearls = (/** @type {$ServerLevel_}} */ level, /** @type {$Play
     }
 }
 
-StartupEvents.registry('fluid', allthemods => {
-    allthemods.create('liquid_souls', 'thin')
-        .tint(0xc9eaff)
-        .displayName('Liquid Souls')
-        .noBlock()
 
-    allthemods.create('unrefined_liquid_souls', 'thin')
-        .tint(0xccebff)
-        .displayName('Unrefined Liquid Souls')
-        .noBlock()
-
-    allthemods.create('liquid_aureal', 'thin')
-        .tint(0x7abaff)
-        .displayName('Liquid Aureal')
-        .noBlock()
-})
 
 StartupEvents.modifyCreativeTab('ironfurnaces:ironfurnaces_tab', allthemods => {
     allthemods.add('ironfurnaces:allthemodium_furnace')
@@ -161,8 +146,7 @@ StartupEvents.modifyCreativeTab('ironfurnaces:ironfurnaces_tab', allthemods => {
 })
 
 StartupEvents.postInit((allthemods) => {
-    $BuiltInRegistries.BLOCK.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
-    $BuiltInRegistries.ITEM.addAlias("kubejs:blaze_block", "allthecompressed:blaze_rod_block")
+
 
     const colors = [
         'white',

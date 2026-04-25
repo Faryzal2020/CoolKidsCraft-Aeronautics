@@ -1,0 +1,18 @@
+filename = 'TaxStructureArchitect+M.1.21.1+NeoF.1.2.2.jar'
+name = "Tax' Structure Architect"
+side = 'server'
+x-prismlauncher-dependencies = []
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = "Tax' Structure Architect 1.2.2"
+
+[download]
+hash = '91ffb34da91c13b6934c0c89d1b3fd9367b656fa'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5800887
+project-id = 873711
