@@ -92,18 +92,13 @@
     "mortar": true,
     "cauldron": true
   },
+  "waystones": {
+    "waystone": true
+  },
   "toms_peripherals": {
     "full_modem_info": true,
     "modem_info": true,
     "wdt_info": true
-  },
-  "cookingforblockheads": {
-    "fridge": true,
-    "oven": true,
-    "sink": true,
-    "preservation_chamber": true,
-    "milk_jar": true,
-    "toaster": true
   },
   "securitycraft": {
     "showowner": true,
@@ -204,9 +199,6 @@
     "inventory_config": true,
     "inventory_connector": true
   },
-  "mysticalagradditions": {
-    "infused_farmland": true
-  },
   "crystalix": {
     "crystalix_block": true
   },
@@ -220,10 +212,5 @@
   },
   "corpse": {
     "corpse": true
-  },
-  "mysticalagriculture": {
-    "infused_farmland": true,
-    "crop": true,
-    "inferium_crop": true
   }
 }

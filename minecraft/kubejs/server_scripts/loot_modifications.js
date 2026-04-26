@@ -50,6 +50,39 @@ Note: To find the exact ID in-game, look at a chest and use the command:
 
 --- APOTHEOSIS ---
 - apotheosis:chests/boss_dungeon
+
+--- CREATE: LET THE ADVENTURE BEGIN (create_ltab) ---
+- create_ltab:core/basic_loot
+- create_ltab:core/legend_loot
+- create_ltab:core/rare_loot
+- create_ltab:normal/basic_loot
+- create_ltab:normal/legend_loot
+- create_ltab:normal/rare_loot
+- create_ltab:normal/trash_loot
+- create_ltab:desert/basic_loot
+- create_ltab:nether/basic_loot
+- create_ltab:snow/basic_loot
+- create_ltab:water/basic_loot
+
+--- EXPLORIFY (explorify) ---
+- explorify:chest/dark_forest_settlement
+- explorify:chest/mausoleum_pot
+- explorify:chest/supply_cache
+
+--- DUNGEONS AND TAVERNS (nova_structures) ---
+- nova_structures:chests/underground_dungeon
+- nova_structures:chests/pillager_camp
+- nova_structures:chests/deep_dark_shrine
+- nova_structures:chests/pillager_outpost_treasure
+- nova_structures:chests/bunker/medical_supplies
+- nova_structures:chests/bunker/bunker_trash
+- nova_structures:chests/witch_villa/lab
+- nova_structures:chests/witch_villa/library
+- (D&T uses many sub-paths, see its jar for full list)
+
+--- OTHER STRUCTURE MODS (Use Vanilla Tables) ---
+- MoStructures, Create Structures Arise, The Lost City
+- (These mods primarily use vanilla loot tables like minecraft:chests/abandoned_mineshaft)
 ================================================================================
 */
 

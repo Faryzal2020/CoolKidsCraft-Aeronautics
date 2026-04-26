@@ -9,3 +9,5 @@
 /sk deactivate default
 /sk add shotgun
 /sk list
+/loot
+/lootr id
