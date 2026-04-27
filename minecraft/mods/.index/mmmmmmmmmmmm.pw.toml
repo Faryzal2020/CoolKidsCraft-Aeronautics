@@ -1,19 +1,19 @@
-filename = 'dummmmmmy-1.21-2.0.11-neoforge.jar'
-name = 'MmmMmmMmmMmm (Target Dummy)'
+filename = 'dummmmmmy-1.21-2.0.12-neoforge.jar'
+name = 'MmmMmmMmmMmm'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
-x-prismlauncher-mc-versions = [ '1.21', '1.21.1' ]
+x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'dummmmmmy-1.21-2.0.11-neoforge.jar'
+x-prismlauncher-version-number = 'dummmmmmy-1.21-2.0.12-neoforge.jar'
 
 [download]
-hash = '1bdaf699dd40c03c96a85f64ae9b54a8e40bb539'
+hash = '0e69c2a8e4e51df42e45b2d6deb3a855bdf8dce6'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7206981
+file-id = 7943676
 project-id = 225738
 
 [[x-prismlauncher-dependencies]]

@@ -1,19 +1,19 @@
-filename = 'dysoncubeproject-1.0.2.jar'
+filename = 'dysoncubeproject-1.0.3.jar'
 name = 'Dyson Cube Project'
 side = 'server'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'dysoncubeproject-1.0.2.jar'
+x-prismlauncher-version-number = 'dysoncubeproject-1.0.3.jar'
 
 [download]
-hash = '6ab001bcad7c02178c4e04e51e8ebaeb544a779a'
+hash = 'b35c63c101ba3e5f68ac043b19bd9f8e9124729e'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7136179
+file-id = 7951484
 project-id = 1345066
 
 [[x-prismlauncher-dependencies]]

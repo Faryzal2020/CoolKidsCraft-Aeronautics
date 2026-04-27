@@ -1,8 +1,8 @@
 [
   {"version":1},
-  {"ingredient":{"id":"oritech:still_heavy_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"oritech:still_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"pneumaticcraft:oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"oritech:still_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"oritech:still_heavy_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:heavy_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:crude_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:crude_oil_bucket"},"type":"item_stack","bookmarkType":"INGREDIENT"},

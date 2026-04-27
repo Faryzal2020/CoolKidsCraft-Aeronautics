@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pneumaticcraft"
+    }
+  ],
+  "type": "oritech:centrifuge_fluid",
+  "fluidInput": {
+    "fluid": "#c:crude_oil"
+  },
+  "fluidOutputs": [
+    {
+      "fluid": "oritech:still_fuel"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "oritech:fluxite"
+    }
+  ],
+  "results": [],
+  "time": 100
+}

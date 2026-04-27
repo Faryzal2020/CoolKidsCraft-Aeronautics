@@ -1,18 +1,22 @@
 ServerEvents.recipes(event => {
     // Unify Oritech fluid inputs to use common tags
+    // Strict filtering by mod and common Oritech recipe types
     event.forEachRecipe({ mod: 'oritech' }, recipe => {
         let json = recipe.json
-        
+        let recipeType = String(recipe.type)
+
+        // Only process Oritech machines that we know use fluids
+        if (!recipeType.includes('oritech')) return
+
         // Handle Oritech-specific 'fluidInput' field (e.g. Refinery)
         if (json.has('fluidInput')) {
             let fi = json.get('fluidInput')
             if (fi.has('fluid')) {
                 let fluidId = String(fi.get('fluid')).replace(/"/g, '')
                 if (fluidId == 'pneumaticcraft:oil' || fluidId == 'pneumaticcraft:crude_oil' || fluidId == 'tfmg:crude_oil' || fluidId == 'modern_industrialization:crude_oil') {
-                    fi.addProperty('fluid', 'c:crude_oil')
-                    // Note: Oritech recipes often support tags via the 'fluid' string if prefixed with #, 
-                    // but it depends on the mod's implementation of FluidIngredient.
-                    // If Oritech fails with a tag here, we might need a different approach.
+                    fi.addProperty('tag', 'c:crude_oil')
+                    fi.addProperty('type', 'neoforge:tag')
+                    fi.remove('fluid')
                 }
             }
         }

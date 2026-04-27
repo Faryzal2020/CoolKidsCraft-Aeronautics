@@ -1,18 +1,18 @@
-filename = 'deeperdarker-neoforge-1.21.1-1.3.5.jar'
+filename = 'deeperdarker-neoforge-1.21.1-1.4.jar'
 name = 'Deeper and Darker'
 side = ''
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'v1.3.5 for NeoForge 1.21.1'
+x-prismlauncher-version-number = 'v1.4 for NeoForge 1.21.1'
 
 [download]
-hash = 'd73626e3d6623db55f37bedb9d48216b23c4fe07'
+hash = 'ba6a751b9365b3e08a28c13ddfb43c566dfdf496'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 6463247
+file-id = 7940538
 project-id = 659011

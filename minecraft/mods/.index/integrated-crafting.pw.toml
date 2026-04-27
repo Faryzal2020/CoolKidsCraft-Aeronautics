@@ -1,19 +1,19 @@
-filename = 'integratedcrafting-1.21.1-neoforge-1.4.5-539.jar'
-name = 'Integrated Crafting'
+filename = 'integratedcrafting-1.21.1-neoforge-1.4.6.jar'
+name = 'IntegratedCrafting'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
-x-prismlauncher-release-type = 'beta'
-x-prismlauncher-version-number = 'integratedcrafting-1.21.1-neoforge-1.4.5-539.jar'
+x-prismlauncher-release-type = 'release'
+x-prismlauncher-version-number = 'integratedcrafting-1.21.1-neoforge-1.4.6.jar'
 
 [download]
-hash = '4399d18d03a1b5e5f5f29e31ff8e2c0e42675573'
+hash = '444e2f7ca21787c415ec318fd6677e97cc2739a3'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7734666
+file-id = 7988198
 project-id = 287357
 
 [[x-prismlauncher-dependencies]]

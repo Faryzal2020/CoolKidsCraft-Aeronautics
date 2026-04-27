@@ -1,18 +1,18 @@
-filename = 'Aquaculture-1.21.1-2.7.19.jar'
+filename = 'Aquaculture-1.21.1-2.7.21.jar'
 name = 'Aquaculture 2'
 side = 'server'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Aquaculture-1.21.1-2.7.19.jar'
+x-prismlauncher-version-number = 'Aquaculture-1.21.1-2.7.21.jar'
 
 [download]
-hash = '9f9236653ea4b3a129ced594053c13379eb24817'
+hash = '93c2043c6a5cfbfbfba93321d044bc61d8a6547b'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7761121
+file-id = 7901588
 project-id = 60028

@@ -40,5 +40,8 @@
 /minecraft/config/ars_nouveau/search_index
 /minecraft/config/crash_assistant
 /minecraft/config/ftbchunks-client.snbt
+/minecraft/config/*.toml
+/minecraft/config/*.bak
+/minecraft/mods/.index
 /flame/overrides.txt
 /dist

@@ -1,19 +1,19 @@
-filename = 'createtransmission-1.1.0+neoforge-create6-1.21.1.jar'
-name = 'Create: Transmission!'
+filename = 'createtransmission-1.1.1+neoforge-create6-1.21.1.jar'
+name = 'Create: Transmission'
 side = 'server'
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'createtransmission-1.1.0+neoforge-create6-1.21.1.jar'
+x-prismlauncher-version-number = 'createtransmission-1.1.1+neoforge-create6-1.21.1.jar'
 
 [download]
-hash = '12712db26b09e5dc3bac2c6981d47e1de23cee9f'
+hash = '17687d8e30834e0724d523d9ed138ef2196b188c'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7724949
+file-id = 7982528
 project-id = 1354280
 
 [[x-prismlauncher-dependencies]]
