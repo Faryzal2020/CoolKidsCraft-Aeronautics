@@ -7,10 +7,9 @@
     },
     "items": "productivebees:configurable_honeycomb"
   },
-  "outputs": [
-  ],
+  "outputs": [],
   "fluid": {
-    "fluid": "modern_industrialization:crude_oil",
+    "fluid": "#c:crude_oil",
     "amount": 50
   },
   "neoforge:conditions": [

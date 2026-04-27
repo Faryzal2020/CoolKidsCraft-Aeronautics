@@ -1,0 +1,9 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"pneumaticcraft:oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"tfmg:crude_oil"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_iridium"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"alltheores:iridium_plate"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"alltheores:iridium_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"alltheores:raw_iridium"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

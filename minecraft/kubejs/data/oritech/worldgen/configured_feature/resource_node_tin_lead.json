@@ -1,0 +1,30 @@
+{
+  "type": "oritech:resource_node",
+  "config": {
+    "nodeSize": 6,
+    "nodeOreChance": 0.35,
+    "boulderRadius": 3,
+    "nodeOres": [
+      "oritech:resource_node_tin",
+      "oritech:resource_node_lead"
+    ],
+    "boulderOres": [
+      "alltheores:deepslate_tin_ore",
+      "alltheores:deepslate_tin_ore",
+      "alltheores:deepslate_tin_ore",
+      "alltheores:deepslate_lead_ore",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate"
+    ],
+    "overlayBlock": "oritech:still_oil_block",
+    "overlayHeight": 5
+  }
+}

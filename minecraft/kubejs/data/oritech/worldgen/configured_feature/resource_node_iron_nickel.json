@@ -1,0 +1,30 @@
+{
+  "type": "oritech:resource_node",
+  "config": {
+    "nodeSize": 6,
+    "nodeOreChance": 0.3,
+    "boulderRadius": 3,
+    "nodeOres": [
+      "oritech:resource_node_iron",
+      "oritech:resource_node_nickel"
+    ],
+    "boulderOres": [
+      "minecraft:deepslate_iron_ore",
+      "minecraft:deepslate_iron_ore",
+      "minecraft:deepslate_iron_ore",
+      "alltheores:deepslate_nickel_ore",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate"
+    ],
+    "overlayBlock": "oritech:still_oil_block",
+    "overlayHeight": 5
+  }
+}

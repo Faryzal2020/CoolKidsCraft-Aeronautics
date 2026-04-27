@@ -1,0 +1,37 @@
+{
+  "type": "oritech:resource_node",
+  "config": {
+    "nodeSize": 6,
+    "nodeOreChance": 0.05,
+    "boulderRadius": 3,
+    "nodeOres": [
+      "oritech:resource_node_coal",
+      "oritech:resource_node_diamond"
+    ],
+    "boulderOres": [
+      "minecraft:deepslate_diamond_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate",
+      "minecraft:deepslate"
+    ],
+    "overlayBlock": "oritech:still_fuel_block",
+    "overlayHeight": 5
+  }
+}

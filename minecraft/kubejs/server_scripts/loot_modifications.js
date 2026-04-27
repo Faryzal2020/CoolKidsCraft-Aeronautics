@@ -92,14 +92,14 @@ LootJS.modifiers((event) => {
 
     /* 
     // Add a Diamond to ALL Dungeons Arise chests (5% chance)
-    event.addLootTableModifier("dungeons_arise:chests")
+    event.addLootTypeModifier("dungeons_arise:chests")
         .addLoot("minecraft:diamond")
         .randomChance(0.05);
     */
 
     /*
     // Add Arcane Essence to Mountain Towers
-    event.addLootTableModifier("irons_spellbooks:chests/mountain_tower")
+    event.addLootTypeModifier("irons_spellbooks:chests/mountain_tower")
         .addLoot("irons_spellbooks:arcane_essence")
         .withWeight(10);
     */

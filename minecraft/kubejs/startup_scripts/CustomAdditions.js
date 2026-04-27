@@ -209,10 +209,6 @@ StartupEvents.postInit((allthemods) => {
     $BuiltInRegistries.ITEM.addAlias("enderio:wood_gear", "minecraft:oak_planks")
     $BuiltInRegistries.ITEM.addAlias("enderio:stone_gear", "minecraft:cobblestone")
 
-    // MI removed those deepslate
-    $BuiltInRegistries.ITEM.addAlias("modern_industrialization:deepslate_iridium_ore", "modern_industrialization:iridium_ore")
-    $BuiltInRegistries.BLOCK.addAlias("modern_industrialization:deepslate_iridium_ore", "modern_industrialization:iridium_ore")
-
     if (!Platform.isLoaded('modular_machinery_reborn')) {
         $BuiltInRegistries.ITEM.addAlias("modular_machinery_reborn:modularium", "kubejs:modularium")
     }

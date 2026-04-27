@@ -11,3 +11,12 @@
 /sk list
 /loot
 /lootr id
+/kubejs reload server-scripts
+/kubejs reload client-scripts
+/reload
+/kubejs reload server-scripts
+/kubejs reload client-scripts
+/reload
+/kubejs reload server-scripts
+/kubejs reload client-scripts
+/reload
