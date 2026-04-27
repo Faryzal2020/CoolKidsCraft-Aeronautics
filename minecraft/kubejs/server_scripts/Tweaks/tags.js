@@ -41,8 +41,8 @@ ServerEvents.tags('fluid', allthemods => {
   allthemods.add("c:experience", "create_enchantment_industry:experience")
 
   // TFMG & PneumaticCraft
-  allthemods.add('c:crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'oritech:still_oil'])
-  allthemods.add('c:fuels/crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'oritech:still_oil'])
+  allthemods.add('c:crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
+  allthemods.add('c:fuels/crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
   allthemods.add('c:heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
   allthemods.add('c:fuels/heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
 })

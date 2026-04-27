@@ -11,9 +11,9 @@
             "item": "oritech:fluxite"
         },
         {
-            "type": "fluid_stack",
-            "amount": 1000,
-            "fluid": "#c:crude_oil"
+            "type": "neoforge:tag",
+            "tag": "c:crude_oil",
+            "amount": 1000
         }
     ],
     "results": [

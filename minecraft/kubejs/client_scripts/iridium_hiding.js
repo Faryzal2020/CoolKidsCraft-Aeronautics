@@ -20,8 +20,6 @@ RecipeViewerEvents.removeEntriesCompletely('item', event => {
 })
 
 RecipeViewerEvents.removeEntriesCompletely('fluid', event => {
-    event.remove([
-        'productivemetalworks:molten_iridium',
-        'tfmg:crude_oil'
-    ])
+    event.remove('tfmg:crude_oil')
+    event.remove('tfmg:heavy_oil')
 })

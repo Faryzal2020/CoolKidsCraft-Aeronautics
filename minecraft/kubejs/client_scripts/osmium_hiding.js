@@ -19,7 +19,6 @@ RecipeViewerEvents.removeEntriesCompletely('item', event => {
     ])
 
     // Hide Productive Bees variants
-    event.remove(Item.of('productivebees:configurable_honeycomb', '{"productivebees:bee_type":"productivebees:osmium"}'))
     event.remove(Item.of('productivebees:configurable_comb', '{"productivebees:bee_type":"productivebees:osmium"}'))
     // Additional check for 1.21 component path
     event.remove(Item.of('productivebees:configurable_honeycomb', '{"minecraft:custom_data":{"productivebees":{"bee_type":"productivebees:osmium"}}}'))
