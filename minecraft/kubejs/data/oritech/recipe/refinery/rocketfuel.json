@@ -1,0 +1,19 @@
+{
+    "type": "oritech:refinery",
+    "fluidInput": {
+        "fluid": "#c:turbofuel"
+    },
+    "fluidOutputs": [
+        {
+            "amount": 500,
+            "fluid": "enderio:fluid_rocket_fuel_still"
+        }
+    ],
+    "ingredients": [
+        {
+            "item": "minecraft:gunpowder"
+        }
+    ],
+    "results": [],
+    "time": 80
+}

@@ -36,8 +36,7 @@ ServerEvents.recipes(allthemods => {
   allthemods.custom({
     "type": "oritech:refinery",
     "fluidInput": {
-      "type": "neoforge:tag",
-      "tag": "c:crude_oil",
+      "fluid": "#c:crude_oil",
       "amount": 1000
     },
     "fluidOutputs": [
@@ -61,8 +60,7 @@ ServerEvents.recipes(allthemods => {
   allthemods.custom({
     "type": "oritech:refinery",
     "fluidInput": {
-      "type": "neoforge:tag",
-      "tag": "c:crude_oil",
+      "fluid": "#c:crude_oil",
       "amount": 1000
     },
     "fluidOutputs": [

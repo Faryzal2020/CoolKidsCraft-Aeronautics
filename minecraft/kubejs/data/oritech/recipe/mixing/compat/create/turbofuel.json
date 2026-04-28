@@ -12,7 +12,7 @@
         },
         {
             "type": "neoforge:tag",
-            "tag": "c:crude_oil",
+            "tag": "c:diesel",
             "amount": 1000
         }
     ],

@@ -33,7 +33,7 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'productivebees:configurable_comb', components: { "productivebees:bee_type": "productivebees:osmium" } })
 
     // Remove recipes that result in molten osmium
-    event.remove({ output: 'productivemetalworks:molten_osmium' })
+    event.remove({ id: /.*molten_osmium.*/ })
 })
 
 ServerEvents.tags('item', event => {

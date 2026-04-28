@@ -1,0 +1,10 @@
+{
+    "type": "oritech:fuel_generator",
+    "fluidInput": {
+        "amount": 50,
+        "fluid": "enderio:fluid_rocket_fuel_still"
+    },
+    "ingredients": [],
+    "results": [],
+    "time": 320
+}

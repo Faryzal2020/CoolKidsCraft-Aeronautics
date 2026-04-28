@@ -1,25 +1,25 @@
-filename = 'createbigcannons-5.11.2-mc.1.21.1.jar'
+filename = 'createbigcannons-5.11.3-mc.1.21.1.jar'
 name = 'Create Big Cannons'
 side = ''
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'Create Big Cannons v5.11.2 for NeoForge 1.21.1, Create v6.0.7'
+x-prismlauncher-version-number = 'Create Big Cannons v5.11.3 for NeoForge 1.21.1, Create v6.0.7'
 
 [download]
-hash = '3b43caff93cffe7c64498d56c1d79d0d034123dc'
+hash = '8b61fa850e260bdeb5d360576123f98c260afa50'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7689060
+file-id = 8002961
 project-id = 646668
 
 [[x-prismlauncher-dependencies]]
-addonId = '1279407'
+addonId = '328085'
 type = 'REQUIRED'
 
 [[x-prismlauncher-dependencies]]
-addonId = '328085'
+addonId = '1279407'
 type = 'REQUIRED'

@@ -3,7 +3,7 @@ ServerEvents.recipes(event => {
     // Strict filtering by mod and common Oritech recipe types
     event.forEachRecipe({ mod: 'oritech' }, recipe => {
         let json = recipe.json
-        let recipeType = String(recipe.type)
+        let recipeType = recipe.json.has('type') ? String(recipe.json.get('type').getAsString()) : ''
 
         // Only process Oritech machines that we know use fluids
         if (!recipeType.includes('oritech')) return

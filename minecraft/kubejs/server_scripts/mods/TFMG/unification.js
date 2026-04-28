@@ -3,7 +3,7 @@ ServerEvents.recipes(event => {
     // Strict filtering by mod and TFMG-specific recipe types
     event.forEachRecipe({ mod: 'tfmg' }, recipe => {
         let json = recipe.json
-        let recipeType = String(recipe.type)
+        let recipeType = recipe.json.has('type') ? String(recipe.json.get('type').getAsString()) : ''
 
         // Only process TFMG-specific machine types to avoid any compatibility recipe issues
         if (!recipeType.includes('tfmg')) return

@@ -20,3 +20,4 @@
 /kubejs reload server-scripts
 /kubejs reload client-scripts
 /reload
+/kubejs export recipe-schema-json oritech:fuel_generator
