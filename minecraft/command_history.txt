@@ -1,5 +1,3 @@
-/starterkit
-/sk list
 /sk add default
 /sk add vibraniumsword
 /sk give MayanoTopgun86 default
@@ -32,3 +30,21 @@
 /locate structure nova_structures:ruin_town
 /tp @s 640 ~ 304
 /wits
+/kubejs reload server-scripts
+/lootr chest apotheosis:chests/chest_valuable
+/lootr chest explorify:chest/supply_cache
+/kubejs reload server-scripts
+/lootr chest apotheosis:chests/chest_valuable
+/loot spawn ~ ~ ~ loot apotheosis:chests/chest_valuable
+/lootr chest apotheosis:chests/chest_valuable
+/list_loot
+/lootr chest apotheosis:chests/chest_valuable
+/lootr chest apotheosis:chest_valuable
+/lootr chest apotheosis:chests
+/kubejs reload server-scripts
+/lootr chest apotheosis:chests/chest_valuable
+/kubejs reload server-scripts
+/lootr chest apotheosis:chests/chest_valuable
+/kubejs reload server-scripts
+/wits
+/kubejs reload server-scripts

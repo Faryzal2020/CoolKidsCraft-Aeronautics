@@ -1,1 +1,1 @@
-You can edit this description in ./config/starterkit/description/vibraniumsword.txt!
+Kinda cheaty start but that's all to it. Just a slightly stronger sword.

@@ -1,1 +1,1 @@
-You can edit this description in ./config/starterkit/description/pistol.txt!
+Good ole' Glock-17 and some supplies.

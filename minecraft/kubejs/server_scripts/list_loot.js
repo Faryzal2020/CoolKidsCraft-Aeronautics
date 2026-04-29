@@ -1,3 +1,4 @@
+/* Old version, not working
 ServerEvents.loaded(event => {
     // Access the internal Minecraft Loot Data
     const $LootDataType = Java.loadClass('net.minecraft.world.level.storage.loot.LootDataType')
@@ -49,4 +50,40 @@ ServerEvents.loaded(event => {
     })
 
     console.log("[Loot Debug] Exported " + tableList.size() + " loot tables with full details to kubejs/exported/loot_table_details.json")
+}) */
+
+LootJS.lootTables(event => {
+    const $LootTable = Java.loadClass('net.minecraft.world.level.storage.loot.LootTable')
+    const $JsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
+
+    let tableMap = {}
+    let tableList = []
+
+    let ids = event.getLootTableIds()
+    console.log("[Loot Debug] Found " + ids.size() + " loot tables")
+
+    ids.forEach(id => {
+        let idStr = id.toString()
+        tableList.push(idStr)
+
+        try {
+            let table = event.getLootTable(id)
+            if (table) {
+                let jsonElement = $LootTable.DIRECT_CODEC
+                    .encodeStart($JsonOps.INSTANCE, table)
+                    .getOrThrow()
+                tableMap[idStr] = JSON.parse(jsonElement.toString())
+            }
+        } catch (e) {
+            tableMap[idStr] = { error: "Failed to serialize: " + e }
+        }
+    })
+
+    JsonIO.write('kubejs/exported/loot_table_details.json', tableMap)
+    JsonIO.write('kubejs/exported/loot_tables.json', {
+        count: tableList.length,
+        all_loot_tables: tableList
+    })
+
+    console.log("[Loot Debug] Export done: " + tableList.length + " tables")
 })

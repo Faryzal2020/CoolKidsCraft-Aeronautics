@@ -1,1 +1,1 @@
-You can edit this description in ./config/starterkit/description/elytra.txt!
+You get Elytra, but nothing else.

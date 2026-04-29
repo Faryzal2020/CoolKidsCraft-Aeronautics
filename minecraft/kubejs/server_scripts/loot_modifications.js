@@ -101,7 +101,7 @@ Note: To find the exact ID in-game, look at a chest and use the command:
 ================================================================================
 */
 
-LootJS.modifiers((event) => {
+LootJS.lootTables((event) => {
 
     // EXAMPLES:
 
@@ -172,39 +172,104 @@ LootJS.modifiers((event) => {
     const DEAGLE = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:deagle", "GunCurrentAmmoCount": 7 } });
 
     const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG], "baseChance": 0.1 }
-    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI], "baseChance": 0.05 }
-    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.03 }
-    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90], "baseChance": 0.02 }
-    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.01 }
-    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.007 }
+    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI], "baseChance": 0.075 }
+    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.05 }
+    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90], "baseChance": 0.03 }
+    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.02 }
+    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.01 }
+
+    const AMMO_TYPES = [
+        "tacz:9mm", "tacz:45acp", "tacz:5.7x28", "tacz:12g",
+        "tacz:556x45", "tacz:762x39", "tacz:762x51", "tacz:762x54",
+        "tacz:308", "tacz:338", "tacz:50bmg", "tacz:50ae"
+    ];
+
+    const Preset_0 = {
+        "lootTables": ["apotheosis:chests/chest_valuable"],
+        "addedLoots": [{ "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.5 }]
+    }
 
     const Preset_1 = {
         "lootTables": ["explorify:chest/supply_cache"],
         "addedLoots": [Grade_1, Grade_2, { "items": [SKS_TACTICAL], "baseChance": 0.5 }]
     }
     const Preset_2 = {
-        "lootTables": ["apotheosis:chests/boss_dungeon", "nova_structures:chests/deep_dark_shrine", "create_ltab:normal/legend_loot", "create_ltab:core/legend_loot"],
+        "lootTables": [
+            "apotheosis:chests/boss_dungeon",
+            "nova_structures:chests/deep_dark_shrine",
+            "create_ltab:normal/legend_loot",
+            "create_ltab:core/legend_loot",
+            "cataclysm:chests/sunken_city/sunken_city_treasure",
+            "cataclysm:chests/cursed_pyramid/cursed_pyramid_treasure",
+            "cataclysm:chests/ancient_factory/ancient_factory"
+        ],
         "addedLoots": [Grade_5, Grade_6]
     }
     const Preset_3 = {
-        "lootTables": ["explorify:chest", "apotheosis:chests", "nova_structures:chests", "minecraft:chests", "ctov:chests"],
+        "lootTables": [
+            /.*:chests\/.*/,
+            /.*:chest\/.*/,
+            /mvs:.*mineshaft\/.*/,
+            /mvs:houses.*/,
+            /mvs:large_carts.*/,
+            /mvs:general/,
+            /aether:chests\/dungeon\/bronze\/.*/,
+            "create_ltab:nether/basic_loot",
+            "create_ltab:desert/basic_loot"
+        ],
         "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4]
     }
+    const Preset_4 = {
+        "lootTables": [
+            /nova_structures:chests\/end.*/,
+            /aether:chests\/dungeon\/silver\/.*/
+        ],
+        "addedLoots": [Grade_6]
+    }
+    const Preset_5 = {
+        "lootTables": [
+            /nova_structures:chests\/nether.*/,
+            /nova_structures:chests\/lone_citadel\/.*/,
+            /nova_structures:chests\/witch_villa\/.*/,
+            /nova_structures:chests\/piglin.*/,
+            /nova_structures:chests\/illager.*/,
+            /nova_structures:chests\/desert.*/,
+            /nova_structures:chests\/creeping.*/,
+            /aether:chests\/dungeon\/gold\/.*/,
+        ],
+        "addedLoots": [Grade_3, Grade_4, Grade_5]
+    }
 
-    const EnabledPresets = [Preset_1, Preset_2]
+    const EnabledPresets = [Preset_0, Preset_1, Preset_2, Preset_3, Preset_4, Preset_5]
 
     // Process all enabled presets
     EnabledPresets.forEach(preset => {
+        // Iterate through each table/regex individually as modifyLootTables expects a single filter
         preset.lootTables.forEach(table => {
-            let modifier = event.addLootTableModifier(table);
+            console.log("[Loot Mod] Modifying table: " + String(table));
+            let modifier = event.modifyLootTables(table);
 
             preset.addedLoots.forEach(loot => {
+                console.log("[Loot Mod] Adding linked gun/ammo pool with baseChance: " + loot.baseChance + ", items: " + loot.items.length);
                 // Each entry in addedLoots gets its own pool with its own baseChance
-                // This allows multiple guns to drop if their respective grade rolls succeed.
-                modifier.pool(pool => {
-                    pool.randomChance(loot.baseChance);
-                    loot.items.forEach(item => {
-                        pool.addLoot(item); // Pick one gun from the grade if it rolls successfully
+                // We use combinations of (Gun x Ammo) in a single pool with weights to ensure:
+                // 1. Atomicity (Gun always comes with Ammo)
+                // 2. Randomness (Pick one random combination)
+                modifier.createPool(pool => {
+                    pool.when(c => c.randomChance(loot.baseChance));
+                    
+                    loot.items.forEach(gun => {
+                        AMMO_TYPES.forEach(ammoId => {
+                            pool.addEntry(
+                                LootEntry.group(
+                                    // Gun entry (extracting ID and NBT/Components)
+                                    LootEntry.of(gun.id, 1, gun.nbt),
+                                    // Ammo entry with random count
+                                    LootEntry.of("tacz:ammo", 1, { "minecraft:custom_data": { "AmmoId": ammoId } })
+                                        .setCount([8, 32])
+                                ).withWeight(1)
+                            );
+                        });
                     });
                 });
             });
