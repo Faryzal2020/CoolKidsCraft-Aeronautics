@@ -50,8 +50,6 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         "rftoolspower:dimensionalcell_creative",
         "xycraft_machines:item_selector",
         "xycraft_machines:fluid_selector",
-        "ftbquests:stage_barrier",
-        "ftbquests:barrier",
         "naturesaura:multiblock_maker",
         "mininggadgets:upgrade_battery_creative",
         "twilightforest:uncrafting_table"]

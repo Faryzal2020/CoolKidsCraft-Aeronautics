@@ -21,3 +21,14 @@
 /kubejs reload client-scripts
 /reload
 /kubejs export recipe-schema-json oritech:fuel_generator
+/lootr custom-chest
+/loot help
+/summon minecraft:zombie 10
+/summon minecraft:zombie
+/locate structure #ars_additions:ancient_city
+/tp @s 1312 ~ 96
+/locate structure nova_structures:bunker
+/tp @s 560 ~ -256
+/locate structure nova_structures:ruin_town
+/tp @s 640 ~ 304
+/wits

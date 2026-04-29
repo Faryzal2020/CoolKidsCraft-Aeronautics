@@ -2,7 +2,9 @@ RecipeViewerEvents.removeEntriesCompletely('item', event => {
     event.remove([
         'pneumaticcraft:diesel_bucket',
         'tfmg:diesel_bucket',
-        'createaddition:bioethanol_bucket'
+        'createaddition:bioethanol_bucket',
+        'tacz:gun_smith_table',
+        'tacz:modern_kinetic_gun'
     ])
 })
 
