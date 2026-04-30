@@ -179,13 +179,13 @@ LootJS.lootTables((event) => {
     const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.01 }
 
     const AMMO_TYPES = [
-        "tacz:9mm", "tacz:45acp", "tacz:5.7x28", "tacz:12g",
+        "tacz:9mm", "tacz:45acp", "tacz:57x28", "tacz:12g",
         "tacz:556x45", "tacz:762x39", "tacz:762x51", "tacz:762x54",
         "tacz:308", "tacz:338", "tacz:50bmg", "tacz:50ae"
     ];
 
     const Preset_0 = {
-        "lootTables": ["apotheosis:chests/chest_valuable"],
+        "lootTables": ["apotheosis:chests/chest_valuable", "mostructures:jungle_temple_treasure"],
         "addedLoots": [{ "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.5 }]
     }
 
@@ -203,7 +203,8 @@ LootJS.lootTables((event) => {
             "cataclysm:chests/cursed_pyramid/cursed_pyramid_treasure",
             "cataclysm:chests/ancient_factory/ancient_factory"
         ],
-        "addedLoots": [Grade_5, Grade_6]
+        "addedLoots": [Grade_5, Grade_6],
+        "chanceOverride": 0.8
     }
     const Preset_3 = {
         "lootTables": [
@@ -217,14 +218,15 @@ LootJS.lootTables((event) => {
             "create_ltab:nether/basic_loot",
             "create_ltab:desert/basic_loot"
         ],
-        "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4]
+        "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6]
     }
     const Preset_4 = {
         "lootTables": [
             /nova_structures:chests\/end.*/,
             /aether:chests\/dungeon\/silver\/.*/
         ],
-        "addedLoots": [Grade_6]
+        "addedLoots": [Grade_6],
+        "chanceOverride": 0.9
     }
     const Preset_5 = {
         "lootTables": [
@@ -237,43 +239,64 @@ LootJS.lootTables((event) => {
             /nova_structures:chests\/creeping.*/,
             /aether:chests\/dungeon\/gold\/.*/,
         ],
-        "addedLoots": [Grade_3, Grade_4, Grade_5]
+        "addedLoots": [Grade_3, Grade_4, Grade_5],
+        "chanceOverride": 0.4
     }
 
     const EnabledPresets = [Preset_0, Preset_1, Preset_2, Preset_3, Preset_4, Preset_5]
 
-    // Process all enabled presets
-    EnabledPresets.forEach(preset => {
-        // Iterate through each table/regex individually as modifyLootTables expects a single filter
-        preset.lootTables.forEach(table => {
-            console.log("[Loot Mod] Modifying table: " + String(table));
-            let modifier = event.modifyLootTables(table);
+    //Testing manual entry
+    /*let table = Preset_0.lootTables[1]
+    let loot = Preset_0.addedLoots[0]
+    event.getLootTable(table).createPool(pool => { // create pool for specific loot table
+        pool.rolls(2) // 2 rolls for each hit
+        pool.when(c => c.randomChance(loot.baseChance))
+        let ammo = AMMO_TYPES[Math.floor(Math.random() * AMMO_TYPES.length)] // pick whichever of the ammo
+        console.log("[TACZ Loot] Loading ammo: " + ammo)
+        let ammoItem = Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammo } })
+        console.log("[TACZ Loot] Loading ammoItem: " + ammoItem)
+        // Add the gun into the pool
+        let gunId = loot.items[Math.floor(Math.random() * Preset_0.lootTables.length)] // pick whichever of the guns
+        console.log("[TACZ Loot] Loading gun: " + gunId)
+        pool.addEntry(
+            LootEntry.sequence(
+                LootEntry.of(gunId),
+                LootEntry.of(ammoItem).setCount([8, 32])
+            )
+        )
+    })*/
 
-            preset.addedLoots.forEach(loot => {
-                console.log("[Loot Mod] Adding linked gun/ammo pool with baseChance: " + loot.baseChance + ", items: " + loot.items.length);
-                // Each entry in addedLoots gets its own pool with its own baseChance
-                // We use combinations of (Gun x Ammo) in a single pool with weights to ensure:
-                // 1. Atomicity (Gun always comes with Ammo)
-                // 2. Randomness (Pick one random combination)
-                modifier.createPool(pool => {
-                    pool.when(c => c.randomChance(loot.baseChance));
-                    
-                    loot.items.forEach(gun => {
-                        AMMO_TYPES.forEach(ammoId => {
-                            pool.addEntry(
-                                LootEntry.group(
-                                    // Gun entry (extracting ID and NBT/Components)
-                                    LootEntry.of(gun.id, 1, gun.nbt),
-                                    // Ammo entry with random count
-                                    LootEntry.of("tacz:ammo", 1, { "minecraft:custom_data": { "AmmoId": ammoId } })
+    const enabled = true
+    // Process all enabled presets
+    if (enabled) {
+        EnabledPresets.forEach(preset => {
+            // Iterate through each table/regex individually as modifyLootTables expects a single filter
+            preset.lootTables.forEach(table => {
+                console.log("[TACZ Loot] Modifying table: " + String(table));
+                let modifier = event.modifyLootTables(table);
+                preset.addedLoots.forEach(loot => {
+                    let chance = loot.baseChance
+                    if (preset.chanceOverride) {
+                        chance = chanceOverride
+                    }
+                    modifier.createPool(pool => {
+                        pool.rolls(2);
+                        pool.when(c => c.randomChance(chance));
+
+                        loot.items.forEach(gun => {
+                            AMMO_TYPES.forEach(ammoId => {
+                                pool.addEntry(LootEntry.sequence(
+                                    LootEntry.of(gun).withWeight(1),
+                                    LootEntry.of(Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammoId } }))
+                                        .withWeight(1)
                                         .setCount([8, 32])
-                                ).withWeight(1)
-                            );
+                                ));
+                            });
                         });
                     });
                 });
             });
         });
-    });
+    }
 
 });

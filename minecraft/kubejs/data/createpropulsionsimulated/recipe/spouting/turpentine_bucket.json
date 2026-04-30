@@ -5,7 +5,6 @@
       "item": "minecraft:bucket"
     },
     {
-      "type": "neoforge:single",
       "amount": 1000,
       "fluid": "createpropulsionsimulated:turpentine"
     }

@@ -53,37 +53,40 @@ ServerEvents.loaded(event => {
 }) */
 
 LootJS.lootTables(event => {
-    const $LootTable = Java.loadClass('net.minecraft.world.level.storage.loot.LootTable')
-    const $JsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
+    const enabled = false
+    if (enabled) {
+        const $LootTable = Java.loadClass('net.minecraft.world.level.storage.loot.LootTable')
+        const $JsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
 
-    let tableMap = {}
-    let tableList = []
+        let tableMap = {}
+        let tableList = []
 
-    let ids = event.getLootTableIds()
-    console.log("[Loot Debug] Found " + ids.size() + " loot tables")
+        let ids = event.getLootTableIds()
+        console.log("[Loot Debug] Found " + ids.size() + " loot tables")
 
-    ids.forEach(id => {
-        let idStr = id.toString()
-        tableList.push(idStr)
+        ids.forEach(id => {
+            let idStr = id.toString()
+            tableList.push(idStr)
 
-        try {
-            let table = event.getLootTable(id)
-            if (table) {
-                let jsonElement = $LootTable.DIRECT_CODEC
-                    .encodeStart($JsonOps.INSTANCE, table)
-                    .getOrThrow()
-                tableMap[idStr] = JSON.parse(jsonElement.toString())
+            try {
+                let table = event.getLootTable(id)
+                if (table) {
+                    let jsonElement = $LootTable.DIRECT_CODEC
+                        .encodeStart($JsonOps.INSTANCE, table)
+                        .getOrThrow()
+                    tableMap[idStr] = JSON.parse(jsonElement.toString())
+                }
+            } catch (e) {
+                tableMap[idStr] = { error: "Failed to serialize: " + e }
             }
-        } catch (e) {
-            tableMap[idStr] = { error: "Failed to serialize: " + e }
-        }
-    })
+        })
 
-    JsonIO.write('kubejs/exported/loot_table_details.json', tableMap)
-    JsonIO.write('kubejs/exported/loot_tables.json', {
-        count: tableList.length,
-        all_loot_tables: tableList
-    })
+        JsonIO.write('kubejs/exported/loot_table_details.json', tableMap)
+        JsonIO.write('kubejs/exported/loot_tables.json', {
+            count: tableList.length,
+            all_loot_tables: tableList
+        })
 
-    console.log("[Loot Debug] Export done: " + tableList.length + " tables")
+        console.log("[Loot Debug] Export done: " + tableList.length + " tables")
+    }
 })
