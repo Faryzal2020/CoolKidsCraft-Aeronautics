@@ -190,21 +190,19 @@ LootJS.lootTables((event) => {
     }
 
     const Preset_1 = {
-        "lootTables": ["explorify:chest/supply_cache"],
-        "addedLoots": [Grade_1, Grade_2, { "items": [SKS_TACTICAL], "baseChance": 0.5 }]
+        "lootTables": [
+            "explorify:chest/supply_cache",
+            /.*chests.*(supply|armorer)/
+        ],
+        "addedLoots": [Grade_1, Grade_2, Grade_3],
+        "chanceOverride": 0.5
     }
     const Preset_2 = {
         "lootTables": [
-            "apotheosis:chests/boss_dungeon",
-            "nova_structures:chests/deep_dark_shrine",
-            "create_ltab:normal/legend_loot",
-            "create_ltab:core/legend_loot",
-            "cataclysm:chests/sunken_city/sunken_city_treasure",
-            "cataclysm:chests/cursed_pyramid/cursed_pyramid_treasure",
-            "cataclysm:chests/ancient_factory/ancient_factory"
+            /.*chests.*(legendary|treasure|legend|tresure|vault|boss|deep_dark|city)/
         ],
-        "addedLoots": [Grade_5, Grade_6],
-        "chanceOverride": 0.8
+        "addedLoots": [Grade_4, Grade_5, Grade_6],
+        "chanceOverride": 1
     }
     const Preset_3 = {
         "lootTables": [
@@ -243,7 +241,14 @@ LootJS.lootTables((event) => {
         "chanceOverride": 0.4
     }
 
-    const EnabledPresets = [Preset_0, Preset_1, Preset_2, Preset_3, Preset_4, Preset_5]
+    const Preset_6 = {
+        "lootTables": [
+            /structory.*/
+        ],
+        "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6]
+    }
+
+    const EnabledPresets = [Preset_0, Preset_1, Preset_2, Preset_3, Preset_4, Preset_5, Preset_6]
 
     //Testing manual entry
     /*let table = Preset_0.lootTables[1]
@@ -277,7 +282,7 @@ LootJS.lootTables((event) => {
                 preset.addedLoots.forEach(loot => {
                     let chance = loot.baseChance
                     if (preset.chanceOverride) {
-                        chance = chanceOverride
+                        chance = preset.chanceOverride
                     }
                     modifier.createPool(pool => {
                         pool.rolls(2);

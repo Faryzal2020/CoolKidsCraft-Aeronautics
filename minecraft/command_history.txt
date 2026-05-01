@@ -1,16 +1,3 @@
-/lootr id
-/kubejs reload server-scripts
-/kubejs reload client-scripts
-/reload
-/kubejs reload server-scripts
-/kubejs reload client-scripts
-/reload
-/kubejs reload server-scripts
-/kubejs reload client-scripts
-/reload
-/kubejs export recipe-schema-json oritech:fuel_generator
-/lootr custom-chest
-/loot help
 /summon minecraft:zombie 10
 /summon minecraft:zombie
 /locate structure #ars_additions:ancient_city
@@ -48,3 +35,16 @@
 /reload
 /lootr chest mostructures:jungle_temple_treasure
 /lootr chest nova_structures:chests/end_castle/greater_loot
+/wits
+/witsop
+/witsop minecraft:overworld
+/witsop minecraft:overworld 257.84 160.43 346.94
+/wits
+/lootr chest mvs:floating_islands
+/wits
+/lootr chest betterjungletemples:chests/treasure
+/lootr chest minecraft:chests/illager_mansion/ancient_city_raid_chest
+/lootr chest cataclysm:chests/sunken_city/sunken_city_treasure
+/lootr chest create_ltab:core/legend_loot
+/lootr chest structory:harvest/old_manor/treasure
+/lootr chest nova_structures:archaelogy/desert_ruin_ruins

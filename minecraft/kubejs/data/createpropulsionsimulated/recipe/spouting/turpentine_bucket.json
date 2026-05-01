@@ -1,5 +1,5 @@
 {
-  "type": "create:spout_filling",
+  "type": "create:filling",
   "ingredients": [
     {
       "item": "minecraft:bucket"
@@ -11,7 +11,7 @@
   ],
   "results": [
     {
-      "id": "createpropulsionsimulated:turpentine_bucket"
+      "item": "createpropulsionsimulated:turpentine_bucket"
     }
   ]
 }
