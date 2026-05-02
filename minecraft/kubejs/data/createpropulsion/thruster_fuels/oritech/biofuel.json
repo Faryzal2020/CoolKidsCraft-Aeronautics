@@ -1,0 +1,6 @@
+{
+    "fluid": "oritech:still_biofuel",
+    "thrust_multiplier": 0.9,
+    "consumption_multiplier": 1.0,
+    "required_mod": "oritech"
+}

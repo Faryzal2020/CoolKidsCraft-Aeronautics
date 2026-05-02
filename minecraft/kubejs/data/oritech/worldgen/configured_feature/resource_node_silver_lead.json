@@ -3,7 +3,7 @@
   "config": {
     "nodeSize": 6,
     "nodeOreChance": 0.3,
-    "boulderRadius": 3,
+    "boulderRadius": 2,
     "nodeOres": [
       "oritech:resource_node_silver",
       "oritech:resource_node_lead"

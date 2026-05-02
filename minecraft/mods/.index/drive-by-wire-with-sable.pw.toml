@@ -1,18 +1,18 @@
-filename = 'drivebywire-0.2.6.jar'
-name = 'Drive-By-Wire With Sable'
+filename = 'drivebywire-0.2.7.jar'
+name = 'Drive By Wire'
 side = 'server'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'drivebywire-0.2.6.jar'
+x-prismlauncher-version-number = 'drivebywire-0.2.7.jar'
 
 [download]
-hash = '9f3c19e8402a48a7ea513b0abfb911b0f7db1b84'
+hash = '1549288b8ffc9cbb5347419d6fa020818702264f'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 7980426
+file-id = 8007844
 project-id = 1520378

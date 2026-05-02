@@ -180,8 +180,10 @@ LootJS.lootTables((event) => {
 
     const AMMO_TYPES = [
         "tacz:9mm", "tacz:45acp", "tacz:57x28", "tacz:12g",
-        "tacz:556x45", "tacz:762x39", "tacz:762x51", "tacz:762x54",
-        "tacz:308", "tacz:338", "tacz:50bmg", "tacz:50ae"
+        "tacz:556x45", "tacz:762x39", "tacz:762x25", "tacz:762x54",
+        "tacz:308", "tacz:338", "tacz:50bmg", "tacz:50ae", "tacz:68x51fury", "tacz:357mag",
+        "tacz:46x30", "tacz:40mm", "tacz:30_06", "tacz:545:39", "tacz:45_70", "tacz:rpg_rocket",
+        "tacz:58x42"
     ];
 
     const Preset_0 = {
@@ -192,17 +194,17 @@ LootJS.lootTables((event) => {
     const Preset_1 = {
         "lootTables": [
             "explorify:chest/supply_cache",
-            /.*chests.*(supply|armorer)/
+            /.*chests.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceOverride": 0.5
+        "chanceIncrease": 0.5
     }
     const Preset_2 = {
         "lootTables": [
-            /.*chests.*(legendary|treasure|legend|tresure|vault|boss|deep_dark|city)/
+            /.*chests.*(deep_dark|city)/
         ],
         "addedLoots": [Grade_4, Grade_5, Grade_6],
-        "chanceOverride": 1
+        "chanceIncrease": 0.5
     }
     const Preset_3 = {
         "lootTables": [
@@ -221,10 +223,11 @@ LootJS.lootTables((event) => {
     const Preset_4 = {
         "lootTables": [
             /nova_structures:chests\/end.*/,
-            /aether:chests\/dungeon\/silver\/.*/
+            /aether:chests\/dungeon\/silver\/.*/,
+            /.*chests.*(legendary|legend|boss)/
         ],
-        "addedLoots": [Grade_6],
-        "chanceOverride": 0.9
+        "addedLoots": [Grade_5, Grade_6],
+        "chanceOverride": 1
     }
     const Preset_5 = {
         "lootTables": [
@@ -238,7 +241,7 @@ LootJS.lootTables((event) => {
             /aether:chests\/dungeon\/gold\/.*/,
         ],
         "addedLoots": [Grade_3, Grade_4, Grade_5],
-        "chanceOverride": 0.4
+        "chanceIncrease": 0.3
     }
 
     const Preset_6 = {
@@ -281,6 +284,9 @@ LootJS.lootTables((event) => {
                 let modifier = event.modifyLootTables(table);
                 preset.addedLoots.forEach(loot => {
                     let chance = loot.baseChance
+                    if (preset.chanceIncrease) {
+                        chance = chance + preset.chanceIncrease
+                    }
                     if (preset.chanceOverride) {
                         chance = preset.chanceOverride
                     }

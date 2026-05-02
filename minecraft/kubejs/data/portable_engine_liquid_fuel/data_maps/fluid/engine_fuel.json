@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": {
+    "oritech:still_biofuel": {
+      "burn_time": 16000
+    },
+    "oritech:still_heavy_oil": {
+      "burn_time": 12000
+    },
+    "oritech:still_diesel": {
+      "burn_time": 32000
+    },
+    "pneumaticcraft:biodiesel": {
+      "burn_time": 24000
+    },
+    "oritech:still_fuel": {
+      "burn_time": 48000
+    },
+    "enderio:fluid_rocket_fuel_still": {
+      "burn_time": 120000
+    }
+  }
+}

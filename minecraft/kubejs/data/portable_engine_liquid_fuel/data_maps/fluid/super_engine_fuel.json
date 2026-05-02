@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": {
+    "oritech:still_fuel": {
+      "burn_time": 64000
+    },
+    "enderio:fluid_rocket_fuel_still": {
+      "burn_time": 160000
+    }
+  }
+}

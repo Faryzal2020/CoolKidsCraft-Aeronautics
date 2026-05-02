@@ -1,0 +1,6 @@
+{
+    "fluid": "oritech:still_fuel",
+    "thrust_multiplier": 1.2,
+    "consumption_multiplier": 0.8,
+    "required_mod": "oritech"
+}

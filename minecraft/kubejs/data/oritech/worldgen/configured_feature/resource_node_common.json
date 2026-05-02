@@ -2,7 +2,7 @@
   "type": "oritech:resource_node",
   "config": {
     "nodeSize": 6,
-    "nodeOreChance": 0.4,
+    "nodeOreChance": 0.2,
     "boulderRadius": 3,
     "nodeOres": [
       "oritech:resource_node_copper",

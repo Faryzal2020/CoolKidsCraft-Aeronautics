@@ -1,0 +1,6 @@
+{
+    "fluid": "enderio:fluid_rocket_fuel_still",
+    "thrust_multiplier": 2.5,
+    "consumption_multiplier": 0.4,
+    "required_mod": "enderio"
+}

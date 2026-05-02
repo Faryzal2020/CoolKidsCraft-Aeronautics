@@ -2,13 +2,15 @@
   "type": "oritech:resource_node",
   "config": {
     "nodeSize": 6,
-    "nodeOreChance": 0.2,
-    "boulderRadius": 3,
+    "nodeOreChance": 0.1,
+    "boulderRadius": 2,
     "nodeOres": [
       "oritech:resource_node_gold",
       "oritech:resource_node_emerald"
     ],
     "boulderOres": [
+      "minecraft:deepslate_gold_ore",
+      "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_emerald_ore",
       "minecraft:deepslate",

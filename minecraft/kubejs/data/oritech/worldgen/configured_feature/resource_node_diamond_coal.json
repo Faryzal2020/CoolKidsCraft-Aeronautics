@@ -1,9 +1,9 @@
 {
   "type": "oritech:resource_node",
   "config": {
-    "nodeSize": 6,
-    "nodeOreChance": 0.05,
-    "boulderRadius": 3,
+    "nodeSize": 7,
+    "nodeOreChance": 0.025,
+    "boulderRadius": 4,
     "nodeOres": [
       "oritech:resource_node_coal",
       "oritech:resource_node_diamond"

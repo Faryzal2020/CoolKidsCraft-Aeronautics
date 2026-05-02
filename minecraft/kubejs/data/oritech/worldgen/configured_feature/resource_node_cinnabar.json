@@ -2,13 +2,20 @@
   "type": "oritech:resource_node",
   "config": {
     "nodeSize": 6,
-    "nodeOreChance": 0.2,
-    "boulderRadius": 3,
+    "nodeOreChance": 0.1,
+    "boulderRadius": 4,
     "nodeOres": [
-      "oritech:resource_node_cinnabar"
+      "oritech:resource_node_redstone",
+      "oritech:resource_node_redstone",
+      "oritech:resource_node_redstone"
     ],
     "boulderOres": [
       "alltheores:deepslate_cinnabar_ore",
+      "alltheores:deepslate_cinnabar_ore",
+      "alltheores:deepslate_cinnabar_ore",
+      "alltheores:deepslate_cinnabar_ore",
+      "alltheores:deepslate_redstone_ore",
+      "alltheores:deepslate_redstone_ore",
       "minecraft:deepslate",
       "minecraft:deepslate",
       "minecraft:deepslate",

@@ -2,7 +2,7 @@
   "type": "oritech:resource_node",
   "config": {
     "nodeSize": 6,
-    "nodeOreChance": 0.3,
+    "nodeOreChance": 0.15,
     "boulderRadius": 3,
     "nodeOres": [
       "oritech:resource_node_iron",
@@ -12,6 +12,10 @@
       "minecraft:deepslate_iron_ore",
       "minecraft:deepslate_iron_ore",
       "minecraft:deepslate_iron_ore",
+      "minecraft:deepslate_iron_ore",
+      "minecraft:deepslate_iron_ore",
+      "alltheores:deepslate_nickel_ore",
+      "alltheores:deepslate_nickel_ore",
       "alltheores:deepslate_nickel_ore",
       "minecraft:deepslate",
       "minecraft:deepslate",

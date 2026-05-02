@@ -1,9 +1,9 @@
 {
   "type": "oritech:resource_node",
   "config": {
-    "nodeSize": 6,
-    "nodeOreChance": 0.15,
-    "boulderRadius": 3,
+    "nodeSize": 7,
+    "nodeOreChance": 0.075,
+    "boulderRadius": 4,
     "nodeOres": [
       "oritech:resource_node_gold",
       "oritech:resource_node_emerald",
@@ -14,11 +14,12 @@
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_emerald_ore",
-      "minecraft:deepslate_emerald_ore",
       "alltheores:deepslate_platinum_ore",
-      "alltheores:deepslate_uranium_ore",
       "alltheores:deepslate_lead_ore",
       "alltheores:deepslate_lead_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
+      "minecraft:deepslate_coal_ore",
       "minecraft:deepslate",
       "minecraft:deepslate",
       "minecraft:deepslate",

@@ -1,0 +1,6 @@
+{
+    "fluid": "pneumaticcraft:biodiesel",
+    "thrust_multiplier": 1.0,
+    "consumption_multiplier": 1.0,
+    "required_mod": "pneumaticcraft"
+}

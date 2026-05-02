@@ -2,8 +2,8 @@
   "type": "oritech:resource_node",
   "config": {
     "nodeSize": 6,
-    "nodeOreChance": 0.25,
-    "boulderRadius": 3,
+    "nodeOreChance": 0.125,
+    "boulderRadius": 4,
     "nodeOres": [
       "oritech:resource_node_zinc",
       "oritech:resource_node_iron"

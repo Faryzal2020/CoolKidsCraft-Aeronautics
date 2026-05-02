@@ -1,0 +1,6 @@
+{
+    "fluid": "oritech:still_heavy_oil",
+    "thrust_multiplier": 0.8,
+    "consumption_multiplier": 1.1,
+    "required_mod": "oritech"
+}

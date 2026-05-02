@@ -1,7 +1,3 @@
-/summon minecraft:zombie 10
-/summon minecraft:zombie
-/locate structure #ars_additions:ancient_city
-/tp @s 1312 ~ 96
 /locate structure nova_structures:bunker
 /tp @s 560 ~ -256
 /locate structure nova_structures:ruin_town
@@ -48,3 +44,7 @@
 /lootr chest create_ltab:core/legend_loot
 /lootr chest structory:harvest/old_manor/treasure
 /lootr chest nova_structures:archaelogy/desert_ruin_ruins
+/wits
+/data get block 134 220 195
+/data get block 146 220 195
+/time set day
