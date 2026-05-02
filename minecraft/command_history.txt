@@ -1,6 +1,3 @@
-/kubejs reload server-scripts
-/lootr chest apotheosis:chests/chest_valuable
-/kubejs reload server-scripts
 /wits
 /kubejs reload server-scripts
 /wits
@@ -48,3 +45,6 @@
 /data get block -635 66 -270
 /data get block -634 66 -270
 /lootr chest minecraft:chests/simple_dungeon
+/voxylod status
+/voxylod disable
+/voxylod mode disk_only

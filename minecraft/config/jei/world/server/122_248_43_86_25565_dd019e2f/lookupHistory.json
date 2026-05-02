@@ -1,0 +1,5 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"sophisticatedbackpacks:backpack"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"tombstone:grave_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]
