@@ -146,6 +146,7 @@
   "toms_storage:inventory_config": null,
   "toms_storage:inventory_connector": null,
   "toms_storage:inventory_hopper": null,
+  "treechop:plugin": null,
   "treetap:tap": null,
   "twilightforest:chiseled_bookshelf_spawner": null,
   "twilightforest:drying_rack": null,
