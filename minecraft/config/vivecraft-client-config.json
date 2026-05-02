@@ -147,7 +147,7 @@
   "showServerPluginMissingMessageAlways": "true",
   "realisticBlockInteractEnabled": "true",
   "crosshairScale": "1.0",
-  "hideGUI": "false",
+  "hideGUI": "true",
   "climbingAutoGrab": "true",
   "mainPlayerDataSource": "REALTIME",
   "sneakThreshold": "0.4",

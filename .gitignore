@@ -42,6 +42,7 @@
 /minecraft/config/ftbchunks-client.snbt
 /minecraft/config/*.toml
 /minecraft/config/*.bak
+/minecraft/config/chunky
 /minecraft/mods/.index
 /minecraft/XaeroWaypoints*
 /minecraft.qmenu_opened.marker
@@ -50,6 +51,11 @@
 /flame/overrides.txt
 /dist
 /minecraft/mods/chunky*
+/minecraft/Distant_Horizons_server_data
+/minecraft/shaderpacks
+/minecraft/config/vivecraft-client-config.json
+/minecraft/mods/DistantHorizons*
+/minecraft/mods/voxy*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
