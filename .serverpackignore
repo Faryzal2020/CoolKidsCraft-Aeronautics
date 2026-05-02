@@ -49,6 +49,7 @@ minecraft/mods/overloadedarmorbar*
 minecraft/mods/tp_shooting*
 minecraft/mods/collapsible_groups*
 minecraft/mods/fancy-entity-renderer*
+minecraft/mods/voxy*
 
 # --- Client-Side Configs ---
 minecraft/config/fancymenu/

@@ -82,3 +82,4 @@ update.sh
 /minecraft/config/yes_steve_model/custom/
 /minecraft/config/yes_steve_model/export/
 /minecraft/server_banlist_config.json
+/minecraft/command_history.txt
