@@ -20,19 +20,93 @@ function Get-IgnorePatterns {
     }
     return @()
 }
+function Get-ConfigValue {
+    param($key)
+    if (-not (Test-Path "instance.cfg")) { return $null }
+    $config = Get-Content "instance.cfg"
+    $line = $config | Where-Object { $_.StartsWith("$key=") }
+    if ($line) {
+        return $line.Split("=")[1].Trim()
+    }
+    return $null
+}
+
+function Set-ConfigValue {
+    param($key, $value)
+    if (-not (Test-Path "instance.cfg")) { return }
+    $config = Get-Content "instance.cfg"
+    $newConfig = @()
+    $found = $false
+    foreach ($line in $config) {
+        if ($line.StartsWith("$key=")) {
+            $newConfig += "$key=$value"
+            $found = $true
+        } else {
+            $newConfig += $line
+        }
+    }
+    if (-not $found) {
+        $newConfig += "$key=$value"
+    }
+    $newConfig | Set-Content "instance.cfg"
+}
 
 function Pack-Distributables {
-    Write-Host "--- Packing Client Distributables ---" -ForegroundColor Yellow
-    # Existing packing logic would go here
-    Write-Host "Feature not fully implemented in this stub."
+    $name = Get-ConfigValue "ExportName"
+    if (-not $name) { $name = Get-ConfigValue "name" }
+    if (-not $name) { $name = "Modpack" }
+    $version = Get-ConfigValue "ExportVersion"
+    if (-not $version) { $version = "0.0.0" }
+    
+    $zipName = "$($name -replace ' ', '_')-v$version.zip"
+    $distDir = Join-Path $PSScriptRoot "dist"
+    $tempDir = Join-Path $PSScriptRoot "tmp_pack"
+    
+    if (-not (Test-Path $distDir)) { New-Item -ItemType Directory -Path $distDir | Out-Null }
+    if (Test-Path $tempDir) { Remove-Item -Path $tempDir -Recurse -Force }
+    New-Item -ItemType Directory -Path $tempDir | Out-Null
+
+    Write-Host "--- Packing Client Distributables ($name v$version) ---" -ForegroundColor Yellow
+    
+    # 1. Get ignore patterns
+    $patterns = Get-IgnorePatterns ".packignore"
+    $systemFiles = @(".git", "ManagePack.ps1", ".serverpackignore", ".gitignore", ".packignore", "dist", "tmp", "tmp_pack")
+    
+    Write-Host "Staging files..."
+    # Copy all files from root to tempDir, then remove ignored ones
+    Get-ChildItem -Path $PSScriptRoot -Exclude $systemFiles | Copy-Item -Destination $tempDir -Recurse -Force
+    
+    foreach ($pattern in $patterns) {
+        $fullPattern = Join-Path $tempDir $pattern
+        if (Test-Path $fullPattern) {
+            Write-Host "Excluding: $pattern"
+            Remove-Item -Path $fullPattern -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    }
+
+    Write-Host "Compressing to $zipName..."
+    $outputPath = Join-Path $distDir $zipName
+    if (Test-Path $outputPath) { Remove-Item $outputPath }
+    
+    Compress-Archive -Path "$tempDir\*" -DestinationPath $outputPath -Force
+    
+    Write-Host "Cleaning up..."
+    Remove-Item -Path $tempDir -Recurse -Force
+    
+    Write-Host "Success! Pack created at: $outputPath" -ForegroundColor Green
     Pause
 }
 
 function Change-Version {
-    $newVersion = Read-Host "Enter new version (e.g., 1.2.0)"
-    Write-Host "Version updated to $newVersion" -ForegroundColor Green
+    $currentVersion = Get-ConfigValue "ExportVersion"
+    $newVersion = Read-Host "Enter new version (Current: $currentVersion)"
+    if ($newVersion) {
+        Set-ConfigValue "ExportVersion" $newVersion
+        Write-Host "Version updated to $newVersion in instance.cfg" -ForegroundColor Green
+    }
     Pause
 }
+
 
 function Sync-ServerBranch {
     Write-Host "--- Syncing Server Branch to GitHub ---" -ForegroundColor Yellow
