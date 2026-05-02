@@ -1,0 +1,120 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT License"
+
+[[mods]]
+modId = "createpropulsion"
+version = "1.1.0"
+displayName = "Create: Propulsion Simulated"
+displayURL = "https://modrinth.com/mod/create-propulsion"
+logoFile = "icon.png"
+authors = "Sergey Feduk, Tronco_78, Bunting_chj, SSnowly, KyivSec"
+description = '''A mod that adds propulsion and fuel systems to Create with Sable-focused moving structure support.'''
+
+[[mixins]]
+config = "createpropulsion.mixins.json"
+
+[[dependencies.createpropulsion]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.219,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "create"
+type = "required"
+versionRange = "[6.0.6,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "createdieselgenerators"
+type = "optional"
+versionRange = "[1.2,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "createbigcannons"
+type = "optional"
+versionRange = "*"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "tfmg"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "immersiveengineering"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "mekanism"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "mekanismgenerators"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "northstar"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "stellaris"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "computercraft"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "jei"
+type = "optional"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "sable"
+type = "required"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.createpropulsion]]
+modId = "sablecompanion"
+type = "required"
+versionRange = "*"
+ordering = "AFTER"
+side = "BOTH"

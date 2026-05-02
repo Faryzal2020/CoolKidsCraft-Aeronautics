@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Specification-Title: createpropulsion
+Specification-Vendor: Sergey Feduk, Tronco_78, Bunting_chj, SSnowly, Kyi
+ vSec
+Specification-Version: 1
+Implementation-Title: create-propulsion-simulated
+Implementation-Version: 1.1.0
+Implementation-Vendor: Sergey Feduk, Tronco_78, Bunting_chj, SSnowly, Ky
+ ivSec
+Implementation-Timestamp: 2026-04-30T08:39:20+0300
+
