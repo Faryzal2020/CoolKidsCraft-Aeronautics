@@ -71,3 +71,14 @@
 /minecraft/tacz_backup/
 /minecraft/.sable/
 update.sh
+/minecraft/.gunsmithlib/
+/minecraft/config/craftingtweaks/
+/minecraft/config/jade/server-plugin-overrides.json
+/minecraft/config/market_categories/
+/minecraft/config/market_presets/
+/minecraft/config/openloader/packs/
+/minecraft/config/spark/activity.json
+/minecraft/config/yes_steve_model/auth/
+/minecraft/config/yes_steve_model/custom/
+/minecraft/config/yes_steve_model/export/
+/minecraft/server_banlist_config.json
