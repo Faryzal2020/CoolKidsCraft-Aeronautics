@@ -49,3 +49,24 @@
 /minecraft/xaero
 /flame/overrides.txt
 /dist
+/minecraft/mods/chunky*
+
+# --- Server-Generated Files (Keep these safe) ---
+/minecraft/eula.txt
+/minecraft/server.properties
+/minecraft/server.env
+/minecraft/whitelist.json
+/minecraft/ops.json
+/minecraft/banned-ips.json
+/minecraft/banned-players.json
+/minecraft/user_jvm_args.txt
+/minecraft/libraries/
+/minecraft/neoforge-*-installer.jar*
+/minecraft/run.sh
+/minecraft/run.bat
+/minecraft/logs/
+/minecraft/crash-reports/
+/minecraft/backups/
+/minecraft/world/
+/minecraft/tacz_backup/
+/minecraft/.sable/
