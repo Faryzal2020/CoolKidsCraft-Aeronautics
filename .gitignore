@@ -42,6 +42,7 @@
 /minecraft/config/ftbchunks-client.snbt
 /minecraft/config/*.toml
 /minecraft/config/*.bak
+/minecraft/config/fancymenu
 /minecraft/mods/.index
 /flame/overrides.txt
 /dist
