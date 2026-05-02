@@ -1,9 +1,9 @@
 #!/bin/sh
 set -eu
-NEOFORGE_VERSION=21.0.167
-# To use a specific Java runtime, set an environment variable named ATM10_JAVA to the full path of java.exe.
-# To disable automatic restarts, set an environment variable named ATM10_RESTART to false.
-# To install the pack without starting the server, set an environment variable named ATM10_INSTALL_ONLY to true.
+NEOFORGE_VERSION=21.1.228
+# To use a specific Java runtime, set an environment variable named CKCA_JAVA to the full path of java.exe.
+# To disable automatic restarts, set an environment variable named CKCA_RESTART to false.
+# To install the pack without starting the server, set an environment variable named CKCA_INSTALL_ONLY to true.
 
 INSTALLER="neoforge-$NEOFORGE_VERSION-installer.jar"
 NEOFORGE_URL="https://maven.neoforged.net/releases/net/neoforged/neoforge/$NEOFORGE_VERSION/neoforge-$NEOFORGE_VERSION-installer.jar"
@@ -13,7 +13,7 @@ pause() {
     read ans
 }
 
-if ! command -v "${ATM10_JAVA:-java}" >/dev/null 2>&1; then
+if ! command -v "${CKCA_JAVA:-java}" >/dev/null 2>&1; then
     echo "Minecraft 1.21 requires Java 21 - Java not found"
     pause
     exit 1
@@ -40,19 +40,19 @@ if [ ! -d libraries ]; then
     fi
 
     echo "Running Neoforge installer."
-    "${ATM10_JAVA:-java}" -jar "$INSTALLER" -installServer
+    "${CKCA_JAVA:-java}" -jar "$INSTALLER" -installServer
 fi
 
 if [ ! -e server.properties ]; then
-    printf "allow-flight=true\nmotd=All the Mods 10\nmax-tick-time=180000" > server.properties
+    printf "allow-flight=true\nmotd=Cool Kids Craft Aeronautics\nmax-tick-time=180000" > server.properties
 fi
 
-if [ "${ATM10_INSTALL_ONLY:-false}" = "true" ]; then
+if [ "${CKCA_INSTALL_ONLY:-false}" = "true" ]; then
     echo "INSTALL_ONLY: complete"
     exit 0
 fi
 
-JAVA_VERSION=$("${ATM10_JAVA:-java}" -fullversion 2>&1 | awk -F '"' '/version/ {print $2}' | cut -d'.' -f1)
+JAVA_VERSION=$("${CKCA_JAVA:-java}" -fullversion 2>&1 | awk -F '"' '/version/ {print $2}' | cut -d'.' -f1)
 if [ ! "$JAVA_VERSION" -ge 21 ]; then
     echo "Minecraft 1.21 requires Java 21 - found Java $JAVA_VERSION"
     pause
@@ -61,9 +61,9 @@ fi
 
 while true
 do
-    "${ATM10_JAVA:-java}" @user_jvm_args.txt @libraries/net/neoforged/neoforge/$NEOFORGE_VERSION/unix_args.txt nogui
+    "${CKCA_JAVA:-java}" @user_jvm_args.txt @libraries/net/neoforged/neoforge/$NEOFORGE_VERSION/unix_args.txt nogui
 
-    if [ "${ATM10_RESTART:-true}" = "false" ]; then
+    if [ "${CKCA_RESTART:-true}" = "false" ]; then
         exit 0
     fi
 
