@@ -56,15 +56,17 @@ function Sync-ServerBranch {
     $systemFiles = @(".git", "ManagePack.ps1", ".serverpackignore", ".gitignore", ".packignore")
     
     foreach ($pattern in $patterns) {
-        $files = Get-ChildItem -Path $pattern -Recurse -ErrorAction SilentlyContinue
-        foreach ($file in $files) {
-            if ($systemFiles -contains $file.Name -or $file.FullName -like "*\.git\*") {
+        # Get-Item correctly handles wildcards and folder paths
+        $targets = Get-Item -Path $pattern -ErrorAction SilentlyContinue
+        foreach ($target in $targets) {
+            # SAFETY CHECK: Never delete critical project files or the git directory
+            if ($systemFiles -contains $target.Name -or $target.FullName -like "*\.git\*") {
                 continue
             }
             
-            if (Test-Path $file.FullName) {
-                Write-Host "Removing: $($file.FullName)"
-                Remove-Item -Path $file.FullName -Recurse -Force -ErrorAction SilentlyContinue
+            if (Test-Path $target.FullName) {
+                Write-Host "Removing: $($target.FullName)"
+                Remove-Item -Path $target.FullName -Recurse -Force -ErrorAction SilentlyContinue
             }
         }
     }
