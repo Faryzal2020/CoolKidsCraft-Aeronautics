@@ -1,0 +1,4 @@
+[21:47:57] [WARN] [FabricLoader/Resolution]: Mod resolution failed
+[21:47:57] [INFO] [FabricLoader/Resolution]: Immediate reason: [HARD_DEP_NO_CANDIDATE voxy 0.2.14-alpha {depends minecraft @ [1.20.1]}, ROOT_FORCELOAD_SINGLE voxy 0.2.14-alpha]
+[21:47:57] [INFO] [FabricLoader/Resolution]: Reason: [HARD_DEP voxy 0.2.14-alpha {depends minecraft @ [1.20.1]}]
+[21:47:57] [INFO] [FabricLoader/Resolution]: Fix: add [], remove [], replace [[minecraft 1.21.1] -> add:minecraft 1.20.1 ([[1.20.1,1.20.1]])]

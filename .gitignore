@@ -55,7 +55,8 @@
 /minecraft/shaderpacks
 /minecraft/config/vivecraft-client-config.json
 /minecraft/mods/DistantHorizons*
-/minecraft/mods/voxy*
+/minecraft/mods/voxy-*
+/minecraft/mods/.connector
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
