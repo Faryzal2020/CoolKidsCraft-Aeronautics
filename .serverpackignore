@@ -46,6 +46,9 @@ minecraft/mods/entityculling-*
 minecraft/mods/lambdynamiclights-*
 minecraft/mods/moreoverlays-*
 minecraft/mods/overloadedarmorbar-*
+minecraft/mods/tp_shooting*
+minecraft/mods/collapsible_groups*
+minecraft/mods/fancy-entity-renderer*
 
 # --- Client-Side Configs ---
 minecraft/config/fancymenu/
