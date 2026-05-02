@@ -1,12 +1,3 @@
-/lootr chest apotheosis:chests/chest_valuable
-/loot spawn ~ ~ ~ loot apotheosis:chests/chest_valuable
-/lootr chest apotheosis:chests/chest_valuable
-/list_loot
-/lootr chest apotheosis:chests/chest_valuable
-/lootr chest apotheosis:chest_valuable
-/lootr chest apotheosis:chests
-/kubejs reload server-scripts
-/lootr chest apotheosis:chests/chest_valuable
 /kubejs reload server-scripts
 /lootr chest apotheosis:chests/chest_valuable
 /kubejs reload server-scripts
@@ -48,3 +39,12 @@
 /spawn
 /openpac-claims admin-mode
 /openpac-claims server-claim-mode
+/colorwheel alertIncompatiblePack off
+/voxylod status
+/voxylod mode generate
+/gamemode survival
+/wits
+/loot spawn -631.55 66.57 -269.06 loot
+/data get block -635 66 -270
+/data get block -634 66 -270
+/lootr chest minecraft:chests/simple_dungeon

@@ -171,12 +171,12 @@ LootJS.lootTables((event) => {
     const CZ75 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "AUTO", "HasBulletInBarrel": 1, "GunId": "tacz:cz75", "GunCurrentAmmoCount": 16 } });
     const DEAGLE = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:deagle", "GunCurrentAmmoCount": 7 } });
 
-    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG], "baseChance": 0.1 }
-    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI], "baseChance": 0.075 }
-    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.05 }
-    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90], "baseChance": 0.03 }
-    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.02 }
-    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.01 }
+    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG], "baseChance": 0.05 }
+    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI], "baseChance": 0.03 }
+    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.02 }
+    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90], "baseChance": 0.015 }
+    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.01 }
+    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.005 }
 
     const AMMO_TYPES = [
         "tacz:9mm", "tacz:45acp", "tacz:57x28", "tacz:12g",
@@ -197,14 +197,14 @@ LootJS.lootTables((event) => {
             /.*chests.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceIncrease": 0.5
+        "chanceIncrease": 0.3
     }
     const Preset_2 = {
         "lootTables": [
             /.*chests.*(deep_dark|city)/
         ],
         "addedLoots": [Grade_4, Grade_5, Grade_6],
-        "chanceIncrease": 0.5
+        "chanceIncrease": 0.3
     }
     const Preset_3 = {
         "lootTables": [
@@ -227,7 +227,7 @@ LootJS.lootTables((event) => {
             /.*chests.*(legendary|legend|boss)/
         ],
         "addedLoots": [Grade_5, Grade_6],
-        "chanceOverride": 1
+        "chanceOverride": 0.9
     }
     const Preset_5 = {
         "lootTables": [

@@ -13,3 +13,5 @@ Cool Kids Craft - Aeronautics
 2. Go to %APPDATA%\Roaming\PrismLauncher\instances (create folder if doesn't exist yet)
 3. Right click on the empty folder then open CMD or Powershell
 4. Paste and run this command -> `git clone https://github.com/Faryzal2020/CoolKidsCraft-Aeronautics.git`
+
+

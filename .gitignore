@@ -57,6 +57,7 @@
 /minecraft/mods/DistantHorizons*
 /minecraft/mods/voxy-*
 /minecraft/mods/.connector
+/minecraft/.voxy
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
