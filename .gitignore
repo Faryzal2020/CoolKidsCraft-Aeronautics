@@ -44,5 +44,9 @@
 /minecraft/config/*.bak
 /minecraft/config/fancymenu
 /minecraft/mods/.index
+/minecraft/XaeroWaypoints*
+/minecraft.qmenu_opened.marker
+/minecraft/command_history.txt
+/minecraft/xaero
 /flame/overrides.txt
 /dist
