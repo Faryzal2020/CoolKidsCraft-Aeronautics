@@ -42,7 +42,6 @@
 /minecraft/config/ftbchunks-client.snbt
 /minecraft/config/*.toml
 /minecraft/config/*.bak
-/minecraft/config/fancymenu
 /minecraft/mods/.index
 /minecraft/XaeroWaypoints*
 /minecraft.qmenu_opened.marker
