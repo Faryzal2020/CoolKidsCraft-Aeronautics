@@ -6,110 +6,140 @@ function Show-Menu {
     Write-Host "==============================" -ForegroundColor Cyan
     Write-Host "   Pack Management Utility" -ForegroundColor Cyan
     Write-Host "==============================" -ForegroundColor Cyan
-    Write-Host "1. Pack Distributables"
+    Write-Host "1. Pack Client Distributable"
     Write-Host "2. Change Pack Version"
-    Write-Host "3. Exit"
+    Write-Host "3. Sync Server Branch (GitHub)"
+    Write-Host "4. Exit"
     Write-Host ""
 }
 
+function Get-IgnorePatterns {
+    param($path)
+    if (Test-Path $path) {
+        return Get-Content $path | Where-Object { $_ -and -not $_.StartsWith("#") }
+    }
+    return @()
+}
+
 function Pack-Distributables {
-    Write-Host "--- Packing Distributables ---" -ForegroundColor Yellow
+    Write-Host "--- Packing Client Distributables ---" -ForegroundColor Yellow
     
     $zipName = "Cool Kids Craft - Aeronautics.zip"
     $distDir = "dist"
     $zipPath = Join-Path $PWD.Path "$distDir\$zipName"
     
     if (-not (Test-Path $distDir)) {
-        Write-Host "Creating dist folder..."
         New-Item -ItemType Directory -Path $distDir | Out-Null
     }
 
-    Write-Host "Fetching file list (respecting .gitignore)..."
-    # Get files not ignored by git
-    try {
-        $gitFiles = git ls-files --cached --others --exclude-standard
-    } catch {
-        Write-Host "Error: Git not found or not a git repository." -ForegroundColor Red
-        return
-    }
-    
-    # Get .packignore patterns
-    $packIgnorePath = ".packignore"
-    $packIgnorePatterns = @()
-    if (Test-Path $packIgnorePath) {
-        Write-Host "Applying .packignore filters..."
-        $packIgnorePatterns = Get-Content $packIgnorePath | Where-Object { $_ -and -not $_.StartsWith("#") }
-    }
+    $gitFiles = git ls-files --cached --others --exclude-standard
+    $packIgnorePatterns = Get-IgnorePatterns ".packignore"
 
     $filesToInclude = @()
     foreach ($file in $gitFiles) {
         $ignored = $false
-        # Normalize file path for matching (forward slashes for consistency)
         $normFile = $file.Replace("\", "/")
-        
         foreach ($pattern in $packIgnorePatterns) {
             $p = $pattern.Replace("\", "/").Trim("/")
-            # Check if file starts with pattern (folder) or exactly matches (file)
             if ($normFile -eq $p -or $normFile.StartsWith("$p/")) {
                 $ignored = $true
                 break
             }
         }
-        
-        # Additional manual check for 'dist' folder just in case
         if ($normFile.StartsWith("dist/")) { $ignored = $true }
-
-        if (-not $ignored) {
-            $filesToInclude += $file
-        }
+        if (-not $ignored) { $filesToInclude += $file }
     }
 
-    if ($filesToInclude.Count -eq 0) {
-        Write-Host "No files to pack!" -ForegroundColor Red
-        Read-Host "Press Enter to continue"
-        return
-    }
+    if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
 
-    if (Test-Path $zipPath) {
-        Write-Host "Removing existing zip..."
-        Remove-Item $zipPath -Force
-    }
-
-    Write-Host "Preparing zip content ($($filesToInclude.Count) files)..."
-    
-    # Using a temporary directory to ensure correct structure and avoid Compress-Archive limitations
-    $tempDirName = "build_temp_" + (Get-Date -Format "yyyyMMddHHmmss")
-    $tempDir = Join-Path $env:TEMP $tempDirName
+    $tempDir = Join-Path $env:TEMP ("build_temp_" + (Get-Date -Format "yyyyMMddHHmmss"))
     New-Item -ItemType Directory -Path $tempDir | Out-Null
     
     try {
         foreach ($f in $filesToInclude) {
             $dest = Join-Path $tempDir $f
             $parentDir = Split-Path $dest
-            if (-not (Test-Path $parentDir)) {
-                New-Item -ItemType Directory -Path $parentDir | Out-Null
-            }
+            if (-not (Test-Path $parentDir)) { New-Item -ItemType Directory -Path $parentDir | Out-Null }
             Copy-Item $f -Destination $dest
         }
-
-        Write-Host "Compressing files into $zipName..."
         Compress-Archive -Path "$tempDir\*" -DestinationPath $zipPath -Force
         Write-Host "Success! Zip created at: $zipPath" -ForegroundColor Green
-    } catch {
-        Write-Host "Error during packing: $($_.Exception.Message)" -ForegroundColor Red
     } finally {
-        if (Test-Path $tempDir) {
-            Write-Host "Cleaning up..."
-            Remove-Item $tempDir -Recurse -Force
-        }
+        if (Test-Path $tempDir) { Remove-Item $tempDir -Recurse -Force }
     }
+    Read-Host "`nPress Enter to return to menu"
+}
+
+function Sync-ServerBranch {
+    Write-Host "--- Syncing Server Branch to GitHub ---" -ForegroundColor Yellow
     
+    # 1. Check for uncommitted changes in main
+    $status = git status --porcelain
+    if ($status) {
+        Write-Host "Error: You have uncommitted changes. Please commit or stash them first." -ForegroundColor Red
+        Read-Host "Press Enter to continue"
+        return
+    }
+
+    $currentBranch = git rev-parse --abbrev-ref HEAD
+    if ($currentBranch -ne "main") {
+        Write-Host "Warning: You are not on 'main'. Proceeding with current branch '$currentBranch' as source." -ForegroundColor Yellow
+    }
+
+    # 2. Get Ignore Patterns
+    $ignorePatterns = Get-IgnorePatterns ".serverpackignore"
+    if ($ignorePatterns.Count -eq 0) {
+        Write-Host "Error: .serverpackignore not found or empty!" -ForegroundColor Red
+        Read-Host "Press Enter to continue"
+        return
+    }
+
+    # 3. Create a temporary orphan branch for the server
+    Write-Host "Preparing server branch..." -ForegroundColor Cyan
+    $tempBranch = "server-sync-temp"
+    
+    # Cleanup previous attempt if any
+    git branch -D $tempBranch 2>$null
+    
+    # Create new branch from current
+    git checkout -b $tempBranch
+    
+    try {
+        Write-Host "Applying exclusions from .serverpackignore..." -ForegroundColor Cyan
+        foreach ($pattern in $ignorePatterns) {
+            $path = $pattern.Trim()
+            if (Test-Path $path) {
+                Write-Host "Removing: $path" -ForegroundColor Gray
+                Remove-Item -Path $path -Recurse -Force
+            }
+        }
+
+        # 4. Commit and Push
+        git add -A
+        $version = "unknown"
+        if (Test-Path "instance.cfg") {
+            $version = (Get-Content "instance.cfg" | Select-String "ExportVersion=").ToString().Split("=")[1]
+        }
+        
+        git commit -m "Server Release v$version" --allow-empty
+        
+        Write-Host "Pushing to remote 'server' branch..." -ForegroundColor Cyan
+        git push origin "$($tempBranch):server" --force
+        
+        Write-Host "Success! Server branch updated on GitHub." -ForegroundColor Green
+    } catch {
+        Write-Host "Error during sync: $($_.Exception.Message)" -ForegroundColor Red
+    } finally {
+        # 5. Switch back and cleanup
+        git checkout $currentBranch
+        git branch -D $tempBranch
+    }
+
     Read-Host "`nPress Enter to return to menu"
 }
 
 function Change-PackVersion {
     Write-Host "--- Change Pack Version ---" -ForegroundColor Yellow
-    
     $cfgPath = "instance.cfg"
     if (-not (Test-Path $cfgPath)) {
         Write-Host "Error: instance.cfg not found!" -ForegroundColor Red
@@ -119,59 +149,34 @@ function Change-PackVersion {
 
     $content = Get-Content $cfgPath
     $versionLine = $content | Select-String "^ExportVersion="
-    $currentVersion = "Unknown"
-    if ($versionLine) {
-        $currentVersion = $versionLine.ToString().Split("=")[1]
-    }
+    $currentVersion = if ($versionLine) { $versionLine.ToString().Split("=")[1] } else { "Unknown" }
 
     Write-Host "Current modpack version: $currentVersion" -ForegroundColor Cyan
-    $newVersion = Read-Host "Enter new version (e.g. 0.2, 0.1-hotfix-1)"
+    $newVersion = Read-Host "Enter new version"
     
-    if ([string]::IsNullOrWhiteSpace($newVersion)) {
-        Write-Host "Version change cancelled."
-        Read-Host "Press Enter to continue"
-        return
-    }
+    if ([string]::IsNullOrWhiteSpace($newVersion)) { return }
 
     $updated = $false
     $newContent = $content | ForEach-Object {
-        if ($_ -match "^ExportVersion=") {
-            $updated = $true
-            "ExportVersion=$newVersion"
-        } elseif ($_ -match "^ManagedPackVersionName=") {
-            "ManagedPackVersionName=$newVersion"
-        } else {
-            $_
-        }
+        if ($_ -match "^ExportVersion=") { $updated = $true; "ExportVersion=$newVersion" }
+        elseif ($_ -match "^ManagedPackVersionName=") { "ManagedPackVersionName=$newVersion" }
+        else { $_ }
     }
 
-    if ($updated) {
-        $newContent | Set-Content $cfgPath
-        Write-Host "Success! Version updated to $newVersion in $cfgPath" -ForegroundColor Green
-    } else {
-        # If ExportVersion wasn't found, try to just add it
-        Add-Content -Path $cfgPath -Value "`nExportVersion=$newVersion"
-        Write-Host "ExportVersion was missing, added it as $newVersion" -ForegroundColor Green
-    }
+    if ($updated) { $newContent | Set-Content $cfgPath }
+    else { Add-Content -Path $cfgPath -Value "`nExportVersion=$newVersion" }
     
+    Write-Host "Success! Version updated to $newVersion" -ForegroundColor Green
     Read-Host "`nPress Enter to return to menu"
 }
 
-# Main Execution Loop
 do {
     Show-Menu
-    $choice = Read-Host "Select an option (1-3)"
-    
+    $choice = Read-Host "Select an option (1-4)"
     switch ($choice) {
         "1" { Pack-Distributables }
         "2" { Change-PackVersion }
-        "3" { 
-            Write-Host "Exiting..." -ForegroundColor Gray
-            return 
-        }
-        default { 
-            Write-Host "Invalid selection '$choice'. Please enter 1, 2, or 3." -ForegroundColor Red
-            Start-Sleep -Seconds 1
-        }
+        "3" { Sync-ServerBranch }
+        "4" { return }
     }
 } while ($true)

@@ -52,6 +52,22 @@ if [[ -z "$JAVA_VERSION" ]] || [ "$JAVA_VERSION" -lt 21 ]; then
     error "Minecraft 1.21 requires Java 21. Found Java ${JAVA_VERSION:-unknown}."
 fi
 
+# --- Pre-flight Mod Check ---
+if [ -d mods ]; then
+    # Look for common client-side mods that cause server crashes
+    CLIENT_MODS=$(ls mods/ | grep -Ei "iris|oculus|sodium|chloride|fancymenu|drippyloadingscreen|entity_texture_features|euphoriapatcher|shouldersurfing" || true)
+    if [ -n "$CLIENT_MODS" ]; then
+        warn "Detected potential client-only mods in the 'mods' folder:"
+        echo "$CLIENT_MODS" | while read -r line; do echo "  - $line"; done
+        warn "These may cause the server to crash. It is recommended to use a clean server export."
+        printf "${YELLOW}Continue anyway? (y/N):${NC} "
+        read -r choice
+        if [[ ! "$choice" =~ ^[Yy]$ ]]; then
+            error "Startup aborted by user due to client-side mods."
+        fi
+    fi
+fi
+
 # --- Installer Logic ---
 if [ ! -d libraries ]; then
     log "NeoForge libraries missing. Initializing installation..."
