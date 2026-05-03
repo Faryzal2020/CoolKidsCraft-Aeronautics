@@ -57,6 +57,8 @@
 /minecraft/mods/DistantHorizons*
 /minecraft/mods/.connector
 /minecraft/.voxy
+/minecraft/debug/
+/minecraft/config/fancymenu/user_variables*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
