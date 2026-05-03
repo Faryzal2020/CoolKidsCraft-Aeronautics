@@ -197,7 +197,7 @@ LootJS.lootTables((event) => {
             /.*chests.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceIncrease": 0.3
+        "chanceIncrease": 0.2
     }
     const Preset_2 = {
         "lootTables": [

@@ -59,6 +59,9 @@
 /minecraft/.voxy
 /minecraft/debug/
 /minecraft/config/fancymenu/user_variables*
+/minecraft/config/iris.properties
+/minecraft/config/packetfixer.properties
+/minecraft/config/fabric/indigo-renderer.properties
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

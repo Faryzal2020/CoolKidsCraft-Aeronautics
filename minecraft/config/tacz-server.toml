@@ -12,15 +12,15 @@
 	#All base damage number is multiplied by this factor
 	# Default: 1.0
 	# Range: 0.0 ~ 1.7976931348623157E308
-	DamageBaseMultiplier = 1.0
+	DamageBaseMultiplier = 1.5
 	#All armor ignore damage number is multiplied by this factor
 	# Default: 1.0
 	# Range: 0.0 ~ 1.7976931348623157E308
-	ArmorIgnoreBaseMultiplier = 1.0
+	ArmorIgnoreBaseMultiplier = 1.5
 	#All head shot damage number is multiplied by this factor
 	# Default: 1.0
 	# Range: 0.0 ~ 1.7976931348623157E308
-	HeadShotBaseMultiplier = 1.0
+	HeadShotBaseMultiplier = 1.5
 	#The movement speed will decrease per kg of weight. 0.015 means 1.5% speed decrease per kg. Set a negative value to disable this feature
 	# Default: 0.015
 	# Range: -1.0 ~ 1.7976931348623157E308
