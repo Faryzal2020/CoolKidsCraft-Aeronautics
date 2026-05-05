@@ -178,12 +178,26 @@ LootJS.lootTables((event) => {
     const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.01 }
     const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.005 }
 
+    // Ammo types actually used by guns in this pack (verified from gun data JSONs in tacz jar).
+    // Removed unused types: tacz:762x25, tacz:762x54, tacz:46x30, tacz:68x51fury, tacz:545x39
+    // (no gun in the default gun pack uses those calibers).
     const AMMO_TYPES = [
-        "tacz:9mm", "tacz:45acp", "tacz:57x28", "tacz:12g",
-        "tacz:556x45", "tacz:762x39", "tacz:762x25", "tacz:762x54",
-        "tacz:308", "tacz:338", "tacz:50bmg", "tacz:50ae", "tacz:68x51fury", "tacz:357mag",
-        "tacz:46x30", "tacz:40mm", "tacz:30_06", "tacz:545:39", "tacz:45_70", "tacz:rpg_rocket",
-        "tacz:58x42"
+        "tacz:9mm",        // glock_17, b93r, cz75, hk_mp5a5, uzi
+        "tacz:45acp",      // m1911, p320, ump45, vector45
+        "tacz:57x28",      // p90
+        "tacz:12g",        // aa12, db_long, db_short, m1014, m870, spas_12
+        "tacz:556x45",     // aug, g36k, hk416d, m16a1, m16a4, m249, m4a1, scar_l, spr15hb
+        "tacz:762x39",     // ak47, rpk, sks_tactical, type_81
+        "tacz:308",        // fn_evolys, fn_fal, hk_g3, minigun, mk14, scar_h
+        "tacz:338",        // ai_awp
+        "tacz:50bmg",      // m107, m95
+        "tacz:50ae",       // deagle, timeless50
+        "tacz:357mag",     // deagle_golden
+        "tacz:40mm",       // m320
+        "tacz:30_06",      // m700
+        "tacz:45_70",      // springfield1873
+        "tacz:rpg_rocket", // rpg7
+        "tacz:58x42",      // qbz_191, qbz_95
     ];
 
     const Preset_0 = {

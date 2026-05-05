@@ -62,6 +62,8 @@
 /minecraft/config/iris.properties
 /minecraft/config/packetfixer.properties
 /minecraft/config/fabric/indigo-renderer.properties
+/minecraft/config/jei/world/local*
+/minecraft/xaero/world-map/*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
@@ -97,4 +99,4 @@ update.sh
 /minecraft/command_history.txt
 /minecraft/auto_restart
 /minecraft/config/yes_steve_model/cache
-/minecraft/config/jei/world/server
+/minecraft/config/jei/world/server*
