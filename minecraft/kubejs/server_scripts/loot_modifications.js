@@ -194,27 +194,26 @@ LootJS.lootTables((event) => {
     const Preset_1 = {
         "lootTables": [
             "explorify:chest/supply_cache",
-            /.*chests.*(supply|armorer|treasure|tresure|vault)/
+            /.*chests?.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
         "chanceIncrease": 0.2
     }
     const Preset_2 = {
         "lootTables": [
-            /.*chests.*(deep_dark|city)/
+            /.*chests?.*(deep_dark|city)/
         ],
         "addedLoots": [Grade_4, Grade_5, Grade_6],
         "chanceIncrease": 0.3
     }
     const Preset_3 = {
         "lootTables": [
-            /.*:chests\/.*/,
-            /.*:chest\/.*/,
-            /mvs:.*mineshaft\/.*/,
-            /mvs:houses.*/,
-            /mvs:large_carts.*/,
-            /mvs:general/,
-            /aether:chests\/dungeon\/bronze\/.*/,
+            /.*:chests?\/.*$/,
+            /mvs:.*mineshaft\/.*$/,
+            /mvs:houses.*$/,
+            /mvs:large_carts.*$/,
+            /mvs:general$/,
+            /aether:chests\/dungeon\/bronze\/.*$/,
             "create_ltab:nether/basic_loot",
             "create_ltab:desert/basic_loot"
         ],
@@ -222,9 +221,9 @@ LootJS.lootTables((event) => {
     }
     const Preset_4 = {
         "lootTables": [
-            /nova_structures:chests\/end.*/,
-            /aether:chests\/dungeon\/silver\/.*/,
-            /.*chests.*(legendary|legend|boss)/
+            /nova_structures:chests\/end.*$/,
+            /aether:chests\/dungeon\/silver\/.*$/,
+            /.*chests?.*(legendary|legend|boss)/
         ],
         "addedLoots": [Grade_5, Grade_6],
         "chanceOverride": 0.9
@@ -251,59 +250,79 @@ LootJS.lootTables((event) => {
         "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6]
     }
 
-    const EnabledPresets = [Preset_0, Preset_1, Preset_2, Preset_3, Preset_4, Preset_5, Preset_6]
+    const SPECIFIC_PRESETS = [Preset_0, Preset_1, Preset_2, Preset_4, Preset_5];
+    const GENERAL_PRESETS = [Preset_3, Preset_6];
 
-    //Testing manual entry
-    /*let table = Preset_0.lootTables[1]
-    let loot = Preset_0.addedLoots[0]
-    event.getLootTable(table).createPool(pool => { // create pool for specific loot table
-        pool.rolls(2) // 2 rolls for each hit
-        pool.when(c => c.randomChance(loot.baseChance))
-        let ammo = AMMO_TYPES[Math.floor(Math.random() * AMMO_TYPES.length)] // pick whichever of the ammo
-        console.log("[TACZ Loot] Loading ammo: " + ammo)
-        let ammoItem = Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammo } })
-        console.log("[TACZ Loot] Loading ammoItem: " + ammoItem)
-        // Add the gun into the pool
-        let gunId = loot.items[Math.floor(Math.random() * Preset_0.lootTables.length)] // pick whichever of the guns
-        console.log("[TACZ Loot] Loading gun: " + gunId)
-        pool.addEntry(
-            LootEntry.sequence(
-                LootEntry.of(gunId),
-                LootEntry.of(ammoItem).setCount([8, 32])
-            )
-        )
-    })*/
-
-    const enabled = true
-    // Process all enabled presets
+    const enabled = true;
     if (enabled) {
-        EnabledPresets.forEach(preset => {
-            // Iterate through each table/regex individually as modifyLootTables expects a single filter
-            preset.lootTables.forEach(table => {
-                console.log("[TACZ Loot] Modifying table: " + String(table));
-                let modifier = event.modifyLootTables(table);
-                preset.addedLoots.forEach(loot => {
-                    let chance = loot.baseChance
-                    if (preset.chanceIncrease) {
-                        chance = chance + preset.chanceIncrease
-                    }
-                    if (preset.chanceOverride) {
-                        chance = preset.chanceOverride
-                    }
-                    modifier.createPool(pool => {
-                        pool.rolls(2);
-                        pool.when(c => c.randomChance(chance));
 
-                        loot.items.forEach(gun => {
-                            AMMO_TYPES.forEach(ammoId => {
-                                pool.addEntry(LootEntry.sequence(
-                                    LootEntry.of(gun).withWeight(1),
-                                    LootEntry.of(Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammoId } }))
-                                        .withWeight(1)
-                                        .setCount([8, 32])
-                                ));
-                            });
-                        });
+        // 1. Collect all table IDs matched by specific presets (for exclusion from general presets)
+        let allSpecificFilters = [];
+        SPECIFIC_PRESETS.forEach(p => {
+            allSpecificFilters = allSpecificFilters.concat(p.lootTables);
+        });
+
+        // 2. Apply Specific Presets (High Priority) — target directly, no exclusion needed
+        SPECIFIC_PRESETS.forEach(preset => {
+            preset.lootTables.forEach(table => {
+                applyModifier(event, table, preset);
+            });
+        });
+
+        // 3. Apply General Presets (Low Priority) — resolve to actual table IDs first,
+        //    then subtract any already covered by specific presets.
+        //
+        //    NOTE: LootTableList (returned by event.modifyLootTables) does NOT support
+        //    addCondition() with a runtime callback. The exclusion must be done statically
+        //    at script-load time using getLootTableIds() + set subtraction.
+        GENERAL_PRESETS.forEach(preset => {
+            preset.lootTables.forEach(table => {
+                // Resolve matching IDs for this general filter
+                let matchedIds = event.getLootTableIds(table);
+
+                // Subtract IDs that are already handled by a specific preset
+                let exclusiveIds = matchedIds.filter(id => !matchesAnyFilter(id, allSpecificFilters));
+
+                if (exclusiveIds.length === 0) return;
+
+                console.log("[TACZ Loot] General filter '" + String(table) + "' matched " + exclusiveIds.length + " exclusive tables.");
+                exclusiveIds.forEach(id => {
+                    applyModifier(event, id, preset);
+                });
+            });
+        });
+    }
+
+    // Helper: check if a table ID matches any filter (string or regex)
+    // Defined at top-level event scope so Rhino can see it inside arrow function callbacks.
+    function matchesAnyFilter(id, filters) {
+        return filters.some(f => (f instanceof RegExp) ? f.test(id) : id === String(f));
+    }
+
+    function applyModifier(event, table, preset) {
+        let modifier = event.modifyLootTables(table);
+
+        preset.addedLoots.forEach(loot => {
+            let chance = loot.baseChance;
+            if (preset.chanceIncrease) {
+                chance = chance + preset.chanceIncrease;
+            }
+            if (preset.chanceOverride) {
+                chance = preset.chanceOverride;
+            }
+
+            modifier.createPool(pool => {
+                pool.rolls(2);
+                pool.when(c => c.randomChance(chance));
+
+                loot.items.forEach(gun => {
+                    AMMO_TYPES.forEach(ammoId => {
+                        pool.addEntry(LootEntry.sequence(
+                            LootEntry.of(gun).withWeight(1),
+                            LootEntry.of(Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammoId } }))
+                                .withWeight(1)
+                                .setCount([8, 32])
+                        ));
                     });
                 });
             });

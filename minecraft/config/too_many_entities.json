@@ -1,0 +1,11 @@
+{
+  "maxEntityCount": 64,
+  "maxHostileCount": 64,
+  "maxPassiveCount": 64,
+  "applyMaxEntityCount": true,
+  "applyMaxHostileCount": true,
+  "applyMaxPassiveCount": true,
+  "useEntityCulling": false,
+  "hideBasedOnDistance": true,
+  "entityMaxCounts": {}
+}

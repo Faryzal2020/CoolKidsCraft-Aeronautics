@@ -1,5 +1,18 @@
 [
   {"version":1},
+  {"ingredient":{"id":"pneumaticcraft:ingot_iron_compressed"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"enderio:dark_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"actuallyadditions:lamp_controller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"additional_lights:al_lamp_birch_planks"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:lantern"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"mcwlights:wall_lantern"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:quartz"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:comparator"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"toms_storage:storage_terminal"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sophisticatedbackpacks:backpack"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"regions_unexplored:maple_boat"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"regions_unexplored:maple_chest_boat"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"biomeswevegone:maple_chest_boat"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:chest"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tombstone:grave_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
