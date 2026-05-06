@@ -73,7 +73,7 @@
 	#nightvision
 	nightvision = true
 	#elytra
-	elytra = true
+	elytra = false
 	#decoy
 	decoy = true
 	#lingering
@@ -89,7 +89,7 @@
 	#noai
 	noai = true
 	#flight
-	flight = true
+	flight = false
 	#lavaimmunity
 	lavaimmunity = true
 	#phase

@@ -202,7 +202,7 @@ LootJS.lootTables((event) => {
 
     const Preset_0 = {
         "lootTables": ["apotheosis:chests/chest_valuable", "mostructures:jungle_temple_treasure"],
-        "addedLoots": [{ "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.5 }]
+        "addedLoots": [{ "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.2 }]
     }
 
     const Preset_1 = {
@@ -211,14 +211,14 @@ LootJS.lootTables((event) => {
             /.*chests?.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceIncrease": 0.1
+        "chanceIncrease": 0.05
     }
     const Preset_2 = {
         "lootTables": [
             /.*chests?.*(deep_dark|city)/
         ],
         "addedLoots": [Grade_4, Grade_5, Grade_6],
-        "chanceIncrease": 0.1
+        "chanceIncrease": 0.05
     }
     const Preset_3 = {
         "lootTables": [
@@ -254,7 +254,7 @@ LootJS.lootTables((event) => {
             /aether:chests\/dungeon\/gold\/.*/,
         ],
         "addedLoots": [Grade_3, Grade_4, Grade_5],
-        "chanceIncrease": 0.1
+        "chanceIncrease": 0.05
     }
 
     const Preset_6 = {

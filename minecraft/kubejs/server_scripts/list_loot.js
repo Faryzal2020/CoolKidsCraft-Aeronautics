@@ -1,8 +1,8 @@
-/* Old version, not working
 ServerEvents.loaded(event => {
     // Access the internal Minecraft Loot Data
     const $LootDataType = Java.loadClass('net.minecraft.world.level.storage.loot.LootDataType')
     const $LootTable = Java.loadClass('net.minecraft.world.level.storage.loot.LootTable')
+    const $LootContextParamSets = Java.loadClass('net.minecraft.world.level.storage.loot.parameters.LootContextParamSets')
     const $JsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
 
     //previous mistakes:
@@ -15,78 +15,50 @@ ServerEvents.loaded(event => {
     //let lootRegistry = event.server.registryAccess().registryOrThrow($Registries.LOOT_TABLE)
     //let allTables = lootRegistry.keySet()
 
-    // 1.21.1 Fix: Loot tables are now in reloadableRegistries().lookup()
-    let lootLookup = event.server.reloadableRegistries().lookup($Registries.LOOT_TABLE).get()
+    console.log("[Loot Debug] Starting loot export...")
+
+    // 1.21.1 Fix: Loot tables are now in reloadableRegistries().get().lookup()
+    let registries = event.server.reloadableRegistries().get()
+    let lootLookup = registries.lookup($Registries.LOOT_TABLE).get()
     let allTableKeys = lootLookup.listElementIds().toList()
 
     let tableMap = {}
+    let tableList = []
 
-    console.log("[Loot Debug] Found " + allTableKeys.size() + " loot tables")
-    allTableKeys.forEach(key => {
-        let id = key.location()
-        let table = lootLookup.get(key).get().value()
+    console.log("[Loot Debug] Found " + allTableKeys.size() + " total loot tables. Filtering for 'minecraft:chest' type...")
+    let enabled = false
+    if (enabled) {
+        allTableKeys.forEach(key => {
+            let id = key.location()
+            let idStr = id.toString()
 
-        if (table) {
-            try {
-                // Use Minecraft's own Codec to convert the LootTable object back to JSON
-                // This captures everything: pools, entries, conditions, functions, etc.
-                let jsonElement = $LootTable.DIRECT_CODEC.encodeStart($JsonOps.INSTANCE, table).getOrThrow()
-                let jsonString = jsonElement.toString()
-                tableMap[id.toString()] = JSON.parse(jsonString)
-            } catch (e) {
-                tableMap[id.toString()] = { error: "Failed to serialize: " + e }
+            let tableWrapper = lootLookup.get(key)
+            if (tableWrapper.isPresent()) {
+                let table = tableWrapper.get().value()
+
+                // Only process if it's a chest loot table (equivalent to LootJS LootType.CHEST)
+                if (table.getParamSet() !== $LootContextParamSets.CHEST) return;
+
+                tableList.push(idStr)
+                try {
+                    // Use Minecraft's own Codec to convert the LootTable object back to JSON
+                    let jsonElement = $LootTable.DIRECT_CODEC.encodeStart($JsonOps.INSTANCE, table).getOrThrow()
+                    tableMap[idStr] = JSON.parse(jsonElement.toString())
+                } catch (e) {
+                    tableMap[idStr] = { error: "Failed to serialize: " + e }
+                }
             }
-        }
-    })
+        })
+    }
 
     // Write the detailed data to a new file
     JsonIO.write('kubejs/exported/loot_table_details.json', tableMap)
 
     // Also update the simple list for convenience
-    let tableList = allTableKeys.stream().map(key => key.location().toString()).toList()
     JsonIO.write('kubejs/exported/loot_tables.json', {
-        count: tableList.size(),
+        count: tableList.length,
         all_loot_tables: tableList
     })
 
-    console.log("[Loot Debug] Exported " + tableList.size() + " loot tables with full details to kubejs/exported/loot_table_details.json")
-}) */
-
-LootJS.lootTables(event => {
-    const enabled = false
-    if (enabled) {
-        const $LootTable = Java.loadClass('net.minecraft.world.level.storage.loot.LootTable')
-        const $JsonOps = Java.loadClass('com.mojang.serialization.JsonOps')
-
-        let tableMap = {}
-        let tableList = []
-
-        let ids = event.getLootTableIds()
-        console.log("[Loot Debug] Found " + ids.size() + " loot tables")
-
-        ids.forEach(id => {
-            let idStr = id.toString()
-            tableList.push(idStr)
-
-            try {
-                let table = event.getLootTable(id)
-                if (table) {
-                    let jsonElement = $LootTable.DIRECT_CODEC
-                        .encodeStart($JsonOps.INSTANCE, table)
-                        .getOrThrow()
-                    tableMap[idStr] = JSON.parse(jsonElement.toString())
-                }
-            } catch (e) {
-                tableMap[idStr] = { error: "Failed to serialize: " + e }
-            }
-        })
-
-        JsonIO.write('kubejs/exported/loot_table_details.json', tableMap)
-        JsonIO.write('kubejs/exported/loot_tables.json', {
-            count: tableList.length,
-            all_loot_tables: tableList
-        })
-
-        console.log("[Loot Debug] Export done: " + tableList.length + " tables")
-    }
+    console.log("[Loot Debug] Exported " + tableList.length + " chest loot tables with full details to kubejs/exported/loot_table_details.json")
 })
