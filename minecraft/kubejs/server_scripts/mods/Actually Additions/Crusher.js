@@ -74,6 +74,17 @@ ServerEvents.recipes(event => {
         addAACrusher('#c:ores/uraninite_dense', 'powah:uraninite_raw', 6, 0)
     }
 
+    //TFMG
+    if (Platform.isLoaded('tfmg')) {
+        addAACrusher('#c:ores/lead', 'oritech:lead_dust', 1, 0.5)
+        addAACrusher('#c:ores/nickel', 'oritech:nickel_dust', 1, 0.5)
+        addAACrusher('#c:ores/lithium', 'oritech:lithium_dust', 1, 0.5)
+    }
+
+    //Create
+    if (Platform.isLoaded('create')) {
+        addAACrusher('#c:ores/zinc', 'oritech:zinc_dust', 1, 0.5)
+    }
 
     //Xycraft World
     global.xycraftColours.forEach(colour => {

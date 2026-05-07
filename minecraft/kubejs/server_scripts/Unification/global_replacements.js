@@ -21,6 +21,12 @@ ServerEvents.recipes(event => {
         'wires': 'wire'
     };
 
+    // Mods known to have custom recipe schemas that KubeJS native replaceInput misses
+    const targetMods = [
+        'tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions',
+        'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire'
+    ];
+
     const priorities = [
         'minecraft', 'kubejs', 'oritech', 'create', 'pneumaticcraft', 'tfmg', 'railcraft',
         'biggerreactors', 'enderio', 'utilitarian', 'actuallyadditions', 'xycraft_world',
@@ -59,9 +65,6 @@ ServerEvents.recipes(event => {
 
     const inputReplacements = {};
     const outputReplacements = {};
-
-    // Mods known to have custom recipe schemas that KubeJS native replaceInput misses
-    const targetMods = ['tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions', 'pneumaticcraft', 'utilitarian', 'productivebees'];
 
     targetMods.forEach(mod => {
         Ingredient.of(`@${mod}`).getItemIds().forEach(itemStr => {
@@ -367,6 +370,19 @@ ServerEvents.recipes(event => {
         {
             // tag patches: force tag outputs to a specific priority item
             'c:dusts/sulfur': 'tfmg:sulfur_dust',          // sulfur dust -> tfmg priority
+        }
+    );
+
+
+    patchStrictRecipe(
+        'enderio:sag_milling/raw_gold',
+        {
+            // id patches: swap rogue item IDs in output slots
+            'enderio:gold_dust': 'oritech:gold_dust',  // coal dust -> oritech priority
+        },
+        {
+            // tag patches: force tag outputs to a specific priority item
+            'c:dusts/copper': 'tfmg:copper_dust',
         }
     );
 });

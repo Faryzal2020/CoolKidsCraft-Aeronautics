@@ -74,3 +74,21 @@ ServerEvents.tags('item', event => {
     // event.add('c:raw_materials/lead', 'somemod:weird_lead_item');
 
 });
+
+ServerEvents.tags('block', event => {
+    UNIFICATION_MATERIALS.forEach(material => {
+        // Blocks only care about ores and storage_blocks
+        ['ores', 'storage_blocks'].forEach(type => {
+            let standardTag = `c:${type}/${material}`;
+            let misalignedPatterns = CANONICAL_TYPES[type] || [];
+
+            misalignedPatterns.forEach(pattern => {
+                let badTag = pattern.replace('{material}', material);
+                if (badTag !== standardTag) {
+                    event.add(standardTag, `#${badTag}`);
+                }
+            });
+        });
+    });
+});
+

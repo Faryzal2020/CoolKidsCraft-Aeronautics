@@ -1,49 +1,69 @@
 // priority: 100
 
-ServerEvents.tags('item', event => {
-    const materials = [
-        'sulfur', 'salt', 'iron', 'gold', 'copper', 'tin', 'lead', 'silver', 
-        'nickel', 'aluminum', 'zinc', 'uranium', 'platinum', 'osmium', 
-        'bauxite', 'tungsten', 'iridium', 'titanium', 'coal', 'diamond', 
-        'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon'
-    ];
-    
-    const types = {
-        'dusts': 'dust',
-        'ingots': 'ingot',
-        'nuggets': 'nugget',
-        'ores': 'ore',
-        'raw_materials': 'raw',
-        'storage_blocks': 'block',
-        'gears': 'gear',
-        'plates': 'plate',
-        'rods': 'rod',
-        'wires': 'wire'
-    };
+const MATERIALS = [
+    'sulfur', 'salt', 'iron', 'gold', 'copper', 'tin', 'lead', 'silver',
+    'nickel', 'aluminum', 'zinc', 'uranium', 'platinum', 'osmium',
+    'bauxite', 'tungsten', 'iridium', 'titanium', 'coal', 'diamond',
+    'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon'
+];
 
-    const targetMods = ['tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions', 'pneumaticcraft', 'utilitarian', 'productivebees'];
+const TYPES = {
+    'dusts': 'dust',
+    'ingots': 'ingot',
+    'nuggets': 'nugget',
+    'ores': 'ore',
+    'raw_materials': 'raw',
+    'storage_blocks': 'block',
+    'gears': 'gear',
+    'plates': 'plate',
+    'rods': 'rod',
+    'wires': 'wire'
+};
 
-    // For every item in these mods, check if it fits our pattern (e.g. sulfur_dust)
-    // and FORCE it into the c:dusts/sulfur tag.
-    // This absolutely guarantees that when global_replacements.js injects this tag into a recipe,
-    // the tag is not empty, preventing the NeoForge "ingredient is not allowed to be empty!" crash.
-    
-    targetMods.forEach(mod => {
-        Ingredient.of(`@${mod}`).getItemIds().forEach(itemStr => {
-            itemStr = String(itemStr);
-            let idPart = itemStr.split(':')[1];
-            
-            for (let mat of materials) {
-                for (let type of Object.keys(types)) {
-                    let typeName = types[type];
-                    if (idPart === `${mat}_${typeName}` || idPart === `${typeName}_${mat}` || (typeName === 'raw' && idPart === `raw_${mat}`)) {
-                        event.add(`c:${type}/${mat}`, itemStr);
+const TARGET_MODS = [
+    'tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions',
+    'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire'
+];
+
+function applyForceTags(event, isBlock) {
+    TARGET_MODS.forEach(mod => {
+        let registry = isBlock ? 'block' : 'item';
+        let ids = isBlock ? Ingredient.of(`@${mod}`).getBlockIds() : Ingredient.of(`@${mod}`).getItemIds();
+
+        ids.forEach(idStr => {
+            idStr = String(idStr);
+            let idPart = idStr.split(':')[1];
+
+            for (let mat of MATERIALS) {
+                for (let type of Object.keys(TYPES)) {
+                    let typeName = TYPES[type];
+
+                    // Skip types that don't make sense for blocks
+                    if (isBlock && type !== 'ores' && type !== 'storage_blocks') continue;
+
+                    let match = idPart === `${mat}_${typeName}` ||
+                        idPart === `${typeName}_${mat}` ||
+                        idPart === `deepslate_${mat}_${typeName}` ||
+                        idPart === `deepslate_${typeName}_${mat}` ||
+                        (typeName === 'raw' && idPart === `raw_${mat}`);
+
+                    if (match) {
+                        event.add(`c:${type}/${mat}`, idStr);
                     }
                 }
             }
         });
     });
-    
+}
+
+ServerEvents.tags('item', event => {
+    applyForceTags(event, false);
+
     // Explicit edge case
     event.add('c:dusts/coal', 'enderio:powdered_coal');
 });
+
+ServerEvents.tags('block', event => {
+    applyForceTags(event, true);
+});
+
