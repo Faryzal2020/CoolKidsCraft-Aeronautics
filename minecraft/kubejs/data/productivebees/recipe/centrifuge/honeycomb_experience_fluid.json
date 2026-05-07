@@ -15,7 +15,6 @@
     }
   ],
   "fluid": {
-    "fluid": "justdirethings:xp_fluid_source",
     "amount": 100
   },
   "neoforge:conditions": [

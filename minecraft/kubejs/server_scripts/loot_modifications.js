@@ -24,12 +24,6 @@ Note: To find the exact ID in-game, look at a chest and use the command:
 - eternal_starlight:chests/cursed_garden
 - eternal_starlight:chests/starlight_portal_ruins
 
---- IRON'S SPELLS 'N SPELLBOOKS (irons_spellbooks) ---
-- irons_spellbooks:chests/mountain_tower
-- irons_spellbooks:chests/evoker_fort
-- irons_spellbooks:chests/mangrove_hut
-- irons_spellbooks:chests/catacombs
-- irons_spellbooks:chests/ancient_battleground
 
 --- YUNG'S BETTER SERIES (Overrides Vanilla but often adds custom tables) ---
 - betterdungeons:chests/zombie_dungeon
@@ -48,8 +42,6 @@ Note: To find the exact ID in-game, look at a chest and use the command:
 - ctov:chests/village/village_fletcher
 - (Usually matches vanilla village loot paths but prefixed with ctov:)
 
---- APOTHEOSIS ---
-- apotheosis:chests/boss_dungeon
 
 --- CREATE: LET THE ADVENTURE BEGIN (create_ltab) ---
 - create_ltab:core/basic_loot
@@ -112,12 +104,6 @@ LootJS.lootTables((event) => {
         .randomChance(0.05);
     */
 
-    /*
-    // Add Arcane Essence to Mountain Towers
-    event.addLootTableModifier("irons_spellbooks:chests/mountain_tower")
-        .addLoot("irons_spellbooks:arcane_essence")
-        .withWeight(10);
-    */
 
     // ================================================================================
     // TaCZ GUN LOOT (EXPERIMENTAL - BARE MINIMUM TEST)
@@ -201,7 +187,7 @@ LootJS.lootTables((event) => {
     ];
 
     const Preset_0 = {
-        "lootTables": ["apotheosis:chests/chest_valuable", "mostructures:jungle_temple_treasure"],
+        "lootTables": ["mostructures:jungle_temple_treasure"],
         "addedLoots": [{ "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.2 }]
     }
 
@@ -343,4 +329,27 @@ LootJS.lootTables((event) => {
         });
     }
 
+});
+
+LootJS.modifiers(event => {
+    event
+        .addBlockModifier("waystones:portstone")
+        .replaceLoot("#waystones:portstones", "minecraft:cobblestone")
+});
+LootJS.modifiers(event => {
+    event
+        .addBlockModifier("#waystones:portstones")
+        .replaceLoot(/waystones:.*portstone/, "minecraft:glass")
+});
+LootJS.modifiers(event => {
+    event
+        .addBlockModifier("#waystones:sharestones")
+        .replaceLoot("#waystones:sharestones", "minecraft:dirt")
+});
+
+//works
+LootJS.modifiers(event => {
+    event
+        .addBlockModifier("waystones:waystone")
+        .replaceLoot("waystones:waystone", "minecraft:cobblestone")
 });

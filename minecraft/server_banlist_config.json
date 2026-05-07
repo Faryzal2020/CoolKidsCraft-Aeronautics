@@ -1,0 +1,111 @@
+{
+  "server": {
+    "banned_block_entities": [
+      "waystones:warp_plate"
+    ],
+    "banned_items": [
+      "sophisticatedbackpacks:inception_upgrade",
+      "sophisticatedstorage:advanced_void_upgrade",
+      "minecraft:elytra",
+      "oritech:jetpack_exo_elytra",
+      "oritech:jetpack_elytra",
+      "deeperdarker:soul_elytra",
+      "draconicevolution:item_chaotic_flight",
+      "draconicevolution:item_draconic_flight",
+      "draconicevolution:item_wyvern_flight",
+      "cataclysm:ignitium_elytra_chestplate",
+      "pneumaticcraft:elytra_upgrade",
+      "silentgear:elytra_blueprint",
+      "silentgear:elytra_template",
+      "silentgear:elytra_wings",
+      "silentgear:elytra",
+      "waystones:warp_dust",
+      "waystones:warp_plate",
+      "waystones:dormant_shard"
+    ],
+    "banned_entities": [],
+    "remove_recipes_by": [
+      {
+        "id": "create:smelting/zinc_ingot_from_raw_ore"
+      },
+      {
+        "id": "create:smelting/zinc_ingot_from_ore"
+      },
+      {
+        "id": "create:smelting/zinc_ingot_from_crushed"
+      },
+      {
+        "id": "powah:smelting/uraninite_from_raw"
+      },
+      {
+        "id": "oritech:platinum_nugget_from_smelting_small_platinum_dust"
+      },
+      {
+        "id": "minecraft:netherite_scrap"
+      },
+      {
+        "id": "tfmg:smelting/nickel_ingot_blasting"
+      },
+      {
+        "id": "tfmg:smelting/nickel_ingot_from_crushed_blasting"
+      },
+      {
+        "id": "tfmg:smelting/nickel_ingot"
+      },
+      {
+        "output": "waystones:dormant_shard"
+      },
+      {
+        "output": "waystones:warp_plate"
+      },
+      {
+        "output": "waystones:warp_dust"
+      },
+      {
+        "output": "sophisticatedbackpacks:inception_upgrade"
+      },
+      {
+        "output": "sophisticatedstorage:advanced_void_upgrade"
+      },
+      {
+        "output": "minecraft:elytra"
+      },
+      {
+        "output": "oritech:jetpack_exo_elytra"
+      },
+      {
+        "output": "oritech:jetpack_elytra"
+      },
+      {
+        "output": "deeperdarker:soul_elytra"
+      },
+      {
+        "output": "draconicevolution:item_chaotic_flight"
+      },
+      {
+        "output": "draconicevolution:item_draconic_flight"
+      },
+      {
+        "output": "draconicevolution:item_wyvern_flight"
+      },
+      {
+        "output": "cataclysm:ignitium_elytra_chestplate"
+      },
+      {
+        "output": "pneumaticcraft:elytra_upgrade"
+      },
+      {
+        "output": "silentgear:elytra_blueprint"
+      },
+      {
+        "output": "silentgear:elytra_template"
+      },
+      {
+        "output": "silentgear:elytra_wings"
+      },
+      {
+        "output": "silentgear:elytra"
+      }
+    ]
+  }
+}

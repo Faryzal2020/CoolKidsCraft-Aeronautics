@@ -1,10 +1,8 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
   // Rebalance of 'machine addon extender'
-  allthemods.remove({ id: 'oritech:crafting/core3alt' })
-  allthemods.remove({ id: 'oritech:crafting/core3' })
-  allthemods.shaped(
+  event.shaped(
     Item.of('oritech:machine_core_3', 1),
     [
       'AAA',
@@ -16,8 +14,7 @@ ServerEvents.recipes(allthemods => {
       B: 'oritech:fluxite_block'
     }
   )
-  // allthemods.remove({output: 'oritech:machine_extender'})
-  allthemods.shaped(
+  event.shaped(
     Item.of('oritech:machine_extender', 1),
     [
       'AAA',
@@ -30,10 +27,8 @@ ServerEvents.recipes(allthemods => {
     }
   )
   // Oil compatibility
-  allthemods.remove({ id: 'oritech:refinery/oilalt' })
-  allthemods.remove({ id: 'oritech:refinery/oilbase' })
 
-  allthemods.custom({
+  event.custom({
     "type": "oritech:refinery",
     "fluidInput": {
       "fluid": "#c:crude_oil",
@@ -57,7 +52,7 @@ ServerEvents.recipes(allthemods => {
     "results": [],
     "time": 120
   })
-  allthemods.custom({
+  event.custom({
     "type": "oritech:refinery",
     "fluidInput": {
       "fluid": "#c:crude_oil",
@@ -86,13 +81,8 @@ ServerEvents.recipes(allthemods => {
     "time": 120
   })
   // Remove enchanting stuff
-  allthemods.remove({ id: 'oritech:crafting/catalyst_alt' })
-  allthemods.remove({ id: 'oritech:crafting/catalyst' })
-  allthemods.remove({ id: 'oritech:crafting/enchanter' })
 
   // Cheaty alloys
-  allthemods.remove({ id: 'oritech:crafting/alloy/steel' })
-  allthemods.remove({ id: 'oritech:crafting/alloy/electrum' })
 })
 
 

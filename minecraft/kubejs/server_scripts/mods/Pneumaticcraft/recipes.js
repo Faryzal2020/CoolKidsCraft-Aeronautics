@@ -1,13 +1,13 @@
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
 
   function changeInput(item, replacement){
-  allthemods.replaceInput(
-    { mod: 'pneumaticcraft' },
-    item, replacement
-  )}
+    event.replaceInput(
+      { mod: 'pneumaticcraft' },
+      item, replacement
+    )
+  }
   
-  allthemods.remove({mod: 'pneumaticcraft', output: 'pneumaticcraft:amadron_tablet'})
-  allthemods.custom(
+  event.custom(
     {
       type: "pneumaticcraft:crafting_shaped_pressurizable",
       category: "misc",

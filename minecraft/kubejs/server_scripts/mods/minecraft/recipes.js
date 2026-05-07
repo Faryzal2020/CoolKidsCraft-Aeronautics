@@ -1,9 +1,8 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.remove({ id: 'minecraft:cake' })
+ServerEvents.recipes(event => {
 
-    allthemods.shaped(
+    event.shaped(
         Item.of('minecraft:sculk', 1), // arg 1: output
         [
             'OOO',
@@ -15,7 +14,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.shaped(
+    event.shaped(
         Item.of('minecraft:sculk_sensor', 1), // arg 1: output
         [
             '   ',
@@ -30,57 +29,6 @@ ServerEvents.recipes(allthemods => {
     )
 
 
-    function enchanting_apparatus(output, pedestalItems, reagent, nbt, sourceCost, id) {
-        let recipe = {
-            "type": "ars_nouveau:enchanting_apparatus",
-            "keepNbtOfReagent": nbt,
-            "pedestalItems": [],
-            "reagent": {},
-            "result": {
-                "count": output.count || 1,
-                "id": output.item
-            },
-            "sourceCost": sourceCost
-        };
-
-        if (reagent.tag) {
-            recipe.reagent.tag = reagent.tag;
-        } else {
-            recipe.reagent.item = reagent.item;
-        }
-
-        pedestalItems.forEach(input => {
-
-            let ingredients = {}
-
-            if (input.tag) {
-                ingredients.tag = input.tag;
-            } else {
-                ingredients.item = input.item;
-            }
-
-            recipe.pedestalItems.push(ingredients);
-        });
-
-        allthemods.custom(recipe).id(`kubejs:enchanting_apparatus/${id}`);
-    }
-
-    enchanting_apparatus(
-        { item: 'minecraft:sculk_shrieker' },
-        [
-            { item: 'minecraft:sculk_catalyst' },
-            { item: 'minecraft:sculk' },
-            { item: 'minecraft:sculk_catalyst' },
-            { item: 'minecraft:sculk' },
-            { item: 'minecraft:sculk_catalyst' },
-            { item: 'minecraft:sculk' },
-            { item: 'minecraft:sculk_catalyst' },
-            { item: 'minecraft:sculk' }],
-        { item: 'deeperdarker:heart_of_the_deep' },
-        false,
-        1000,
-        'sculk_shrieker'
-    );
 })
 
 

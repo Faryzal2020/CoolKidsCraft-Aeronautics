@@ -1,20 +1,6 @@
 
 ServerEvents.recipes(event => {
     const osmiumItems = [
-        'alltheores:osmium_ingot',
-        'alltheores:osmium_dust',
-        'alltheores:osmium_nugget',
-        'alltheores:osmium_block',
-        'alltheores:raw_osmium',
-        'alltheores:raw_osmium_block',
-        'alltheores:osmium_ore',
-        'alltheores:deepslate_osmium_ore',
-        'alltheores:nether_osmium_ore',
-        'alltheores:end_osmium_ore',
-        'alltheores:other_osmium_ore',
-        'alltheores:osmium_gear',
-        'alltheores:osmium_plate',
-        'alltheores:osmium_rod',
         'productivemetalworks:molten_osmium_bucket'
     ]
 
@@ -38,29 +24,11 @@ ServerEvents.recipes(event => {
 
 ServerEvents.tags('item', event => {
     const osmiumItems = [
-        'alltheores:osmium_ingot',
-        'alltheores:osmium_dust',
-        'alltheores:osmium_nugget',
-        'alltheores:osmium_block',
-        'alltheores:raw_osmium',
-        'alltheores:raw_osmium_block',
-        'alltheores:osmium_ore',
-        'alltheores:deepslate_osmium_ore',
-        'alltheores:nether_osmium_ore',
-        'alltheores:end_osmium_ore',
-        'alltheores:other_osmium_ore',
-        'alltheores:osmium_gear',
-        'alltheores:osmium_plate',
-        'alltheores:osmium_rod'
     ]
 
     event.removeAllTagsFrom(osmiumItems)
 
     // Explicitly remove from common tags just in case
-    event.remove('c:ingots/osmium', 'alltheores:osmium_ingot')
-    event.remove('c:dusts/osmium', 'alltheores:osmium_dust')
-    event.remove('c:nuggets/osmium', 'alltheores:osmium_nugget')
-    event.remove('c:storage_blocks/osmium', 'alltheores:osmium_block')
     event.remove('c:ores/osmium', '#c:ores/osmium')
 })
 

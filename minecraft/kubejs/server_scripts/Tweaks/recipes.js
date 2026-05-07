@@ -1,7 +1,7 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.shaped(
+ServerEvents.recipes(event => {
+    event.shaped(
         `8x minecraft:item_frame[entity_data={Invisible:1b,id:"minecraft:item_frame"},custom_name='"Invisible Item Frame"']`,
         [
             'iii',
@@ -14,7 +14,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.shaped(
+    event.shaped(
         `8x minecraft:glow_item_frame[entity_data={Invisible:1b,id:"minecraft:item_frame"},custom_name='"Invisible Glow Item Frame"']`,
         [
             'iii',
@@ -33,7 +33,7 @@ ServerEvents.recipes(allthemods => {
     ];
 
     colors.forEach(color => {
-        allthemods.shaped(
+        event.shaped(
             Item.of(`minecraft:${color}_concrete`, 8),
             ['CCC', 'CBC', 'CCC'],
             {
@@ -44,11 +44,9 @@ ServerEvents.recipes(allthemods => {
     });
 
     // Remove Raw Redstone Block Recipe
-    allthemods.remove({ id: 'regions_unexplored:raw_redstone_block' });
 
     // Dense Uraninite Ore Energizing Recipes
-    allthemods.remove({ id: 'powah:energizing/uraninite_from_ore' })
-    allthemods.custom({
+    event.custom({
         "type": "powah:energizing",
         "energy": 50000,
         "ingredients": [
@@ -63,7 +61,7 @@ ServerEvents.recipes(allthemods => {
     }).id('powah:energizing/uraninite_from_ore')
 
     if (Platform.isLoaded('mysticalagriculture')) {
-        allthemods.shapeless(
+        event.shapeless(
             Item.of('minecraft:potion[potion_contents={potion:"minecraft:water"}]', 1),
             [
                 'minecraft:glass_bottle',
@@ -71,17 +69,17 @@ ServerEvents.recipes(allthemods => {
             ]
         )
 
-        allthemods.shapeless(
+        event.shapeless(
             Item.of('minecraft:honey_block'),
             [
                 '9x mysticalagriculture:honey_essence'
             ]
         )
     }
-    allthemods.shaped("minecraft:crafting_table", ['XX', 'XX'], { X: "#minecraft:planks" }).id("minecraft:crafting_table")
+    event.shaped("minecraft:crafting_table", ['XX', 'XX'], { X: "#minecraft:planks" }).id("minecraft:crafting_table")
 
     //soy sauce from unified tag
-    allthemods.custom({
+    event.custom({
         type: "sushigocrafting:fermenting_barrel",
         fluid: {
             amount: 250,
@@ -98,37 +96,36 @@ ServerEvents.recipes(allthemods => {
 
     if (Platform.isLoaded('crafting_on_a_stick')) {
         if (Item.exists('crafting_on_a_stick:crafting_table')) {
-            allthemods.replaceInput({ output: 'crafting_on_a_stick:crafting_table' }, 'minecraft:crafting_table', '#c:player_workstations/crafting_tables')
         }
     }
-    allthemods.shapeless(
+    event.shapeless(
         Item.of('minecraft:crafting_table'),
         [
             '#c:player_workstations/crafting_tables'
         ]
     )
     // Example Firework Star recipe to help people in JEI (as it's not shown there)
-    allthemods.shapeless(
+    event.shapeless(
         Item.of('minecraft:firework_star[firework_explosion={colors:[I;15790320],shape:"small_ball"}]'),
         [
             'minecraft:gunpowder',
             'minecraft:white_dye'
         ]
-    ).id("allthemods:example_firework_star")
+    ).id("kubejs:example_firework_star")
     // Saltpeter Block Recipes
-    allthemods.shaped(
+    event.shaped(
         Item.of(`kubejs:saltpeter_block`),
         ['CCC', 'CCC', 'CCC'],
         {
             C: `#c:dusts/saltpeter`
         }
-    ).id("allthemods:saltpeter_block")
-    allthemods.shapeless(
+    ).id("kubejs:saltpeter_block")
+    event.shapeless(
         Item.of('railcraft:saltpeter_dust', 9),
         [
             'kubejs:saltpeter_block'
         ]
-    ).id("allthemods:saltpeter_dust_from_block")
+    ).id("kubejs:saltpeter_dust_from_block")
 })
 
 

@@ -7,8 +7,6 @@ KubeJSTweaks.beforeRecipes(event => {
 
   // Upgrade from forge to neoforge conditions
   event.fixCondition([
-    "irons_spellbooks:patchouli_book",
-    "apotheosis:book",
     "treetap:id_menril",
     "treetap:id_menril_tfc",
     /^silentgear:woodcutting\//,
@@ -73,12 +71,6 @@ KubeJSTweaks.beforeRecipes(event => {
     entry.replaceValueAtKey("output", "id", "biomeswevegone:dacite_tile", "biomeswevegone:dacite_tiles")
   })
 
-  // Another typo, a wild `'` at the name of the item
-  event.getEntry("mekmm:compat/ars_nouveau/planting/magebloom").forEach(entry => {
-    entry.fromPath("secondary_output.id").ifPresent(result => {
-      result.first.add("id", result.second.getAsString().replace("'", ""))
-    })
-  })
 
   // Hammocks removed
 
@@ -160,11 +152,6 @@ KubeJSTweaks.beforeRecipes(event => {
       if (ci.has("gas")) {
         ci.add("chemical", ci.remove("gas"))
       }
-    })
-
-  event.getEntry("botanypots:allthemodium/crop/ancient_soulberries")
-    .forEach(entry => {
-      entry.addConditionsFromKey("input")
     })
 
   event.getEntry("bellsandwhistles:metro/metro_window").forEach(entry => {

@@ -1,36 +1,31 @@
 
 
-ServerEvents.recipes(allthemods => {
-
-    allthemods.shaped(
-        Item.of('kubejs:allthemodium_solar_sail_package', 1),
-        [
-            'AAA',
-            'APA',
-            'AAA'
-        ],
-        {
-            A: '#c:plates/allthemodium',
-            P: 'dysoncubeproject:solar_sail_package'
-        }
-    )
-
-    allthemods.shaped(
-        Item.of('kubejs:allthemodium_beam_package', 1),
-        [
-            ' A ',
-            'APA',
-            ' A '
-        ],
-        {
-            A: '#c:plates/allthemodium',
-            P: 'dysoncubeproject:beam_package'
-        }
-    )
-
+ServerEvents.recipes(event => {
+    /*
+        event.shaped(
+            [
+                'AAA',
+                'APA',
+                'AAA'
+            ],
+            {
+                P: 'dysoncubeproject:solar_sail_package'
+            }
+        )
+    
+        event.shaped(
+            [
+                ' A ',
+                'APA',
+                ' A '
+            ],
+            {
+                P: 'dysoncubeproject:beam_package'
+            }
+        )
+    */
     // Beams
-    allthemods.remove({ output: 'dysoncubeproject:beam' })
-    allthemods.shaped(
+    event.shaped(
         Item.of('dysoncubeproject:beam', 1),
         [
             'ABA',
@@ -42,6 +37,6 @@ ServerEvents.recipes(allthemods => {
             B: '#c:ingots/steel',
             C: 'minecraft:iron_bars'
         }
-    ).id('allthemods:dysoncubeproject/beam')
+    ).id('kubejs:dysoncubeproject/beam')
 })
 

@@ -1,5 +1,5 @@
 // TaCZ Ammo Recycling Recipes
-// Converts TaCZ ammo items into alltheores copper resources.
+// Converts TaCZ ammo items into copper resources.
 //
 // WHY THIS IS A SCRIPT AND NOT JSON:
 // tacz:ammo items use minecraft:custom_data to store the AmmoId.
@@ -60,7 +60,7 @@ ServerEvents.recipes(event => {
         event.recipes.oritech
             .pulverizer()
             .itemInputs(ammoItem)
-            .itemOutputs("alltheores:copper_dust")
+            .itemOutputs("oritech:copper_dust")
             .time(100)
             .id("kubejs:tacz_ammo_pulverizer_" + safeId);
 
@@ -69,7 +69,7 @@ ServerEvents.recipes(event => {
         event.recipes.oritech
             .grinder()
             .itemInputs(ammoItem)
-            .itemOutputs("alltheores:copper_dust")
+            .itemOutputs("oritech:copper_dust")
             .time(40)
             .id("kubejs:tacz_ammo_grinder_" + safeId);
 
@@ -79,8 +79,8 @@ ServerEvents.recipes(event => {
             "ingredients": [{ "item": "tacz:ammo", "components": { "minecraft:custom_data": { "AmmoId": ammoId } } }],
             "processing_time": 200,
             "results": [
-                { "count": 3, "id": "alltheores:copper_nugget" },
-                { "chance": 0.25, "id": "alltheores:copper_nugget" }
+                { "count": 3, "id": "oritech:copper_dust" },
+                { "chance": 0.25, "id": "oritech:copper_dust" }
             ]
         }).id("kubejs:tacz_ammo_crushing_" + safeId);
 
@@ -90,8 +90,8 @@ ServerEvents.recipes(event => {
             "ingredients": [{ "item": "tacz:ammo", "components": { "minecraft:custom_data": { "AmmoId": ammoId } } }],
             "processing_time": 150,
             "results": [
-                { "count": 1, "id": "alltheores:copper_nugget" },
-                { "chance": 0.5, "id": "alltheores:copper_nugget" }
+                { "count": 1, "id": "oritech:copper_dust" },
+                { "chance": 0.5, "id": "oritech:copper_dust" }
             ]
         }).id("kubejs:tacz_ammo_milling_" + safeId);
     });

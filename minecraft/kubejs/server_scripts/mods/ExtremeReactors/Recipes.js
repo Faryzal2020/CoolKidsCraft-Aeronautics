@@ -1,9 +1,9 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
 
     function fluidizer(input, inamount, output, outamount, id) {
-        allthemods.custom(
+        event.custom(
             {
                 type: "bigreactors:fluidizersolid",
                 ingredient: {
@@ -31,11 +31,11 @@ ServerEvents.recipes(allthemods => {
                     id: output
                 }
             }
-        ).id(`allthemods:fluidizersolid/${id}`)
+        ).id(`kubejs:fluidizersolid/${id}`)
     }
 
     function fluidizersolidmixing(input1, inamount1, input2, inamount2, output, outamount, id) {
-        allthemods.custom(
+        event.custom(
             {
                 type: "bigreactors:fluidizersolidmixing",
                 ingredient1: {
@@ -83,7 +83,7 @@ ServerEvents.recipes(allthemods => {
                     id: output
                 }
             }
-        ).id(`allthemods:fluidizersolidmixing/${id}`)
+        ).id(`kubejs:fluidizersolidmixing/${id}`)
     }
 
     fluidizer('#c:ingots/uranium', 1, 'bigreactors:yellorium', 1000, 'ingot_yellorium')
@@ -94,11 +94,5 @@ ServerEvents.recipes(allthemods => {
     fluidizersolidmixing('#c:storage_blocks/uranium', 2, 'bigreactors:blutonium_block', 1, 'bigreactors:verderium', 18000, 'verderium9_1')
     fluidizersolidmixing('bigreactors:blutonium_block', 1, '#c:storage_blocks/uranium', 2, 'bigreactors:verderium', 18000, 'verderium9_2')
 
-    allthemods.remove({ id: "bigreactors:fluidizer/solid/yellorium" })
-    allthemods.remove({ id: "bigreactors:fluidizer/solid/yellorium9" })
-    allthemods.remove({ id: "bigreactors:fluidizer/solidmixing/verderium9_1" })
-    allthemods.remove({ id: "bigreactors:fluidizer/solidmixing/verderium9_2" })
-    allthemods.remove({ id: "bigreactors:fluidizer/solidmixing/verderium_1" })
-    allthemods.remove({ id: "bigreactors:fluidizer/solidmixing/verderium_2" })
 })
 

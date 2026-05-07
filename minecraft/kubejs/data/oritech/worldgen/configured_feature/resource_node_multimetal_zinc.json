@@ -9,9 +9,7 @@
       "oritech:resource_node_iron"
     ],
     "boulderOres": [
-      "alltheores:deepslate_zinc_ore",
       "minecraft:deepslate_copper_ore",
-      "alltheores:deepslate_silver_ore",
       "minecraft:deepslate_iron_ore",
       "minecraft:deepslate",
       "minecraft:deepslate",

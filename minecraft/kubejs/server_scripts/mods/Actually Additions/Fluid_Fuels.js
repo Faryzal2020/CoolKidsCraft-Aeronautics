@@ -1,11 +1,9 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.custom(
+ServerEvents.recipes(event => {
+    event.custom(
         {
-            type: "justdirethings:fluiddrop",
             catalyst: 'actuallyadditions:crystallized_canola_seed',
-            id: "atm:crystalized_oil",
             input: {
                 Name: "actuallyadditions:refined_canola_oil",
                 Properties: {
@@ -21,11 +19,9 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.custom(
+    event.custom(
         {
-            type: "justdirethings:fluiddrop",
             catalyst: 'actuallyadditions:empowered_canola_seed',
-            id: "atm:empowered_oil",
             input: {
                 Name: "actuallyadditions:crystallized_oil",
                 Properties: {

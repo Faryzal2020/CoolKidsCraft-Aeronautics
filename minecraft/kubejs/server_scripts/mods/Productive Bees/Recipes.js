@@ -1,8 +1,8 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.remove({ output: 'productivelib:upgrade_productivity_4' })
-    allthemods.shaped('productivelib:upgrade_productivity_4', [
+/*
+ServerEvents.recipes(event => {
+    event.shaped('productivelib:upgrade_productivity_4', [
         'UHU',
         'NBN',
         'UHU'
@@ -10,8 +10,7 @@ ServerEvents.recipes(allthemods => {
         U: 'productivelib:upgrade_productivity_3',
         B: 'productivelib:upgrade_block',
         H: 'minecraft:heart_of_the_sea',
-        N: '#c:nuggets/unobtainium'
     })
-})
+})*/
 
 

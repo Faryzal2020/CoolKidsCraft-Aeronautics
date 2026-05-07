@@ -2,7 +2,7 @@
 
 // Standardizing salt use in some of Pam's recipes.
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
 
   ;["pamhc2foodcore:friesitem",
     "pamhc2foodextended:gritsitem",
@@ -52,7 +52,7 @@ ServerEvents.recipes(allthemods => {
     "pamhc2foodcore:rabbitjerkyitem",
     "pamhc2foodextended:tortillachipsitem",
     "pamhc2foodcore:porkjerkyitem"].forEach(recipeId => {
-      allthemods.replaceInput(
+      event.replaceInput(
         { id: recipeId },
         'pamhc2foodcore:saltitem',
         '#c:dusts/salt'
@@ -60,7 +60,7 @@ ServerEvents.recipes(allthemods => {
     })
 
   // use to list recipe ids and avoid using resource intenside "input"
-  // allthemods.forEachRecipe(
+  // event.forEachRecipe(
   //   { input: 'pamhc2foodcore:saltitem' }, recipe => {
   //     console.log("Salt recipe:" + recipe.getId())  
   //   }

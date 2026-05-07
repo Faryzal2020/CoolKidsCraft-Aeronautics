@@ -1,5 +1,5 @@
-ServerEvents.recipes(allthemods => {
-  allthemods.shaped('2x laserbridges:laser_source_block', [// arg 1: output
+ServerEvents.recipes(event => {
+  event.shaped('2x laserbridges:laser_source_block', [// arg 1: output
     'ABA', 
     'ACA',
     'AAA'  

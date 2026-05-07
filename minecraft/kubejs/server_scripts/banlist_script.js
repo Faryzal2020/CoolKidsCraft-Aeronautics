@@ -1,4 +1,4 @@
-// priority 99
+// priority: 99
 
 // related files:
 // instance/server_banlist_config.json
@@ -22,6 +22,8 @@ if (!Platform.isClientEnvironment()) {
       remove_recipes_by: Utils.newList()
     }
   }
+  console.log("Recipes to remove: ")
+  console.log(JSON.stringify(defaultConfig.server.remove_recipes_by))
 
   config = JsonIO.read(configPath)
   if (config == null) {
@@ -42,7 +44,7 @@ if (!Platform.isClientEnvironment()) {
       if (bannedEntities.contains(event.entity.type)) {
         // event.level.server.tell(Text.red("Removed banned entity: " + event.entity.type + " at " + event.entity.blockPosition().toShortString()))
         event.setCanceled(true)
-      }      
+      }
     })
   }
 
@@ -71,20 +73,20 @@ if (!Platform.isClientEnvironment()) {
   if (!bannedBlockEntities.isEmpty()) {
     NativeEvents.onEvent($ChunkEvent$Load, event => {
       if (event.level.clientSide) return
-	  removeBlockEntities(event)
+      removeBlockEntities(event)
     })
-	NativeEvents.onEvent($LevelTickEvent$Pre, event => {
-	  let blocksToRemove = levelAndPosToRemove.get(event.level)
-	  if (blocksToRemove == null) return
-	  let pos
-	  while ((pos = blocksToRemove.poll()) != null) {
-		  addSignToPos(event.level, pos)
-		  // event.level.server.tell("Removing banned block entity at " + pos.toShortString())
-	  }
+    NativeEvents.onEvent($LevelTickEvent$Pre, event => {
+      let blocksToRemove = levelAndPosToRemove.get(event.level)
+      if (blocksToRemove == null) return
+      let pos
+      while ((pos = blocksToRemove.poll()) != null) {
+        addSignToPos(event.level, pos)
+        // event.level.server.tell("Removing banned block entity at " + pos.toShortString())
+      }
     })
-	LevelEvents.unloaded(event => {
-		levelAndPosToRemove.remove(event.level)
-	})
+    LevelEvents.unloaded(event => {
+      levelAndPosToRemove.remove(event.level)
+    })
   }
 }
 
@@ -116,13 +118,13 @@ let removeBlockEntities = (/** @type {$ChunkEvent$Load_} */ event) => {
     })
   }
   if (!blocksToRemove.isEmpty()) {
-	  let original = levelAndPosToRemove.get(event.level)
-	  if (original == null) {
-		  let queue = new $ConcurrentLinkedQueue(blocksToRemove)
-		  levelAndPosToRemove.put(event.level, queue)
-	  } else {
-		  original.addAll(blocksToRemove)
-	  }
+    let original = levelAndPosToRemove.get(event.level)
+    if (original == null) {
+      let queue = new $ConcurrentLinkedQueue(blocksToRemove)
+      levelAndPosToRemove.put(event.level, queue)
+    } else {
+      original.addAll(blocksToRemove)
+    }
   }
 }
 
@@ -133,6 +135,6 @@ let addSignToPos = (/** @type {$ServerLevel_} */level, /** @type {$BlockPos_} */
   let oakSignBlockEntity = level.getBlockEntity(pos)
   let namespace = `'${beRL.split(":")[0]}:'`
   let path = beRL.split(":")[1]
-  let nbt = {is_waxed: 1, front_text: {has_glowing_text: 1, color: "black", messages: [namespace, path, '"is banned on this"', "server"]}}
-  oakSignBlockEntity.loadWithComponents(nbt, level.registryAccess())  
+  let nbt = { is_waxed: 1, front_text: { has_glowing_text: 1, color: "black", messages: [namespace, path, '"is banned on this"', "server"] } }
+  oakSignBlockEntity.loadWithComponents(nbt, level.registryAccess())
 }

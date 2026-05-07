@@ -1,8 +1,7 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.remove('reliquary:fertile_lily_pad')
-    allthemods.shaped('reliquary:fertile_lily_pad', [
+ServerEvents.recipes(event => {
+    event.shaped('reliquary:fertile_lily_pad', [
         'EME',
         'MLM',
         'EME'

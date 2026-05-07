@@ -1,22 +1,11 @@
 
 
-ServerEvents.recipes(allthemods => {
-  allthemods.remove({ id: 'modularbees:electrode_copper' })
-  allthemods.remove({ id: 'modularbees:electrode_iron' })
-  allthemods.remove({ id: 'modularbees:electrode_gold' })
-  allthemods.remove({ id: 'modularbees:electrode/electrode_gold' })
-  allthemods.remove({ id: 'modularbees:electrode/electrode_netherite' })
-  allthemods.remove({ id: 'modularbees:scented_plank' })
-  allthemods.remove({ id: 'modularbees:modular_beehive_core' })
-  allthemods.remove({ id: 'modularbees:modular_beehive_part' })
-  allthemods.remove({ id: 'modularbees:modular_alveary' })
-  allthemods.remove({ id: 'modularbees:modular_feeder' })
-  allthemods.remove({ id: 'modularbees:modular_overclocker' })
+ServerEvents.recipes(event => {
 
-  allthemods.recipes.modularbees.overclocker_electrode('modularbees:electrode_gold', 1.8);
-  allthemods.recipes.modularbees.overclocker_electrode('modularbees:electrode_netherite', 2.25);
+  event.recipes.modularbees.overclocker_electrode('modularbees:electrode_gold', 1.8);
+  event.recipes.modularbees.overclocker_electrode('modularbees:electrode_netherite', 2.25);
 
-  allthemods.shaped(
+  event.shaped(
     Item.of('modularbees:electrode_copper'),
     [
       ' NG',
@@ -27,9 +16,9 @@ ServerEvents.recipes(allthemods => {
     G: '#c:storage_blocks/gold',
     B: "#c:storage_blocks/copper",
     I: '#c:ingots/copper'
-  }).id('allthemods:modularbees/electrode_copper')
+  }).id('kubejs:modularbees/electrode_copper')
 
-  allthemods.shaped(
+  event.shaped(
     Item.of('modularbees:electrode_iron'),
     [
       ' NG',
@@ -40,9 +29,9 @@ ServerEvents.recipes(allthemods => {
     G: '#c:storage_blocks/gold',
     B: "#c:storage_blocks/iron",
     I: '#c:ingots/iron'
-  }).id('allthemods:modularbees/electrode_iron')
+  }).id('kubejs:modularbees/electrode_iron')
 
-  allthemods.shaped(
+  event.shaped(
     Item.of('modularbees:electrode_gold'),
     [
       ' NG',
@@ -53,35 +42,32 @@ ServerEvents.recipes(allthemods => {
     G: '#c:storage_blocks/gold',
     B: "#c:storage_blocks/gold",
     I: '#c:ingots/gold'
-  }).id('allthemods:modularbees/electrode_gold')
+  }).id('kubejs:modularbees/electrode_gold')
+  /*
 
-  allthemods.shaped(
+  event.shaped(
     Item.of('modularbees:scented_plank', 4),
     [
       'NHN',
       'PPP',
       'NHN'
     ], {
-    N: '#c:nuggets/allthemodium',
     H: 'minecraft:honey_block',
     P: '#minecraft:planks'
-  }).id('allthemods:modularbees/scented_plank')
-
-  allthemods.shaped(
-    Item.of('modularbees:modular_beehive_core'),
-    [
-      'POP',
-      'UBU',
-      'PAP'
-    ], {
-    P: 'modularbees:scented_plank',
-    O: 'productivelib:upgrade_productivity_4',
-    U: '#c:ingots/unobtainium',
-    B: 'minecraft:iron_bars',
-    A: 'productivelib:upgrade_adult',
-  }).id('allthemods:modularbees/modular_beehive_core')
-
-  allthemods.shaped(
+  }).id('kubejs:modularbees/scented_plank')
+    event.shaped(
+      Item.of('modularbees:modular_beehive_core'),
+      [
+        'POP',
+        'UBU',
+        'PAP'
+      ], {
+      P: 'modularbees:scented_plank',
+      O: 'productivelib:upgrade_productivity_4',
+      B: 'minecraft:iron_bars',
+      A: 'productivelib:upgrade_adult',
+    }).id('kubejs:modularbees/modular_beehive_core')
+  event.shaped(
     Item.of('modularbees:modular_beehive_part'),
     [
       'PPP',
@@ -89,10 +75,10 @@ ServerEvents.recipes(allthemods => {
       'PPP'
     ], {
     P: 'modularbees:scented_plank',
-    V: '#c:ingots/vibranium'
-  }).id('allthemods:modularbees/modular_beehive_part')
+  }).id('kubejs:modularbees/modular_beehive_part')
+  */
 
-  allthemods.shaped(
+  event.shaped(
     Item.of('modularbees:modular_beehive_feeder'),
     [
       ' P ',
@@ -101,21 +87,20 @@ ServerEvents.recipes(allthemods => {
     ], {
     P: 'modularbees:modular_beehive_part',
     F: 'productivebees:feeder'
-  }).id('allthemods:modularbees/modular_beehive_feeder')
-
-  allthemods.shaped(
-    Item.of('modularbees:modular_beehive_alveary'),
-    [
-      'EPE',
-      'PNP',
-      'EPE'
-    ], {
-    E: '#productivebees:expansion_boxes',
-    P: 'modularbees:modular_beehive_part',
-    N: '#c:nuggets/vibranium'
-  }).id('allthemods:modularbees/modular_beehive_alveary')
-
-  allthemods.shaped(
+  }).id('kubejs:modularbees/modular_beehive_feeder')
+  /*
+    event.shaped(
+      Item.of('modularbees:modular_beehive_alveary'),
+      [
+        'EPE',
+        'PNP',
+        'EPE'
+      ], {
+      E: '#productivebees:expansion_boxes',
+      P: 'modularbees:modular_beehive_part',
+    }).id('kubejs:modularbees/modular_beehive_alveary')
+  */
+  event.shaped(
     Item.of('modularbees:modular_beehive_overclocker'),
     [
       'PBP',
@@ -125,6 +110,6 @@ ServerEvents.recipes(allthemods => {
     P: 'modularbees:modular_beehive_part',
     B: 'minecraft:iron_bars',
     O: 'productivelib:upgrade_productivity_4'
-  }).id('allthemods:modularbees/modular_beehive_overclocker')
+  }).id('kubejs:modularbees/modular_beehive_overclocker')
 })
 

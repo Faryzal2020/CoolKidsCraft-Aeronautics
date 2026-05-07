@@ -1,19 +1,21 @@
 {
   "mod_priorities": [
     "minecraft",
-    "alltheores",
-    "allthemodium",
     "kubejs",
-    "mekanism",
-    "modern_industrialization",
-    "occultism",
-    "industrialforegoing",
+    "oritech",
     "pneumaticcraft",
-    "biggerreactors", 
-    "ae2",
+    "biggerreactors",
     "enderio",
     "utilitarian",
-    "actuallyadditions"
+    "actuallyadditions",
+    "tfmg",
+    "railcraft",
+    "xycraft_world",
+    "silentgems",
+    "mffs",
+    "createbigcannons",
+    "iceandfire",
+    "silentgear"
   ],
   "priority_overrides": {},
   "stone_variants": [
@@ -44,9 +46,7 @@
     "c:dirty_dusts/{material}",
     "c:shards/{material}",
     "c:silicon",
-    "c:plastics",
-    "atm10:tiny_coals",
-    "atm10:tiny_charcoals"
+    "c:plastics"
   ],
   "ignored_tags": [],
   "ignored_items": [
@@ -67,6 +67,6 @@
     "create:crushing/compat/silentgems/sapphire_ore"
   ],
   "recipe_viewer_hiding": true,
-  "loot_unification": false,
+  "loot_unification": true,
   "ignored_loot_tables": []
 }

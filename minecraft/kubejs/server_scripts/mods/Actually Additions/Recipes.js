@@ -1,5 +1,5 @@
-ServerEvents.recipes(allthemods => {
-    allthemods.custom(
+ServerEvents.recipes(event => {
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",
@@ -11,7 +11,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.custom(
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",
@@ -23,7 +23,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.custom(
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",
@@ -35,7 +35,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.custom(
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",

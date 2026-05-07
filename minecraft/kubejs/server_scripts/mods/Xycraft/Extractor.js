@@ -1,6 +1,6 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
     // Target = block underneath
     // Adjacent = blocks around target
     // Catalyst = block underneath target
@@ -40,9 +40,9 @@ ServerEvents.recipes(allthemods => {
         }
 
         if (id) {
-            allthemods.custom(recipe).id(`allthemods:xycraft/extractor/${output.item.split(":").pop()}_${id}`);
+            event.custom(recipe).id(`kubejs:xycraft/extractor/${output.item.split(":").pop()}_${id}`);
         } else {
-            allthemods.custom(recipe).id(`allthemods:xycraft/extractor/${output.item.split(":").pop()}`);
+            event.custom(recipe).id(`kubejs:xycraft/extractor/${output.item.split(":").pop()}`);
         }
     }
 

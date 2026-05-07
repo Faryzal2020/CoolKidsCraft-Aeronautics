@@ -7,19 +7,10 @@
     "item:xycraft_world:aluminum_ore_stone",
     "item:xycraft_world:aluminum_ingot",
     "item:xycraft_world:aluminum_nugget",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:unrefined_t4_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:unrefined_t3_fluid_source\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"minecraft:water\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"minecraft:lava\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"minecraft:milk\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"productivebees:honey\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:polymorphic_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:portal_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:unstable_portal_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:unrefined_t2_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:refined_t2_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:refined_t3_fluid_source\"}}",
-    "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"justdirethings:refined_t4_fluid_source\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"xycraft_machines:ore_slurry\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"xycraft_machines:redstone_slurry\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"xycraft_machines:nitrogen\"}}",
@@ -43,8 +34,6 @@
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"securitycraft:fake_lava\"}}",
     "item:xycraft_machines:foil{\"xycraft_core:fluid_container\":{amount:250,id:\"productivetrees:maple_sap\"}}",
     "item:minecraft:reinforced_deepslate",
-    "item:xycraft_world:aluminum_storage",
-    "item:allthetweaks:greg_star_block",
-    "item:allthetweaks:greg_star"
+    "item:xycraft_world:aluminum_storage"
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "type": "oritech:particle_collision",
+  "ingredients": [
+    {
+      "item": "rftoolsbase:infused_enderpearl"
+    },
+    {
+      "item": "cataclysm:void_eye"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "waystones:warp_stone"
+    }
+  ],
+  "time": 10000
+}

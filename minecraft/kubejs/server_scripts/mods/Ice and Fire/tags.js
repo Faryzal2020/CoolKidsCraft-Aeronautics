@@ -1,7 +1,8 @@
+ServerEvents.tags('item', event => {
 
 
-ServerEvents.tags('item', allthemods => {
-    allthemods.add('c:wither_bones', 'iceandfire:witherbone')
+    event.add('c:wither_bones', 'iceandfire:witherbone')
 })
+
 
 

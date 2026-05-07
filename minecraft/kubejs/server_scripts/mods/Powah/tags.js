@@ -1,6 +1,0 @@
-
-
-ServerEvents.tags('item', allthemods => {
-
-})
-

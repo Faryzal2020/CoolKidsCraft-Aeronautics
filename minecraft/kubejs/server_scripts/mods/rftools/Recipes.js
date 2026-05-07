@@ -1,15 +1,8 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.remove({ id: 'rftoolsbuilder:builder' })
-    allthemods.shaped('rftoolsbuilder:builder', ['aea', 'rmr', 'ara'], {
-        a: '#c:nuggets/allthemodium',
-        e: '#c:ender_pearls',
-        r: '#c:storage_blocks/redstone',
-        m: 'rftoolsbase:machine_frame'
-    });
+ServerEvents.recipes(event => {
     // Fix Syringe Display
-    allthemods.shaped(Item.of('rftoolsutility:flight_module', 1), [
+    event.shaped(Item.of('rftoolsutility:flight_module', 1), [
         'DUD',
         'DND',
         'DPD'
@@ -19,7 +12,7 @@ ServerEvents.recipes(allthemods => {
         N: 'rftoolsutility:moduleplus_template',
         P: 'rftoolsbase:infused_enderpearl'
     }).id('rftoolsutility:flight_module');
-    allthemods.shaped(Item.of('rftoolsutility:blindness_module', 1), [
+    event.shaped(Item.of('rftoolsutility:blindness_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -28,7 +21,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:squid"}]',
         N: 'rftoolsutility:moduleplus_template'
     }).id('rftoolsutility:blindness_module');
-    allthemods.shaped(Item.of('rftoolsutility:featherfalling_module', 1), [
+    event.shaped(Item.of('rftoolsutility:featherfalling_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -37,7 +30,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:chicken"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:featherfalling_module');
-    allthemods.shaped(Item.of('rftoolsutility:haste_module', 1), [
+    event.shaped(Item.of('rftoolsutility:haste_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -46,7 +39,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:pillager"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:haste_module');
-    allthemods.shaped(Item.of('rftoolsutility:glowing_module', 1), [
+    event.shaped(Item.of('rftoolsutility:glowing_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -55,7 +48,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:creeper"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:glowing_module');
-    allthemods.shaped(Item.of('rftoolsutility:luck_module', 1), [
+    event.shaped(Item.of('rftoolsutility:luck_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -64,7 +57,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:cat"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:luck_module');
-    allthemods.shaped(Item.of('rftoolsutility:nightvision_module', 1), [
+    event.shaped(Item.of('rftoolsutility:nightvision_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -73,7 +66,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:drowned"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:nightvision_module');
-    allthemods.shaped(Item.of('rftoolsutility:noteleport_module', 1), [
+    event.shaped(Item.of('rftoolsutility:noteleport_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -82,7 +75,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:enderman"}]',
         N: 'rftoolsutility:moduleplus_template'
     }).id('rftoolsutility:noteleport_module');
-    allthemods.shaped(Item.of('rftoolsutility:peaceful_module', 1), [
+    event.shaped(Item.of('rftoolsutility:peaceful_module', 1), [
         'IUI',
         'DND',
         'IDI'
@@ -92,7 +85,7 @@ ServerEvents.recipes(allthemods => {
         N: 'rftoolsutility:moduleplus_template',
         I: 'minecraft:iron_block'
     }).id('rftoolsutility:peaceful_module');
-    allthemods.shaped(Item.of('rftoolsutility:poison_module', 1), [
+    event.shaped(Item.of('rftoolsutility:poison_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -101,7 +94,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:cave_spider"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:poison_module');
-    allthemods.shaped(Item.of('rftoolsutility:regeneration_module', 1), [
+    event.shaped(Item.of('rftoolsutility:regeneration_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -110,7 +103,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:witch"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:regeneration_module');
-    allthemods.shaped(Item.of('rftoolsutility:saturation_module', 1), [
+    event.shaped(Item.of('rftoolsutility:saturation_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -119,7 +112,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:zombie"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:saturation_module');
-    allthemods.shaped(Item.of('rftoolsutility:slowness_module', 1), [
+    event.shaped(Item.of('rftoolsutility:slowness_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -128,7 +121,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:turtle"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:slowness_module');
-    allthemods.shaped(Item.of('rftoolsutility:speed_module', 1), [
+    event.shaped(Item.of('rftoolsutility:speed_module', 1), [
         'DUD',
         'DND',
         'DDD'
@@ -137,7 +130,7 @@ ServerEvents.recipes(allthemods => {
         U: 'rftoolsutility:syringe[rftoolsutility:syringe_data={level:10,mob:"minecraft:wolf"}]',
         N: 'rftoolsutility:module_template'
     }).id('rftoolsutility:speed_module');
-    allthemods.shaped(Item.of('rftoolsutility:waterbreathing_module', 1), [
+    event.shaped(Item.of('rftoolsutility:waterbreathing_module', 1), [
         'PUP',
         'DND',
         'PDP'
@@ -147,7 +140,7 @@ ServerEvents.recipes(allthemods => {
         N: 'rftoolsutility:moduleplus_template',
         P: 'minecraft:prismarine'
     }).id('rftoolsutility:waterbreathing_module');
-    allthemods.shaped(Item.of('rftoolsutility:weakness_module', 1), [
+    event.shaped(Item.of('rftoolsutility:weakness_module', 1), [
         'DUD',
         'DND',
         'DDD'

@@ -1,7 +1,7 @@
 
 
-ServerEvents.recipes(allthemods => {
-    allthemods.custom(
+ServerEvents.recipes(event => {
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",
@@ -13,7 +13,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
 
-    allthemods.custom(
+    event.custom(
         {
             "type": "farmingforblockheads:market",
             "category": "farmingforblockheads:seeds",
@@ -26,7 +26,7 @@ ServerEvents.recipes(allthemods => {
     )
     //adds a chainmail salvage, mirroring the crafting recipe from MineColonies, which uses vanilla Iron items rather than Modern Industrialization Iron Rings
     //Chainmail Helmet
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "minecraft:chainmail_helmet" },
@@ -34,7 +34,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Chainmail Chestplate
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "minecraft:chainmail_chestplate" },
@@ -42,7 +42,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Chainmail Leggings
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "minecraft:chainmail_leggings" },
@@ -50,7 +50,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Chainmail Boots
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "minecraft:chainmail_boots" },
@@ -59,7 +59,7 @@ ServerEvents.recipes(allthemods => {
     )
     //Adds Pneumaticraft's Compressed Iron Armor to the Salvager
     //Compressed Iron Helmet
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "pneumaticcraft:compressed_iron_helmet" },
@@ -67,7 +67,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Compressed Iron Chestplate
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "pneumaticcraft:compressed_iron_chestplate" },
@@ -75,7 +75,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Compressed Iron Leggings
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "pneumaticcraft:compressed_iron_leggings" },
@@ -83,7 +83,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Compressed Iron Boots
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "pneumaticcraft:compressed_iron_boots" },
@@ -92,7 +92,7 @@ ServerEvents.recipes(allthemods => {
     )
     //adds Everything is Copper gear to the Salvager
     //Copper Pickaxe
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": {
@@ -111,7 +111,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Horse Armor
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_horse_armor" },
@@ -119,7 +119,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Sword
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_sword" },
@@ -127,7 +127,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Axe
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_axe" },
@@ -135,7 +135,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Helmet
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_helmet" },
@@ -143,7 +143,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Chestplate
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_chestplate" },
@@ -151,7 +151,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Leggings
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_leggings" },
@@ -159,7 +159,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Boots
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_boots" },
@@ -167,7 +167,7 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Hoe
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_hoe" },
@@ -175,60 +175,11 @@ ServerEvents.recipes(allthemods => {
         }
     )
     //Copper Shovel
-    allthemods.custom(
+    event.custom(
         {
             "type": "silentgear:salvaging",
             "ingredient": { "item": "everythingcopper:copper_shovel" },
             "results": [{ "count": 1, "id": "minecraft:copper_ingot" }, { "count": 2, "id": "minecraft:stick" }]
-        }
-    )
-    //Aether gloves salvaging
-    //Leather Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:leather_gloves" },
-            "results": [{ "count": 2, "id": "minecraft:leather" }]
-        }
-    )
-    //Chainmail Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:chainmail_gloves" },
-            "results": [{ "count": 4, "id": "minecraft:iron_nugget" }]
-        }
-    )
-    //Iron Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:iron_gloves" },
-            "results": [{ "count": 2, "id": "minecraft:iron_ingot" }]
-        }
-    )
-    //Gold Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:golden_gloves" },
-            "results": [{ "count": 2, "id": "minecraft:gold_ingot" }]
-        }
-    )
-    //Diamond Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:diamond_gloves" },
-            "results": [{ "count": 2, "id": "minecraft:diamond" }]
-        }
-    )
-    //Netherite Gloves
-    allthemods.custom(
-        {
-            "type": "silentgear:salvaging",
-            "ingredient": { "item": "aether:netherite_gloves" },
-            "results": [{ "count": 2, "id": "minecraft:diamond" }, { "count": 1, "id": "minecraft:netherite_ingot" }]
         }
     )
 })

@@ -1,9 +1,9 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
 
     function sagMill(input, energy, output) {
-        allthemods.custom(
+        event.custom(
             {
                 type: 'enderio:sag_milling',
                 energy: energy,
@@ -27,10 +27,6 @@ ServerEvents.recipes(allthemods => {
         sagMill('ae2:sky_stone_block', 2400, { item: 'ae2:sky_dust', count: 1 })
         sagMill('#c:ender_pearls', 2400, { item: 'ae2:ender_dust', count: 1 })
     }
-
-    if (Platform.isLoaded('irons_spellbooks')) {
-        sagMill('#c:ores/mithril', 2400, { item: 'irons_spellbooks:raw_mithril', count: 4 })
-    }
     if (Platform.isLoaded('actuallyadditions')) {
         sagMill('#c:ores/black_quartz', 2400, { item: 'actuallyadditions:black_quartz', count: 2 })
     }
@@ -45,6 +41,5 @@ ServerEvents.recipes(allthemods => {
     global.xycraftColours.forEach(colour => {
         sagMill(`#c:ores/xychorium_${colour}`, 2400, { item: `xycraft_world:xychorium_gem_${colour}`, count: 4 })
     })
-    allthemods.remove({ id: 'enderio:sag_milling/ender_pearl' })
 })
 

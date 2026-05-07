@@ -1,6 +1,6 @@
 
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
 	// Draconic Evolution Clearing
 	const draconicclearing = [
 		"awakened_crafting_injector",
@@ -31,7 +31,7 @@ ServerEvents.recipes(allthemods => {
 	draconicclearing.forEach((name) => {
 		let material = Item.of(`draconicevolution:${name}`)
 
-		allthemods.shapeless(material, [material]).id(`allthemods:clear_draconicevolution/${name}`)
+		event.shapeless(material, [material]).id(`kubejs:clear_draconicevolution/${name}`)
 	})
 
 	// Powah Energizing Rod Clearing
@@ -47,7 +47,7 @@ ServerEvents.recipes(allthemods => {
 	powahclearing.forEach((name) => {
 		let material = Item.of(`powah:energizing_rod_${name}`)
 
-		allthemods.shapeless(material, [material]).id(`allthemods:clear_powah/energizing_rod_${name}`)
+		event.shapeless(material, [material]).id(`kubejs:clear_powah/energizing_rod_${name}`)
 	})
 })
 

@@ -1,9 +1,10 @@
+ServerEvents.tags('item', event => {
 
 
-ServerEvents.tags('item', allthemods => {
   //Plastic
-  allthemods.add('c:plastics', 'pneumaticcraft:plastic')
+  event.add('c:plastics', 'pneumaticcraft:plastic')
 
 })
+
 
 

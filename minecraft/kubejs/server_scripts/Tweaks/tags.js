@@ -1,114 +1,58 @@
 
-
-ServerEvents.tags('block', allthemods => {
+ServerEvents.tags('item', event => {
   // Waystones
-  allthemods.add('ftbchunks:interact_whitelist', ['@waystones'])
-
-  // Extreme Reactors
-  allthemods.add('c:storage_blocks/yellorium', 'alltheores:uranium_block')
+  event.add('ftbchunks:interact_whitelist', ['@waystones'])
 
   // Essence Blocks
-  allthemods.add('c:storage_blocks/air_essence', 'kubejs:air_essence_block')
-  allthemods.add('c:storage_blocks/earth_essence', 'kubejs:earth_essence_block')
-  allthemods.add('c:storage_blocks/fire_essence', 'kubejs:fire_essence_block')
-  allthemods.add('c:storage_blocks/water_essence', 'kubejs:water_essence_block')
-  allthemods.add('c:storage_blocks', [
+  event.add('c:storage_blocks/air_essence', 'kubejs:air_essence_block')
+  event.add('c:storage_blocks/earth_essence', 'kubejs:earth_essence_block')
+  event.add('c:storage_blocks/fire_essence', 'kubejs:fire_essence_block')
+  event.add('c:storage_blocks/water_essence', 'kubejs:water_essence_block')
+  event.add('c:storage_blocks', [
     '#c:storage_blocks/air_essence',
     '#c:storage_blocks/earth_essence',
     '#c:storage_blocks/fire_essence',
     '#c:storage_blocks/water_essence'
   ])
 
-  //Entangled
+  // Entangled
   if (Platform.isLoaded('entangled')) {
-    allthemods.add('entangled:invalid_targets',
+    event.add('entangled:invalid_targets',
       ['@ae2', '@advancedae', '@extendedae', '@megacells', '@appflux', '@appmek']
     )
   }
 
-  // Just Dire Things
-  allthemods.add('justdirethings:lawnmowerable', '#c:grass')
-  allthemods.add('justdirethings:tick_speed_deny', '@industrialforegoingsouls')
   // Saltpeter Block
-  allthemods.add('c:storage_blocks/niter', 'kubejs:saltpeter_block')
-  allthemods.add('c:storage_blocks/saltpeter', 'kubejs:saltpeter_block')
-  allthemods.add('c:storage_blocks', '#c:storage_blocks/niter')
-})
+  event.add('c:storage_blocks/niter', 'kubejs:saltpeter_block')
+  event.add('c:storage_blocks/saltpeter', 'kubejs:saltpeter_block')
+  event.add('c:storage_blocks', '#c:storage_blocks/niter')
 
-ServerEvents.tags('fluid', allthemods => {
-  // Pneumaticcraft
-  allthemods.add('c:ethanol', 'pneumaticcraft:ethanol')
-  allthemods.add("c:experience", "create_enchantment_industry:experience")
-
-  // TFMG & PneumaticCraft
-  allthemods.add('c:crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
-  allthemods.add('c:fuels/crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
-  allthemods.add('c:heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
-  allthemods.add('c:fuels/heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
-})
-
-ServerEvents.tags('item', allthemods => {
-  // Extreme Reactors (using config/almostunified/tags.json)
-  // allthemods.add('c:ingots/yellorium', 'alltheores:uranium_ingot')
-  allthemods.add('c:storage_blocks/raw_yellorium', 'bigreactors:raw_yellorium_block')
+  // Extreme Reactors
+  event.add('c:storage_blocks/raw_yellorium', 'bigreactors:raw_yellorium_block')
 
   // Tiny Coal
-  allthemods.add('atm10:tiny_coals', [
+  event.add('c:tiny_coal', [
     'utilitarian:tiny_coal',
-    'actuallyadditions:tiny_coal',
+    'actuallyadditions:tiny_coal'
   ])
-  allthemods.add('atm10:tiny_charcoals', [
+  event.add('c:tiny_charcoal', [
     'utilitarian:tiny_charcoal',
-    'actuallyadditions:tiny_charcoal',
+    'actuallyadditions:tiny_charcoal'
   ])
 
-  // Allthemodium Alloy Dusts
-  allthemods.add('c:dusts/unobtainium_allthemodium_alloy', 'allthemodium:unobtainium_allthemodium_alloy_dust')
-  allthemods.add('c:dusts/unobtainium_vibranium_alloy', 'allthemodium:unobtainium_vibranium_alloy_dust')
-  allthemods.add('c:dusts/vibranium_allthemodium_alloy', 'allthemodium:vibranium_allthemodium_alloy_dust')
-  allthemods.add('c:dusts', [
-    '#c:dusts/unobtainium_allthemodium_alloy',
-    '#c:dusts/unobtainium_vibranium_alloy',
-    '#c:dusts/vibranium_allthemodium_alloy',
+  // Silent Gear
+  event.add('c:storage_blocks', '#c:storage_blocks/raw_crimson_iron')
+  event.add('c:storage_blocks', '#c:storage_blocks/raw_azure_silver')
+
+  // Books
+  event.add('minecraft:bookshelf_books', [
+    'patchouli:guide_book',
+    'powah:book',
+    'actuallyadditions:booklet'
   ])
 
-  allthemods.add('c:storage_blocks', '#c:storage_blocks/raw_crimson_iron')
-  allthemods.add('c:storage_blocks', '#c:storage_blocks/raw_azure_silver')
-
-  // Essence Blocks
-  allthemods.add('c:storage_blocks/air_essence', 'kubejs:air_essence_block')
-  allthemods.add('c:storage_blocks/earth_essence', 'kubejs:earth_essence_block')
-  allthemods.add('c:storage_blocks/fire_essence', 'kubejs:fire_essence_block')
-  allthemods.add('c:storage_blocks/water_essence', 'kubejs:water_essence_block')
-  allthemods.add('c:storage_blocks', [
-    '#c:storage_blocks/air_essence',
-    '#c:storage_blocks/earth_essence',
-    '#c:storage_blocks/fire_essence',
-    '#c:storage_blocks/water_essence'
-  ])
-
-  // Bibliocraft compat
-  // Ars Elemental Books
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:air_caster_tome')
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:fire_caster_tome')
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:water_caster_tome')
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:earth_caster_tome')
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:anima_caster_tome')
-  allthemods.add('minecraft:bookshelf_books', 'ars_elemental:manipulation_caster_tome')
-
-  // More books
-  allthemods.add('minecraft:bookshelf_books', 'patchouli:guide_book')
-  allthemods.add('minecraft:bookshelf_books', 'powah:book')
-  allthemods.add('minecraft:bookshelf_books', 'actuallyadditions:booklet')
-
-  // Trial Vault Repeatability for Decrepit Keys
-  allthemods.add("repeatable_trial_vaults:can_reset_trial_vaults", "irons_spellbooks:decrepit_key")
-})
-
-ServerEvents.tags('entity_type', allthemods => {
-
-  allthemods.add('c:bosses', [
-    "allthemodium:piglich",
+  // Bosses
+  event.add('c:bosses', [
     "cataclysm:amethyst_crab",
     "cataclysm:ancient_remnant",
     "cataclysm:coralssus",
@@ -129,15 +73,15 @@ ServerEvents.tags('entity_type', allthemods => {
   ])
 
   if (Platform.isLoaded("eternal_starlight")) {
-    allthemods.add('c:bosses', [
+    event.add('c:bosses', [
       "eternal_starlight:starlight_golem",
       "eternal_starlight:the_gatekeeper"
     ])
   }
 
-  allthemods.add('allthemods:jank_blacklist', [
+  // Jank Blacklist
+  event.add('kubejs:jank_blacklist', [
     "@iceandfire",
-    'ars_nouveau:animated_block',
     'artifacts:mimic',
     'create:package',
     'mekanism:robit',
@@ -149,54 +93,31 @@ ServerEvents.tags('entity_type', allthemods => {
     "the_bumblezone:bee_queen"
   ].filter(i => i != null))
 
-  allthemods.add('ars_nouveau:jar_blacklist', "the_bumblezone:bee_queen")
-  allthemods.add('apothic_spawners:blacklisted_from_spawners', '#allthemods:jank_blacklist')
-  allthemods.add('enderio:soul_vial_blacklist', '#allthemods:jank_blacklist')
-  allthemods.add('industrialforegoing:mob_duplicator_blacklist', '#allthemods:jank_blacklist')
-  allthemods.add('industrialforegoing:mob_crusher_blacklist', '#allthemods:jank_blacklist')
-  allthemods.add('justdirethings:paradox_deny', '#allthemods:jank_blacklist');
-  allthemods.add('tombstone:unhandled_tamable', '#allthemods:jank_blacklist')
-  allthemods.add('mob_grinding_utils:no_swab', '#allthemods:jank_blacklist')
-  allthemods.add('mob_grinding_utils:no_spawn', '#allthemods:jank_blacklist')
-  allthemods.add('enderio:spawner_blacklist', '#allthemods:jank_blacklist')
-  allthemods.add('ars_additions:source_spawner_denylist', '#allthemods:jank_blacklist')
-  allthemods.add('oritech:spawner_blacklist', '#allthemods:jank_blacklist')
-
+  // System Blacklists
+  event.add('apothic_spawners:blacklisted_from_spawners', '#kubejs:jank_blacklist')
+  event.add('enderio:soul_vial_blacklist', '#kubejs:jank_blacklist')
+  event.add('industrialforegoing:mob_duplicator_blacklist', '#kubejs:jank_blacklist')
+  event.add('industrialforegoing:mob_crusher_blacklist', '#kubejs:jank_blacklist')
+  event.add('tombstone:unhandled_tamable', '#kubejs:jank_blacklist')
+  event.add('mob_grinding_utils:no_swab', '#kubejs:jank_blacklist')
+  event.add('mob_grinding_utils:no_spawn', '#kubejs:jank_blacklist')
+  event.add('enderio:spawner_blacklist', '#kubejs:jank_blacklist')
+  event.add('oritech:spawner_blacklist', '#kubejs:jank_blacklist')
 })
 
-ServerEvents.tags('worldgen/structure', allthemods => {
+ServerEvents.tags('fluid', event => {
+  // Pneumaticcraft
+  event.add('c:ethanol', 'pneumaticcraft:ethanol')
+  event.add("c:experience", "create_enchantment_industry:experience")
+
+  // TFMG & PneumaticCraft
+  event.add('c:crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
+  event.add('c:fuels/crude_oil', ['tfmg:crude_oil', 'pneumaticcraft:crude_oil', 'pneumaticcraft:oil', 'oritech:still_oil'])
+  event.add('c:heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
+  event.add('c:fuels/heavy_oil', ['tfmg:heavy_oil', 'oritech:still_heavy_oil'])
+})
+
+ServerEvents.tags('entity_type', event => {
   // Cataclysm
-  allthemods.add('cataclysm:berserker_spawn', "betterfortresses:fortress");
-});
-
-ServerEvents.tags('enchantment', allthemods => {
-  // Apoth Enchanting
-  allthemods.remove('minecraft:non_treasure', "apothic_enchanting:miners_fervor");
-});
-
-ServerEvents.tags('block_entity_type', allthemods => {
-  // Apoth Enchanting
-  allthemods.remove('packingtape:blacklist/problematic', ["extrastorage:block_16384k_fluid", "extrastorage:block_65536k_fluid", "extrastorage:block_262144k_fluid", "extrastorage:block_1048576k_fluid"]);
-});
-
-// Fix dyenamicandfriends handled in its own script if needed, or removed
-
-ServerEvents.tags('worldgen/biome', allthemods => {
-  // JustDireThings
-  allthemods.add('justdirethings:unstable_portal_fluid_viable', ["nullscape:crystal_peaks", "nullscape:shadowlands", "nullscape:void_barrens"]);
-});
-
-ServerEvents.tags('mob_effect', allthemods => {
-
-  allthemods.add('irons_spellbooks:cleanse_immune', [
-    "cataclysm:ghost_sickness"
-  ]);
-
-});
-
-// cataclysm:ghost_sickness
-
-
-
-
-
+  event.add('cataclysm:berserker_spawn', "betterfortresses:fortress")
+})

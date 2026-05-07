@@ -2,7 +2,7 @@
 [microsoft]
 	#Indicates the type of user interaction that is required
 	#Allowed Values: DEFAULT, SELECT_ACCOUNT, LOGIN, NONE, CONSENT
-	prompt = "DEFAULT"
+	prompt = "NONE"
 	#The port from which to listen for OAuth2 callbacks
 	# Default: 25585
 	# Range: 0 ~ 65535

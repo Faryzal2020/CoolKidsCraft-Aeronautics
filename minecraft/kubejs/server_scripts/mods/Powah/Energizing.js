@@ -1,43 +1,42 @@
+ServerEvents.tags('item', event => {
 
 
-ServerEvents.tags('item', allthemods => {
-    allthemods.add('c:storage_blocks/blaze_powder', 'kubejs:blaze_powder_block')
-    allthemods.add('c:storage_blocks/blaze_rod', 'kubejs:blaze_block')
+    event.add('c:storage_blocks/blaze_powder', 'kubejs:blaze_powder_block')
+    event.add('c:storage_blocks/blaze_rod', 'kubejs:blaze_block')
 })
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
     //Blaze Powder
-    allthemods.shaped('kubejs:blaze_powder_block', [
+    event.shaped('kubejs:blaze_powder_block', [
         'SSS',
         'SSS',
         'SSS'
     ], {
         S: 'minecraft:blaze_powder'
     })
-    allthemods.shapeless('9x minecraft:blaze_powder', [ // arg 1: output
+    event.shapeless('9x minecraft:blaze_powder', [ // arg 1: output
         'kubejs:blaze_powder_block'
     ])
     //Blaze Block
-    // allthemods.shaped('kubejs:blaze_block', [
+    // event.shaped('kubejs:blaze_block', [
     //     'SSS',
     //     'SSS',
     //     'SSS'
     // ], {
     //     S: 'minecraft:blaze_rod'
     // })
-    // allthemods.shapeless('9x minecraft:blaze_rod', [ // arg 1: output
+    // event.shapeless('9x minecraft:blaze_rod', [ // arg 1: output
     //     'kubejs:blaze_block'
     // ])
 
     function bulk_energizing(input, input_number, output, energy, id) {
-        allthemods.remove({ id: `powah:energizing/${id}` })
         let loop = 0
         let ingredients = []
         while (loop <= 5) {
             for (let item = 1; item <= input_number; item++) {
                 ingredients.push({ tag: input });
             }
-            allthemods.custom(
+            event.custom(
                 {
                     type: "powah:energizing",
                     energy: energy * (ingredients.length / input_number),
@@ -75,7 +74,7 @@ ServerEvents.recipes(allthemods => {
             recipe.ingredients.push(ingredients);
         }
 
-        allthemods.custom(recipe).id(`kubejs:energizing/${id}`);
+        event.custom(recipe).id(`kubejs:energizing/${id}`);
     }
 
     if (Platform.isLoaded('ae2')) {
@@ -92,5 +91,6 @@ ServerEvents.recipes(allthemods => {
     energizing({ tag: 'c:storage_blocks/blaze_powder', count: 4 }, { item: 'powah:blazing_crystal_block' }, 1080000, 'blazing_crystal_from_powder_block')
     energizing({ tag: 'c:storage_blocks/blaze_rod', count: 1 }, { item: 'powah:blazing_crystal_block' }, 1080000, 'blazing_crystal_from_block')
 })
+
 
 

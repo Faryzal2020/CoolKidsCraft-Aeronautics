@@ -1,7 +1,4 @@
 const inputResource = [
-  {material: 'unobtainium', out3: null, modID: 'allthemodium:'},
-  {material: 'vibranium', out3: null, modID: 'allthemodium:'},
-  {material: 'allthemodium', out3: null, modID: 'allthemodium:'},
   {material: 'crimson_iron', out3: null, modID: 'silentgear:'},
   {material: 'azure_silver', out3: null, modID: 'silentgear:'},
   {material: 'blaze_gold', out3: null, modID: 'silentgear:'},
@@ -9,15 +6,15 @@ const inputResource = [
   {material: 'crimson_steel', out3: null, modID: 'silentgear:'},
 ]
 
-ServerEvents.recipes(allthemods => {
+ServerEvents.recipes(event => {
   
     inputResource.forEach(sag => {
     let outID = ''
     //raw material sagging with sideproducts
     if(sag.out3 !== null){
     if(Item.exists(`${sag.modID}raw_${sag.material}`) && Item.exists(`${sag.modID}${sag.material}_dust`)){
-    if(!allthemods.countRecipes({ input: `#c:raw_materials/${sag.material}`, type: `enderio:sag_milling`})){
-    allthemods.custom({
+    if(!event.countRecipes({ input: `#c:raw_materials/${sag.material}`, type: `enderio:sag_milling`})){
+    event.custom({
       type: 'enderio:sag_milling',
       energy: 2400,
       input: {
@@ -49,8 +46,8 @@ ServerEvents.recipes(allthemods => {
     //raw material sagging without sideproducts
     else{
     if(Item.exists(`${sag.modID}raw_${sag.material}`) && Item.exists(`${sag.modID}${sag.material}_dust`)){
-    if(!allthemods.countRecipes({ input: `#c:raw_materials/${sag.material}`, type: `enderio:sag_milling`})){
-    allthemods.custom({
+    if(!event.countRecipes({ input: `#c:raw_materials/${sag.material}`, type: `enderio:sag_milling`})){
+    event.custom({
       type: 'enderio:sag_milling',
       energy: 2400,
       input: {
@@ -74,8 +71,8 @@ ServerEvents.recipes(allthemods => {
     }).id(`sag_milling/raw_${sag.material}`)}}}
     //ore sagging
     if(Item.exists(`${sag.modID}${sag.material}_ore`) && Item.exists(`${sag.modID}raw_${sag.material}`)){
-    if(!allthemods.countRecipes({ input: `#c:ores/${sag.material}`, type: `enderio:sag_milling`})){
-    allthemods.custom({
+    if(!event.countRecipes({ input: `#c:ores/${sag.material}`, type: `enderio:sag_milling`})){
+    event.custom({
       type: 'enderio:sag_milling',
       energy: 2400,
       input: {
@@ -106,8 +103,8 @@ ServerEvents.recipes(allthemods => {
     }).id(`sag_milling/${sag.material}_ore`)}}
     //ingot sagging
     if(Item.exists(`${sag.modID}${sag.material}_ingot`) && Item.exists(`${sag.modID}${sag.material}_dust`)){
-    if(!allthemods.countRecipes({ input: `#c:ingots/${sag.material}`, type: `enderio:sag_milling`})){
-      allthemods.custom({
+    if(!event.countRecipes({ input: `#c:ingots/${sag.material}`, type: `enderio:sag_milling`})){
+      event.custom({
         type: 'enderio:sag_milling',
         bonus: "none",
         energy: 2400,
