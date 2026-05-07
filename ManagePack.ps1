@@ -1,5 +1,6 @@
 # ManagePack.ps1
 # Modpack Management Script for Cool Kids Craft - Aeronautics
+$env:GIT_ASK_YESNO = "false"
 
 function Show-Menu {
     Clear-Host

@@ -28,7 +28,7 @@ const TARGET_MODS = [
 function applyForceTags(event, isBlock) {
     TARGET_MODS.forEach(mod => {
         let registry = isBlock ? 'block' : 'item';
-        let ids = isBlock ? Ingredient.of(`@${mod}`).getBlockIds() : Ingredient.of(`@${mod}`).getItemIds();
+        let ids = Ingredient.of(`@${mod}`).getItemIds();
 
         ids.forEach(idStr => {
             idStr = String(idStr);

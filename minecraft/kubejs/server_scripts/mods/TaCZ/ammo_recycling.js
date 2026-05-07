@@ -60,7 +60,7 @@ ServerEvents.recipes(event => {
         event.recipes.oritech
             .pulverizer()
             .itemInputs(ammoItem)
-            .itemOutputs("oritech:copper_dust")
+            .itemOutputs("2x oritech:copper_dust")
             .time(100)
             .id("kubejs:tacz_ammo_pulverizer_" + safeId);
 
@@ -69,21 +69,15 @@ ServerEvents.recipes(event => {
         event.recipes.oritech
             .grinder()
             .itemInputs(ammoItem)
-            .itemOutputs("oritech:copper_dust")
+            .itemOutputs(["2x oritech:copper_dust", "3x oritech:small_copper_dust"])
             .time(40)
             .id("kubejs:tacz_ammo_grinder_" + safeId);
 
         // --- Create Crushing Wheels: ammo -> 3x copper_dust + 25% bonus ---
-        event.recipes.create.crushing(
+        event.recipes.createCrushing(
             ['3x oritech:copper_dust', CreateItem.of('oritech:copper_dust', 0.25)],
             ammoItem
         ).processingTime(200).id("kubejs:tacz_ammo_crushing_" + safeId);
-
-        // --- Create Millstone: ammo -> 1x copper_dust + 50% bonus ---
-        event.recipes.create.milling(
-            ['oritech:copper_dust', CreateItem.of('oritech:copper_dust', 0.5)],
-            ammoItem
-        ).id("kubejs:tacz_ammo_milling_" + safeId);
     });
 });
 

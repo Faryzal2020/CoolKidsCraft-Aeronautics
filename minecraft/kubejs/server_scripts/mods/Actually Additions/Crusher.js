@@ -2,48 +2,22 @@
 
 ServerEvents.recipes(event => {
     function addAACrusher(input, output, num, bonus) {
-        if (bonus !== 0) {
-            event.custom(
-                {
-                    type: 'actuallyadditions:crushing',
-                    ingredient: Ingredient.of(input).toJson(),
-                    result: [
-                        {
-                            result: {
-                                count: num,
-                                id: output
-                            }
-                        },
-                        {
-                            chance: bonus,
-                            result: {
-                                count: 1,
-                                id: output
-                            }
-                        }
-                    ]
-                }
-            )
-        }
-        else {
-            event.custom(
-                {
-                    type: 'actuallyadditions:crushing',
-                    ingredient: Ingredient.of(input).toJson(),
-                    result: [
-                        {
-                            result: {
-                                count: num,
-                                id: output
-                            }
-                        },
-                        {
-                            chance: bonus,
-                            result: {}
-                        }
-                    ]
-                }
-            )
+        try {
+            console.log(`Adding Actually Additions Crusher recipe for input: ${input}, output: ${output}, count: ${num}, bonus chance: ${bonus}`);
+            if (bonus !== 0) {
+                event.recipes.actuallyadditions.crushing(
+                    [Item.of(output, num), CrushingResult.of(output, bonus)],
+                    input
+                )
+            }
+            else {
+                event.recipes.actuallyadditions.crushing(
+                    Item.of(output, num),
+                    input
+                )
+            }
+        } catch (err) {
+            console.error(`Failed to add Actually Additions Crusher recipe for input: ${input}. Error: ${err}`);
         }
     }
 
@@ -75,11 +49,14 @@ ServerEvents.recipes(event => {
     }
 
     addAACrusher('#c:raw_materials/lead', 'create:crushed_raw_lead', 1, 0.5)
-    addAACrusher('#c:raw_materials/nickel', 'oritech:nickel_dust', 1, 0.5)
+
     addAACrusher('#c:raw_materials/lithium', 'tfmg:crushed_raw_lithium', 1, 0.5)
     addAACrusher('#c:raw_materials/silver', 'create:crushed_raw_silver', 1, 0.5)
     addAACrusher('#c:raw_materials/zinc', 'create:crushed_raw_zinc', 1, 0.5)
     addAACrusher('#c:raw_materials/aluminum', 'create:crushed_raw_aluminum', 1, 0.5)
+
+    addAACrusher('#c:raw_materials/platinum', 'oritech:platinum_dust', 1, 0.5)
+    addAACrusher('#c:raw_materials/uranium', 'create:crushed_raw_uranium', 1, 0.5)
 
     //Xycraft World
     global.xycraftColours.forEach(colour => {

@@ -4,23 +4,35 @@ ServerEvents.recipes(event => {
     event.remove({ output: 'railcraft:brass_ingot', type: 'minecraft:crafting_shapeless' })
 
     // This forces the use of more advanced processing for other metals.
+    let removeSmelting = [
+        "minecraft:gold_ingot",
+        "minecraft:copper_ingot",
+        "oritech:nickel_ingot",
+        "railcraft:silver_ingot",
+        "tfmg:lead_ingot",
+        "tfmg:aluminum_ingot",
+        "tfmg:platinum_ingot",
+        "create:zinc_ingot"
+    ]
+
+    let removeBlasting = [
+        "minecraft:gold_ingot",
+        "minecraft:copper_ingot",
+        "oritech:nickel_ingot",
+        "railcraft:silver_ingot",
+        "tfmg:lead_ingot",
+        "tfmg:aluminum_ingot",
+        "tfmg:platinum_ingot",
+        "create:zinc_ingot"
+    ]
+
     event.remove({
         type: 'minecraft:smelting',
-        output: '#c:ingots',
-        not: {
-            output: ['minecraft:iron_ingot', 'minecraft:copper_ingot']
-        }
+        output: removeSmelting
     })
     event.remove({
         type: 'minecraft:blasting',
-        output: '#c:ingots',
-        not: {
-            output: ['minecraft:iron_ingot', 'minecraft:copper_ingot']
-        }
-    })
-    event.remove({
-        type: 'minecraft:blasting',
-        output: 'oritech:nickel_ingot'
+        output: removeBlasting
     })
 
 

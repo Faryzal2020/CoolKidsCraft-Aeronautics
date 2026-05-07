@@ -1,5 +1,13 @@
 [
   {"version":1},
+  {"ingredient":{"id":"oritech:raw_nickel"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"oritech:nickel_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_aluminum"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_zinc"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_silver"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_nickel"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_lead"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_lead_bucket"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"xycraft_world:raw_aluminum"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"railcraft:quarried_stone"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"railcraft:refined_firestone"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -91,13 +99,5 @@
   {"ingredient":{"id":"railcraft:silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"iceandfire:silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgems:silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"silentgear:azure_silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"createbigcannons:cast_iron_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"xycraft_world:aluminum_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"undergarden:forgotten_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"undergarden:froststeel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"undergarden:cloggrum_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:ancient_metal_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:black_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:netherite_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"silentgear:azure_silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]

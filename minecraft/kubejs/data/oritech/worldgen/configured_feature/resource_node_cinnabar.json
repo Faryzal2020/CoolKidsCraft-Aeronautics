@@ -10,10 +10,10 @@
       "oritech:resource_node_redstone"
     ],
     "boulderOres": [
-      "minecraft:deepslate",
-      "minecraft:deepslate",
-      "minecraft:deepslate",
-      "minecraft:deepslate",
+      "minecraft:deepslate_redstone_ore",
+      "minecraft:deepslate_redstone_ore",
+      "minecraft:deepslate_redstone_ore",
+      "minecraft:deepslate_redstone_ore",
       "minecraft:deepslate",
       "minecraft:deepslate",
       "minecraft:deepslate",

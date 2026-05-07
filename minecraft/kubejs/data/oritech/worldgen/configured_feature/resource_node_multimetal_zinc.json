@@ -5,7 +5,9 @@
     "nodeOreChance": 0.125,
     "boulderRadius": 4,
     "nodeOres": [
-      "oritech:resource_node_zinc",
+      "oritech:resource_node_copper",
+      "oritech:resource_node_copper",
+      "oritech:resource_node_iron",
       "oritech:resource_node_iron"
     ],
     "boulderOres": [

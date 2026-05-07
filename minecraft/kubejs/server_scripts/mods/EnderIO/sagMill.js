@@ -42,5 +42,7 @@ ServerEvents.recipes(event => {
     sagMill('#c:raw_materials/silver', 2400, { item: 'create:crushed_raw_silver', count: 2 })
     sagMill('#c:raw_materials/zinc', 2400, { item: 'create:crushed_raw_zinc', count: 2 })
     sagMill('#c:raw_materials/aluminum', 2400, { item: 'create:crushed_raw_aluminum', count: 2 })
+    sagMill('#c:raw_materials/platinum', 2400, { item: 'oritech:platinum_dust', count: 2 })
+    sagMill('#c:raw_materials/uranium', 2400, { item: 'create:crushed_raw_uranium', count: 2 })
 })
 

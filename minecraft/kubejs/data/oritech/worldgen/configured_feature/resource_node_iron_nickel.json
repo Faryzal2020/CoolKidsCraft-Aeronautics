@@ -6,6 +6,8 @@
     "boulderRadius": 3,
     "nodeOres": [
       "oritech:resource_node_iron",
+      "oritech:resource_node_iron",
+      "oritech:resource_node_nickel",
       "oritech:resource_node_nickel"
     ],
     "boulderOres": [
