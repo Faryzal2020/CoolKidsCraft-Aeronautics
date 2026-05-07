@@ -82,6 +82,33 @@ ServerEvents.recipes(event => {
   })
   // Remove enchanting stuff
 
+  // Extra Ore Processing
+  // Pulverizer: 1 Raw -> 2x Output
+  // Grinder (Fragment Forge): 1 Raw -> 3x Output
+
+  const extraOreProcessing = [
+    { raw: 'tfmg:raw_lithium', output: 'tfmg:crushed_raw_lithium' },
+    { raw: 'tfmg:raw_lead', output: 'create:crushed_raw_lead' },
+    { raw: 'railcraft:silver_raw', output: 'create:crushed_raw_silver' },
+    { raw: 'xycraft_world:raw_aluminum', output: 'create:crushed_raw_aluminum' }
+  ]
+
+  extraOreProcessing.forEach(ore => {
+    // Pulverizer
+    event.recipes.oritech.pulverizer()
+      .itemInputs(ore.raw)
+      .itemOutputs(`2x ${ore.output}`)
+      .time(100)
+      .id(`kubejs:pulverizer/${ore.raw.replace(':', '_')}`)
+
+    // Grinder
+    event.recipes.oritech.grinder()
+      .itemInputs(ore.raw)
+      .itemOutputs(`3x ${ore.output}`)
+      .time(40)
+      .id(`kubejs:grinder/${ore.raw.replace(':', '_')}`)
+  })
+
   // Cheaty alloys
 })
 

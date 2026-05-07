@@ -1,0 +1,19 @@
+{
+    "type": "create:crushing",
+    "ingredients": [
+        {
+            "item": "#c:raw_materials/nickel"
+        }
+    ],
+    "processing_time": 350,
+    "results": [
+        {
+            "count": 1,
+            "id": "oritech:nickel_dust"
+        },
+        {
+            "chance": 0.25,
+            "id": "create:experience_nugget"
+        }
+    ]
+}

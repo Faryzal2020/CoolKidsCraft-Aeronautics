@@ -36,9 +36,11 @@ ServerEvents.recipes(event => {
         sagMill(`#c:ores/xychorium_${colour}`, 2400, { item: `xycraft_world:xychorium_gem_${colour}`, count: 4 })
     })
 
-    sagMill('#c:raws/lithium', 2400, { item: '', count: 2 })
-    sagMill('#c:raws/lead', 2400, { item: '', count: 2 })
-    sagMill('#c:raws/silver', 2400, { item: '', count: 2 })
-    sagMill('#c:raws/zinc', 2400, { item: '', count: 2 })
+    sagMill('#c:raw_materials/nickel', 2400, { item: 'oritech:nickel_dust', count: 2 })
+    sagMill('#c:raw_materials/lithium', 2400, { item: 'tfmg:crushed_raw_lithium', count: 2 })
+    sagMill('#c:raw_materials/lead', 2400, { item: 'create:crushed_raw_lead', count: 2 })
+    sagMill('#c:raw_materials/silver', 2400, { item: 'create:crushed_raw_silver', count: 2 })
+    sagMill('#c:raw_materials/zinc', 2400, { item: 'create:crushed_raw_zinc', count: 2 })
+    sagMill('#c:raw_materials/aluminum', 2400, { item: 'create:crushed_raw_aluminum', count: 2 })
 })
 

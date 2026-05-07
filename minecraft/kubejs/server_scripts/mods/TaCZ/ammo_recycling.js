@@ -73,27 +73,17 @@ ServerEvents.recipes(event => {
             .time(40)
             .id("kubejs:tacz_ammo_grinder_" + safeId);
 
-        // --- Create Crushing Wheels: ammo -> 3x copper_nugget + 25% bonus ---
-        event.custom({
-            "type": "create:crushing",
-            "ingredients": [{ "item": "tacz:ammo", "components": { "minecraft:custom_data": { "AmmoId": ammoId } } }],
-            "processing_time": 200,
-            "results": [
-                { "count": 3, "id": "oritech:copper_dust" },
-                { "chance": 0.25, "id": "oritech:copper_dust" }
-            ]
-        }).id("kubejs:tacz_ammo_crushing_" + safeId);
+        // --- Create Crushing Wheels: ammo -> 3x copper_dust + 25% bonus ---
+        event.recipes.create.crushing(
+            ['3x oritech:copper_dust', CreateItem.of('oritech:copper_dust', 0.25)],
+            ammoItem
+        ).processingTime(200).id("kubejs:tacz_ammo_crushing_" + safeId);
 
-        // --- Create Millstone: ammo -> 1x copper_nugget + 50% bonus ---
-        event.custom({
-            "type": "create:milling",
-            "ingredients": [{ "item": "tacz:ammo", "components": { "minecraft:custom_data": { "AmmoId": ammoId } } }],
-            "processing_time": 150,
-            "results": [
-                { "count": 1, "id": "oritech:copper_dust" },
-                { "chance": 0.5, "id": "oritech:copper_dust" }
-            ]
-        }).id("kubejs:tacz_ammo_milling_" + safeId);
+        // --- Create Millstone: ammo -> 1x copper_dust + 50% bonus ---
+        event.recipes.create.milling(
+            ['oritech:copper_dust', CreateItem.of('oritech:copper_dust', 0.5)],
+            ammoItem
+        ).id("kubejs:tacz_ammo_milling_" + safeId);
     });
 });
 
@@ -102,5 +92,5 @@ ServerEvents.recipes(event => {
 // - JSON "tag": "tacz:ammo" item tag: same problem.
 // - event.custom() with "components" in ingredients: Oritech's Java-side
 //   recipe codec does not inspect data components — matched tacz:empty.
-// - Create crushing/milling via event.custom() with "components": UNTESTED,
-//   may also fail. If so, use KubeJS-Create typed builders when available.
+// - Create crushing/milling: Typed builders (event.recipes.create.crushing)
+//   are used to handle component-aware ingredient matching for ammoItem.
