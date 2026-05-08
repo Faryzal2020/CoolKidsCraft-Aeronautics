@@ -20,6 +20,76 @@ ServerEvents.tags('fluid', event => {
 });
 
 ServerEvents.recipes(event => {
+
+    event.remove({ id: "create:empty_tfmg_molten_plastic_bucket_of_tfmg_molten_plastic" })
+    event.remove({ id: "create:fill_minecraft_bucket_with_tfmg_molten_plastic" })
+
+    const modsToClean = ['oritech', 'tfmg', 'create', 'pneumaticcraft', 'enderio', 'productivemetalworks'];
+    const plasticSheetOutputs = ['oritech:plastic_sheet', 'tfmg:plastic_sheet', 'pneumaticcraft:plastic'];
+    const inputKeysToSkipForRemoval = new Set(['input', 'inputs', 'ingredients', 'ingredient', 'key', 'base', 'addition']);
+
+    modsToClean.forEach(modid => {
+        event.forEachRecipe({ mod: modid }, recipe => {
+            let json = recipe.json;
+            if (!json || !json.isJsonObject()) return;
+
+            let recipeId = recipe.getId();
+            let rootObj = JSON.parse(json.toString());
+            let shouldRemove = false;
+            let matchedItem = "";
+
+            function searchForOutput(obj) {
+                if (shouldRemove) return;
+
+                if (Array.isArray(obj)) {
+                    for (let i = 0; i < obj.length; i++) {
+                        if (typeof obj[i] === 'string' && plasticSheetOutputs.includes(obj[i])) {
+                            matchedItem = obj[i];
+                            shouldRemove = true;
+                            return;
+                        } else if (typeof obj[i] === 'object' && obj[i] !== null) {
+                            searchForOutput(obj[i]);
+                        }
+                    }
+                } else if (typeof obj === 'object' && obj !== null) {
+                    for (let k of ['output', 'item', 'id']) {
+                        if (obj[k] && typeof obj[k] === 'string' && plasticSheetOutputs.includes(obj[k])) {
+                            if (obj[k] === 'pneumaticcraft:plastic') {
+                                let isFluid = (obj.amount !== undefined || obj.fluid !== undefined || obj.fluid_id !== undefined || obj.type === 'neoforge:fluid' || obj.type === 'pneumaticcraft:fluid');
+                                if (!isFluid) {
+                                    matchedItem = obj[k];
+                                    shouldRemove = true;
+                                    return;
+                                }
+                            } else {
+                                matchedItem = obj[k];
+                                shouldRemove = true;
+                                return;
+                            }
+                        }
+                    }
+
+                    for (let key in obj) {
+                        if (inputKeysToSkipForRemoval.has(key)) continue;
+                        searchForOutput(obj[key]);
+                        if (shouldRemove) return;
+                    }
+                }
+            }
+
+            for (let key in rootObj) {
+                if (inputKeysToSkipForRemoval.has(key)) continue;
+                searchForOutput(rootObj[key]);
+                if (shouldRemove) break;
+            }
+
+            if (shouldRemove) {
+                console.log(`Removing ${recipeId} based on ${matchedItem} match`);
+                event.remove({ id: recipeId });
+            }
+        });
+    });
+
     const modsToScan = [
         'oritech', 'pneumaticcraft', 'tfmg', 'create', 'enderio', 'actuallyadditions',
         'productivemetalworks', 'productivebees'
@@ -222,75 +292,20 @@ ServerEvents.recipes(event => {
         });
     });
 
-    event.remove({ id: "create:empty_tfmg_molten_plastic_bucket_of_tfmg_molten_plastic" })
-    event.remove({ id: "create:fill_minecraft_bucket_with_tfmg_molten_plastic" })
-
-    const modsToClean = ['oritech', 'tfmg', 'create', 'pneumaticcraft', 'enderio', 'productivemetalworks'];
-    const plasticSheetOutputs = ['oritech:plastic_sheet', 'tfmg:plastic_sheet', 'pneumaticcraft:plastic'];
-    const inputKeysToSkipForRemoval = new Set(['input', 'inputs', 'ingredients', 'ingredient', 'key', 'base', 'addition']);
-
-    modsToClean.forEach(modid => {
-        event.forEachRecipe({ mod: modid }, recipe => {
-            let json = recipe.json;
-            if (!json || !json.isJsonObject()) return;
-
-            let recipeId = recipe.getId();
-            let rootObj = JSON.parse(json.toString());
-            let shouldRemove = false;
-
-            function searchForOutput(obj) {
-                if (shouldRemove) return;
-
-                if (Array.isArray(obj)) {
-                    for (let i = 0; i < obj.length; i++) {
-                        if (typeof obj[i] === 'string' && plasticSheetOutputs.includes(obj[i])) {
-                            if (obj[i] === 'pneumaticcraft:plastic') {
-                                shouldRemove = true;
-                            } else {
-                                shouldRemove = true;
-                            }
-                            if (shouldRemove) return;
-                        } else if (typeof obj[i] === 'object' && obj[i] !== null) {
-                            searchForOutput(obj[i]);
-                        }
-                    }
-                } else if (typeof obj === 'object' && obj !== null) {
-                    for (let k of ['output', 'item', 'id']) {
-                        if (obj[k] && typeof obj[k] === 'string' && plasticSheetOutputs.includes(obj[k])) {
-                            if (obj[k] === 'pneumaticcraft:plastic') {
-                                let isFluid = (obj.amount !== undefined || obj.fluid !== undefined || obj.fluid_id !== undefined || obj.type === 'neoforge:fluid' || obj.type === 'pneumaticcraft:fluid');
-                                if (!isFluid) {
-                                    shouldRemove = true;
-                                    return;
-                                }
-                            } else {
-                                shouldRemove = true;
-                                return;
-                            }
-                        }
-                    }
-
-                    for (let key in obj) {
-                        if (inputKeysToSkipForRemoval.has(key)) continue;
-                        searchForOutput(obj[key]);
-                        if (shouldRemove) return;
-                    }
-                }
+    event.recipes.createCompacting('oritech:plastic_sheet', Fluid.of('pneumaticcraft:plastic', 90));
+    event.custom({
+        type: "create:cutting",
+        ingredients: [
+            {
+                tag: "c:storage_blocks/plastic"
             }
-
-            for (let key in rootObj) {
-                if (inputKeysToSkipForRemoval.has(key)) continue;
-                searchForOutput(rootObj[key]);
-                if (shouldRemove) break;
+        ],
+        results: [
+            {
+                id: "oritech:plastic_sheet",
+                count: 9
             }
-
-            if (shouldRemove) {
-                console.log(`[Plastic Fix] Removing recipe via deep search: ${recipeId}`);
-                event.remove({ id: recipeId });
-            }
-        });
-    });
-
-    event.recipes.createCompacting('oritech:plastic_sheet', { fluidTag: 'c:molten_plastic', amount: 90 });
-    event.recipes.createCutting('oritech:plastic_sheet', 'c:storage_blocks/plastic').processingTime(60);
+        ],
+        processingTime: 60
+    }).id('kubejs:create/cutting/plastic_block_to_sheets');
 });

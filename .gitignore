@@ -1,4 +1,6 @@
 .vscode
+.DS_Store
+/minecraft/.DS_Store
 /minecraft/.mixin.out
 /minecraft/backup
 /minecraft/blueprints
@@ -64,6 +66,7 @@
 /minecraft/config/fabric/indigo-renderer.properties
 /minecraft/config/jei/world/local*
 /minecraft/xaero/world-map/*
+/minecraft/tacz/*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

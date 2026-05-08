@@ -72,12 +72,47 @@ ServerEvents.recipes(event => {
         pmw_item_casting('productivemetalworks:plate_cast', 90, fluid, result, id, 'plates')
     }
 
+    /**
+     * Helper for Productive Metalworks Item Melting
+     * @param {string} ingredient - Item ID or Tag (e.g. 'minecraft:iron_ingot' or '#c:ingots/iron')
+     * @param {string} resultFluid - Output fluid ID
+     * @param {number} amount - Output fluid amount in mB
+     * @param {number} minTemp - Minimum temperature required
+     * @param {string} id - Unique recipe ID suffix
+     */
+    function pmw_item_melting(ingredient, resultFluid, amount, minTemp, id) {
+        let ingCfg = {};
+        if (ingredient.startsWith('#')) {
+            ingCfg.tag = ingredient.substring(1);
+        } else if (ingredient.startsWith('c:')) {
+            ingCfg.tag = ingredient;
+        } else {
+            ingCfg.item = ingredient;
+        }
+
+        event.custom({
+            type: "productivemetalworks:item_melting",
+            ingredient: ingCfg,
+            maximum_temperature: 0,
+            minimum_temperature: minTemp,
+            result: [
+                {
+                    amount: amount,
+                    id: resultFluid
+                }
+            ]
+        }).id(`kubejs:productivemetalworks/melting/${id}`)
+    }
+
 
     // --- EXAMPLES ---
     // pmw_block_casting('c:molten_lead', 'railcraft:lead_block', 'lead')
     // pmw_ingot_casting('c:molten_lead', 'tfmg:lead_ingot', 'lead')
     // pmw_nugget_casting('c:molten_lead', 'railcraft:lead_nugget', 'lead')
     // pmw_plate_casting('c:molten_lead', 'railcraft:lead_plate', 'lead')
+    // pmw_item_melting('#c:ingots/lead', 'productivemetalworks:molten_lead', 90, 1000, 'lead')
+
+    pmw_item_melting('#c:storage_blocks/plastic', 'pneumaticcraft:plastic', 810, 500, 'plastic')
 
     pmw_block_casting('c:molten_lead', 'tfmg:lead_block', 'lead')
     pmw_nugget_casting('c:molten_lead', 'tfmg:lead_nugget', 'lead')
