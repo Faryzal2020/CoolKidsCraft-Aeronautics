@@ -72,7 +72,7 @@ ServerEvents.recipes(event => {
         'BCB',
         'BDB'
     ], {
-        A: 'minecraft:copper_nugget',
+        A: '#c:nuggets/copper',
         B: '#c:plates/plastic',
         C: 'tfmg:lithium_charge',
         D: '#c:ingots/electrum'

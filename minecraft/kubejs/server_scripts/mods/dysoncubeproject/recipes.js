@@ -1,42 +1,35 @@
 
 
 ServerEvents.recipes(event => {
-    /*
-        event.shaped(
-            [
-                'AAA',
-                'APA',
-                'AAA'
-            ],
-            {
-                P: 'dysoncubeproject:solar_sail_package'
-            }
-        )
-    
-        event.shaped(
-            [
-                ' A ',
-                'APA',
-                ' A '
-            ],
-            {
-                P: 'dysoncubeproject:beam_package'
-            }
-        )
-    */
+
+    event.remove({ id: 'dysoncubeproject:solar_sail' })
+    event.remove({ id: 'dysoncubeproject:beam' })
+    event.shaped(
+        Item.of('dysoncubeproject:solar_sail', 1),
+        [
+            '   ',
+            'ABA',
+            'ACA'
+        ],
+        {
+            A: 'oritech:carbon_fibre_strands',
+            B: 'enderio:photovoltaic_plate',
+            C: 'createpropulsion:thruster'
+        }
+    )
     // Beams
     event.shaped(
-        Item.of('dysoncubeproject:beam', 1),
+        Item.of('dysoncubeproject:beam', 4),
         [
             'ABA',
             'CBC',
             'ABA'
         ],
         {
-            A: 'minecraft:iron_nugget',
+            A: 'pneumaticcraft:ingot_iron_compressed',
             B: '#c:ingots/steel',
-            C: 'minecraft:iron_bars'
+            C: 'oritech:carbon_fibre_strands'
         }
-    ).id('kubejs:dysoncubeproject/beam')
+    )
 })
 
