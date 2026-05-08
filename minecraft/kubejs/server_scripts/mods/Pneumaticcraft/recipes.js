@@ -1,12 +1,12 @@
 ServerEvents.recipes(event => {
 
-  function changeInput(item, replacement){
+  function changeInput(item, replacement) {
     event.replaceInput(
       { mod: 'pneumaticcraft' },
       item, replacement
     )
   }
-  
+
   event.custom(
     {
       type: "pneumaticcraft:crafting_shaped_pressurizable",
@@ -33,7 +33,7 @@ ServerEvents.recipes(event => {
       }
     }
   )
-  
+
   //changeInput('#pneumaticcraft:plastic_sheets', '#c:plastics')
-  changeInput('pneumaticcraft:plastic', '#c:plastics')
-  })
+  changeInput('pneumaticcraft:plastic', '#c:plates/plastic')
+})

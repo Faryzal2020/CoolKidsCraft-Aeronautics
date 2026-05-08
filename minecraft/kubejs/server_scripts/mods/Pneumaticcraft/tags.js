@@ -2,7 +2,7 @@ ServerEvents.tags('item', event => {
 
 
   //Plastic
-  event.add('c:plastics', 'pneumaticcraft:plastic')
+  event.add('c:plates/plastic', 'pneumaticcraft:plastic')
 
 })
 

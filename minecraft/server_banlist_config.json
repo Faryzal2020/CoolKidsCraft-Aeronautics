@@ -26,6 +26,9 @@
     "banned_entities": [],
     "remove_recipes_by": [
       {
+        "output": "tfmg:molten_plastic"
+      },
+      {
         "id": "create:smelting/zinc_ingot_from_raw_ore"
       },
       {

@@ -6,11 +6,16 @@ RecipeViewerEvents.removeEntriesCompletely('item', event => {
         'tacz:gun_smith_table',
         'tacz:modern_kinetic_gun',
         'railcraft:lead_ingot',
-        'railcraft:nickel_ingot'
+        'railcraft:nickel_ingot',
+        'tfmg:molten_plastic_bucket',
+        'tfmg:plastic_sheet',
+        'pneumaticcraft:plastic',
+        'tfmg:plastic_block'
     ])
 })
 
 RecipeViewerEvents.removeEntriesCompletely('fluid', event => {
+    event.remove('tfmg:molten_plastic')
     event.remove('tfmg:crude_oil')
     event.remove('tfmg:heavy_oil')
     event.remove('pneumaticcraft:oil')

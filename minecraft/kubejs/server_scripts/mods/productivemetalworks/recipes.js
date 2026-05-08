@@ -96,4 +96,6 @@ ServerEvents.recipes(event => {
     pmw_nugget_casting('c:molten_aluminum', 'tfmg:aluminum_nugget', 'aluminum')
     pmw_plate_casting('c:molten_aluminum', 'tfmg:aluminum_sheet', 'aluminum')
 
+    pmw_block_casting('c:molten_plastic', 'oritech:plastic_block', 'plastic')
+    pmw_plate_casting('c:molten_plastic', 'oritech:plastic_sheet', 'plastic')
 })

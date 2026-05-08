@@ -51,10 +51,8 @@
   ],
   "ignored_tags": [],
   "ignored_items": [
-    "pneumaticcraft:plastic",
     "regions_unexplored:raw_redstone_block",
-    "oritech:biosteel_ingot",
-    "oritech:plastic_sheet"
+    "oritech:biosteel_ingot"
   ],
   "ignored_recipe_types": [
     "cucumber:shaped_tag"

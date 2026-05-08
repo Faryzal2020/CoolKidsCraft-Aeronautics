@@ -3,6 +3,8 @@ ServerEvents.recipes(event => {
     // This removes the recipe that allows crafting brass by just mixing items in a grid.
     event.remove({ output: 'railcraft:brass_ingot', type: 'minecraft:crafting_shapeless' })
 
+    event.remove({ id: "railcraft:rolling/steel_plate" })
+
     // This forces the use of more advanced processing for other metals.
     let removeSmelting = [
         "minecraft:gold_ingot",
@@ -11,8 +13,9 @@ ServerEvents.recipes(event => {
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",
         "tfmg:aluminum_ingot",
-        "tfmg:platinum_ingot",
-        "create:zinc_ingot"
+        "oritech:platinum_ingot",
+        "create:zinc_ingot",
+        "tfmg:lithium_ingot"
     ]
 
     let removeBlasting = [
@@ -22,17 +25,23 @@ ServerEvents.recipes(event => {
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",
         "tfmg:aluminum_ingot",
-        "tfmg:platinum_ingot",
-        "create:zinc_ingot"
+        "oritech:platinum_ingot",
+        "create:zinc_ingot",
+        "tfmg:lithium_ingot"
     ]
 
-    event.remove({
-        type: 'minecraft:smelting',
-        output: removeSmelting
+    removeSmelting.forEach(i => {
+        event.remove({
+            type: 'minecraft:smelting',
+            output: i
+        })
     })
-    event.remove({
-        type: 'minecraft:blasting',
-        output: removeBlasting
+
+    removeBlasting.forEach(i => {
+        event.remove({
+            type: 'minecraft:blasting',
+            output: i
+        })
     })
 
 
@@ -56,5 +65,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: 'bigreactors:reinforced_reactorcontroller' }, 'minecraft:comparator', 'oritech:processing_unit')
     event.replaceInput({ output: 'bigreactors:basic_turbinecontroller' }, 'minecraft:comparator', 'oritech:processing_unit')
     event.replaceInput({ output: 'bigreactors:reinforced_turbinecontroller' }, 'minecraft:comparator', 'oritech:processing_unit')
+
+
 
 })

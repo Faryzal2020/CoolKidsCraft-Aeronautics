@@ -38,8 +38,6 @@ StartupEvents.registry('item', event => {
     if (!Platform.isLoaded('modular_machinery_reborn')) {
         event.create('modularium').color(0xe64200).texture('minecraft:item/iron_ingot')
     }
-
-    event.create('create_things_and_misc:deleted_mod_element').displayName('Deleted Mod Element')
 })
 
 
