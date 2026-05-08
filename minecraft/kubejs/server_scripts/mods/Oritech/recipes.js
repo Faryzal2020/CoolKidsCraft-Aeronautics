@@ -6,10 +6,10 @@ ServerEvents.recipes(event => {
   event.remove({ id: 'oritech:crafting/core2alt' })
   event.remove({ id: 'oritech:crafting/core3' })
   event.remove({ id: 'oritech:crafting/core3alt' })
-  event.remove({ id: 'oritech:crafting/core4' })
-  event.remove({ id: 'oritech:crafting/core5' })
-  event.remove({ id: 'oritech:crafting/core6' })
-  event.remove({ id: 'oritech:crafting/core7' })
+  //event.remove({ id: 'oritech:crafting/core4' })
+  //event.remove({ id: 'oritech:crafting/core5' })
+  //event.remove({ id: 'oritech:crafting/core6' })
+  //event.remove({ id: 'oritech:crafting/core7' })
 
   event.shaped(
     Item.of('oritech:machine_core_1', 1),
