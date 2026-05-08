@@ -1,4 +1,6 @@
 .vscode
+.DS_Store
+/minecraft/.DS_Store
 /minecraft/.mixin.out
 /minecraft/backup
 /minecraft/blueprints
