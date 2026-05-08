@@ -97,7 +97,8 @@ pack_distributables() {
             if [[ -n "$pattern" ]]; then
                 echo "Excluding: $pattern"
                 # Using find to handle wildcards and recursive deletion in temp_dir
-                find "$temp_dir" -path "$temp_dir/$pattern" -exec rm -rf {} + 2>/dev/null
+                # Quote the path pattern to handle spaces
+                find "$temp_dir" -path "$temp_dir/$pattern" -print0 2>/dev/null | xargs -0 rm -rf
             fi
         done <<< "$patterns"
     fi
@@ -147,10 +148,9 @@ sync_server_branch() {
     if [[ -n "$patterns" ]]; then
         while IFS= read -r pattern; do
             if [[ -n "$pattern" ]]; then
-                # Find matching files/dirs
+                # Find matching files/dirs using print0 to handle spaces
                 # SAFETY CHECK: Don't delete system files
-                local targets=$(find . -path "./$pattern" 2>/dev/null)
-                for target in $targets; do
+                find . -path "./$pattern" -print0 2>/dev/null | while IFS= read -r -d '' target; do
                     local base_target=$(basename "$target")
                     local is_system=false
                     for sys in "${system_files[@]}"; do
