@@ -90,6 +90,17 @@ ServerEvents.recipes(event => {
         D: '#c:ingots/energite'
     }).id('oritech:motor/advbattery')
 
+    event.remove({ id: "sophisticatedbackpacks:battery_upgrade" })
+    event.shaped(Item.of('sophisticatedbackpacks:battery_upgrade', 1), [
+        'BAB',
+        'ACA',
+        'BAB'
+    ], {
+        A: 'powah:battery_basic',
+        B: '#c:ingots/energite',
+        C: 'sophisticatedbackpacks:upgrade_base'
+    }).id('sophisticatedbackpacks:battery_upgrade')
+
     // Battery Tweaks
     let aaBatteries = [
         'actuallyadditions:single_battery',
@@ -116,7 +127,6 @@ ServerEvents.recipes(event => {
     })
 
     event.replaceInput({ output: 'integrateddynamics:energy_battery' }, 'minecraft:redstone_block', 'powah:battery_basic')
-    event.replaceInput({ output: 'sophisticatedbackpacks:battery_upgrade' }, 'minecraft:redstone_block', 'powah:battery_basic')
     event.replaceInput({ output: 'mininggadgets:upgrade_battery_1' }, 'minecraft:quartz', 'oritech:basic_battery')
     event.replaceInput({ output: 'mininggadgets:upgrade_battery_2' }, 'minecraft:quartz', 'oritech:basic_battery')
     event.replaceInput({ output: 'mininggadgets:upgrade_battery_2' }, 'minecraft:iron_ingot', 'powah:steel_energized')
@@ -126,5 +136,6 @@ ServerEvents.recipes(event => {
 
     event.replaceInput({ output: 'oritech:reactor_condenser' }, 'minecraft:ice', 'undergarden:froststeel_ingot')
     event.replaceInput({ output: 'oritech:atomic_forge_block' }, 'oritech:duratium_ingot', 'cataclysm:ignitium_ingot')
+    event.replaceInput({ output: 'createpropulsion:ion_thruster' }, 'create:chute', 'oritech:ion_thruster')
 
 })

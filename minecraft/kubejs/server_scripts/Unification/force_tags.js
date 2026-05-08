@@ -4,7 +4,7 @@ const MATERIALS = [
     'sulfur', 'salt', 'iron', 'gold', 'copper', 'tin', 'lead', 'silver',
     'nickel', 'aluminum', 'zinc', 'uranium', 'platinum', 'osmium',
     'bauxite', 'tungsten', 'iridium', 'titanium', 'coal', 'diamond',
-    'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon'
+    'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon', 'cast_iron'
 ];
 
 const TYPES = {
@@ -17,12 +17,13 @@ const TYPES = {
     'gears': 'gear',
     'plates': 'plate',
     'rods': 'rod',
-    'wires': 'wire'
+    'wires': 'wire',
+    'clumps': 'clump'
 };
 
 const TARGET_MODS = [
-    'tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions',
-    'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire'
+    'tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions', 'createbigcannons',
+    'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire', 'createpropulsion'
 ];
 
 function applyForceTags(event, isBlock) {

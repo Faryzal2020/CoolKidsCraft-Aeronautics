@@ -16,7 +16,8 @@
     "mffs",
     "createbigcannons",
     "iceandfire",
-    "silentgear"
+    "silentgear",
+    "createpropulsion"
   ],
   "priority_overrides": {},
   "stone_variants": [

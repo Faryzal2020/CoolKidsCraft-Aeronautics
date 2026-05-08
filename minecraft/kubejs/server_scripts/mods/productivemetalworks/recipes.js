@@ -125,6 +125,9 @@ ServerEvents.recipes(event => {
 
     pmw_plate_casting('c:molten_nickel', 'tfmg:nickel_sheet', 'nickel')
     pmw_plate_casting('c:molten_zinc', 'railcraft:zinc_plate', 'zinc')
+    pmw_plate_casting('c:molten_tin', 'railcraft:tin_plate', 'tin')
+    pmw_plate_casting('c:molten_invar', 'railcraft:invar_plate', 'invar')
+    pmw_plate_casting('c:molten_bronze', 'railcraft:bronze_plate', 'bronze')
 
     pmw_block_casting('c:molten_aluminum', 'tfmg:aluminum_block', 'aluminum')
     pmw_ingot_casting('c:molten_aluminum', 'tfmg:aluminum_ingot', 'aluminum')

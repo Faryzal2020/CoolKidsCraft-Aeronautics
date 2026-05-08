@@ -1,5 +1,6 @@
 {
     "ids": [
-        "silentgems:neoforge/biome_modifier/silver_ore"
+        "silentgems:neoforge/biome_modifier/silver_ore",
+        "iceandfire:neoforge/biome_modifier/silver_ore"
     ]
 }

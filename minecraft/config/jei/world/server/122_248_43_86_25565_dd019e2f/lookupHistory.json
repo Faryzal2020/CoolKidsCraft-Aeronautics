@@ -1,5 +1,15 @@
 [
   {"version":1},
+  {"ingredient":{"id":"kubejs:fire_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"kubejs:fire_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"kubejs:ice_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"kubejs:lightning_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:ancient_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:soul_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:corrupted_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:summoner_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:icy_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"endermanoverhaul:crimson_pearl"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"productivemetalworks:molten_gold"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:gold_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:lead_sheet"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -89,15 +99,5 @@
   {"ingredient":{"id":"undergarden:froststeel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"undergarden:froststeel_nugget"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"undergarden:raw_froststeel_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:raw_copper"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"oritech:copper_clump"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"iceandfire:raw_silver"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"silentgems:raw_silver"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"railcraft:silver_ore"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"iceandfire:dragonscale_silver"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"iceandfire:dragonscales_silver"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"iceandfire:armor_silver_helmet"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"iceandfire:silver_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"productivetrees:silver_fir_log"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"productivetrees:silver_fir_planks"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"minecraft:raw_copper"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]

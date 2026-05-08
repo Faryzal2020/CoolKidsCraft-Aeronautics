@@ -48,8 +48,8 @@ global.iceAndFirePearls = (/** @type {$ServerLevel_}} */ level, /** @type {$Play
     let mainItemStack = player.getItemInHand(hand)
     if (level.clientSide) return true
     // currentStopwatch = $Stopwatch.createStarted()
-    let $DragonType = Java.loadClass("com.iafenvoy.iceandfire.data.DragonType")
-    let $EntityDragonBase = Java.loadClass("com.iafenvoy.iceandfire.entity.EntityDragonBase")
+    let $DragonType = Java.loadClass("com.iafenvoy.iceandfire.registry.IafDragonTypes")
+    let $EntityDragonBase = Java.loadClass("com.iafenvoy.iceandfire.entity.DragonBaseEntity")
     let $AABB = Java.loadClass("net.minecraft.world.phys.AABB")
     let $Mth = Java.loadClass("net.minecraft.util.Mth")
     let $EyeOfEnder = Java.loadClass("net.minecraft.world.entity.projectile.EyeOfEnder")
@@ -80,7 +80,7 @@ global.iceAndFirePearls = (/** @type {$ServerLevel_}} */ level, /** @type {$Play
     let currentMinDist = 0
     targets.forEach(dragon => {
         if (dragon.dragonType == thisType && !dragon.isModelDead() && !dragon.isTame()) {
-            let dist = dragon.distanceToEntity(player)
+            let dist = dragon.distanceTo(player)
             if (currentMinDist == 0 || dist < currentMinDist) {
                 closest = dragon
             }

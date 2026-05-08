@@ -24,13 +24,13 @@ ServerEvents.recipes(event => {
     // Mods known to have custom recipe schemas that KubeJS native replaceInput misses
     const targetMods = [
         'tfmg', 'enderio', 'railcraft', 'create', 'oritech', 'actuallyadditions',
-        'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire'
+        'pneumaticcraft', 'utilitarian', 'productivebees', 'silentgems', 'iceandfire', "createpropulsion"
     ];
 
     const priorities = [
         'minecraft', 'kubejs', 'oritech', 'create', 'pneumaticcraft', 'tfmg', 'railcraft',
         'biggerreactors', 'enderio', 'utilitarian', 'actuallyadditions', 'xycraft_world',
-        'silentgems', 'mffs', 'createbigcannons', 'iceandfire', 'silentgear'
+        'silentgems', 'mffs', 'createbigcannons', 'iceandfire', 'silentgear', "createpropulsion"
 
     ];
 
