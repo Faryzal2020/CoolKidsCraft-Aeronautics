@@ -11,7 +11,6 @@ ServerEvents.recipes(event => {
     // This forces the use of more advanced processing for other metals.
     let removeSmelting = [
         "minecraft:gold_ingot",
-        "minecraft:copper_ingot",
         "oritech:nickel_ingot",
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",
@@ -30,7 +29,6 @@ ServerEvents.recipes(event => {
 
     let removeBlasting = [
         "minecraft:gold_ingot",
-        "minecraft:copper_ingot",
         "oritech:nickel_ingot",
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",

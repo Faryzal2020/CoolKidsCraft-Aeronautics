@@ -1,5 +1,14 @@
 [
   {"version":1},
+  {"ingredient":{"id":"minecraft:blast_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:black_foundry_controller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:red_foundry_controller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:white_foundry_drain"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:orange_foundry_controller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:white_foundry_controller"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_copper"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:copper_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:iron_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:asphalt"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:liquid_concrete"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:concrete_mixture"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -22,7 +31,6 @@
   {"ingredient":{"id":"tfmg:rusted_blast_furnace_reinforcement"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:blast_furnace_hatch"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:blast_furnace_output"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:blast_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"securitycraft:keypad_blast_furnace"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"productivemetalworks:molten_tin"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"railcraft:tin_plate"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -91,13 +99,5 @@
   {"ingredient":{"id":"powah:photoelectric_pane"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"enderio:grains_of_infinity"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"enderio:basic_capacitor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"enderio:energetic_photovoltaic_module"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"enderio:photovoltaic_composite"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"enderio:photovoltaic_plate"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"pneumaticcraft:electrostatic_compressor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedbackpacks:auto_blasting_upgrade"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:blasting_upgrade"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:auto_blasting_upgrade"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"supplementaries:blast_armor_trim_smithing_template"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"tacz:attachment","components":{"minecraft:custom_data":{"AttachmentId":"tacz:muzzle_silencer_vulture"}}},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"enderio:energetic_photovoltaic_module"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
