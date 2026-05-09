@@ -2,6 +2,7 @@
   "mod_priorities": [
     "minecraft",
     "kubejs",
+    "productivemetalworks",
     "oritech",
     "create",
     "pneumaticcraft",
@@ -17,7 +18,8 @@
     "createbigcannons",
     "iceandfire",
     "silentgear",
-    "createpropulsion"
+    "createpropulsion",
+    "mffs"
   ],
   "priority_overrides": {},
   "stone_variants": [
@@ -48,7 +50,8 @@
     "c:dirty_dusts/{material}",
     "c:shards/{material}",
     "c:silicon",
-    "c:plastics"
+    "c:plastics",
+    "c:molten_{material}"
   ],
   "ignored_tags": [],
   "ignored_items": [

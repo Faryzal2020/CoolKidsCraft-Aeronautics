@@ -21,7 +21,8 @@ const UNIFICATION_MATERIALS = [
     'bauxite',
     'tungsten',
     'iridium',
-    'titanium'
+    'titanium',
+    'silicon'
 ];
 
 const CANONICAL_TYPES = {
@@ -71,7 +72,8 @@ ServerEvents.tags('item', event => {
     });
 
     // 2. Manual Additions (if needed for highly specific edge cases)
-    // event.add('c:raw_materials/lead', 'somemod:weird_lead_item');
+    event.add('c:ingots/silicon', ['oritech:silicon', 'tfmg:silicon_ingot']);
+    event.add('c:silicon', ['oritech:silicon', 'tfmg:silicon_ingot']);
 
 });
 

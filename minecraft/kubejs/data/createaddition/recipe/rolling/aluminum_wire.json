@@ -1,0 +1,14 @@
+{
+  "type": "createaddition:rolling",
+  "ingredients": [
+    {
+      "tag": "c:plates/aluminum"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "tfmg:aluminum_wire"
+    }
+  ]
+}

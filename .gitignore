@@ -65,8 +65,11 @@
 /minecraft/config/packetfixer.properties
 /minecraft/config/fabric/indigo-renderer.properties
 /minecraft/config/jei/world/local*
+/minecraft/config/jei/world
 /minecraft/xaero/world-map/*
 /minecraft/tacz/*
+/minecraft/config/jei/ingredient-list-mod-sort-order.cfg
+/minecraft/config/collapsiblegroups/expand_state.json
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

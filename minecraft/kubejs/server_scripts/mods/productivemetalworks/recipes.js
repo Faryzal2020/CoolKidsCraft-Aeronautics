@@ -122,6 +122,7 @@ ServerEvents.recipes(event => {
     pmw_ingot_casting('c:molten_silver', 'railcraft:silver_ingot', 'silver')
     pmw_nugget_casting('c:molten_silver', 'railcraft:silver_nugget', 'silver')
     pmw_plate_casting('c:molten_silver', 'railcraft:silver_plate', 'silver')
+    pmw_block_casting('tfmg:liquid_asphalt', 'tfmg:asphalt', 'asphalt')
 
     pmw_plate_casting('c:molten_nickel', 'tfmg:nickel_sheet', 'nickel')
     pmw_plate_casting('c:molten_zinc', 'railcraft:zinc_plate', 'zinc')

@@ -1,6 +1,7 @@
 // priority: 50
 
 ServerEvents.recipes(event => {
+    let startTime = Date.now();
     const materials = [
         'sulfur', 'salt', 'iron', 'gold', 'copper', 'tin', 'lead', 'silver',
         'nickel', 'aluminum', 'zinc', 'uranium', 'platinum', 'osmium',
@@ -28,7 +29,7 @@ ServerEvents.recipes(event => {
     ];
 
     const priorities = [
-        'minecraft', 'kubejs', 'oritech', 'create', 'pneumaticcraft', 'tfmg', 'railcraft',
+        'minecraft', 'kubejs', 'productivemetalworks', 'oritech', 'create', 'pneumaticcraft', 'tfmg', 'railcraft',
         'biggerreactors', 'enderio', 'utilitarian', 'actuallyadditions', 'xycraft_world',
         'silentgems', 'mffs', 'createbigcannons', 'iceandfire', 'silentgear', "createpropulsion"
 
@@ -89,6 +90,37 @@ ServerEvents.recipes(event => {
 
     // Add explicit overrides
     inputReplacements['enderio:powdered_coal'] = 'c:dusts/coal';
+    inputReplacements['tfmg:silicon_ingot'] = 'c:silicon';
+    outputReplacements['tfmg:silicon_ingot'] = 'oritech:silicon';
+    outputReplacements['oritech:silicon'] = 'oritech:silicon'; // Ensure it's not replaced by something lower priority
+
+    // Molten Metal Buckets Unification
+    const moltenMetals = [
+        'steel'
+    ];
+    moltenMetals.forEach(metal => {
+        let tag = `c:buckets/molten_${metal}`;
+        let priority = `productivemetalworks:molten_${metal}_bucket`;
+        if (Item.exists(priority)) {
+            let tfmgBucket = `tfmg:molten_${metal}_bucket`;
+            let cbcBucket = `createbigcannons:molten_${metal}_bucket`;
+            let createBucket = `create:molten_${metal}_bucket`;
+
+            if (Item.exists(tfmgBucket)) {
+                inputReplacements[tfmgBucket] = tag;
+                outputReplacements[tfmgBucket] = priority;
+            }
+            if (Item.exists(cbcBucket)) {
+                inputReplacements[cbcBucket] = tag;
+                outputReplacements[cbcBucket] = priority;
+            }
+            if (Item.exists(createBucket)) {
+                inputReplacements[createBucket] = tag;
+                outputReplacements[createBucket] = priority;
+            }
+        }
+    });
+
     let coalPriority = getPriorityItem('coal', 'dust');
     if (coalPriority && coalPriority !== 'enderio:powdered_coal') {
         outputReplacements['enderio:powdered_coal'] = coalPriority;
@@ -96,10 +128,24 @@ ServerEvents.recipes(event => {
 
     // 1. STANDARD REPLACEMENTS (Catches 90% of normal recipes)
     Object.keys(inputReplacements).forEach(rogueItem => {
-        event.replaceInput({}, rogueItem, `#${inputReplacements[rogueItem]}`);
+        if (!Item.exists(rogueItem)) return;
+        
+        console.log(`[Global Unification] Replacing input ${rogueItem} with #${inputReplacements[rogueItem]}`);
+        try {
+            event.replaceInput({}, rogueItem, `#${inputReplacements[rogueItem]}`);
+        } catch (err) {
+            console.error(`[Global Unification Error] Failed to replace input ${rogueItem}: ${err}`);
+        }
     });
     Object.keys(outputReplacements).forEach(rogueItem => {
-        event.replaceOutput({}, rogueItem, outputReplacements[rogueItem]);
+        if (!Item.exists(rogueItem)) return;
+
+        console.log(`[Global Unification] Replacing output ${rogueItem} with ${outputReplacements[rogueItem]}`);
+        try {
+            event.replaceOutput({}, rogueItem, outputReplacements[rogueItem]);
+        } catch (err) {
+            console.error(`[Global Unification Error] Failed to replace output ${rogueItem}: ${err}`);
+        }
     });
 
     // 2. DEEP JSON REPLACEMENTS (For Create, TFMG, Railcraft, ProductiveBees, etc.)
@@ -232,7 +278,7 @@ ServerEvents.recipes(event => {
                     event.custom(json).id(recipeId);
                 }
             } catch (err) {
-                // console.error(`[Unification Error] [${recipeId}] Failed to process/inject: ${err}`);
+                console.error(`[Unification Error] [${recipeId}] Failed to process/inject: ${err}`);
             }
         });
     });
@@ -385,4 +431,6 @@ ServerEvents.recipes(event => {
             'c:dusts/copper': 'tfmg:copper_dust',
         }
     );
+    let duration = Date.now() - startTime;
+    console.log(`[Global Unification] Completed item replacements in ${duration}ms`);
 });

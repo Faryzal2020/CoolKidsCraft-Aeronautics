@@ -1,0 +1,14 @@
+{
+  "type": "createaddition:rolling",
+  "ingredients": [
+    {
+      "tag": "c:plates/constantan"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "tfmg:constantan_wire"
+    }
+  ]
+}

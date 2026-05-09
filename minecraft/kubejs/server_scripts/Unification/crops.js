@@ -1,4 +1,5 @@
 ServerEvents.tags('item', event => {
+    let startTime = Date.now();
 
 
   if (Platform.isLoaded('herbsandharvest')) {
@@ -125,9 +126,12 @@ ServerEvents.tags('item', event => {
   // Small tweaks
   event.add('c:onions/onion', 'farmersdelight:onion')
   event.add('c:onions', 'farmersdelight:onion')
+  let duration = Date.now() - startTime;
+  console.log(`[Crops Unification] Completed item tags in ${duration}ms`);
 })
 
 ServerEvents.recipes(event => {
+  let startTime = Date.now();
   if (Platform.isLoaded('merrymaking')) {
     event.remove([{
         id: 'merrymaking:poultry_dinner'
@@ -278,6 +282,8 @@ ServerEvents.recipes(event => {
     )
   }
 
+  let duration = Date.now() - startTime;
+  console.log(`[Crops Unification] Completed recipes in ${duration}ms`);
 })
 
 

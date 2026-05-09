@@ -58,13 +58,21 @@ function applyForceTags(event, isBlock) {
 }
 
 ServerEvents.tags('item', event => {
+    let startTime = Date.now();
     applyForceTags(event, false);
 
     // Explicit edge case
     event.add('c:dusts/coal', 'enderio:powdered_coal');
+    
+    let duration = Date.now() - startTime;
+    console.log(`[Force Tags] Completed item tags in ${duration}ms`);
 });
 
 ServerEvents.tags('block', event => {
+    let startTime = Date.now();
     applyForceTags(event, true);
+    
+    let duration = Date.now() - startTime;
+    console.log(`[Force Tags] Completed block tags in ${duration}ms`);
 });
 
