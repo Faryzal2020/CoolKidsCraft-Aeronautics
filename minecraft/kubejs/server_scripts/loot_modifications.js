@@ -172,7 +172,8 @@ LootJS.lootTables((event) => {
     const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.001 }
 
     // Inject gun_grade into the custom_data of each gun item for Legendary Tooltips
-    [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6].forEach((grade, i) => {
+    let grades = [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6];
+    grades.forEach((grade, i) => {
         grade.items = grade.items.map(gun => gun.withCustomData({ gun_grade: i + 1 }));
     });
 
