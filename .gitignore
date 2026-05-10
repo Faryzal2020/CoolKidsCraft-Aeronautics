@@ -58,7 +58,7 @@
 /minecraft/config/vivecraft-client-config.json
 /minecraft/mods/DistantHorizons*
 /minecraft/mods/.connector
-/minecraft/.voxy
+#/minecraft/.voxy
 /minecraft/debug/
 /minecraft/config/fancymenu/user_variables*
 /minecraft/config/iris.properties
