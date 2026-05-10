@@ -109,3 +109,4 @@ update.sh
 /minecraft/auto_restart
 /minecraft/config/yes_steve_model/cache
 /minecraft/config/jei/world/server*
+/minecraft/config/auto_restart-server.toml

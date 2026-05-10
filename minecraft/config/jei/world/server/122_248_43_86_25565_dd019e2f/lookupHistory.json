@@ -1,5 +1,6 @@
 [
   {"version":1},
+  {"ingredient":{"id":"minecraft:iron_door"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"supplementaries:lumisene_bucket"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"supplementaries:lumisene"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"oritech:reinforced_carbon_sheet"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -98,6 +99,5 @@
   {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_1_plus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:copper_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_1"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:upgrade_base"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedbackpacks:upgrade_base"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"sophisticatedstorage:upgrade_base"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]

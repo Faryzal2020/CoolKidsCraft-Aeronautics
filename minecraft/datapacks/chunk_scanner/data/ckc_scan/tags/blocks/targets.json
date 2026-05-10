@@ -1,9 +1,5 @@
 {
   "values": [
-    "minecraft:grass_block",
-    "minecraft:dirt",
-    "minecraft:stone",
-    "minecraft:short_grass",
-    "minecraft:tall_grass"
+    "supplementaries:lumisene_bucket"
   ]
 }
