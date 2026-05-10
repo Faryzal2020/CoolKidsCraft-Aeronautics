@@ -11,8 +11,10 @@
       "oritech:resource_node_nickel"
     ],
     "boulderOres": [
-      "minecraft:deepslate_iron_ore",
-      "minecraft:deepslate_iron_ore",
+      "oritech:deepslate_nickel_ore",
+      "oritech:deepslate_nickel_ore",
+      "oritech:deepslate_nickel_ore",
+      "oritech:deepslate_nickel_ore",
       "minecraft:deepslate_iron_ore",
       "minecraft:deepslate_iron_ore",
       "minecraft:deepslate_iron_ore",

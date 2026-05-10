@@ -1,0 +1,8 @@
+{
+    "entryname": "sulfur",
+    "oretag": "c:ores/sulfur",
+    "color": -5658236,
+    "drawing": false,
+    "order": 0,
+    "recipeItem": "railcraft:sulfur_ore"
+}

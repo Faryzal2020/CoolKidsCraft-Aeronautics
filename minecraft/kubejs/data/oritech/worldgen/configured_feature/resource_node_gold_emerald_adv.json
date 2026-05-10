@@ -11,6 +11,7 @@
       "oritech:resource_node_uranium"
     ],
     "boulderOres": [
+      "oritech:deepslate_platinum_ore",
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_emerald_ore",

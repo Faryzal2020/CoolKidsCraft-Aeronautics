@@ -12,6 +12,7 @@
       "oritech:resource_node_emerald"
     ],
     "boulderOres": [
+      "oritech:deepslate_nickel_ore",
       "minecraft:deepslate_gold_ore",
       "minecraft:deepslate_lapis_ore",
       "minecraft:deepslate_emerald_ore",

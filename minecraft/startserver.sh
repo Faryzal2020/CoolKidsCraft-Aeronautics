@@ -55,7 +55,7 @@ fi
 # --- Pre-flight Mod Check ---
 if [ -d mods ]; then
     # Look for common client-side mods that cause server crashes
-    CLIENT_MODS=$(ls mods/ | grep -Ei "iris|oculus|sodium|chloride|fancymenu|drippyloadingscreen|entity_texture_features|euphoriapatcher|shouldersurfing" || true)
+    CLIENT_MODS=$(ls mods/ | grep -Ei "iris|oculus|chloride|fancymenu|drippyloadingscreen|entity_texture_features|euphoriapatcher|shouldersurfing" || true)
     if [ -n "$CLIENT_MODS" ]; then
         warn "Detected potential client-only mods in the 'mods' folder:"
         echo "$CLIENT_MODS" | while read -r line; do echo "  - $line"; done

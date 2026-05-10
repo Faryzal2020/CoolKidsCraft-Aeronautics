@@ -1,0 +1,8 @@
+{
+    "entryname": "saltpeter",
+    "oretag": "c:ores/saltpeter",
+    "color": -5971737,
+    "drawing": false,
+    "order": 0,
+    "recipeItem": "railcraft:saltpeter"
+}

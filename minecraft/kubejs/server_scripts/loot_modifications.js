@@ -180,12 +180,12 @@ LootJS.lootTables((event) => {
         }
     });
 
-    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG, TAURUS943], "baseChance": 0.05 }
+    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG, TAURUS943], "baseChance": 0.04 }
     const Grade_2 = { "items": [M4A1, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI, RHINO357, HK_MK23, M9A4], "baseChance": 0.02 }
-    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.015 }
-    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, M1014, P90, KAR98, LONETRAIL], "baseChance": 0.01 }
-    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK, TAURUS500, AA12], "baseChance": 0.005 }
-    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.001 }
+    const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.01 }
+    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, M1014, P90, KAR98, LONETRAIL], "baseChance": 0.005 }
+    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK, TAURUS500, AA12], "baseChance": 0.002 }
+    const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.00075 }
 
     // Lessons:
     // withCustomData() is not available in KubeJS
@@ -243,14 +243,14 @@ LootJS.lootTables((event) => {
             /.*chests?.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceIncrease": 0.02
+        "chanceIncrease": 0.01
     }
     const Preset_2 = {
         "lootTables": [
             /.*chests?.*(deep_dark|city)/
         ],
         "addedLoots": [Grade_4, Grade_5, Grade_6],
-        "chanceIncrease": 0.05
+        "chanceIncrease": 0.005
     }
     const Preset_3 = {
         "lootTables": [
@@ -270,7 +270,7 @@ LootJS.lootTables((event) => {
             /.*chests?.*(legendary|legend|boss)/
         ],
         "addedLoots": [Grade_5, Grade_6],
-        "chanceOverride": 0.1
+        "chanceOverride": 0.02
     }
     const Preset_5 = {
         "lootTables": [
@@ -283,12 +283,14 @@ LootJS.lootTables((event) => {
             /nova_structures:chests\/creeping.*/
         ],
         "addedLoots": [Grade_3, Grade_4, Grade_5],
-        "chanceIncrease": 0.05
+        "chanceIncrease": 0.01
     }
 
     const Preset_6 = {
         "lootTables": [
-            /structory.*/
+            /structory.*/,
+            "create_ltab:core/legend_loot",
+            "create_ltab:normal/legend_loot"
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6]
     }
