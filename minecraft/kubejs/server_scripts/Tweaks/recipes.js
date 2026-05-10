@@ -60,22 +60,6 @@ ServerEvents.recipes(event => {
         }
     }).id('powah:energizing/uraninite_from_ore')
 
-    if (Platform.isLoaded('mysticalagriculture')) {
-        event.shapeless(
-            Item.of('minecraft:potion[potion_contents={potion:"minecraft:water"}]', 1),
-            [
-                'minecraft:glass_bottle',
-                'mysticalagriculture:water_essence'
-            ]
-        )
-
-        event.shapeless(
-            Item.of('minecraft:honey_block'),
-            [
-                '9x mysticalagriculture:honey_essence'
-            ]
-        )
-    }
     event.shaped("minecraft:crafting_table", ['XX', 'XX'], { X: "#minecraft:planks" }).id("minecraft:crafting_table")
 
     //soy sauce from unified tag
@@ -121,7 +105,7 @@ ServerEvents.recipes(event => {
         }
     ).id("kubejs:saltpeter_block")
     event.shapeless(
-        Item.of('railcraft:saltpeter_dust', 9),
+        Item.of('tfmg:nitrate_dust', 9),
         [
             'kubejs:saltpeter_block'
         ]
