@@ -1,5 +1,5 @@
 ServerEvents.tags('item', event => {
-    let startTime = Date.now();
+  let startTime = Date.now();
 
 
   if (Platform.isLoaded('herbsandharvest')) {
@@ -39,7 +39,7 @@ ServerEvents.tags('item', event => {
     tags = ['c:crops/eggplant', 'rftoolsutility:living/living', 'c:vegetables/eggplant', 'c:vegetables', 'extended_industrialization:farmer_plantable', 'c:crops', 'rftoolsutility:living/highyield']
     tags.forEach(tag => { event.add(tag, 'herbsandharvest:eggplant') })
 
-    tags = ['rftoolsutility:living/living', 'c:vegetables', 'c:rootvegetables/garlic', 'extended_industrialization:farmer_plantable', 'rftoolsutility:living/highyield', 'c:crops/garlic', 'c:crops', 'supplementaries:cookies', 'c:rootvegetables', 'c:vegetables/garlic']
+    tags = ['rftoolsutility:living/living', 'c:vegetables', 'c:rootvegetables/garlic', 'extended_industrialization:farmer_plantable', 'rftoolsutility:living/highyield', 'c:crops/garlic', 'c:crops', 'c:rootvegetables', 'c:vegetables/garlic']
     tags.forEach(tag => { event.add(tag, 'herbsandharvest:garlic_bulb') })
 
     tags = ['rftoolsutility:living/living', 'c:crops', 'rftoolsutility:living/highyield', 'c:crops/ginger', 'extended_industrialization:farmer_plantable']
@@ -49,7 +49,7 @@ ServerEvents.tags('item', event => {
     tags.forEach(tag => { event.add(tag, 'herbsandharvest:grapes') })
 
     // Can argue that green beans != beans, but good enough
-    tags = ['rftoolsutility:living/living', 'c:grain/bean', 'extended_industrialization:farmer_plantable', 'c:grain', 'rftoolsutility:living/highyield', 'c:flour_plants/bean', 'supplementaries:cookies', 'c:crops/bean', 'c:crops', 'c:flour_plants']
+    tags = ['rftoolsutility:living/living', 'c:grain/bean', 'extended_industrialization:farmer_plantable', 'c:grain', 'rftoolsutility:living/highyield', 'c:flour_plants/bean', 'c:crops/bean', 'c:crops', 'c:flour_plants']
     tags.forEach(tag => { event.add(tag, 'herbsandharvest:green_bean') })
 
     tags = ['rftoolsutility:living/highyield', 'c:peppers', 'c:peppers/bellpepper', 'extended_industrialization:farmer_plantable', 'c:crops/bellpepper', 'c:vegetables', 'rftoolsutility:living/living', 'c:vegetables/bellpepper', 'c:crops']
@@ -134,29 +134,29 @@ ServerEvents.recipes(event => {
   let startTime = Date.now();
   if (Platform.isLoaded('merrymaking')) {
     event.remove([{
-        id: 'merrymaking:poultry_dinner'
-      },
-      {
-        id: 'merrymaking:latke'
-      },
-      {
-        id: 'merrymaking:sweet_potato_pie'
-      },
-      {
-        id: 'merrymaking:icing'
-      },
-      {
-        id: 'merrymaking:ground_ginger'
-      },
-      {
-        id: 'merrymaking:cookie_dough'
-      },
-      {
-        id: 'merrymaking:gingerbread_dough'
-      },
-      {
-        id: 'merrymaking:harvest_tray'
-      }
+      id: 'merrymaking:poultry_dinner'
+    },
+    {
+      id: 'merrymaking:latke'
+    },
+    {
+      id: 'merrymaking:sweet_potato_pie'
+    },
+    {
+      id: 'merrymaking:icing'
+    },
+    {
+      id: 'merrymaking:ground_ginger'
+    },
+    {
+      id: 'merrymaking:cookie_dough'
+    },
+    {
+      id: 'merrymaking:gingerbread_dough'
+    },
+    {
+      id: 'merrymaking:harvest_tray'
+    }
     ])
 
     event.shaped('merrymaking:stuffed_poultry_dinner', ['ABC', 'DEF'], {

@@ -128,8 +128,6 @@ KubeJSTweaks.beforeRecipes(event => {
 
   // Factory blocks removed
 
-  event.disable("supplementaries:botany_flax")
-
   event.getEntry(["mekmm:compat/immersiveengineering/lathe/aluminum_stick", "mekmm:compat/immersiveengineering/lathe/steel_stick"])
     .forEach(entry => {
       entry.renameKey("main_input", "input", false)

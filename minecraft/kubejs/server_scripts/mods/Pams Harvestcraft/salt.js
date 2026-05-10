@@ -72,7 +72,6 @@ ServerEvents.tags('item', event => {
   event.add('c:dusts', 'pamhc2foodcore:saltitem')
   event.add('c:raw_materials', 'pamhc2foodcore:saltitem')
   event.add('minecolonies:reduceable_ingredient', 'pamhc2foodcore:saltitem')
-  event.add('supplementaries:hourglass_dusts', 'pamhc2foodcore:saltitem')
 })
 
 

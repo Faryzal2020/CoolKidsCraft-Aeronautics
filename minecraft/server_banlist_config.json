@@ -21,10 +21,14 @@
       "silentgear:elytra",
       "waystones:warp_dust",
       "waystones:warp_plate",
-      "waystones:dormant_shard"
+      "waystones:dormant_shard",
+      "supplementaries:lumisene"
     ],
     "banned_entities": [],
     "remove_recipes_by": [
+      {
+        "output": "supplementaries:lumisene"
+      },
       {
         "output": "createpropulsion:raw_platinum_block"
       },
