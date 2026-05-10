@@ -174,8 +174,12 @@ LootJS.lootTables((event) => {
     // Inject gun_grade into the custom_data of each gun item for Legendary Tooltips
     let grades = [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6];
     grades.forEach((grade, i) => {
-        grade.items = grade.items.map(gun => gun.withCustomData({ gun_grade: i + 1 }));
+        grade.items.forEach(gun => {
+            gun.nbt.merge({ gun_grade: i + 1 });
+        });
     });
+    // Lessons:
+    // withCustomData() is not available in KubeJS
 
     // Ammo types with per-caliber weight (selection rarity) and count ranges.
     // Higher weight = more likely to be picked. countMin/countMax = drop range.

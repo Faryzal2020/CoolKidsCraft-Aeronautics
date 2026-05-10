@@ -69,6 +69,8 @@
 /minecraft/xaero/world-map/*
 /minecraft/config/jei/ingredient-list-mod-sort-order.cfg
 /minecraft/config/collapsiblegroups/expand_state.json
+/minecraft/config/fancymenu/ui_themes/dark.json
+/minecraft/config/fancymenu/ui_themes/light.json
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
