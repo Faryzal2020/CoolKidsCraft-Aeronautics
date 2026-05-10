@@ -33,7 +33,7 @@
 	#The maximum stack size of ammo that the ammo box can hold
 	# Default: 3
 	# Range: > 1
-	AmmoBoxStackSize = 3
+	AmmoBoxStackSize = 4
 	#Deprecated. Use vanilla server resource pack
 	ClientGunPackDownloadUrls = []
 	#Whether or not players are allowed to use the crawl feature

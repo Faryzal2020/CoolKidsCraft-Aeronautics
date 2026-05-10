@@ -156,34 +156,61 @@ LootJS.lootTables((event) => {
     const GLOCK_17 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:glock_17", "GunCurrentAmmoCount": 17 } });
     const CZ75 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "AUTO", "HasBulletInBarrel": 1, "GunId": "tacz:cz75", "GunCurrentAmmoCount": 16 } });
     const DEAGLE = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:deagle", "GunCurrentAmmoCount": 7 } });
+    const RHINO357 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:rhino357", "GunCurrentAmmoCount": 6 } });
+    const LONETRAIL = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:lonetrail", "GunCurrentAmmoCount": 1 } });
+    const TAURUS943 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:taurus943", "GunCurrentAmmoCount": 9 } });
+    const KAR98 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:kar98", "GunCurrentAmmoCount": 5 } });
+    const HK_MK23 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:hk_mk23", "GunCurrentAmmoCount": 12 } });
+    const TAURUS500 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:taurus500", "GunCurrentAmmoCount": 5 } });
+    const M9A4 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:m9a4", "GunCurrentAmmoCount": 15 } });
 
-    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG], "baseChance": 0.05 }
-    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI], "baseChance": 0.02 }
+    const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG, TAURUS943], "baseChance": 0.05 }
+    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI, RHINO357, HK_MK23, M9A4], "baseChance": 0.02 }
     const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.015 }
-    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90], "baseChance": 0.01 }
-    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK], "baseChance": 0.005 }
+    const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90, KAR98, LONETRAIL], "baseChance": 0.01 }
+    const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK, TAURUS500], "baseChance": 0.005 }
     const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.001 }
 
-    // Ammo types actually used by guns in this pack (verified from gun data JSONs in tacz jar).
-    // Removed unused types: tacz:762x25, tacz:762x54, tacz:46x30, tacz:68x51fury, tacz:545x39
-    // (no gun in the default gun pack uses those calibers).
+    // Ammo types with per-caliber weight (selection rarity) and count ranges.
+    // Higher weight = more likely to be picked. countMin/countMax = drop range.
+    // Small/pistol calibers: common, high count. Heavy/explosive: rare, low count.
     const AMMO_TYPES = [
-        "tacz:9mm",        // glock_17, b93r, cz75, hk_mp5a5, uzi
-        "tacz:45acp",      // m1911, p320, ump45, vector45
-        "tacz:57x28",      // p90
-        "tacz:12g",        // aa12, db_long, db_short, m1014, m870, spas_12
-        "tacz:556x45",     // aug, g36k, hk416d, m16a1, m16a4, m249, m4a1, scar_l, spr15hb
-        "tacz:762x39",     // ak47, rpk, sks_tactical, type_81
-        "tacz:308",        // fn_evolys, fn_fal, hk_g3, minigun, mk14, scar_h
-        "tacz:338",        // ai_awp
-        "tacz:50bmg",      // m107, m95
-        "tacz:50ae",       // deagle, timeless50
-        "tacz:357mag",     // deagle_golden
-        "tacz:40mm",       // m320
-        "tacz:30_06",      // m700
-        "tacz:45_70",      // springfield1873
-        "tacz:rpg_rocket", // rpg7
-        "tacz:58x42",      // qbz_191, qbz_95
+        // Pistol / SMG calibers — common, high count
+        { id: "tacz:9mm", weight: 10, countMin: 16, countMax: 64 }, // glock_17, b93r, cz75, hk_mp5a5, uzi, m9a4
+        { id: "tacz:45acp", weight: 10, countMin: 12, countMax: 48 }, // m1911, p320, ump45, vector45, hk_mk23
+        { id: "tacz:22wmr", weight: 10, countMin: 16, countMax: 64 }, // taurus943
+        { id: "tacz:57x28", weight: 8, countMin: 12, countMax: 48 }, // p90
+        { id: "tacz:357mag", weight: 8, countMin: 8, countMax: 32 }, // deagle_golden, rhino357
+        { id: "tacz:50ae", weight: 6, countMin: 6, countMax: 24 }, // deagle, timeless50
+        { id: "tacz:500mag", weight: 6, countMin: 6, countMax: 24 }, // taurus500
+
+        // Shotgun — common-ish, medium-low count (shells are bulky)
+        { id: "tacz:12g", weight: 8, countMin: 4, countMax: 20 }, // aa12, db_long, db_short, m1014, m870, spas_12
+
+        // Intermediate rifle calibers — medium, medium count
+        { id: "tacz:556x45", weight: 6, countMin: 10, countMax: 40 }, // aug, g36k, hk416d, m16a1, m16a4, m249, m4a1, scar_l, spr15hb
+        { id: "tacz:762x39", weight: 6, countMin: 10, countMax: 40 }, // ak47, rpk, sks_tactical, type_81
+        { id: "tacz:58x42", weight: 6, countMin: 10, countMax: 40 }, // qbz_191, qbz_95
+        { id: "tacz:545x39", weight: 6, countMin: 10, countMax: 40 },
+        { id: "tacz:46x30", weight: 7, countMin: 12, countMax: 40 },
+        { id: "tacz:68x51fury", weight: 4, countMin: 5, countMax: 20 },
+
+        // Battle rifle / DMR calibers — uncommon, lower count
+        { id: "tacz:308", weight: 4, countMin: 5, countMax: 20 }, // fn_evolys, fn_fal, hk_g3, minigun, mk14, scar_h
+        { id: "tacz:762x25", weight: 5, countMin: 8, countMax: 30 },
+        { id: "tacz:762x54", weight: 4, countMin: 5, countMax: 20 },
+        { id: "tacz:30_06", weight: 4, countMin: 5, countMax: 20 }, // m700, lonetrail
+        { id: "tacz:45_70", weight: 4, countMin: 4, countMax: 16 }, // springfield1873
+        { id: "tacz:792x57", weight: 4, countMin: 4, countMax: 16 }, // kar98
+        { id: "tacz:magnum_r", weight: 3, countMin: 3, countMax: 12 },
+
+        // Sniper / anti-materiel — rare, low count
+        { id: "tacz:338", weight: 2, countMin: 2, countMax: 8 }, // ai_awp
+        { id: "tacz:50bmg", weight: 2, countMin: 2, countMax: 8 }, // m107, m95
+
+        // Heavy / explosive — very rare, very low count
+        { id: "tacz:40mm", weight: 1, countMin: 1, countMax: 3 }, // m320
+        { id: "tacz:rpg_rocket", weight: 1, countMin: 1, countMax: 2 }, // rpg7
     ];
 
     const Preset_0 = {
@@ -312,17 +339,19 @@ LootJS.lootTables((event) => {
             }
 
             modifier.createPool(pool => {
-                pool.rolls(2);
+                pool.rolls(2); // if roll = 1 it would either drop gun or ammo , confirmed it works like that in the game as of 1.21.1 based on ingame tests
                 pool.when(c => c.randomChance(chance));
 
                 loot.items.forEach(gun => {
-                    AMMO_TYPES.forEach(ammoId => {
-                        pool.addEntry(LootEntry.sequence(
-                            LootEntry.of(gun).withWeight(1),
-                            LootEntry.of(Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammoId } }))
-                                .withWeight(1)
-                                .setCount([8, 32])
-                        ));
+                    AMMO_TYPES.forEach(ammo => {
+                        pool.addEntry(
+                            LootEntry.group(
+                                LootEntry.of(gun).withWeight(1),
+                                LootEntry.of(Item.of("tacz:ammo", { "minecraft:custom_data": { "AmmoId": ammo.id } }))
+                                    .withWeight(1) // to balance with the gun, so that pool #x = gun (50%) + ammo (50%)
+                                    .setCount([ammo.countMin, ammo.countMax])
+                            ) // cannot put withWeight() here dumbass , read the API docs
+                        );
                     });
                 });
             });

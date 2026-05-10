@@ -28,8 +28,8 @@
 // Pulverizer is the early-game slow version; grinder is the upgraded faster one.
 
 var TACZ_AMMO_TYPES = [
-    { ammoId: "tacz:9mm", note: "glock_17, b93r, cz75, hk_mp5a5, uzi" },
-    { ammoId: "tacz:45acp", note: "m1911, p320, ump45, vector45" },
+    { ammoId: "tacz:9mm", note: "glock_17, b93r, cz75, hk_mp5a5, uzi, m9a4" },
+    { ammoId: "tacz:45acp", note: "m1911, p320, ump45, vector45, hk_mk23" },
     { ammoId: "tacz:57x28", note: "p90" },
     { ammoId: "tacz:12g", note: "aa12, db_long, db_short, m1014, m870, spas_12" },
     { ammoId: "tacz:556x45", note: "aug, g36k, hk416d, m16a1, m16a4, m249, m4a1, scar_l, spr15hb" },
@@ -38,12 +38,21 @@ var TACZ_AMMO_TYPES = [
     { ammoId: "tacz:338", note: "ai_awp" },
     { ammoId: "tacz:50bmg", note: "m107, m95" },
     { ammoId: "tacz:50ae", note: "deagle, timeless50" },
-    { ammoId: "tacz:357mag", note: "deagle_golden" },
+    { ammoId: "tacz:357mag", note: "deagle_golden, rhino357" },
     { ammoId: "tacz:40mm", note: "m320" },
-    { ammoId: "tacz:30_06", note: "m700" },
+    { ammoId: "tacz:30_06", note: "m700, lonetrail" },
     { ammoId: "tacz:45_70", note: "springfield1873" },
     { ammoId: "tacz:rpg_rocket", note: "rpg7" },
     { ammoId: "tacz:58x42", note: "qbz_191, qbz_95" },
+    { ammoId: "tacz:46x30", note: "" },
+    { ammoId: "tacz:68x51fury", note: "" },
+    { ammoId: "tacz:545x39", note: "" },
+    { ammoId: "tacz:762x25", note: "" },
+    { ammoId: "tacz:762x54", note: "" },
+    { ammoId: "tacz:magnum_r", note: "rhino357" },
+    { ammoId: "tacz:792x57", note: "kar98" },
+    { ammoId: "tacz:22wmr", note: "taurus943" },
+    { ammoId: "tacz:500mag", note: "taurus500" }
 ];
 
 ServerEvents.recipes(event => {

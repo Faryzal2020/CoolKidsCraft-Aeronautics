@@ -1,6 +1,6 @@
 {
-  "maxEntityCount": 64,
-  "maxHostileCount": 32,
+  "maxEntityCount": 45,
+  "maxHostileCount": 20,
   "maxPassiveCount": 32,
   "applyMaxEntityCount": true,
   "applyMaxHostileCount": true,
