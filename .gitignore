@@ -72,6 +72,8 @@
 /minecraft/config/collapsiblegroups/expand_state.json
 /minecraft/config/fancymenu/ui_themes/dark.json
 /minecraft/config/fancymenu/ui_themes/light.json
+/minecraft/config/simple-discord-link
+/minecraft/sdlinkstorage
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
