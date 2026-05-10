@@ -165,7 +165,7 @@ LootJS.lootTables((event) => {
     const M9A4 = Item.of("tacz:modern_kinetic_gun", { "minecraft:custom_data": { "GunFireMode": "SEMI", "HasBulletInBarrel": 1, "GunId": "tacz:m9a4", "GunCurrentAmmoCount": 15 } });
 
     const Grade_1 = { "items": [M1911, GLOCK_17, SPRINGFIELD1873, DB_SHORT, DB_LONG, TAURUS943], "baseChance": 0.05 }
-    const Grade_2 = { "items": [M4A1, GLOCK_17, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI, RHINO357, HK_MK23, M9A4], "baseChance": 0.02 }
+    const Grade_2 = { "items": [M4A1, P320, B93R, CZ75, HK416D, SCAR_L, G36K, AUG, M870, UZI, RHINO357, HK_MK23, M9A4], "baseChance": 0.02 }
     const Grade_3 = { "items": [M16A1, M16A4, DEAGLE, QBZ_95, AK47, TYPE_81, QBZ_191, SPAS_12, UMP45, HK_MP5A5], "baseChance": 0.015 }
     const Grade_4 = { "items": [SPR15HB, M700, HK_G3, SKS_TACTICAL, SCAR_H, FN_FAL, AA12, M1014, P90, KAR98, LONETRAIL], "baseChance": 0.01 }
     const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK, TAURUS500], "baseChance": 0.005 }
