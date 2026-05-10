@@ -171,6 +171,11 @@ LootJS.lootTables((event) => {
     const Grade_5 = { "items": [M107, TIMELESS50, AI_AWP, MK14, VECTOR45, M320, M249, RPK, TAURUS500], "baseChance": 0.005 }
     const Grade_6 = { "items": [DEAGLE_GOLDEN, M95, RPG7, MINIGUN, FN_Evolys], "baseChance": 0.001 }
 
+    // Inject gun_grade into the custom_data of each gun item for Legendary Tooltips
+    [Grade_1, Grade_2, Grade_3, Grade_4, Grade_5, Grade_6].forEach((grade, i) => {
+        grade.items = grade.items.map(gun => gun.withCustomData({ gun_grade: i + 1 }));
+    });
+
     // Ammo types with per-caliber weight (selection rarity) and count ranges.
     // Higher weight = more likely to be picked. countMin/countMax = drop range.
     // Small/pistol calibers: common, high count. Heavy/explosive: rare, low count.
@@ -224,7 +229,7 @@ LootJS.lootTables((event) => {
             /.*chests?.*(supply|armorer|treasure|tresure|vault)/
         ],
         "addedLoots": [Grade_1, Grade_2, Grade_3],
-        "chanceIncrease": 0.05
+        "chanceIncrease": 0.02
     }
     const Preset_2 = {
         "lootTables": [
@@ -240,7 +245,6 @@ LootJS.lootTables((event) => {
             /mvs:houses.*$/,
             /mvs:large_carts.*$/,
             /mvs:general$/,
-            /aether:chests\/dungeon\/bronze\/.*$/,
             "create_ltab:nether/basic_loot",
             "create_ltab:desert/basic_loot"
         ],
@@ -249,7 +253,6 @@ LootJS.lootTables((event) => {
     const Preset_4 = {
         "lootTables": [
             /nova_structures:chests\/end.*$/,
-            /aether:chests\/dungeon\/silver\/.*$/,
             /.*chests?.*(legendary|legend|boss)/
         ],
         "addedLoots": [Grade_5, Grade_6],
@@ -263,8 +266,7 @@ LootJS.lootTables((event) => {
             /nova_structures:chests\/piglin.*/,
             /nova_structures:chests\/illager.*/,
             /nova_structures:chests\/desert.*/,
-            /nova_structures:chests\/creeping.*/,
-            /aether:chests\/dungeon\/gold\/.*/,
+            /nova_structures:chests\/creeping.*/
         ],
         "addedLoots": [Grade_3, Grade_4, Grade_5],
         "chanceIncrease": 0.05
