@@ -17,7 +17,7 @@
     "type": "ammo",
     "group": "pd_cartridges",
     "id": "tacz:22wmr",
-    "count": 100
+    "count": 99
   },
   "type": "tacz:gun_smith_table_crafting"
 }

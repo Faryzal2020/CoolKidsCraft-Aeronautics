@@ -42,7 +42,8 @@
 /minecraft/config/ars_nouveau/search_index
 /minecraft/config/crash_assistant
 /minecraft/config/ftbchunks-client.snbt
-/minecraft/config/*.toml
+#/minecraft/config/*.toml
+/minecraft/config/*client*
 /minecraft/config/*.bak
 /minecraft/config/chunky
 /minecraft/mods/.index
@@ -58,7 +59,7 @@
 /minecraft/config/vivecraft-client-config.json
 /minecraft/mods/DistantHorizons*
 /minecraft/mods/.connector
-#/minecraft/.voxy
+/minecraft/.voxy
 /minecraft/debug/
 /minecraft/config/fancymenu/user_variables*
 /minecraft/config/iris.properties

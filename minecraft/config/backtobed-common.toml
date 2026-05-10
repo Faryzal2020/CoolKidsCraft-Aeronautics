@@ -1,0 +1,65 @@
+#Global configuration for all returners.
+#Individual returners can override these settings.
+[global]
+	#Time (in ticks) a player must wait before teleportation occurs.
+	# Default: 60
+	# Range: 0 ~ 72000
+	duration_usage = 60
+	#Time (in ticks) before the returner can be used again after teleportation.
+	# Default: 50
+	# Range: 0 ~ 72000
+	cooldown = 50
+	#Set to false to disable tooltips for all returners, regardless of individual settings.
+	show_tooltip = true
+
+#Specific configuration for 'magical_returner' settings.
+[magical_returner]
+	#A value of -1 means it will use the global setting.
+	# Default: -1
+	# Range: -1 ~ 72000
+	duration_usage = -1
+	#A value of -1 means it will use the global setting.
+	# Default: -1
+	# Range: -1 ~ 72000
+	cooldown = -1
+	#Enable or disable the tooltip for this specific returner.
+	show_tooltip = true
+
+#Specific configuration for 'hells_returner' settings.
+[hells_returner]
+	#A value of -1 means it will use the global setting.
+	# Default: 70
+	# Range: -1 ~ 72000
+	duration_usage = 70
+	#A value of -1 means it will use the global setting.
+	# Default: 60
+	# Range: -1 ~ 72000
+	cooldown = 60
+	#Enable or disable the tooltip for this specific returner.
+	show_tooltip = true
+
+#Specific configuration for 'mysterious_returner' settings.
+[mysterious_returner]
+	#A value of -1 means it will use the global setting.
+	# Default: 90
+	# Range: -1 ~ 72000
+	duration_usage = 90
+	#A value of -1 means it will use the global setting.
+	# Default: 70
+	# Range: -1 ~ 72000
+	cooldown = 70
+	#Enable or disable the tooltip for this specific returner.
+	show_tooltip = true
+
+#Specific configuration for 'tresrealm_returner' settings.
+[tresrealm_returner]
+	#A value of -1 means it will use the global setting.
+	# Default: 75
+	# Range: -1 ~ 72000
+	duration_usage = 75
+	#A value of -1 means it will use the global setting.
+	# Default: 95
+	# Range: -1 ~ 72000
+	cooldown = 95
+	#Enable or disable the tooltip for this specific returner.
+	show_tooltip = true
