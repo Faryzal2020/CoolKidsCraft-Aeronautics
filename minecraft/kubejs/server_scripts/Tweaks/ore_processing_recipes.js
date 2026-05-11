@@ -102,10 +102,13 @@ ServerEvents.recipes(event => {
 
         // 2. Create Crusher
         if (ore.process[1] == 1) {
+            let output = '2x ' + ore.output
+            let input = Item.of(ore.input)
             event.recipes.createCrushing([
-                ore.output,
+                output,
                 CreateItem.of(ore.output, 0.5)
-            ], ore.input) // using KubeJS Create api , check docs folder for documentation
+            ], input).processingTime(200).id("kubejs:create/ore_blocks/crushing_" + ore.input.replace('#c:', ''));
+            // using KubeJS Create api , check docs folder for documentation
         }
 
         // 3. EnderIO Sag Mill
@@ -124,7 +127,7 @@ ServerEvents.recipes(event => {
                 .itemInputs(ore.input)
                 .itemOutputs(`2x ${ore.output}`)
                 .time(100)
-                .id(`kubejs:pulverizer/${ore.input.replace(':', '_')}`)
+                .id(`kubejs:pulverizer/ore_blocks/${ore.input.replace('#c:', '')}`)
         }
 
         // 5. OriTech Grinder
@@ -133,7 +136,7 @@ ServerEvents.recipes(event => {
                 .itemInputs(ore.input)
                 .itemOutputs(`3x ${ore.output}`)
                 .time(40)
-                .id(`kubejs:grinder/${ore.input.replace(':', '_')}`)
+                .id(`kubejs:grinder/ore_blocks/${ore.input.replace('#c:', '')}`)
         }
     })
 })
