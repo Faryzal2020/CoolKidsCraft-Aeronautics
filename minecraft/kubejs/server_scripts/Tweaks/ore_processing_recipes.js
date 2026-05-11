@@ -114,7 +114,7 @@ ServerEvents.recipes(event => {
         // 3. EnderIO Sag Mill
         if (ore.process[2] == 1) {
             event.recipes.enderio.sag_milling(
-                [Item.of(ore.output, 2), SagMillOutput.of(ore.output, 0.5)],
+                [Ingredient.of(ore.output, 2), SagMillOutput.of(ore.output, 0.5)],
                 ore.input,
                 2400,
                 SagMillBonus.NONE
