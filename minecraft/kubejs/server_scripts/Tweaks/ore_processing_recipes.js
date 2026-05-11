@@ -104,7 +104,7 @@ ServerEvents.recipes(event => {
         if (ore.process[1] == 1) {
             event.recipes.createCrushing([
                 ore.output,
-                Item.of(ore.output).withChance(0.5)
+                CreateItem.of(ore.output, 0.5)
             ], ore.input) // using KubeJS Create api , check docs folder for documentation
         }
 

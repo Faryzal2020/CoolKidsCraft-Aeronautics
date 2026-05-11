@@ -174,6 +174,7 @@ ServerEvents.recipes(event => {
 
     event.replaceInput({ output: 'bigreactors:basic_turbinerotorshaft' }, 'minecraft:iron_ingot', '#c:ingots/steel')
     event.remove({ id: "bigreactors:turbine/basic/blade" })
+    event.remove({ id: "railcraft:crusher/crushing_tags_ores_saltpeter" })
     event.shaped(Item.of('bigreactors:basic_turbinerotorblade', 1), [
         'AAA',
         'BBB'
