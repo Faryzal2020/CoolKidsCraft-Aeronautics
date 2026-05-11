@@ -87,6 +87,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: 'rftoolsutility:matter_receiver' }, 'minecraft:ender_pearl', 'rftoolsbase:infused_enderpearl')
 
     event.remove({ id: "minecraft:ender_eye" })
+    event.remove({ id: "endermanoverhaul:ender_eye" })
     event.shaped(Item.of('minecraft:ender_eye', 2), [
         'CAC',
         'ABA',

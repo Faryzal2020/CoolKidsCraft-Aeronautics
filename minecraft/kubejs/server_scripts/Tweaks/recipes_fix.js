@@ -197,5 +197,6 @@ KubeJSTweaks.beforeRecipes(event => {
       entry.json().add("neoforge:conditions", [{ "type": "neoforge:mod_loaded", "modid": "createlowheated" }])
     })
 
+  event.remove({ id: "railcraft:crusher/crushing_tags_ores_saltpeter" })
   console.log(`Fixing recipes took ${timer.stop().elapsed("milliseconds")} ms...`)
 })

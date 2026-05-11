@@ -7,3 +7,6 @@
 	creeper_drop = true
 	#Whether loot chests could contain cassette tapes.
 	chest_drop = true
+	#Where the wave gate is obtainable.
+	#Allowed Values: CRAFTABLE, CREATIVE_ONLY, OFF
+	wave_gate_enabled = "CREATIVE_ONLY"

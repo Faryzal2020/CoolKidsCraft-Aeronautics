@@ -1,0 +1,8 @@
+{
+    "entryname": "draconium",
+    "oretag": "c:ores/draconium",
+    "color": -8388480,
+    "drawing": false,
+    "order": 0,
+    "recipeItem": "draconicevolution:draconium_dust"
+}

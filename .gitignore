@@ -74,6 +74,13 @@
 /minecraft/config/fancymenu/ui_themes/light.json
 /minecraft/config/simple-discord-link
 /minecraft/sdlinkstorage
+/minecraft/config/jei/world/local
+/minecraft/config/jei/world/server
+/minecraft/config/jei/*client*
+/minecraft/mods/wm_binaries*
+/minecraft/vista_ffmpeg_bin*
+/minecraft/shaderpacks/*
+!minecraft/shaderpacks/ComplementaryReimagined_r5.7.1 + EuphoriaPatches_1.8.6
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

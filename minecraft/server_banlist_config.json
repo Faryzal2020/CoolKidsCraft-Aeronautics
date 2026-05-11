@@ -21,8 +21,7 @@
       "silentgear:elytra",
       "waystones:warp_dust",
       "waystones:warp_plate",
-      "waystones:dormant_shard",
-      "supplementaries:lumisene"
+      "waystones:dormant_shard"
     ],
     "banned_entities": [],
     "remove_recipes_by": [

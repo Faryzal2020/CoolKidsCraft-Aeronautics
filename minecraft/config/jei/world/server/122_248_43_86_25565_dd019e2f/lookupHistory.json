@@ -1,5 +1,9 @@
 [
   {"version":1},
+  {"ingredient":{"id":"minecraft:flint_and_steel"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"tfmg:raw_lead"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"tfmg:galena"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:potion","components":{"minecraft:potion_contents":{"potion":"potionsmaster:sulfur"}}},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:iron_door"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"supplementaries:lumisene_bucket"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"supplementaries:lumisene"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
@@ -95,9 +99,5 @@
   {"ingredient":{"id":"oritech:power_pole_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"deeperdarker:transmission_gloomsherd"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_2"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:iron_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_1_plus"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:copper_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_1"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:upgrade_base"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"minecraft:iron_block"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]

@@ -52,8 +52,7 @@ RecipeViewerEvents.removeEntriesCompletely('fluid', event => {
         'createbigcannons:molten_steel',
         'createbigcannons:molten_cast_iron',
         'createbigcannons:molten_bronze',
-        'tfmg:molten_steel',
-        'supplementaries:lumisene'
+        'tfmg:molten_steel'
     ]
 
     const existingFluids = fluidsToRemove.filter(id => !Fluid.of(id).empty)

@@ -1,6 +1,0 @@
-{
-  "pack": {
-    "pack_format": 48,
-    "description": "Scans and clears target blocks in the current chunk"
-  }
-}
