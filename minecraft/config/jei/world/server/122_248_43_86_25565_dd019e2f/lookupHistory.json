@@ -1,5 +1,6 @@
 [
   {"version":1},
+  {"ingredient":{"id":"waystones:waystone"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"rftoolsbase:dimensionalshard_overworld"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:flint_and_steel"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:raw_lead"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -98,6 +99,5 @@
   {"ingredient":{"id":"tfmg:transmission"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"oritech:power_pole_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"deeperdarker:transmission_gloomsherd"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_2"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:iron_block"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"sophisticatedstorage:stack_upgrade_tier_2"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
