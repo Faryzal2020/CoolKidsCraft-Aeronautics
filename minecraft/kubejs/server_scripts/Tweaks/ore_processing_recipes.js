@@ -103,7 +103,7 @@ ServerEvents.recipes(event => {
         // 2. Create Crusher
         if (ore.process[1] == 1) {
             let output = '2x ' + ore.output
-            let input = Item.of(ore.input)
+            let input = Ingredient.of(ore.input)
             event.recipes.createCrushing([
                 output,
                 CreateItem.of(ore.output, 0.5)
@@ -114,7 +114,7 @@ ServerEvents.recipes(event => {
         // 3. EnderIO Sag Mill
         if (ore.process[2] == 1) {
             event.recipes.enderio.sag_milling(
-                [Ingredient.of(ore.input, 2), SagMillOutput.of(ore.output, 0.5)],
+                [Item.of(ore.output, 2), SagMillOutput.of(ore.output, 0.5)],
                 ore.input,
                 2400,
                 SagMillBonus.NONE

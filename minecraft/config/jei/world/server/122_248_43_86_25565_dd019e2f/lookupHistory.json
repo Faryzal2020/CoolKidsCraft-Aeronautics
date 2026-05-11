@@ -1,5 +1,6 @@
 [
   {"version":1},
+  {"ingredient":{"id":"rftoolsbase:dimensionalshard_overworld"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:flint_and_steel"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:raw_lead"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:galena"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -19,7 +20,6 @@
   {"ingredient":{"id":"oritech:raw_platinum_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"createpropulsion:raw_platinum_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"oritech:deepslate_platinum_ore"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"createpropulsion:crushed_raw_platinum"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"railcraft:saltpeter_ore"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"tfmg:nitrate_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"railcraft:saltpeter_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"},
