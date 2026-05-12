@@ -176,6 +176,7 @@ ServerEvents.recipes(event => {
 
     event.replaceInput({ output: 'bigreactors:basic_turbinerotorshaft' }, 'minecraft:iron_ingot', '#c:ingots/steel')
     event.replaceInput({ output: 'tfmg:accumulator' }, 'tfmg:sulfuric_acid_bucket', 'oritech:still_sulfuric_acid_bucket')
+    event.remove({ id: "productivemetalworks:casting/ender_eye" })
     event.remove({ id: "bigreactors:turbine/basic/blade" })
     event.remove({ id: "railcraft:crusher/crushing_tags_ores_saltpeter" })
     event.shaped(Item.of('bigreactors:basic_turbinerotorblade', 1), [
@@ -231,4 +232,19 @@ ServerEvents.recipes(event => {
         E: 'powah:energy_cable_basic',
         F: 'actuallyadditions:heat_collector'
     }).id('dysoncubeproject:ray_receiver_controller')
+
+
+    event.remove({ id: "oritech:compat/productivemetalworks/alloying/duratium" })
+    event.remove({ id: "productivemetalworks:alloying/molten_crimson_steel" })
+    event.remove({ id: "productivemetalworks:alloying/molten_blaze_gold" })
+    event.remove({ id: "productivemetalworks:alloying/molten_azure_electrum" })
+    event.remove({ id: "productivemetalworks:alloying/molten_tyrian_steel" })
+
+    event.recipes.enderio
+        .alloy_smelting(Item.of("silentgear:crimson_steel_ingot"), [
+            Ingredient.of("silentgear:crimson_iron_block"),
+            "minecraft:magma_cream",
+            "2x minecraft:blaze_rod",
+        ])
+        .energy(3200)
 })
