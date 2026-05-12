@@ -26,6 +26,9 @@
     "banned_entities": [],
     "remove_recipes_by": [
       {
+        "output": "mffs:steel_compound"
+      },
+      {
         "output": "tfmg:creosote"
       },
       {

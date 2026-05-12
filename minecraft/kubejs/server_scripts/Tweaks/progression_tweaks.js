@@ -12,6 +12,7 @@ ServerEvents.recipes(event => {
     let removeSmelting = [
         "minecraft:gold_ingot",
         "oritech:nickel_ingot",
+        "oritech:steel_ingot",
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",
         "tfmg:aluminum_ingot",
@@ -24,12 +25,15 @@ ServerEvents.recipes(event => {
         "silentgear:blaze_gold_ingot",
         "silentgear:azure_silver_ingot",
         "silentgear:azure_electrum_ingot",
-        "silentgear:tyrian_steel_ingot"
+        "silentgear:tyrian_steel_ingot",
+        "bigreactors:yellorium_ingot",
+        "oritech:electrum_ingot"
     ]
 
     let removeBlasting = [
         "minecraft:gold_ingot",
         "oritech:nickel_ingot",
+        "oritech:steel_ingot",
         "railcraft:silver_ingot",
         "tfmg:lead_ingot",
         "tfmg:aluminum_ingot",
@@ -42,7 +46,9 @@ ServerEvents.recipes(event => {
         "silentgear:blaze_gold_ingot",
         "silentgear:azure_silver_ingot",
         "silentgear:azure_electrum_ingot",
-        "silentgear:tyrian_steel_ingot"
+        "silentgear:tyrian_steel_ingot",
+        "bigreactors:yellorium_ingot",
+        "oritech:electrum_ingot"
     ]
 
     removeSmelting.forEach(i => {
@@ -236,7 +242,6 @@ ServerEvents.recipes(event => {
 
     event.remove({ id: "oritech:compat/productivemetalworks/alloying/duratium" })
     event.remove({ id: "productivemetalworks:alloying/molten_crimson_steel" })
-    event.remove({ id: "productivemetalworks:alloying/molten_blaze_gold" })
     event.remove({ id: "productivemetalworks:alloying/molten_azure_electrum" })
     event.remove({ id: "productivemetalworks:alloying/molten_tyrian_steel" })
 
