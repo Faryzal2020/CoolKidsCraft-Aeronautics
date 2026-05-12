@@ -1,6 +1,6 @@
 {
   "dragon": {
-    "iceandfire.dragon.maxHealth": 1500.0,
+    "iceandfire.dragon.maxHealth": 2000.0,
     "iceandfire.dragon.eggBornTime": 7200,
     "iceandfire.dragon.maxPathingNodes": 5000,
     "iceandfire.dragon.villagersFear": true,
@@ -50,9 +50,9 @@
   "cyclops": {
     "iceandfire.cyclops.spawnWanderingChance": 0.0011111111111111111,
     "iceandfire.cyclops.sheepSearchLength": 17,
-    "iceandfire.cyclops.maxHealth": 650.0,
-    "iceandfire.cyclops.attackDamage": 25.0,
-    "iceandfire.cyclops.biteDamage": 50.0,
+    "iceandfire.cyclops.maxHealth": 850.0,
+    "iceandfire.cyclops.attackDamage": 45.0,
+    "iceandfire.cyclops.biteDamage": 70.0,
     "iceandfire.cyclops.griefing": true
   },
   "siren": {
@@ -61,13 +61,13 @@
     "iceandfire.siren.timeBetweenSongs": 2000
   },
   "gorgon": {
-    "iceandfire.gorgon.maxHealth": 300.0
+    "iceandfire.gorgon.maxHealth": 500.0
   },
   "deathworm": {
     "iceandfire.deathworm.spawnChance": 0.03333333333333333,
     "iceandfire.deathworm.targetSearchLength": 48,
-    "iceandfire.deathworm.maxHealth": 100.0,
-    "iceandfire.deathworm.attackDamage": 5.0,
+    "iceandfire.deathworm.maxHealth": 300.0,
+    "iceandfire.deathworm.attackDamage": 20.0,
     "iceandfire.deathworm.attackMonsters": true
   },
   "cockatrice": {

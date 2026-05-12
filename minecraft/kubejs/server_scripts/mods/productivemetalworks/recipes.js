@@ -112,8 +112,6 @@ ServerEvents.recipes(event => {
     // pmw_plate_casting('c:molten_lead', 'railcraft:lead_plate', 'lead')
     // pmw_item_melting('#c:ingots/lead', 'productivemetalworks:molten_lead', 90, 1000, 'lead')
 
-    pmw_item_melting('#c:storage_blocks/plastic', 'pneumaticcraft:plastic', 810, 500, 'plastic')
-
     pmw_block_casting('c:molten_lead', 'tfmg:lead_block', 'lead')
     pmw_nugget_casting('c:molten_lead', 'tfmg:lead_nugget', 'lead')
     pmw_plate_casting('c:molten_lead', 'tfmg:lead_sheet', 'lead')
@@ -134,7 +132,4 @@ ServerEvents.recipes(event => {
     pmw_ingot_casting('c:molten_aluminum', 'tfmg:aluminum_ingot', 'aluminum')
     pmw_nugget_casting('c:molten_aluminum', 'tfmg:aluminum_nugget', 'aluminum')
     pmw_plate_casting('c:molten_aluminum', 'tfmg:aluminum_sheet', 'aluminum')
-
-    pmw_block_casting('c:molten_plastic', 'oritech:plastic_block', 'plastic')
-    pmw_plate_casting('c:molten_plastic', 'oritech:plastic_sheet', 'plastic')
 })

@@ -172,7 +172,10 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: 'oritech:atomic_forge_block' }, 'oritech:duratium_ingot', 'cataclysm:ignitium_ingot')
     event.replaceInput({ output: 'createpropulsion:ion_thruster' }, 'create:chute', 'oritech:ion_thruster')
 
+    event.replaceInput({ output: 'tfmg:turbine_blade' }, 'create:iron_sheet', 'railcraft:turbine_blade')
+
     event.replaceInput({ output: 'bigreactors:basic_turbinerotorshaft' }, 'minecraft:iron_ingot', '#c:ingots/steel')
+    event.replaceInput({ output: 'tfmg:accumulator' }, 'tfmg:sulfuric_acid_bucket', 'oritech:still_sulfuric_acid_bucket')
     event.remove({ id: "bigreactors:turbine/basic/blade" })
     event.remove({ id: "railcraft:crusher/crushing_tags_ores_saltpeter" })
     event.shaped(Item.of('bigreactors:basic_turbinerotorblade', 1), [

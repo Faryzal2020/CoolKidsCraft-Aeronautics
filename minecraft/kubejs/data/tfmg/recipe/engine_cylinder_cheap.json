@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "tag": "c:plates/iron"
+    },
+    "F": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "pattern": [
+    " F ",
+    "P P",
+    "P P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfmg:simple_engine_cylinder",
+    "components": {
+      "tfmg:fuel_tags": {
+        "furnace_gas": "c:furnace_gas",
+        "creosote": "c:creosote",
+        "turpentine": "c:fuels/turpentine",
+        "biofuel": "c:fuels/biofuel"
+      },
+      "tfmg:fuels": {
+        "furnace_gas": "Furnace Gas",
+        "creosote": "Creosote",
+        "turpentine": "Turpentine",
+        "biofuel": "Biofuel"
+      }
+    }
+  }
+}

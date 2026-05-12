@@ -26,6 +26,12 @@
     "banned_entities": [],
     "remove_recipes_by": [
       {
+        "output": "tfmg:creosote"
+      },
+      {
+        "output": "tfmg:creosote_bucket"
+      },
+      {
         "output": "supplementaries:lumisene"
       },
       {

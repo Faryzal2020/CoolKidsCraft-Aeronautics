@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
         'sulfur', 'salt', 'iron', 'gold', 'copper', 'tin', 'lead', 'silver',
         'nickel', 'aluminum', 'zinc', 'uranium', 'platinum', 'osmium',
         'bauxite', 'tungsten', 'iridium', 'titanium', 'coal', 'diamond',
-        'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon'
+        'emerald', 'lapis', 'redstone', 'quartz', 'rubber', 'silicon', 'coal_coke'
     ];
 
     const types = {
@@ -129,7 +129,7 @@ ServerEvents.recipes(event => {
     // 1. STANDARD REPLACEMENTS (Catches 90% of normal recipes)
     Object.keys(inputReplacements).forEach(rogueItem => {
         if (!Item.exists(rogueItem)) return;
-        
+
         console.log(`[Global Unification] Replacing input ${rogueItem} with #${inputReplacements[rogueItem]}`);
         try {
             event.replaceInput({}, rogueItem, `#${inputReplacements[rogueItem]}`);

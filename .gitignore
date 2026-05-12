@@ -50,7 +50,7 @@
 /minecraft/XaeroWaypoints*
 /minecraft.qmenu_opened.marker
 /minecraft/command_history.txt
-/minecraft/xaero
+/minecraft/xaero/*
 /flame/overrides.txt
 /dist
 /minecraft/mods/chunky*
@@ -80,7 +80,8 @@
 /minecraft/mods/wm_binaries*
 /minecraft/vista_ffmpeg_bin*
 /minecraft/shaderpacks/*
-!minecraft/shaderpacks/ComplementaryReimagined_r5.7.1 + EuphoriaPatches_1.8.6
+!minecraft/shaderpacks/Complementary*
+/minecraft/config/easy_npc*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

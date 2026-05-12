@@ -22,8 +22,8 @@ narrator:0
 particles:1
 reducedDebugInfo:false
 renderClouds:"true"
-renderDistance:5
-simulationDistance:9
+renderDistance:7
+simulationDistance:10
 screenEffectScale:1.0
 soundDevice:""
 autoJump:false
@@ -86,9 +86,9 @@ onlyShowSecureChat:false
 panoramaScrollSpeed:1.0
 telemetryOptInExtra:false
 onboardAccessibility:false
-menuBackgroundBlurriness:5
+menuBackgroundBlurriness:0
 soundCategory_master:0.8807947019867549
-soundCategory_music:0.5422535211267606
+soundCategory_music:0.13028169014084506
 soundCategory_record:0.75
 soundCategory_weather:0.7323943661971831
 soundCategory_block:0.7922535211267606

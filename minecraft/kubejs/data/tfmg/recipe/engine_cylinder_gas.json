@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "tfmg:engine_cylinder"
+    },
+    "B": {
+      "item": "tfmg:brass_pipe"
+    }
+  },
+  "pattern": [
+    "   ",
+    " C ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfmg:engine_cylinder",
+    "components": {
+      "tfmg:fuel_tags": {
+        "gasoline": "c:gasoline",
+        "lpg": "c:fuels/lpg",
+        "ethylene": "c:fuels/ethylene"
+      },
+      "tfmg:fuels": {
+        "gasoline": "Gasoline",
+        "lpg": "LPG",
+        "ethylene": "Ethylene"
+      }
+    }
+  }
+}
