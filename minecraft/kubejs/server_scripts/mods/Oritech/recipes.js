@@ -187,13 +187,15 @@ ServerEvents.recipes(event => {
     { raw: 'tfmg:raw_lead', output: 'create:crushed_raw_lead' },
     { raw: 'railcraft:silver_raw', output: 'create:crushed_raw_silver' },
     { raw: 'xycraft_world:raw_aluminum', output: 'create:crushed_raw_aluminum' },
-    { raw: 'create:raw_zinc', output: 'create:crushed_raw_zinc' }
+    { raw: 'create:raw_zinc', output: 'create:crushed_raw_zinc' },
+    { raw: 'silentgear:raw_azure_silver', output: 'silentgear:azure_silver_dust' }
   ]
   const grinder = [
     { raw: 'tfmg:raw_lithium', output: 'tfmg:crushed_raw_lithium' },
     { raw: 'tfmg:raw_lead', output: 'create:crushed_raw_lead' },
     { raw: 'railcraft:silver_raw', output: 'create:crushed_raw_silver' },
-    { raw: 'xycraft_world:raw_aluminum', output: 'create:crushed_raw_aluminum' }
+    { raw: 'xycraft_world:raw_aluminum', output: 'create:crushed_raw_aluminum' },
+    { raw: 'silentgear:raw_azure_silver', output: 'silentgear:azure_silver_dust' }
   ]
 
   pulverizer.forEach(ore => {
@@ -250,5 +252,10 @@ ServerEvents.recipes(event => {
       .id(`kubejs:centrifuge_fluid/water/${id_base}`)
   })
 
-  // Cheaty alloys
+
+  event.recipes.oritech
+    .atomic_forge()
+    .itemInputs(["oritech:electrum_ingot", "silentgear:azure_silver_dust", "silentgear:azure_silver_dust"])
+    .itemOutputs("2x silentgear:azure_electrum_dust")
+    .time(40)
 })

@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "allthemodium"
+      }
+    }
+  ],
+  "type": "productivemetalworks:fluid_alloying",
+  "fluids": [
+    {
+      "amount": 180,
+      "tag": "c:molten_heavy_core"
+    },
+    {
+      "amount": 180,
+      "fluid": "bigreactors:rossinite"
+    },
+    {
+      "amount": 90,
+      "tag": "c:molten_azure_electrum"
+    },
+    {
+      "amount": 90,
+      "tag": "c:molten_tyrian_steel"
+    },
+    {
+      "amount": 180,
+      "fluid": "create_deep_dark:molten_echo"
+    },
+    {
+      "amount": 180,
+      "tag": "c:molten_nethersteel"
+    }
+  ],
+  "result": {
+    "amount": 270,
+    "id": "sgearmetalworks:molten_uru_metal"
+  },
+  "speed": 1
+}

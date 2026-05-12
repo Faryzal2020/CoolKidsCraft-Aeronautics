@@ -1,0 +1,18 @@
+{
+  "type": "oritech:particle_collision",
+  "ingredients": [
+    {
+      "item": "cataclysm:black_steel_ingot"
+    },
+    {
+      "item": "bigreactors:magentite_ingot"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "silentgear:tyrian_steel_dust"
+    }
+  ],
+  "time": 10000
+}

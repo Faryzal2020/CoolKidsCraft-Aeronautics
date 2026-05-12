@@ -7,6 +7,8 @@ ServerEvents.recipes(event => {
     event.remove({ id: "silentgear:crimson_steel_ingot" })
     event.remove({ id: "silentgear:blaze_gold_ingot" })
     event.remove({ id: "silentgear:azure_electrum_ingot" })
+    event.remove({ id: "oritech:crafting/alloy/steel" })
+    event.remove({ id: "mffs:steel_compound" })
 
     // This forces the use of more advanced processing for other metals.
     let removeSmelting = [
@@ -91,6 +93,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({ output: 'minecraft:lodestone' }, 'minecraft:netherite_ingot', 'utilitarian:magnet')
     event.replaceInput({ output: 'rftoolsutility:charged_porter' }, 'minecraft:ender_pearl', 'waystones:warp_stone')
     event.replaceInput({ output: 'rftoolsutility:matter_receiver' }, 'minecraft:ender_pearl', 'rftoolsbase:infused_enderpearl')
+    event.replaceInput({ output: 'oritech:accelerator_controller' }, 'minecraft:dropper', 'actuallyadditions:dropper')
 
     event.remove({ id: "minecraft:ender_eye" })
     event.remove({ id: "endermanoverhaul:ender_eye" })
@@ -182,6 +185,11 @@ ServerEvents.recipes(event => {
 
     event.replaceInput({ output: 'bigreactors:basic_turbinerotorshaft' }, 'minecraft:iron_ingot', '#c:ingots/steel')
     event.replaceInput({ output: 'tfmg:accumulator' }, 'tfmg:sulfuric_acid_bucket', 'oritech:still_sulfuric_acid_bucket')
+    event.replaceInput({ output: 'silentgear:alloy_forge' }, 'minecraft:blackstone', 'enderio:dark_steel_ingot')
+    event.replaceInput({ output: 'silentgear:alloy_forge' }, 'minecraft:iron_block', 'twilightforest:fiery_block')
+    event.replaceInput({ output: 'silentgear:starlight_charger' }, 'silentgear:blaze_gold_block', 'cataclysm:witherite_block')
+
+
     event.remove({ id: "productivemetalworks:casting/ender_eye" })
     event.remove({ id: "bigreactors:turbine/basic/blade" })
     event.remove({ id: "railcraft:crusher/crushing_tags_ores_saltpeter" })

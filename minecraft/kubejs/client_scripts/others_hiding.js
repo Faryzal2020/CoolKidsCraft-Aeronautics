@@ -30,7 +30,9 @@ RecipeViewerEvents.removeEntriesCompletely('item', event => {
         'createbigcannons:molten_cast_iron_bucket',
         'createbigcannons:molten_bronze_bucket',
         'supplementaries:lumisene_bucket',
-        'supplementaries:lumisene_bottle'
+        'supplementaries:lumisene_bottle',
+        'mffs:steel_compound',
+        'silentgear:starmetal_dust'
     ]
 
     const existingItems = itemsToRemove.filter(id => Item.exists(id))
