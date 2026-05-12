@@ -110,56 +110,84 @@ function Change-Version {
 
 
 function Sync-ServerBranch {
-    Write-Host "--- Syncing Server Branch to GitHub ---" -ForegroundColor Yellow
+    Write-Host "--- Syncing Server Branch to GitHub (Safe Mode) ---" -ForegroundColor Yellow
     
     if (-not (Test-Path ".git")) {
-        Write-Host "Error: Not a git repository. Please initialize git first." -ForegroundColor Red
-        Pause
-        return
+        Write-Host "Error: Not a git repository." -ForegroundColor Red
+        Pause; return
     }
 
-    # 1. Create temporary branch
-    Write-Host "Preparing server branch..."
-    git checkout -B server-sync-temp
-    
-    # 2. Get ignore patterns
-    $patterns = Get-IgnorePatterns ".serverpackignore"
-    
-    # 3. Remove ignored files
-    Write-Host "Applying exclusions from .serverpackignore..."
-    # CRITICAL SAFETY CHECK: Never delete project metadata or this script!
-    $systemFiles = @(".git", "ManagePack.ps1", ".serverpackignore", ".gitignore", ".packignore")
-    
-    foreach ($pattern in $patterns) {
-        # Get-Item correctly handles wildcards and folder paths
-        $targets = Get-Item -Path $pattern -ErrorAction SilentlyContinue
-        foreach ($target in $targets) {
-            # SAFETY CHECK: Never delete critical project files or the git directory
-            if ($systemFiles -contains $target.Name -or $target.FullName -like "*\.git\*") {
-                continue
+    # 1. Get remote URL
+    $remoteUrl = git remote get-url origin
+    if (-not $remoteUrl) {
+        Write-Host "Error: Could not determine remote URL." -ForegroundColor Red
+        Pause; return
+    }
+
+    # 2. Setup temp directory
+    $tempDirName = "tmp_server_sync_dir"
+    $tempDir = Join-Path $PSScriptRoot $tempDirName
+    if (Test-Path $tempDir) { Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue }
+    New-Item -ItemType Directory -Path $tempDir | Out-Null
+
+    try {
+        # 3. Clone current repo to temp (to keep history and git metadata)
+        Write-Host "Cloning repository to temporary directory..."
+        git clone --local . $tempDir
+        
+        # 4. Copy current working state (including uncommitted changes)
+        Write-Host "Syncing current working state..."
+        $systemFiles = @(".git", $tempDirName, "dist", "tmp", "tmp_pack")
+        Get-ChildItem -Path $PSScriptRoot -Exclude $systemFiles | Copy-Item -Destination $tempDir -Recurse -Force -ErrorAction SilentlyContinue
+
+        # 5. Move into temp directory
+        Push-Location $tempDir
+        
+        # 6. Prepare the branch
+        git checkout -B server-sync-temp
+        
+        # 7. Apply exclusions from .serverpackignore
+        Write-Host "Applying exclusions from .serverpackignore..."
+        $ignorePath = Join-Path $PSScriptRoot ".serverpackignore"
+        $patterns = Get-IgnorePatterns $ignorePath
+        
+        foreach ($pattern in $patterns) {
+            $targets = Get-Item -Path $pattern -ErrorAction SilentlyContinue
+            foreach ($target in $targets) {
+                # Safety check: Never delete the git directory
+                if ($target.FullName -like "*\.git\*") { continue }
+                
+                if (Test-Path $target.FullName) {
+                    Write-Host "Removing: $($target.FullName)"
+                    Remove-Item -Path $target.FullName -Recurse -Force -ErrorAction SilentlyContinue
+                }
             }
-            
-            if (Test-Path $target.FullName) {
-                Write-Host "Removing: $($target.FullName)"
-                Remove-Item -Path $target.FullName -Recurse -Force -ErrorAction SilentlyContinue
-            }
+        }
+        
+        # 8. Commit and push
+        Write-Host "Pushing to remote 'server' branch..."
+        git add .
+        git commit -m "Server sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        git push $remoteUrl server-sync-temp:server --force
+        
+        Pop-Location
+        Write-Host "Success! Server branch updated on GitHub." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "Error during sync: $_" -ForegroundColor Red
+        if ($PWD.Path -eq $tempDir) { Pop-Location }
+    }
+    finally {
+        # 9. Cleanup
+        Write-Host "Cleaning up..."
+        if (Test-Path $tempDir) {
+            Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
     
-    # 4. Commit and push
-    Write-Host "Pushing to remote 'server' branch..."
-    git add .
-    git commit -m "Server sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-    git push origin server-sync-temp:server --force
-    
-    # 5. Switch back
-    Write-Host "Restoring main branch..."
-    git checkout main
-    git branch -D server-sync-temp
-    
-    Write-Host "Success! Server branch updated on GitHub." -ForegroundColor Green
     Pause
 }
+
 
 # Main Loop
 do {
