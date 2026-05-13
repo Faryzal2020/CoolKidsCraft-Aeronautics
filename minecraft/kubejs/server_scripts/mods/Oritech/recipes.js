@@ -258,4 +258,10 @@ ServerEvents.recipes(event => {
     .itemInputs(["oritech:electrum_ingot", "silentgear:azure_silver_dust", "silentgear:azure_silver_dust"])
     .itemOutputs("2x silentgear:azure_electrum_dust")
     .time(40)
+
+  event.recipes.oritech
+    .assembler()
+    .itemInputs(["#c:ingots/steel", "#c:ingots/steel", "#c:ingots/steel", "#c:ingots/steel"])
+    .itemOutputs("32x tfmg:screw")
+    .time(80)
 })

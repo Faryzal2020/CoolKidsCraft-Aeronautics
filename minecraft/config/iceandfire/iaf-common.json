@@ -1,6 +1,6 @@
 {
   "dragon": {
-    "iceandfire.dragon.maxHealth": 2000.0,
+    "iceandfire.dragon.maxHealth": 4000.0,
     "iceandfire.dragon.eggBornTime": 7200,
     "iceandfire.dragon.maxPathingNodes": 5000,
     "iceandfire.dragon.villagersFear": true,
@@ -50,23 +50,23 @@
   "cyclops": {
     "iceandfire.cyclops.spawnWanderingChance": 0.0011111111111111111,
     "iceandfire.cyclops.sheepSearchLength": 17,
-    "iceandfire.cyclops.maxHealth": 850.0,
+    "iceandfire.cyclops.maxHealth": 1850.0,
     "iceandfire.cyclops.attackDamage": 45.0,
     "iceandfire.cyclops.biteDamage": 70.0,
     "iceandfire.cyclops.griefing": true
   },
   "siren": {
-    "iceandfire.siren.maxHealth": 150.0,
+    "iceandfire.siren.maxHealth": 450.0,
     "iceandfire.siren.maxSingTime": 12000,
     "iceandfire.siren.timeBetweenSongs": 2000
   },
   "gorgon": {
-    "iceandfire.gorgon.maxHealth": 500.0
+    "iceandfire.gorgon.maxHealth": 1500.0
   },
   "deathworm": {
     "iceandfire.deathworm.spawnChance": 0.03333333333333333,
     "iceandfire.deathworm.targetSearchLength": 48,
-    "iceandfire.deathworm.maxHealth": 300.0,
+    "iceandfire.deathworm.maxHealth": 1300.0,
     "iceandfire.deathworm.attackDamage": 20.0,
     "iceandfire.deathworm.attackMonsters": true
   },
@@ -75,7 +75,7 @@
     "iceandfire.cockatrice.spawnWeight": 4,
     "iceandfire.cockatrice.chickenSearchLength": 32,
     "iceandfire.cockatrice.eggChance": 0.03333333333333333,
-    "iceandfire.cockatrice.maxHealth": 140.0,
+    "iceandfire.cockatrice.maxHealth": 740.0,
     "iceandfire.cockatrice.chickensLayRottenEggs": true
   },
   "bird": {
@@ -91,7 +91,7 @@
     "iceandfire.troll.spawn": true,
     "iceandfire.troll.spawnWeight": 60,
     "iceandfire.troll.dropWeapon": true,
-    "iceandfire.troll.maxHealth": 500.0,
+    "iceandfire.troll.maxHealth": 1800.0,
     "iceandfire.troll.attackDamage": 20.0
   },
   "myrmex": {
@@ -109,14 +109,14 @@
     "iceandfire.amphithere.villagerSearchLength": 48.0,
     "iceandfire.amphithere.tameTime": 400,
     "iceandfire.amphithere.flightSpeed": 1.75,
-    "iceandfire.amphithere.maxHealth": 50.0,
+    "iceandfire.amphithere.maxHealth": 150.0,
     "iceandfire.amphithere.attackDamage": 7.0
   },
   "seaSerpent": {
     "iceandfire.seaSerpent.spawnChance": 0.004,
     "iceandfire.seaSerpent.griefing": true,
-    "iceandfire.seaSerpent.baseHealth": 20.0,
-    "iceandfire.seaSerpent.attackDamage": 4.0
+    "iceandfire.seaSerpent.baseHealth": 1350.0,
+    "iceandfire.seaSerpent.attackDamage": 27.0
   },
   "lich": {
     "iceandfire.lich.spawn": true,
@@ -124,14 +124,14 @@
     "iceandfire.lich.spawnChance": 0.03333333333333333
   },
   "hydra": {
-    "iceandfire.hydra.maxHealth": 450.0
+    "iceandfire.hydra.maxHealth": 1450.0
   },
   "hippocampus": {
     "iceandfire.hippocampus.spawnChance": 0.025,
     "iceandfire.hippocampus.swimSpeedMod": 1.0
   },
   "ghost": {
-    "iceandfire.ghost.maxHealth": 140.0,
+    "iceandfire.ghost.maxHealth": 240.0,
     "iceandfire.ghost.attackDamage": 13.0,
     "iceandfire.ghost.fromPlayerDeaths": true
   },
@@ -180,7 +180,7 @@
   },
   "misc": {
     "iceandfire.misc.enableDragonSeeker": true,
-    "iceandfire.misc.dreadQueenMaxHealth": 1750.0
+    "iceandfire.misc.dreadQueenMaxHealth": 9750.0
   },
   "version": 2
 }

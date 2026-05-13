@@ -43,51 +43,51 @@ dynamic:
   dynamic-settings:
     - setting: 'CHUNK_TICK_DISTANCE'
       max: 15
-      min: 5
-      increment: 1
-      interval: 15
-
-    - setting: 'MOBCAP_PERCENTAGE'
-      max: 50
-      min: 10
-      increment: 10
-      interval: 15
-
-    - setting: 'SIMULATION_DISTANCE'
-      max: 10
-      min: 6
-      increment: 1
-      interval: 15
-
-    - setting: 'CHUNK_TICK_DISTANCE'
-      max: 6
       min: 2
       increment: 1
       interval: 15
 
     - setting: 'MOBCAP_PERCENTAGE'
-      max: 30
-      min: 15
-      increment: 10
+      max: 100
+      min: 5
+      increment: 5
       interval: 15
 
     - setting: 'SIMULATION_DISTANCE'
-      max: 6
+      max: 15
+      min: 2
+      increment: 1
+      interval: 15
+
+    - setting: 'CHUNK_TICK_DISTANCE'
+      max: 3
+      min: 2
+      increment: 1
+      interval: 15
+
+    - setting: 'MOBCAP_PERCENTAGE'
+      max: 50
       min: 5
+      increment: 5
+      interval: 10
+
+    - setting: 'SIMULATION_DISTANCE'
+      max: 3
+      min: 2
       increment: 1
       interval: 15
 
     - setting: 'VIEW_DISTANCE'
       max: 10
-      min: 5
+      min: 2
       increment: 1
-      interval: 150
+      interval: 60
 
 
 # A special mobcap that only affects the breeding of animals and villagers.
 breeding-cap:
   # Enables breeding caps.
-  enabled: false
+  enabled: true
   # The breeding cap for villagers.
   # ► limit = The limit of mobs of the same type within range. Setting this to negative will disable the breeding cap.
   # ► range = The range it will check for entities of the same type.
@@ -218,8 +218,8 @@ activation-range:
   # ► extra-height-down = Allows entities to be ticked when far below the player when vertical range is in use.
   default-activation-type:
     activation-range: 16
-    tick-interval: 20
-    wakeup-interval: -1
+    tick-interval: 40
+    wakeup-interval: 1
     extra-height-up: false
     extra-height-down: false
 
@@ -308,6 +308,15 @@ activation-range:
       entity-matcher:
         - 'typeof:animal'
         - 'typeof:ambient'
+
+    - name: 'creature'
+      activation-range: 5
+      tick-interval: 60
+      wakeup-interval: 30
+      extra-height-up: false
+      extra-height-down: false
+      entity-matcher:
+        - 'iceandfire:pixie'
 
     - name: 'creature'
       activation-range: 24
