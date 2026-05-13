@@ -1,5 +1,8 @@
 [
   {"version":1},
+  {"ingredient":{"id":"createdeliveryrequired:market"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"createdeliveryrequired:contractor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"createdeliveryrequired:delivery_marker"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:crimson_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"enderio:dark_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"enderio:dark_steel_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -96,8 +99,5 @@
   {"ingredient":{"id":"cataclysm:storm_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"cataclysm:cursed_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"cataclysm:desert_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:abyss_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:monstrous_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:void_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:flame_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"cataclysm:abyss_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
