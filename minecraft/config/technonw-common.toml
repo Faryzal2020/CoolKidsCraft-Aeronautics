@@ -1,0 +1,25 @@
+enableCoinPayment = true
+enableCardPayment = true
+allowMixedPayment = true
+preferCoinsFirst = true
+freeGlobalWaystones = false
+freeWarpPlates = true
+creativeBypassesCost = true
+# Default: 4
+# Range: > 0
+baseCost = 6
+# Default: 0.12
+# Range: 0.0 ~ 100.0
+sqrtDistanceMultiplier = 0.01
+# Default: 0.0035
+# Range: 0.0 ~ 100.0
+linearDistanceMultiplier = 0.0004
+# Default: 96
+# Range: > 0
+interdimensionalFlatSurcharge = 128
+# Default: 4
+# Range: > 0
+minCost = 4
+# Default: 1024
+# Range: > 0
+maxCost = 10240

@@ -1,0 +1,94 @@
+[general]
+	# Default: 100
+	# Range: 1 ~ 10000
+	max_listings_per_player = 100
+	# Default: 86400
+	# Range: > 60
+	listing_duration_sec = 86400
+	# Default: 2304
+	# Range: > 1
+	max_order_size = 2304
+	audit_log = true
+
+[currency]
+	type = "numismatics"
+	id = "numismatics:spur"
+	tag = ""
+	nbt = ""
+
+[restrictions]
+	blacklist_dimensions = ["build_dim:build"]
+
+[notifications]
+	public = true
+	# Default: 0
+	# Range: 0 ~ 9223372036854775807
+	min_value = 0
+
+[leaderboard]
+	#How often Baltop / Revtop data and your balance line refresh in the UI (real-time seconds). Also sets the 'Refresh' countdown.
+	# Default: 60
+	# Range: 5 ~ 3600
+	refresh_sec = 60
+	#Length of each daily delta period for balance and revenue stats (seconds). Shown as the 'Reset' countdown; deltas reset at each period boundary.
+	# Default: 86400
+	# Range: 60 ~ 604800
+	day_reset_sec = 86400
+
+[server_sell_block]
+	#How often each Create: Auction House server sell block scans its inventory and pays out (real-time seconds, converted to game ticks at 20 TPS). Default 60 (one minute) keeps automated farms from hammering the server; use 5 for five seconds, etc. Minimum 1s.
+	# Default: 60
+	# Range: 1 ~ 3600
+	process_interval_sec = 60
+
+[server_sell_tax]
+	#When true, server shop sell payouts are multiplied by a yield that falls linearly with cumulative catalog sell-through (list price x qty), not wallet balance.
+	enabled = false
+	#Cumulative catalog millispur (pre-tax list total) at which the player reaches the minimum yield. Default 1_000_000_000 = 1,000,000 spurs of server-list sell-through before payout hits min_yield.
+	# Default: 1000000000
+	# Range: 1000 ~ 2305843009213693951
+	reference_catalog_milli = 1000000000
+	#Yield at/above the reference (0.0–1.0). 0.3 means you receive 30% of list price at the cap (~70% reduction from list).
+	# Default: 0.3
+	# Range: 0.01 ~ 1.0
+	min_yield = 0.3
+
+[persistence]
+	#When true, marks auction house world data dirty at most once per server tick (after all mutations), reducing redundant save-queue churn from high-frequency paths (feeder blocks, tx logging).
+	coalesce_dirty_end_of_tick = true
+	#Max history rows sent per state sync for the History tab (client may page with history_offset).
+	# Default: 40
+	# Range: 8 ~ 128
+	history_state_page_size = 40
+	#How often to sample raw Numismatics bank balances for admin forensics (seconds).
+	# Default: 300
+	# Range: 60 ~ 3600
+	bank_history_sample_sec = 300
+	#How many days of 5-minute bank samples to retain per player.
+	# Default: 14
+	# Range: 1 ~ 90
+	bank_history_retention_days = 14
+	#Reserved — not implemented yet. Keep false.
+	analytics_separate_save_planned = false
+
+[exploit_detection]
+	#Minimum gain (spur) within one sample window to flag as an immediate burst.
+	# Default: 50000
+	# Range: 1 ~ 9223372036854775807
+	burst_min_spur = 50000
+	#Minimum gain/hour to consider for outlier checks.
+	# Default: 20000.0
+	# Range: 1.0 ~ 1.7976931348623157E308
+	hourly_rate_min_spur = 20000.0
+	#Flag when player gain/hour exceeds this multiple of current server average gain/hour.
+	# Default: 8.0
+	# Range: 1.0 ~ 200.0
+	server_rate_multiplier = 8.0
+	#Flag when player gain/hour exceeds this multiple of their own baseline gain/hour.
+	# Default: 4.0
+	# Range: 1.0 ~ 200.0
+	player_rate_multiplier = 4.0
+	#How often unresolved exploit alerts are re-broadcast to online level-4 operators (seconds).
+	# Default: 900
+	# Range: 120 ~ 86400
+	op_reminder_sec = 900

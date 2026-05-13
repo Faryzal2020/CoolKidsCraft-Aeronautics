@@ -1,0 +1,46 @@
+# Create Aeronautics: Delivery Required contract item price config
+# Every listed item id maps to its base price in spurs.
+# Add modded items here explicitly; recipes are not used for price calculation.
+# Items not listed here are not priced by goggles and are not automatically assigned a value.
+
+[item_prices]
+"minecraft:coal_block" = 1
+"iceandfire:raw_silver_block" = 4
+"minecraft:raw_copper_block" = 5
+"minecraft:raw_iron_block" = 5
+"minecraft:raw_gold_block" = 5
+"oritech:raw_nickel_block" = 4
+"xycraft_world:raw_aluminum_block" = 3
+"tfmg:raw_lead_block" = 6
+"tfmg:raw_lithium_block" = 8
+"oritech:raw_platinum_block" = 10
+"oritech:raw_uranium_block" = 10
+"undergarden:raw_froststeel_block" = 10
+"undergarden:raw_cloggrum_block" = 10
+"silentgear:raw_crimson_iron_block" = 10
+"silentgear:raw_azure_silver_block" = 16
+"minecraft:diamond_block" = 8
+"minecraft:emerald_block" = 8
+"minecraft:bricks" = 2
+"minecraft:slime_ball" = 2
+"minecraft:blaze_rod" = 2
+"minecraft:leather" = 4
+"minecraft:gunpowder" = 10
+"minecraft:obsidian" = 2
+"minecraft:prismarine_bricks" = 4
+"create:andesite_alloy" = 1
+"create:precision_mechanism" = 4
+"oritech:reinforced_carbon_sheet" = 18
+"create:brass_sheet" = 2
+"create:precision_mechanism" = 8
+"tfmg:steel_mechanism" = 18
+"farmersdelight:carrot_crate" = 1
+"farmersdelight:potato_crate" = 1
+"farmersdelight:beetroot_crate" = 1
+"farmersdelight:cabbage_crate" = 1
+"farmersdelight:tomato_crate" = 1
+"farmersdelight:onion_crate" = 1
+"minecraft:hay_bale" = 1
+"farmersdelight:rice_bale" = 1
+"farmersdelight:rice_bag" = 1
+"farmersdelight:straw_bale" = 1

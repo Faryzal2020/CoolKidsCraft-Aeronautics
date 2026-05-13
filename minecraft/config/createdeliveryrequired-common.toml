@@ -1,0 +1,120 @@
+#How often Contractor delivery offers refresh.
+# Default: 30
+# Range: 1 ~ 1440
+contractorOfferRefreshMinutes = 30
+#How often Market pickup offers refresh.
+# Default: 30
+# Range: 1 ~ 1440
+marketOfferRefreshMinutes = 30
+#Number of generated delivery offers shown by each Contractor.
+# Default: 10
+# Range: 1 ~ 32
+generatedContractOfferCount = 6
+#Number of generated pickup offers shown by each Market.
+# Default: 4
+# Range: 1 ~ 32
+generatedMarketOfferCount = 6
+#Lower target base value used when generating item amounts.
+# Default: 160
+# Range: 1 ~ 1000000
+generatedMinTargetSpurs = 50
+#Upper target base value used when generating item amounts before star scaling.
+# Default: 1800
+# Range: 1 ~ 1000000
+generatedMaxTargetSpurs = 300
+#Minimum contract payload at the lowest rank and star rating.
+# Default: 2962
+# Range: 1 ~ 103680
+contractMinPayload = 100
+#Maximum contract payload at the highest rank and star rating.
+# Default: 103680
+# Range: 1 ~ 103680
+contractMaxPayload = 2000
+#Minimum random contract time limit in minutes.
+# Default: 60
+# Range: 1 ~ 1440
+contractMinTimeMinutes = 60
+#Maximum random contract time limit in minutes.
+# Default: 120
+# Range: 1 ~ 1440
+contractMaxTimeMinutes = 180
+#Maximum reward bonus from star rating for contracts.
+# Default: 10.0
+# Range: 0.0 ~ 100.0
+contractStarBonusMaxPercent = 10.0
+#Maximum reward bonus from contractor rank for contracts.
+# Default: 10.0
+# Range: 0.0 ~ 100.0
+contractRankBonusMaxPercent = 10.0
+#Total spur value of items demanded per contract slot per refresh. demand = budget / itemPrice.
+# Default: 1000000
+# Range: > 1
+demandBudgetSpurs = 640
+#Maximum amount that can be bought from a market offer.
+# Default: 103680
+# Range: 1 ~ 103680
+marketMaxPayload = 6400
+#Maximum discount from buying the full market payload.
+# Default: 10.0
+# Range: 0.0 ~ 100.0
+marketMaxDiscountPercent = 10.0
+#Multiplier applied to all contract item prices loaded from the price list. Default 1.0 = no change.
+# Default: 2.0
+# Range: 0.0 ~ 1000.0
+contractPriceMultiplier = 1.0
+#Multiplier applied to all market item prices loaded from the price list. Default 1.0 = no change.
+# Default: 1.0
+# Range: 0.0 ~ 1000.0
+marketPriceMultiplier = 1.0
+#Distance multiplier for the easiest normal star rating.
+# Default: 1.0
+# Range: 0.05 ~ 10.0
+starDistanceMinMultiplier = 1.0
+#Distance multiplier for the hardest normal star rating.
+# Default: 3.0
+# Range: 0.05 ~ 10.0
+starDistanceMaxMultiplier = 10.0
+#XP required to advance from contractor rank 1 to rank 2.
+# Default: 100
+# Range: 1 ~ 1000000
+rank2Xp = 100
+#XP required to advance from contractor rank 2 to rank 3.
+# Default: 250
+# Range: 1 ~ 1000000
+rank3Xp = 250
+#XP required to advance from contractor rank 3 to rank 4.
+# Default: 500
+# Range: 1 ~ 1000000
+rank4Xp = 500
+#XP required to advance from contractor rank 4 to rank 5.
+# Default: 900
+# Range: 1 ~ 1000000
+rank5Xp = 900
+#XP required to advance from contractor rank 5 to rank 6.
+# Default: 1400
+# Range: 1 ~ 1000000
+rank6Xp = 1400
+#XP required to advance from contractor rank 6 to rank 7.
+# Default: 2200
+# Range: 1 ~ 1000000
+rank7Xp = 2200
+#Base XP awarded for every completed delivery contract.
+# Default: 0
+# Range: 0 ~ 1000000
+rankXpBase = 1
+#XP awarded per contract rating star.
+# Default: 20.0
+# Range: 0.0 ~ 1000000.0
+rankXpPerStar = 20.0
+#XP awarded per 100 blocks of delivery distance.
+# Default: 10.0
+# Range: 0.0 ~ 1000000.0
+rankXpPer100Blocks = 5.0
+#XP awarded per remaining delivery minute when the contract is completed.
+# Default: 2.0
+# Range: 0.0 ~ 1000000.0
+rankXpPerRemainingMinute = 2.0
+#XP awarded per delivered item.
+# Default: 1.0
+# Range: 0.0 ~ 1000000.0
+rankXpPerDeliveredItem = 1.0

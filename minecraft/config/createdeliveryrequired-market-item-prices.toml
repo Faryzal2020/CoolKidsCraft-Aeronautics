@@ -1,0 +1,33 @@
+# Create Aeronautics: Delivery Required market item price config
+# Every listed item id maps to its base price in spurs.
+# Add modded items here explicitly; recipes are not used for price calculation.
+# Items not listed here are not priced by goggles and are not automatically assigned a value.
+[item_prices]
+"create:andesite" = 10
+"create:precision_mechanism" = 80
+"minecraft:blaze_rod" = 20
+"minecraft:bread" = 3
+"minecraft:bricks" = 20
+"minecraft:clay_ball" = 2
+"minecraft:coal" = 2
+"minecraft:copper_ingot" = 40
+"minecraft:diamond" = 100
+"minecraft:emerald" = 80
+"minecraft:ender_pearl" = 200
+"minecraft:feather" = 2
+"minecraft:glass" = 2
+"minecraft:glowstone_dust" = 6
+"minecraft:gold_ingot" = 40
+"minecraft:gunpowder" = 100
+"minecraft:hay_block" = 10
+"minecraft:iron_ingot" = 20
+"minecraft:lapis_lazuli" = 8
+"minecraft:leather" = 40
+"minecraft:obsidian" = 20
+"minecraft:paper" = 2
+"minecraft:quartz" = 10
+"minecraft:redstone" = 4
+"minecraft:slime_ball" = 90
+"minecraft:string" = 2
+"minecraft:sugar" = 2
+"minecraft:wheat" = 2

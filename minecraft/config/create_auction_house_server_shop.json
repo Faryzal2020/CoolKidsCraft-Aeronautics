@@ -1,0 +1,18 @@
+{
+  "ui": {
+    "listings_per_page": 54
+  },
+  "buy": [
+    {
+      "item": "minecraft:cobblestone",
+      "count": 64,
+      "price": "1",
+      "label": "Cobblestone",
+      "description": [
+        "Cheap starter block.",
+        "Buy from the server."
+      ]
+    }
+  ],
+  "sell": []
+}

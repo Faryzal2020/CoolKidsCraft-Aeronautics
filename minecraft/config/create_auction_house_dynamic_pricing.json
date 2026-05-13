@@ -1,0 +1,6 @@
+{
+  "k": 1.0,
+  "margin_pct": 0.60,
+  "rolling_hours": 24,
+  "rebalance_interval_sec": 3600
+}
