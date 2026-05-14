@@ -175,7 +175,7 @@
     "iceandfire.worldgen.generateMausoleumChance": 1.0,
     "iceandfire.worldgen.generateMyemexHiveDesertChance": 1.0,
     "iceandfire.worldgen.generateMyemexHiveJungleChance": 1.0,
-    "iceandfire.worldgen.generatePixieVillageChance": 1.0,
+    "iceandfire.worldgen.generatePixieVillageChance": 0.1,
     "iceandfire.worldgen.generateSirenIslandChance": 1.0
   },
   "misc": {

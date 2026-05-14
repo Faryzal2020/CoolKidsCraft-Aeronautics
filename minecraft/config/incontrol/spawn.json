@@ -2,7 +2,46 @@
     {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
-        "maxcount": 20,
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:rabbit",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:villager",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 10,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:fox",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:polar_bear",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
         "result": "deny"
     }
 ]

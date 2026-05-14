@@ -1,5 +1,15 @@
 [
   {"version":1},
+  {"ingredient":{"id":"minecraft:oak_slab"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"enderio:pulsating_alloy_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:ender_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:light_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:heavy_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:redstone_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:double_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:note_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aquaculture:nether_star_hook"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"structurize:sceptergold"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"createdeliveryrequired:market"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"createdeliveryrequired:contractor"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"createdeliveryrequired:delivery_marker"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -88,16 +98,6 @@
   {"ingredient":{"id":"backtobed:mysterious_returner"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"backtobed:tresrealm_returner"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"actuallyadditions:ender_star"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"minecraft:ender_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"cataclysm:goddess_statue"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:aptrgangr_head"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:black_steel_pickaxe"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:cursium_upgrade_smithing_template"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:ignitium_upgrade_smithing_template"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:ignitium_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:black_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:storm_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:cursed_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:desert_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:abyss_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"cataclysm:aptrgangr_head"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
