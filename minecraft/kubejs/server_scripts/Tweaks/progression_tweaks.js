@@ -102,7 +102,7 @@ ServerEvents.recipes(event => {
         'ABA',
         'CAC'
     ], {
-        A: 'naturesaura:fortress_finder',
+        A: 'enderio:pulsating_alloy_ingot',
         B: 'rftoolsbase:infused_enderpearl',
         C: 'twilightforest:carminite'
     }).id('minecraft:ender_eye')

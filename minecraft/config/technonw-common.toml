@@ -13,7 +13,7 @@ baseCost = 6
 sqrtDistanceMultiplier = 0.01
 # Default: 0.0035
 # Range: 0.0 ~ 100.0
-linearDistanceMultiplier = 0.005
+linearDistanceMultiplier = 0.01
 # Default: 96
 # Range: > 0
 interdimensionalFlatSurcharge = 128

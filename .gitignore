@@ -119,4 +119,5 @@ update.sh
 /minecraft/config/jei/world/server*
 /minecraft/config/auto_restart-server.toml
 /minecraft/easy_npc/
+/minecraft/ldlib2/
 
