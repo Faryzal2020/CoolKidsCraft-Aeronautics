@@ -2,6 +2,14 @@
     {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
+        "maxcount": {
+            "amount": 50
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "iceandfire:pixie",
+        "dimension": "minecraft:overworld",
         "mincount": {
             "amount": 5,
             "perplayer": true

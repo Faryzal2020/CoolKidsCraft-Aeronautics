@@ -38,7 +38,6 @@
 /minecraft/saves
 /minecraft/TrashSlotSaveState.json
 /minecraft/config/iris.properties
-/minecraft/config/incontrol
 /minecraft/config/ars_nouveau/search_index
 /minecraft/config/crash_assistant
 /minecraft/config/ftbchunks-client.snbt
@@ -55,7 +54,6 @@
 /dist
 /minecraft/mods/chunky*
 /minecraft/Distant_Horizons_server_data
-/minecraft/shaderpacks
 /minecraft/config/vivecraft-client-config.json
 /minecraft/mods/DistantHorizons*
 /minecraft/mods/.connector
