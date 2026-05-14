@@ -6,12 +6,40 @@
     {
       "item": "minecraft:cobblestone",
       "count": 64,
-      "price": "1",
+      "price": "32",
       "label": "Cobblestone",
       "description": [
         "Cheap starter block.",
         "Buy from the server."
       ]
+    },
+    {
+      "item": "minecraft:dirt",
+      "count": 64,
+      "price": "32",
+      "label": "dirt",
+      "description": []
+    },
+    {
+      "item": "minecraft:sand",
+      "count": 64,
+      "price": "64",
+      "label": "Sand",
+      "description": []
+    },
+    {
+      "item": "minecraft:gravel",
+      "count": 64,
+      "price": "64",
+      "label": "Gravel",
+      "description": []
+    },
+    {
+      "item": "minecraft:wool",
+      "count": 64,
+      "price": "64",
+      "label": "Wool",
+      "description": []
     }
   ],
   "sell": []

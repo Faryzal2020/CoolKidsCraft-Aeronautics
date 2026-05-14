@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "mob": "iceandfire:pixie",
+        "dimension": "minecraft:overworld",
+        "maxcount": 20,
+        "result": "deny"
+    }
+]
