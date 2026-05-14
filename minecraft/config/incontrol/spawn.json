@@ -1,14 +1,14 @@
 [
     {
         "hostile": true,
-        "maxcount": {
+        "mincount": {
             "amount": 200
         },
         "result": "deny"
     },
     {
         "passive": true,
-        "maxcount": {
+        "mincount": {
             "amount": 300
         },
         "result": "deny"
@@ -16,7 +16,7 @@
     {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 50
         },
         "result": "deny"
@@ -24,7 +24,7 @@
     {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 5,
             "perplayer": true
         },
@@ -33,7 +33,7 @@
     {
         "mob": "minecraft:rabbit",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 5,
             "perplayer": true
         },
@@ -42,7 +42,7 @@
     {
         "mob": "minecraft:villager",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 10,
             "perplayer": true
         },
@@ -52,14 +52,14 @@
         "mob": "minecraft:bat",
         "dimension": "minecraft:overworld",
         "mincount": {
-            "amount": 20
+            "amount": 10
         },
         "result": "deny"
     },
     {
         "mob": "minecraft:bat",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 3,
             "perplayer": true
         },
@@ -68,7 +68,7 @@
     {
         "mob": "minecraft:creeper",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 30
         },
         "result": "deny"
@@ -76,7 +76,7 @@
     {
         "mob": "minecraft:creeper",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 8,
             "perplayer": true
         },
@@ -85,7 +85,7 @@
     {
         "mob": "minecraft:zombie",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 30
         },
         "result": "deny"
@@ -93,7 +93,7 @@
     {
         "mob": "minecraft:zombie",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 8,
             "perplayer": true
         },
@@ -102,7 +102,7 @@
     {
         "mob": "minecraft:skeleton",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 30
         },
         "result": "deny"
@@ -110,7 +110,7 @@
     {
         "mob": "minecraft:skeleton",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 8,
             "perplayer": true
         },
@@ -119,7 +119,7 @@
     {
         "mob": "minecraft:enderman",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 30
         },
         "result": "deny"
@@ -127,7 +127,7 @@
     {
         "mob": "minecraft:enderman",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 8,
             "perplayer": true
         },
@@ -136,8 +136,17 @@
     {
         "mob": "minecraft:fox",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "quark:stoneling",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 2,
             "perplayer": true
         },
         "result": "deny"
@@ -145,7 +154,7 @@
     {
         "mob": "minecraft:polar_bear",
         "dimension": "minecraft:overworld",
-        "maxcount": {
+        "mincount": {
             "amount": 5,
             "perplayer": true
         },
