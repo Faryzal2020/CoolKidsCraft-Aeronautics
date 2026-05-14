@@ -71,7 +71,6 @@ ServerEvents.recipes(event => {
         'c:kerosene': 'pneumaticcraft:kerosene',
         'c:lpg': 'pneumaticcraft:lpg',
         'c:ethylene': 'tfmg:ethylene',
-        'c:ethylene': 'tfmg:ethylene',
         'c:naphtha': 'oritech:still_naphtha',
         'c:sulfuric_acid': 'oritech:still_sulfuric_acid'
     };

@@ -118,4 +118,5 @@ update.sh
 /minecraft/config/auto_restart-server.toml
 /minecraft/easy_npc/
 /minecraft/ldlib2/
+/minecraft/mods/servercore*
 

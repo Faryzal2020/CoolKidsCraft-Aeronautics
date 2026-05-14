@@ -1,5 +1,10 @@
 [
   {"version":1},
+  {"ingredient":{"id":"silentgear:azure_electrum_dust"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"sgearmetalworks:molten_azure_electrum"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"silentgear:azure_electrum_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"oritech:electrum_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"productivemetalworks:molten_electrum"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:oak_slab"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"enderio:pulsating_alloy_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"minecraft:ender_eye"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -25,7 +30,6 @@
   {"ingredient":{"id":"sgearmetalworks:uru_metal_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sgearmetalworks:uru_metal_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sgearmetalworks:molten_uru_metal"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"sgearmetalworks:molten_azure_electrum"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sgearmetalworks:molten_azure_silver"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"sgearmetalworks:molten_blaze_gold"},"type":"fluid_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:alloy_forge"},"type":"item_stack","bookmarkType":"INGREDIENT"},
@@ -89,15 +93,11 @@
   {"ingredient":{"id":"oritech:cooler_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"oritech:foundry_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"oritech:assembler_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"silentgear:azure_electrum_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:tyrian_steel_ingot"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:blueprint_paper"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:paxel_blueprint"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgear:super_alloy"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"silentgems:white_diamond"},"type":"item_stack","bookmarkType":"INGREDIENT"},
   {"ingredient":{"id":"backtobed:mysterious_returner"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"backtobed:tresrealm_returner"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"actuallyadditions:ender_star"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:goddess_statue"},"type":"item_stack","bookmarkType":"INGREDIENT"},
-  {"ingredient":{"id":"cataclysm:aptrgangr_head"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+  {"ingredient":{"id":"backtobed:tresrealm_returner"},"type":"item_stack","bookmarkType":"INGREDIENT"}
 ]
