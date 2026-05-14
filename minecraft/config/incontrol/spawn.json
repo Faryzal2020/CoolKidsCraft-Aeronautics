@@ -1,5 +1,19 @@
 [
     {
+        "hostile": true,
+        "maxcount": {
+            "amount": 200
+        },
+        "result": "deny"
+    },
+    {
+        "passive": true,
+        "maxcount": {
+            "amount": 300
+        },
+        "result": "deny"
+    },
+    {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
         "maxcount": {
