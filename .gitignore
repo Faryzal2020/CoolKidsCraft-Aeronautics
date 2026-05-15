@@ -80,6 +80,7 @@
 /minecraft/shaderpacks/*
 !minecraft/shaderpacks/Complementary*
 /minecraft/config/easy_npc*
+/minecraft/mods/servercore*
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt

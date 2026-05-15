@@ -207,6 +207,7 @@ activation-range:
   villager-work-immunity-for: 20
   # A list of entity types that should be excluded from activation range checks.
   excluded-entity-types:
+    - 'create:super_glue'
     - 'minecraft:hopper_minecart'
     - 'minecraft:warden'
     - 'minecraft:ghast'
