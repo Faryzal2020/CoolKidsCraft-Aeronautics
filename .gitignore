@@ -73,7 +73,7 @@
 /minecraft/config/simple-discord-link
 /minecraft/sdlinkstorage
 /minecraft/config/jei/world/local
-/minecraft/config/jei/world/server
+/minecraft/config/jei/world/server/*
 /minecraft/config/jei/*client*
 /minecraft/mods/wm_binaries*
 /minecraft/vista_ffmpeg_bin*
@@ -81,6 +81,10 @@
 !minecraft/shaderpacks/Complementary*
 /minecraft/config/easy_npc*
 /minecraft/mods/servercore*
+/minecraft/config/just_enough_crafting_tree_recipe_cache
+/minecraft/config/jei/*
+/minecraft/config/euphoria_patcher/data.json
+/instance.cfg
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
