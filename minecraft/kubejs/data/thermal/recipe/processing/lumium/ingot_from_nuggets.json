@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/lumium"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thermal:lumium_ingot"
+  }
+}

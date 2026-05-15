@@ -72,6 +72,19 @@ ServerEvents.recipes(event => {
     //sagMill(input, energy, output{item, count})
     //addAACrusher(input, output, num, bonus)
 
+    sagMill('railcraft:tin_ingot', 1000, { item: 'enderio:powdered_tin', count: 1 })
+    addAACrusher('railcraft:tin_ingot', 'enderio:powdered_tin', 1, 0)
+    event.recipes.oritech.pulverizer()
+        .itemInputs('railcraft:tin_ingot')
+        .itemOutputs('enderio:powdered_tin')
+        .time(100)
+        .id(`kubejs:pulverizer/dusts/tin_ingot_to_dust`)
+    event.recipes.oritech.grinder()
+        .itemInputs('railcraft:tin_ingot')
+        .itemOutputs('enderio:powdered_tin')
+        .time(40)
+        .id(`kubejs:grinder/dusts/tin_ingot_to_dust`)
+
     const ores = [
         { input: '#c:ores/dimensional_shard', output: 'rftoolsbase:dimensionalshard', process: [1, 1, 1, 1, 1] },
         { input: '#c:ores/sulfur', output: 'tfmg:sulfur_dust', process: [1, 1, 1, 1, 1] },

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "thermal:block/enderium_block" }
+  }
+}

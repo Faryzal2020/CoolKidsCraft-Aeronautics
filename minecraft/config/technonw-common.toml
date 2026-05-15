@@ -22,4 +22,4 @@ interdimensionalFlatSurcharge = 128
 minCost = 4
 # Default: 1024
 # Range: > 0
-maxCost = 10240
+maxCost = 256

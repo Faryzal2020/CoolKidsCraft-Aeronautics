@@ -1,0 +1,14 @@
+{
+  "item.thermal.lumium_ingot": "Lumium Ingot",
+  "item.thermal.lumium_nugget": "Lumium Nugget",
+  "item.thermal.lumium_dust": "Lumium Dust",
+  "block.thermal.lumium_block": "Block of Lumium",
+  "item.thermal.enderium_ingot": "Enderium Ingot",
+  "item.thermal.enderium_nugget": "Enderium Nugget",
+  "item.thermal.enderium_dust": "Enderium Dust",
+  "block.thermal.enderium_block": "Block of Enderium",
+  "item.thermal.signalum_ingot": "Signalum Ingot",
+  "item.thermal.signalum_nugget": "Signalum Nugget",
+  "item.thermal.signalum_dust": "Signalum Dust",
+  "block.thermal.signalum_block": "Block of Signalum"
+}

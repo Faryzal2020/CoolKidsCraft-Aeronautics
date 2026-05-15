@@ -13,6 +13,15 @@ ServerEvents.tags('item', event => {
   event.add('c:nuggets/refined_glowstone', 'mekanism:nugget_refined_glowstone')
   event.add('c:storage_blocks/refined_glowstone', 'mekanism:block_refined_glowstone')
 
+  // Thermal Alloys
+  const alloys = ['lumium', 'enderium', 'signalum']
+  alloys.forEach(alloy => {
+    event.add(`c:ingots/${alloy}`, `thermal:${alloy}_ingot`)
+    event.add(`c:nuggets/${alloy}`, `thermal:${alloy}_nugget`)
+    event.add(`c:dusts/${alloy}`, `thermal:${alloy}_dust`)
+    event.add(`c:storage_blocks/${alloy}`, `thermal:${alloy}_block`)
+  })
+
   // Essence Blocks
   event.add('c:storage_blocks/air_essence', 'kubejs:air_essence_block')
   event.add('c:storage_blocks/earth_essence', 'kubejs:earth_essence_block')
