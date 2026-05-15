@@ -3,6 +3,16 @@ ServerEvents.tags('item', event => {
   // Waystones
   event.add('ftbchunks:interact_whitelist', ['@waystones'])
 
+  event.add('c:ingots/refined_obsidian', 'mekanism:ingot_refined_obsidian')
+  event.add('c:dusts/refined_obsidian', 'mekanism:dust_refined_obsidian')
+  event.add('c:nuggets/refined_obsidian', 'mekanism:nugget_refined_obsidian')
+  event.add('c:storage_blocks/refined_obsidian', 'mekanism:block_refined_obsidian')
+
+  event.add('c:ingots/refined_glowstone', 'mekanism:ingot_refined_glowstone')
+  // there is no refined glowstone dust
+  event.add('c:nuggets/refined_glowstone', 'mekanism:nugget_refined_glowstone')
+  event.add('c:storage_blocks/refined_glowstone', 'mekanism:block_refined_glowstone')
+
   // Essence Blocks
   event.add('c:storage_blocks/air_essence', 'kubejs:air_essence_block')
   event.add('c:storage_blocks/earth_essence', 'kubejs:earth_essence_block')

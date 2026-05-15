@@ -1,5 +1,12 @@
 [
     {
+        "mob": "create:super_glue",
+        "mincount": {
+            "amount": 200
+        },
+        "result": "allow"
+    },
+    {
         "hostile": true,
         "mincount": {
             "amount": 200
