@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "III",
+        "III",
+        "III"
+    ],
+    "key": {
+        "I": {
+            "tag": "c:ingots/refined_glowstone"
+        }
+    },
+    "result": {
+        "count": 1,
+        "id": "mekanism:block_refined_glowstone"
+    }
+}

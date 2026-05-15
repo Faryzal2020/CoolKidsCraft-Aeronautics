@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ingots/refined_obsidian"
+        }
+    ],
+    "result": {
+        "count": 9,
+        "id": "mekanism:nugget_refined_obsidian"
+    }
+}

@@ -132,4 +132,10 @@ ServerEvents.recipes(event => {
     pmw_ingot_casting('c:molten_aluminum', 'tfmg:aluminum_ingot', 'aluminum')
     pmw_nugget_casting('c:molten_aluminum', 'tfmg:aluminum_nugget', 'aluminum')
     pmw_plate_casting('c:molten_aluminum', 'tfmg:aluminum_sheet', 'aluminum')
+
+    pmw_block_casting('c:molten_refined_obsidian', 'mekanism:block_refined_obsidian', 'refined_obsidian')
+    pmw_ingot_casting('c:molten_refined_obsidian', 'mekanism:ingot_refined_obsidian', 'refined_obsidian')
+
+    pmw_block_casting('c:molten_refined_glowstone', 'mekanism:block_refined_glowstone', 'refined_glowstone')
+    pmw_ingot_casting('c:molten_refined_glowstone', 'mekanism:ingot_refined_glowstone', 'refined_glowstone')
 })

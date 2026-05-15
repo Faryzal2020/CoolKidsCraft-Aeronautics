@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "III",
+        "III",
+        "III"
+    ],
+    "key": {
+        "I": {
+            "tag": "c:ingots/refined_obsidian"
+        }
+    },
+    "result": {
+        "count": 1,
+        "id": "mekanism:block_refined_obsidian"
+    }
+}

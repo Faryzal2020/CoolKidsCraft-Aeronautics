@@ -31,4 +31,23 @@ ServerEvents.recipes(event => {
             ]
         }).id(`kubejs:create/pressing/${recipe.output.replace(':', '_')}`)
     })
+
+    event.recipes.create.pressing('mekanism:ingot_refined_obsidian', 'mekanism:dust_refined_obsidian')
+    //event.smelting('mekanism:ingot_refined_glowstone', 'mekanism:dust_refined_glowstone') couldn't find dust refined glowstone definition anywhere
+
+    // Refined Obsidian Recipes
+    // Ingot into Dust
+    event.recipes.create.crushing('mekanism:dust_refined_obsidian', 'mekanism:ingot_refined_obsidian')
+
+    // Melting (Dust/Ingot/Block into Molten)
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 90), 'mekanism:ingot_refined_obsidian').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 90), 'mekanism:dust_refined_obsidian').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 810), 'mekanism:block_refined_obsidian').heated()
+
+    // Alloy Mixing: 4 Silver + 1 Diamond + 4 Obsidian -> 1 Bucket Molten Refined Obsidian
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 1000), [
+        '4x railcraft:silver_ingot',
+        'minecraft.diamond',
+        '4x minecraft:obsidian'
+    ]).heated()
 })
