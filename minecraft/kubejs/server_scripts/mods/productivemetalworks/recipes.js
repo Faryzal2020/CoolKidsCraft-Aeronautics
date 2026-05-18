@@ -147,4 +147,6 @@ ServerEvents.recipes(event => {
 
     pmw_block_casting('c:molten_signalum', 'thermal:signalum_block', 'signalum')
     pmw_ingot_casting('c:molten_signalum', 'thermal:signalum_ingot', 'signalum')
+
+    pmw_plate_casting('c:molten_platinum', 'createpropulsion:platinum_sheet', 'platinum')
 })
