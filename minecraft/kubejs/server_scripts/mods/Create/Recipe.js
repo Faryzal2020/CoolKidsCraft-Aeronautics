@@ -65,14 +65,14 @@ ServerEvents.recipes(event => {
 
     // Alloy Mixing: 4 Silver + 1 Diamond + 4 Obsidian -> 1 Bucket Molten Refined Obsidian
     event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 1000), [
-        '4x railcraft:silver_dust',
+        '4x create:crushed_raw_silver',
         'createaddition:diamond_grit',
         '4x create:powdered_obsidian'
     ]).heated()
 
     event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_enderium', 360), [
         '3x tfmg:lead_ingot',
-        'oritech:platinum_ingot',
+        'oritech:platinum_dust',
         '2x railcraft:ender_dust'
     ]).heated()
 
