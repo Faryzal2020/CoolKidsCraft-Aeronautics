@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/signalum"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thermal:signalum_block"
+  }
+}

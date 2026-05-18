@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/enderium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "thermal:enderium_ingot"
+  }
+}

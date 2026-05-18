@@ -264,4 +264,11 @@ ServerEvents.recipes(event => {
     .itemInputs(["#c:ingots/steel", "#c:ingots/steel", "#c:ingots/steel", "#c:ingots/steel"])
     .itemOutputs("32x tfmg:screw")
     .time(80)
+
+  event.recipes.oritech
+    .pulverizer()
+    .itemInputs("minecraft:diamond")
+    .itemOutputs("2x createaddition:diamond_grit")
+    .time(80)
+    .id(`kubejs:pulverizer/diamond_grit`)
 })

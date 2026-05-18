@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/enderium"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thermal:enderium_ingot"
+  }
+}

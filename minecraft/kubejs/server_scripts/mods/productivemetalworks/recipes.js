@@ -138,4 +138,13 @@ ServerEvents.recipes(event => {
 
     pmw_block_casting('c:molten_refined_glowstone', 'mekanism:block_refined_glowstone', 'refined_glowstone')
     pmw_ingot_casting('c:molten_refined_glowstone', 'mekanism:ingot_refined_glowstone', 'refined_glowstone')
+
+    pmw_block_casting('c:molten_enderium', 'thermal:enderium_block', 'enderium')
+    pmw_ingot_casting('c:molten_enderium', 'thermal:enderium_ingot', 'enderium')
+
+    pmw_block_casting('c:molten_lumium', 'thermal:lumium_block', 'lumium')
+    pmw_ingot_casting('c:molten_lumium', 'thermal:lumium_ingot', 'lumium')
+
+    pmw_block_casting('c:molten_signalum', 'thermal:signalum_block', 'signalum')
+    pmw_ingot_casting('c:molten_signalum', 'thermal:signalum_ingot', 'signalum')
 })
