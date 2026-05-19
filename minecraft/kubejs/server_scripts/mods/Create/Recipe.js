@@ -63,6 +63,12 @@ ServerEvents.recipes(event => {
     event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_signalum', 90), 'thermal:signalum_dust').heated()
     event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_signalum', 810), 'thermal:signalum_block').heated()
 
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_uranium', 90), 'bigreactors:yellorium_ingot').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_uranium', 90), 'oritech:uranium_dust').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_uranium', 810), 'bigreactors:yellorium_block').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_uranium', 90), 'create:crushed_raw_uranium').heated()
+    event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_uranium', 180), '#c:raw_materials/uranium').heated()
+
     // Alloy Mixing: 4 Silver + 1 Diamond + 4 Obsidian -> 1 Bucket Molten Refined Obsidian
     event.recipes.create.mixing(Fluid.of('productivemetalworks:molten_refined_obsidian', 1000), [
         '4x create:crushed_raw_silver',

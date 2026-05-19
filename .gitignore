@@ -125,4 +125,6 @@ update.sh
 /minecraft/ldlib2/
 /minecraft/mods/servercore*
 /minecraft/mods/autorestarter*
+/minecraft/config/vsfluidlink-server.toml
+/minecraft/config/autorestarter-common.toml
 
