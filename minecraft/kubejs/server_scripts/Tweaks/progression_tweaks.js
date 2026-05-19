@@ -252,6 +252,7 @@ ServerEvents.recipes(event => {
     event.remove({ id: "productivemetalworks:alloying/molten_crimson_steel" })
     event.remove({ id: "productivemetalworks:alloying/molten_azure_electrum" })
     event.remove({ id: "productivemetalworks:alloying/molten_tyrian_steel" })
+    event.remove({ id: "oritech:compat/productivemetalworks/casting/block/platinum" })
 
     event.recipes.enderio
         .alloy_smelting(Item.of("silentgear:crimson_steel_ingot"), [

@@ -93,4 +93,42 @@ ServerEvents.recipes(event => {
         'railcraft:silver_ingot',
         '4x minecraft:redstone'
     ]).heated()
+
+    // Molten to Block Compacting
+    const moltenCompacting = [
+        { fluid: 'productivemetalworks:molten_obsidian', block: 'minecraft:obsidian', amount: 1000 },
+        { fluid: 'productivemetalworks:molten_emerald', block: 'minecraft:emerald_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_diamond', block: 'minecraft:diamond_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_lapis', block: 'minecraft:lapis_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_quartz', block: 'minecraft:quartz_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_carbon', block: 'minecraft:coal_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_iron', block: 'minecraft:iron_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_copper', block: 'minecraft:copper_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_gold', block: 'minecraft:gold_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_netherite', block: 'minecraft:netherite_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_aluminum', block: 'tfmg:aluminum_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_lead', block: 'tfmg:lead_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_nickel', block: 'oritech:nickel_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_platinum', block: 'oritech:platinum_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_silver', block: 'railcraft:silver_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_tin', block: 'railcraft:tin_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_uranium', block: 'bigreactors:yellorium_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_zinc', block: 'create:zinc_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_invar', block: 'railcraft:invar_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_electrum', block: 'oritech:electrum_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_brass', block: 'create:brass_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_enderium', block: 'thermal:enderium_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_lumium', block: 'thermal:lumium_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_signalum', block: 'thermal:signalum_block', amount: 810 },
+        { fluid: 'sgearmetalworks:molten_crimson_iron', block: 'silentgear:crimson_iron_block', amount: 810 },
+        { fluid: 'sgearmetalworks:molten_crimson_steel', block: 'silentgear:crimson_steel_block', amount: 810 },
+        { fluid: 'sgearmetalworks:molten_blaze_gold', block: 'silentgear:blaze_gold_block', amount: 810 },
+        { fluid: 'sgearmetalworks:molten_azure_silver', block: 'silentgear:azure_silver_block', amount: 810 },
+        { fluid: 'sgearmetalworks:molten_azure_electrum', block: 'silentgear:azure_electrum_block', amount: 810 },
+        { fluid: 'productivemetalworks:molten_constantan', block: 'tfmg:constantan_block', amount: 810 }
+    ]
+
+    moltenCompacting.forEach(recipe => {
+        event.recipes.create.compacting(recipe.block, Fluid.of(recipe.fluid, recipe.amount)).id(`kubejs:create/compacting/${recipe.block.replace(':', '_')}`)
+    })
 })

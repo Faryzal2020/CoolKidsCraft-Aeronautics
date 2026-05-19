@@ -152,4 +152,16 @@ ServerEvents.recipes(event => {
 
     pmw_block_casting('c:molten_uranium', 'bigreactors:yellorium_block', 'yellorium')
     pmw_ingot_casting('c:molten_uranium', 'bigreactors:yellorium_ingot', 'yellorium')
+
+    pmw_block_casting('c:molten_carbon', 'minecraft:coal_block', 'coal')
+
+    pmw_block_casting('c:molten_tin', 'railcraft:tin_block', 'tin')
+    pmw_ingot_casting('c:molten_tin', 'railcraft:tin_ingot', 'tin')
+
+    pmw_block_casting('c:molten_invar', 'railcraft:invar_block', 'invar')
+    pmw_ingot_casting('c:molten_invar', 'railcraft:invar_ingot', 'invar')
+
+    pmw_block_casting('c:molten_constantan', 'tfmg:constantan_block', 'constantan')
+    pmw_ingot_casting('c:molten_constantan', 'tfmg:constantan_ingot', 'constantan')
+    pmw_nugget_casting('c:molten_constantan', 'tfmg:constantan_nugget', 'constantan')
 })
