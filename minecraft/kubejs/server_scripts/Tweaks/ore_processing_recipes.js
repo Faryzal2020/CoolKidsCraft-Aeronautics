@@ -85,6 +85,22 @@ ServerEvents.recipes(event => {
         .time(40)
         .id(`kubejs:grinder/dusts/tin_ingot_to_dust`)
 
+
+
+
+    sagMill('tfmg:sulfur', 1000, { item: 'tfmg:sulfur_dust', count: 1 })
+    addAACrusher('tfmg:sulfur', 'tfmg:sulfur_dust', 1, 0)
+    event.recipes.oritech.pulverizer()
+        .itemInputs('tfmg:sulfur')
+        .itemOutputs('tfmg:sulfur_dust')
+        .time(100)
+        .id(`kubejs:pulverizer/dusts/sulfur_to_dust`)
+    event.recipes.oritech.grinder()
+        .itemInputs('tfmg:sulfur')
+        .itemOutputs('tfmg:sulfur_dust')
+        .time(40)
+        .id(`kubejs:grinder/dusts/sulfur_to_dust`)
+
     const ores = [
         { input: '#c:ores/dimensional_shard', output: 'rftoolsbase:dimensionalshard', process: [1, 1, 1, 1, 1] },
         { input: '#c:ores/sulfur', output: 'tfmg:sulfur_dust', process: [1, 1, 1, 1, 1] },
