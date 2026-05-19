@@ -84,7 +84,6 @@
 /minecraft/config/just_enough_crafting_tree_recipe_cache
 /minecraft/config/jei/*
 /minecraft/config/euphoria_patcher/data.json
-instance.cfg
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
