@@ -1,0 +1,941 @@
+#version 460 core
+#define UP_FACE_TINT 1.0f
+#define IS_WINDOWS 
+#define PATCHED_SHADER 
+#define Z_AXIS_FACE_TINT 1.0f
+#define TRANSLUCENT 
+#define X_AXIS_FACE_TINT 1.0f
+#define DOWN_FACE_TINT 1.0f
+#define NO_SHADE_FACE_TINT 1.0f
+//Use quad shuffling to compute fragment mip
+//#extension GL_KHR_shader_subgroup_quad: enable
+#ifdef USE_SINGLE_TRI
+#define USE_NV_BARRY
+#endif
+
+#ifdef USE_NV_BARRY
+#extension GL_NV_fragment_shader_barycentric: require
+#endif
+
+layout(binding = 0) uniform sampler2D blockModelAtlas;
+layout(binding = 2) uniform sampler2D depthTex;
+
+//#define DEBUG_RENDER
+
+//TODO: need to fix when merged quads have discardAlpha set to false but they span multiple tiles
+// however they are not a full block
+
+layout(location = 0) in flat uvec4 interData;
+#ifndef USE_NV_BARRY
+layout(location = 1) in vec2 uv;
+#endif
+
+#ifdef DEBUG_RENDER
+layout(location = 7) in flat uint quadDebug;
+#endif
+
+
+#ifndef PATCHED_SHADER
+layout(location = 0) out vec4 outColour;
+#else
+
+//Bind the model buffer and import the model system as we need it
+#define MODEL_BUFFER_BINDING 3
+struct BlockModel {
+    uint faceData[6];
+    uint flagsA;
+    uint colourTint;
+    uint customId;
+    uint _pad[7];
+};
+
+//TODO: FIXME: this isnt actually correct cause depending on the face (i think) it could be 1/64 th of a position off
+// but im going to assume that since we are dealing with huge render distances, this shouldent matter that much
+float extractFaceIndentation(uint faceData) {
+    uint enc = (faceData>>16)&63u;
+    enc += uint(enc==63u);//convert 63 to 64 cause of pain reasons
+    return float(enc)/64.0;
+}
+
+vec4 extractFaceSizes(uint faceData) {
+    return (vec4(faceData&0xFu, (faceData>>4)&0xFu, (faceData>>8)&0xFu, (faceData>>12)&0xFu)/16.0)+vec4(0.0,1.0/16.0,0.0,1.0/16.0);
+}
+
+uint faceHasAlphaCuttout(uint faceData) {
+    return (faceData>>22)&1u;
+}
+
+//TODO: try and get rid of
+uint faceHasAlphaCuttoutOverride(uint faceData) {
+    return (faceData>>23)&1u;
+}
+
+uint faceTintState(uint faceData) {
+    return (faceData>>24)&3u;
+}
+
+bool modelHasBiomeLUT(BlockModel model) {
+    return ((model.flagsA)&2u) != 0;
+}
+
+bool modelIsTranslucent(BlockModel model) {
+    return ((model.flagsA)&4u) != 0;
+}
+
+bool modelIsShaded(BlockModel model) {
+    return ((model.flagsA)&8u) != 0;
+}
+
+#endif
+
+layout(binding = 0, std140) uniform SceneUniform {
+    mat4 MVP;
+    ivec3 baseSectionPos;
+    uint frameId;
+    vec3 cameraSubPos;
+};
+
+//TODO: see if making the stride 2*4*4 bytes or something cause you get that 16 byte write
+struct DrawCommand {
+    uint  count;
+    uint  instanceCount;
+    uint  firstIndex;
+    int  baseVertex;
+    uint  baseInstance;
+};
+
+
+#ifdef BLOCK_MODEL_TEXTURE_BINDING
+layout(binding = BLOCK_MODEL_TEXTURE_BINDING) uniform sampler2D blockModelAtlas;
+#endif
+
+
+#ifndef Quad
+#define Quad ivec2
+#endif
+#ifdef QUAD_BUFFER_BINDING
+layout(binding = QUAD_BUFFER_BINDING, std430) readonly restrict buffer QuadBuffer {
+    Quad quadData[];
+};
+#endif
+
+#ifdef DRAW_BUFFER_BINDING
+layout(binding = DRAW_BUFFER_BINDING, std430) writeonly restrict buffer DrawBuffer {
+    DrawCommand cmdBuffer[];
+};
+#endif
+
+#ifdef DRAW_COUNT_BUFFER_BINDING
+layout(binding = DRAW_COUNT_BUFFER_BINDING, std430) restrict buffer DrawCommandCountBuffer {
+    uint cmdGenDispatchX;
+    uint cmdGenDispatchY;
+    uint cmdGenDispatchZ;
+
+    uint opaqueDrawCount;
+    uint translucentDrawCount;
+    uint temporalOpaqueDrawCount;
+
+    DrawCommand cullDrawIndirectCommand;
+};
+#endif
+
+#ifdef SECTION_METADATA_BUFFER_BINDING
+layout(binding = SECTION_METADATA_BUFFER_BINDING, std430) readonly restrict buffer SectionBuffer {
+    SectionMeta sectionData[];
+};
+#endif
+
+#ifdef INDIRECT_SECTION_LOOKUP_BINDING
+layout(binding = INDIRECT_SECTION_LOOKUP_BINDING, std430) readonly restrict buffer IndirectSectionLookupBuffer {
+    uint sectionCount;
+    uint indirectLookup[];
+};
+#endif
+
+#ifndef VISIBILITY_ACCESS
+#define VISIBILITY_ACCESS readonly
+#endif
+#ifdef VISIBILITY_BUFFER_BINDING
+layout(binding = VISIBILITY_BUFFER_BINDING, std430) VISIBILITY_ACCESS restrict buffer VisibilityBuffer {
+    uint visibilityData[];
+};
+#endif
+
+#ifdef MODEL_BUFFER_BINDING
+layout(binding = MODEL_BUFFER_BINDING, std430) readonly restrict buffer ModelBuffer {
+    BlockModel modelData[];
+};
+#endif
+
+#ifdef MODEL_COLOUR_BUFFER_BINDING
+layout(binding = MODEL_COLOUR_BUFFER_BINDING, std430) readonly restrict buffer ModelColourBuffer {
+    uint colourData[];
+};
+#endif
+
+#ifdef POSITION_SCRATCH_BINDING
+#ifndef POSITION_SCRATCH_ACCESS
+#define POSITION_SCRATCH_ACCESS readonly
+#endif
+layout(binding = POSITION_SCRATCH_BINDING, std430) POSITION_SCRATCH_ACCESS restrict buffer PositionScratchBuffer {
+    uvec2 positionBuffer[];
+};
+#endif
+
+#ifndef _VOXY_LIGHTING_DECL
+#define _VOXY_LIGHTING_DECL
+
+vec2 getLightmapUv(uint index) {
+    return clamp((vec2((index>>4)&0xFu, index&0xFu)/15)+vec2(8.0f/256), vec2(8.0f/256), vec2(248.0f/256));
+}
+
+#ifdef LIGHTING_SAMPLER_BINDING
+
+layout(binding = LIGHTING_SAMPLER_BINDING) uniform sampler2D lightSampler;
+
+vec4 getLighting(uint index) {
+    return texture(lightSampler, getLightmapUv(index));
+}
+#endif
+
+#endif
+
+vec4 uint2vec4RGBA(uint colour) {
+    return vec4((uvec4(colour)>>uvec4(24,16,8,0))&uvec4(0xFF))/255.0;
+}
+
+//bool useMipmaps() {
+//    return (interData.x&2u)==0u;
+//}
+
+uint tintingState() {
+    return (interData.x>>2)&3u;
+}
+
+bool useDiscard() {
+    return (interData.x&1u)==1u;
+}
+
+uint getFace() {
+    return (interData.x>>4)&7u;
+}
+
+
+uint getModelId() {
+    return interData.x>>16;
+}
+
+vec2 getBaseUV() {
+    uint face = getFace();
+    uint modelId = interData.x>>16;
+    vec2 modelUV = vec2(modelId&0xFFu, (modelId>>8)&0xFFu)*(1.0/(256.0));
+    return modelUV + (vec2(face>>1, face&1u) * (1.0/(vec2(3.0, 2.0)*256.0)));
+}
+
+
+#ifdef PATCHED_SHADER
+struct VoxyFragmentParameters {
+    //TODO: pass in derivative data
+    vec4 sampledColour;
+    vec2 tile;
+    vec2 uv;
+    uint face;
+    uint modelId;
+    vec2 lightMap;
+    vec4 tinting;
+    uint customId;//Same as iris's modelId
+};
+
+void voxy_emitFragment(VoxyFragmentParameters parameters);
+#else
+
+vec4 computeColour(vec2 texturePos, vec4 colour) {
+    //Conditional tinting, TODO: FIXME: this is better but still not great, try encode data into the top bit of alpha so its per pixel
+
+    uint tintingFunction = tintingState();
+    bool doTint = tintingFunction==2;//Always tint if function == 2
+    if (tintingFunction == 1) {//partial tint
+        vec4 tintTest = textureLod(blockModelAtlas, texturePos, 0);
+        if (abs(tintTest.r-tintTest.g) < 0.02f && abs(tintTest.g-tintTest.b) < 0.02f) {
+            doTint = true;
+        }
+    }
+    if (doTint) {
+        colour *= uint2vec4RGBA(interData.z).yzwx;
+    }
+    return (colour * uint2vec4RGBA(interData.y)) + vec4(0,0,0,float(interData.w&0xFFu)/255);
+}
+
+#endif
+
+
+void main() {
+    //vec2 uv = vec2(0);
+    //Tile is the tile we are in
+    vec2 tile;
+    #ifdef USE_NV_BARRY
+    #ifdef USE_SINGLE_TRI
+    if (gl_BaryCoordNV.x>=0.5||gl_BaryCoordNV.y>=0.5) discard;
+    vec2 uv = gl_BaryCoordNV.yx*(vec2((interData.x>>8)&0xFu, (interData.x>>12)&0xFu)+1)*2;
+    #else
+    vec2 uv = mix(gl_BaryCoordNV.yx, 1-gl_BaryCoordNV.xz, gl_PrimitiveID&1)*(vec2((interData.x>>8)&0xFu, (interData.x>>12)&0xFu)+1);
+    #endif
+    #endif
+
+    vec2 uv2 = modf(uv, tile)*(1.0/(vec2(3.0,2.0)*256.0));
+    vec4 colour;
+    vec2 texPos = uv2 + getBaseUV();
+//This is deprecated, TODO: remove the non mip code path
+    //if (useMipmaps())
+    {
+        vec2 uvSmol = uv*(1.0/(vec2(3.0,2.0)*256.0));
+        vec2 dx = dFdx(uvSmol);//vec2(lDx, dDx);
+        vec2 dy = dFdy(uvSmol);//vec2(lDy, dDy);
+        colour = textureGrad(blockModelAtlas, texPos, dx, dy);
+    }// else {
+    //    colour = textureLod(blockModelAtlas, texPos, 0);
+    //}
+
+    //If we are in shaders and are a helper invocation, just exit, as it enables extra performance gains for small sized
+    // fragments, we do this here after derivative computation
+    //Trying it with all shaders
+    //#ifdef PATCHED_SHADER
+    #ifndef PATCHED_SHADER_ALLOW_DERIVATIVES
+    if (gl_HelperInvocation) {
+        return;
+    }
+    #endif
+    //#endif
+
+    if (any(notEqual(clamp(tile, vec2(0), vec2((interData.x>>8)&0xFu, (interData.x>>12)&0xFu)), tile))) {
+        discard;
+        return;
+    }
+
+    //Check the minimum bounding texture and ensure we are greater than it
+    if (gl_FragCoord.z < texelFetch(depthTex, ivec2(gl_FragCoord.xy), 0).r) {
+        discard;
+        return;
+    }
+
+
+    //Also, small quad is really fking over the mipping level somehow
+    #ifndef TRANSLUCENT
+    colour.a = 1.0f;
+    if (useDiscard() && (textureLod(blockModelAtlas, texPos, 0).a <= 0.1f)) {
+    //if (useDiscard() && (colour.a <= 0.1f)) {
+    #else
+    if (textureLod(blockModelAtlas, texPos, 0).a == 0.0f) {
+    #endif
+        //This is stupidly stupidly bad for divergence
+        //TODO: FIXME, basicly what this do is sample the exact pixel (no lod) for discarding, this stops mipmapping fucking it over
+        #ifndef DEBUG_RENDER
+        discard;
+        return;
+        #endif
+    }
+
+    #ifndef PATCHED_SHADER_ALLOW_DERIVATIVES
+    if (gl_HelperInvocation) {
+        return;
+    }
+    #endif
+
+    #ifndef PATCHED_SHADER
+    colour = computeColour(texPos, colour);
+    outColour = colour;
+
+    #ifdef DEBUG_RENDER
+    uint hash = quadDebug*1231421+123141;
+    hash ^= hash>>16;
+    hash = hash*1231421+123141;
+    hash ^= hash>>16;
+    hash = hash * 1827364925 + 123325621;
+    outColour = vec4(float(hash&15u)/15, float((hash>>4)&15u)/15, float((hash>>8)&15u)/15, 0);
+    #endif
+
+    #else
+    uint modelId = getModelId();
+    BlockModel model = modelData[modelId];
+    uint tintingFunction = tintingState();
+    bool doTint = tintingFunction==2;//Always tint if function == 2
+    if (tintingFunction==1) {//Partial tint
+        vec4 tintTest = texture(blockModelAtlas, texPos, -2);
+        if (abs(tintTest.r-tintTest.g) < 0.02f && abs(tintTest.g-tintTest.b) < 0.02f) {
+            doTint = true;
+        }
+    }
+    vec4 tint = vec4(1);
+    if (doTint) {
+        tint = uint2vec4RGBA(interData.z).yzwx;
+    }
+
+    uint face = getFace();
+    face ^= uint((face&1u)!=uint(gl_FrontFacing!=((face>>1)!=0u)));
+    voxy_emitFragment(VoxyFragmentParameters(colour, tile, texPos, face, modelId, getLightmapUv(interData.y), tint, model.customId));
+
+    #endif
+}
+
+
+
+//#ifdef GL_KHR_shader_subgroup_quad
+/*
+uint hash = (uint(tile.x)*(1<<16))^uint(tile.y);
+uint horiz = subgroupQuadSwapHorizontal(hash);
+bool sameTile = horiz==hash;
+uint sv = mix(uint(-1), hash, sameTile);
+uint vert = subgroupQuadSwapVertical(sv);
+sameTile = sameTile&&vert==hash;
+mipBias = sameTile?0:-5.0;
+*/
+/*
+vec2 uvSmol = uv*(1.0/(vec2(3.0,2.0)*256.0));
+float lDx = subgroupQuadSwapHorizontal(uvSmol.x)-uvSmol.x;
+float lDy = subgroupQuadSwapVertical(uvSmol.y)-uvSmol.y;
+float dDx = subgroupQuadSwapDiagonal(lDx);
+float dDy = subgroupQuadSwapDiagonal(lDy);
+vec2 dx = vec2(lDx, dDx);
+vec2 dy = vec2(lDy, dDy);
+colour = textureGrad(blockModelAtlas, texPos, dx, dy);
+*/
+//#else
+//colour = texture(blockModelAtlas, texPos);
+//#endif
+
+
+
+layout(binding = 7, std140) uniform ShaderUniformBindings {
+	mat4 gbufferModelView;
+	mat4 vxModelView;
+	mat4 vxModelViewInv;
+	mat4 vxProjInv;
+	vec3 cameraPosition;
+	float blindness;
+	vec3 fogColor;
+	float darknessFactor;
+	vec3 shadowLightPosition;
+	float frameTimeCounter;
+	vec3 sunPosition;
+	int isEyeInWater;
+	vec3 upPosition;
+	float nightVision;
+	float rainStrength;
+	float viewHeight;
+	float viewWidth;
+	int vxRenderDistance;
+	int worldTime;
+};
+
+#define BASE_SAMPLER_BINDING_INDEX 6
+layout(binding=(BASE_SAMPLER_BINDING_INDEX+0)) uniform sampler2D lightmap;
+layout(binding=(BASE_SAMPLER_BINDING_INDEX+1)) uniform sampler2D depthtex1;
+layout(binding=(BASE_SAMPLER_BINDING_INDEX+2)) uniform sampler2D noisetex;
+
+
+
+
+layout(location = 0) out vec4 fragData0;
+layout(location = 1) out vec4 fragData1;
+layout(location = 2) out vec4 fragData2;
+
+/*
+Sildur's Vibrant Shaders:
+https://www.patreon.com/Sildur
+https://sildurs-shaders.github.io/
+https://twitter.com/SildurFX
+https://www.curseforge.com/minecraft/shaders/sildurs-vibrant-shaders
+
+Permissions:
+You are not allowed to edit, copy code or share my shaderpack under a different name or claim it as yours.
+*/
+
+
+
+
+
+/*
+Thank you for downloading Sildur's vibrant shaders, make sure you got it from the official source found here:
+https://sildurs-shaders.github.io/
+*/
+
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+        
+
+    
+        
+
+
+
+
+
+
+
+        
+	    
+
+
+
+    
+
+
+
+    
+        
+    
+
+    
+    
+    
+    
+   
+    
+        
+    
+
+
+
+    
+    
+    
+    
+    const float shadowDistance = 80.0;			//Render distance of shadows. 60=lite, 80=med, 80=high, 120=extreme [60.0 70.0 80.0 90.0 100.0 110.0 120.0 130.0 140.0 150.0 160.0 170.0 180.0 190.0 200.0 210.0 220.0 230.0 240.0 250.0 260.0 270.0 280.0 290.0 300.0 310.0 320.0 330.0 340.0 350.0 360.0 370.0 380.0 390.0 400.0]
+    const int shadowMapResolution = 2048;		//Shadows resolution. [256 512 1024 2048 3072 4096 6144 8192 16384] 512=lite, 1024=med, 2048=high, 3072=extreme 
+    const float k = 1.8;
+    
+    
+    float a = exp(0.05);
+    float b = (exp(1.0)-a)*shadowDistance/128.0;
+    float calcDistortion(vec2 worldpos){
+        return 1.0/(log(length(worldpos)*b+a)*k);
+    }
+    
+
+
+
+	
+    
+	
+		
+
+
+
+
+
+    
+	
+	
+		
+
+    
+		
+		
+
+	
+		
+		
+		
+        
+
+	
+	
+	
+    
+    
+    
+    
+
+    
+
+    
+    
+
+	
+	
+	
+
+	
+
+
+    
+
+    
+        
+    
+    
+        
+    
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+    
+
+    
+
+    
+
+
+
+        
+
+
+
+    
+	
+    
+    
+    
+    
+    
+	
+
+    
+
+ 
+
+
+    
+
+
+
+    
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+    
+
+
+
+    
+    
+    
+
+//    //#define watertex
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+
+
+
+
+    
+	
+	
+    
+    
+    
+    
+    
+	
+	
+
+
+
+// vertex
+
+const vec3 ToD[7] = vec3[7](  vec3(0.58597,0.16,0.005),
+								vec3(0.58597,0.31,0.05),
+								vec3(0.58597,0.45,0.16),
+								vec3(0.58597,0.5,0.35),
+								vec3(0.58597,0.5,0.36),
+								vec3(0.58597,0.5,0.37),
+								vec3(0.58597,0.5,0.38));
+
+float SunIntensity(float zenithAngleCos, float sunIntensity, float cutoffAngle, float steepness){
+	return sunIntensity * max(0.0, 1.0 - exp(-((cutoffAngle - acos(zenithAngleCos))/steepness)));
+}
+
+float luma(vec3 color) {
+	return dot(color,vec3(0.299, 0.587, 0.114));
+}
+
+
+vec2 texelSize = vec2(1.0/viewWidth,1.0/viewHeight);
+uniform int framemod8;
+const vec2[8] offsets = vec2[8](vec2(1./8.,-3./8.),
+								vec2(-1.,3.)/8.,
+								vec2(5.0,1.)/8.,
+								vec2(-3,-5.)/8.,
+								vec2(-5.,5.)/8.,
+								vec2(-7.,-1.)/8.,
+								vec2(3,7.)/8.,
+								vec2(7.,-7.)/8.);
+
+
+
+//Moving entities IDs
+//See block.properties for mapped ids
+
+
+
+
+// fragment
+
+mat2 rmatrix(float rad){
+	return mat2(vec2(cos(rad), -sin(rad)), vec2(sin(rad), cos(rad)));
+}
+
+float calcWaves(vec2 coord, float iswater){
+	
+	if(iswater > 0.9){
+	vec2 movement = abs(vec2(0.0, -frameTimeCounter * 0.31365));
+
+	coord *= 0.262144;
+	vec2 coord0 = coord * rmatrix(1.0) - movement * 4.0;
+		 coord0.y *= 3.0;
+	vec2 coord1 = coord * rmatrix(0.5) - movement * 1.5;
+		 coord1.y *= 3.0;		 
+	vec2 coord2 = coord + movement * 0.5;
+		 coord2.y *= 3.0;
+	
+	coord0 *= 1.0;
+	coord1 *= 1.0;
+
+	float wave = 1.0 - texture2D(noisetex,coord0 * 0.005).x * 10.0;			//big waves
+		  wave += texture2D(noisetex,coord1 * 0.010416).x * 7.0;			//small waves
+		  wave += sqrt(texture2D(noisetex,coord2 * 0.045).x * 6.5) * 1.33;	//noise texture
+		  wave *= 0.0157;
+	return wave;
+	} else return sqrt(texture2D(noisetex,coord * 0.5).x) * 0.035;			//translucent noise, non water
+
+}
+
+vec3 calcBump(vec2 coord, float iswater){
+	const vec2 deltaPos = vec2(0.25, 0.0);
+
+	float h0 = calcWaves(coord, iswater);
+	float h1 = calcWaves(coord + deltaPos.xy, iswater);
+	float h2 = calcWaves(coord - deltaPos.xy, iswater);
+	float h3 = calcWaves(coord + deltaPos.yx, iswater);
+	float h4 = calcWaves(coord - deltaPos.yx, iswater);
+
+	float xDelta = ((h1-h0)+(h0-h2));
+	float yDelta = ((h3-h0)+(h0-h4));
+
+	return vec3(vec2(xDelta,yDelta)*0.5, 0.5); //z = 1.0-0.5
+}
+
+vec3 toScreenSpace(vec3 pos) {
+	vec4 iProjDiag = vec4(vxProjInv[0].x, vxProjInv[1].y, vxProjInv[2].zw);
+    vec3 p3 = pos * 2.0 - 1.0;
+    vec4 viewPos = iProjDiag * p3.xyzz + vxProjInv[3];
+    return viewPos.xyz / viewPos.w;
+}
+
+
+vec3 calcParallax(vec3 pos, vec2 view, float iswater){
+	float getwave = calcWaves(pos.xz - pos.y, iswater);
+
+	pos.xz += (getwave * view) * 1.0;
+	
+	return pos;
+}
+
+
+vec4 encode (vec3 n, float dif, float lmap, float mat){
+    float p = sqrt(n.z*8+8);
+	
+	float vis = lmap;
+	if (mat > 0.9) vis = vis * 0.25;
+	if (mat > 0.4 && mat < 0.6) vis = vis*0.25+0.25;
+	if (mat < 0.1) vis = vis*0.25+0.5;
+		
+    return vec4(n.xy/p + 0.5,vis,1.0);
+}
+
+
+void voxy_emitFragment(VoxyFragmentParameters parameters) {
+
+	// vertex
+	vec3 normal = vec3(0.0);
+
+	switch (uint(parameters.face) >> 1u) {
+		case 0u:
+		normal.xyz = vxModelView[1].xyz;
+		break;
+		case 1u:
+		normal.xyz  = vxModelView[2].xyz;
+		break;
+		case 2u:
+		normal.xyz  = vxModelView[0].xyz;
+		break;
+	}
+	if ((parameters.face & 1) == 0) {
+		normal.xyz  = -normal.xyz ;
+	}
+
+
+	float material = 0.0;
+	float removeWater = 1.0; //disable lightmap on water, make light go through instead
+	if(parameters.customId == 10008.0) {
+		material = 1.0;
+		removeWater = 0.0;
+	
+		/*float fy = fract(worldpos.y + 0.001);
+		float wave = 0.05 * sin(2 * PI * (frameTimeCounter*0.8 + worldpos.x /  2.5 + worldpos.z / 5.0))
+				   + 0.05 * sin(2 * PI * (frameTimeCounter*0.6 + worldpos.x / 6.0 + worldpos.z /  12.0));
+		position.y += clamp(wave, -fy, 1.0-fy)*waves_amplitude;*/
+	
+	}
+	if(parameters.customId == 10079.0) material = 0.5;
+
+	//ToD
+	float hour = max(mod(worldTime/1000.0+2.0,24.0)-2.0,0.0);  //-0.1
+	float cmpH = max(-abs(floor(hour)-6.0)+6.0,0.0); //12
+	float cmpH1 = max(-abs(floor(hour)-5.0)+6.0,0.0); //1
+	
+	
+		
+	
+		vec3 sunlight = mix(ToD[int(cmpH)], ToD[int(cmpH1)], fract(hour));
+	
+	sunlight.rgb += vec3(0.0,0.0,0.0); //allows lighting colors to be tweaked.
+	sunlight.rgb *= 1.0; //brightness needs to be adjusted if we tweak lighting colors.
+	//---
+
+	//lightmap
+	float torch_lightmap = 16.0-min(15.0,(parameters.lightMap.x-0.5/16.0)*16.0*16.0/15.0);
+	float fallof1 = clamp(1.0 - pow(torch_lightmap/16.0,4.0),0.0,1.0);
+	torch_lightmap = fallof1*fallof1/(torch_lightmap*torch_lightmap+1.0);
+	torch_lightmap *= removeWater;
+	vec3 emissiveLightC = vec3(1.5,0.42,0.045)*torch_lightmap*0.2;
+	//---
+
+	//light bounce
+	vec3 sunVec = normalize(sunPosition);
+	vec3 upVec = normalize(upPosition);
+
+	vec2 visibility = vec2(dot(sunVec,upVec),dot(-sunVec,upVec));
+	
+	float cutoffAngle = 1.608;
+	float steepness = 1.5;
+	float cosSunUpAngle = dot(sunVec, upVec) * 0.95 + 0.05; //Has a lower offset making it scatter when sun is below the horizon.
+	float sunE = SunIntensity(cosSunUpAngle, 1000.0, cutoffAngle, steepness);  // Get sun intensity based on how high in the sky it is
+
+	float NdotL = dot(normal,sunVec);
+	float NdotU = dot(normal,upVec);
+
+	vec2 trCalc = min(abs(worldTime-vec2(23000.0,12700.0)),750.0); //adjust to make day-night switch smoother
+	float tr = max(min(trCalc.x,trCalc.y)/375.0-1.0,0.0);
+	visibility = pow(clamp(visibility+0.15,0.0,0.3)/0.3,vec2(4.4));
+	sunlight = sunlight/luma(sunlight)*sunE*0.0075*0.075*3.*visibility.x;
+	
+	float skyL = max(parameters.lightMap.y-2./16.0,0.0)*1.14285714286;	
+	float SkyL2 = skyL*skyL;
+	float skyc2 = mix(1.0,SkyL2,skyL);
+
+	vec4 bounced = vec4(NdotL,NdotL,NdotL,NdotU) * vec4(-0.14*skyL*skyL,0.33,0.7,0.1) + vec4(0.6,0.66,0.7,0.25);
+		 bounced *= vec4(skyc2,skyc2,visibility.x-tr*visibility.x,0.8);
+	
+	vec3 ambientC = mix(vec3(0.3, 0.5, 1.1),vec3(0.08,0.1,0.1),rainStrength)*length(sunlight)*bounced.w;
+		 ambientC += 0.25*sunlight*(bounced.x + bounced.z)*(0.03+tr*0.17)/0.4*(1.0-rainStrength*0.98)  + length(sunlight)*0.2*(1.0-rainStrength*0.9);
+		 ambientC += sunlight*(NdotL*0.5+0.45)*visibility.x*(1.0-tr)*(1.0-tr)*4.*(1.0-rainStrength*0.98);
+
+	//lighting during night time
+	const vec3 moonlight = vec3(0.0024, 0.00432, 0.0078);	
+	vec3 moon_ambient = (moonlight*2.0 + moonlight*bounced.y)*(4.0-rainStrength*0.95)*0.2;
+	vec3 moonC = (moon_ambient*visibility.y)*SkyL2*(0.03*0.65+tr*0.17*0.65);
+
+	float wminlight = (nightVision > 0.01)? 0.075: 0.00008;
+	vec3 getAmbientNdotLColor = ambientC*SkyL2*0.3 + moonC + emissiveLightC + wminlight;
+		
+	//sunlight = mix(sunlight,moonlight*(1.0-rainStrength*0.9),visibility.y)*tr;
+	sunlight = mix(sunlight,moonlight*(1.0-rainStrength*0.9),visibility.y);	//remove time check to improve day-night transition
+
+	vec3 getSunlight = sunlight;
+	//---
+
+
+	// fragment 
+
+	vec4 albedo = parameters.sampledColour * parameters.tinting;
+		 albedo.rgb = pow(albedo.rgb,vec3(2.2));
+
+    vec3 viewPos = toScreenSpace(vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), gl_FragCoord.z));
+   
+	mat3 tbnMatrix = mat3(vxModelView[0].x, vxModelView[2].x, normal.x,
+						  vxModelView[0].y, vxModelView[2].y, normal.y,
+						  vxModelView[0].z, vxModelView[2].z, normal.z);
+
+	vec3 worldPos = mat3(vxModelViewInv) * viewPos + vxModelViewInv[3].xyz;
+
+    vec3 waterpos = worldPos + cameraPosition;
+	
+		waterpos = calcParallax(waterpos, worldPos.xz / length(worldPos.xz) * 8.25, material);
+	
+	normal = clamp(normalize(calcBump(waterpos.xz - waterpos.y, material) * tbnMatrix), vec3(-1.0), vec3(1.0)); 
+
+	//float iswater = clamp(material*2.0-1.0,0.0,1.0);
+
+	float texvis = 0.12;
+
+	
+		texvis = 0.11;
+		if(material > 0.9)albedo.rgb = vec3(0.0,0.175,0.2);
+	
+
+	float diffuse = clamp(dot(normal, normalize(shadowLightPosition))*1.02-0.02,0.0,1.0) * removeWater; //don't diffuse water
+		  diffuse *= (1.0 - rainStrength);
+
+	vec3 finalsunlight = getSunlight.rgb*diffuse*(1.0-rainStrength*0.99)*0.85;	  
+
+	vec3 fColor = albedo.rgb*(finalsunlight+getAmbientNdotLColor);	
+	float alpha = mix(albedo.a, texvis, material);
+	if(material > 0.9)alpha *= 6.0;
+
+	//fix hand rendering
+    if(texture2D(depthtex2, gl_FragCoord.xy / vec2(viewWidth, viewHeight)).x > texture2D(depthtex1, gl_FragCoord.xy / vec2(viewWidth, viewHeight)).x) discard;
+
+    fragData0 = vec4(fColor, alpha);
+    fragData1 = encode(normal, diffuse, parameters.lightMap.y, material);
+	fragData2 = vec4(normalize(albedo.rgb+0.00001), alpha);
+}
+

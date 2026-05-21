@@ -4,5 +4,5 @@
   // - Custom wood type shipwrecks
   // - Structure optimizations
   "breaks_seed_parity": true,
-  "log_debug_messages": false
+  "log_debug_messages": true
 }
