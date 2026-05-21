@@ -60,7 +60,7 @@ if /i not "%choice%"=="y" (
 :skip_client_mods
 
 :: --- Installer Logic ---
-if not exist libraries (
+if not exist "libraries\net\neoforged\neoforge\%NEOFORGE_VERSION%\win_args.txt" (
     echo [CKCA] NeoForge libraries missing. Initializing installation...
     if not exist "%INSTALLER%" (
         echo [CKCA] Downloading NeoForge installer: %NEOFORGE_VERSION%

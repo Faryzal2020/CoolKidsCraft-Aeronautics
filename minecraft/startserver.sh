@@ -69,7 +69,7 @@ if [ -d mods ]; then
 fi
 
 # --- Installer Logic ---
-if [ ! -d libraries ]; then
+if [ ! -f "libraries/net/neoforged/neoforge/$NEOFORGE_VERSION/unix_args.txt" ]; then
     log "NeoForge libraries missing. Initializing installation..."
     if [ ! -f "$INSTALLER" ]; then
         log "Downloading NeoForge installer: $NEOFORGE_VERSION"
