@@ -31,6 +31,84 @@ chunk_rebuild_scheduler = "culling"
 				spark = true
 				whoopee_cloud = true
 
+			[light_sources.settings.entities.grapplemod]
+				grapplehook = true
+
+			[light_sources.settings.entities.easy_npc]
+				zombie_horse = true
+				orc_warrior = true
+				example_villager = true
+				evoker_raw = true
+				pig = true
+				husk_raw = true
+				allay = true
+				skeleton = true
+				humanoid_slim = true
+				husk = true
+				drowned_raw = true
+				zombie_raw = true
+				drowned = true
+				fairy = true
+				cat_raw = true
+				stray = true
+				chicken_raw = true
+				vex = true
+				wither_skeleton = true
+				horse_raw = true
+				piglin_brute = true
+				wolf_raw = true
+				zombie_villager_raw = true
+				horse = true
+				vindicator = true
+				evoker = true
+				stray_raw = true
+				skeleton_raw = true
+				creeper = true
+				bogged_raw = true
+				enderman = true
+				wither_skeleton_raw = true
+				chicken = true
+				humanoid = true
+				pig_raw = true
+				bogged = true
+				spider_raw = true
+				zombified_piglin_raw = true
+				fox = true
+				slime = true
+				pillager = true
+				iron_golem = true
+				vex_raw = true
+				zombified_piglin = true
+				piglin = true
+				creeper_raw = true
+				fox_raw = true
+				pillager_raw = true
+				illusioner_raw = true
+				piglin_brute_raw = true
+				slime_raw = true
+				cat = true
+				zombie = true
+				doppler = true
+				ghast = true
+				illusioner = true
+				orc = true
+				enderman_raw = true
+				witch_raw = true
+				villager = true
+				wolf = true
+				villager_raw = true
+				ghast_raw = true
+				skeleton_horse = true
+				allay_raw = true
+				zombie_villager = true
+				iron_golem_raw = true
+				cave_spider = true
+				piglin_raw = true
+				witch = true
+				vindicator_raw = true
+				example_zombie = true
+				spider = true
+
 			[light_sources.settings.entities.createbigcannons]
 				smoke_emitter = true
 				ap_shot = true
@@ -101,6 +179,9 @@ chunk_rebuild_scheduler = "culling"
 
 			[light_sources.settings.entities.bits_n_bobs]
 				inert_stationary_contraption = true
+
+			[light_sources.settings.entities.create_aeronautics_throwable_rope_connector]
+				throwable_rope_connector = true
 
 			[light_sources.settings.entities.variantsandventures]
 				gelid = true
@@ -798,6 +879,22 @@ chunk_rebuild_scheduler = "culling"
 
 			[light_sources.settings.entities.enderio]
 				painted_sand = true
+
+			[light_sources.settings.entities.rottencreatures]
+				frostbitten = true
+				immortal = true
+				mummy = true
+				hunter_wolf = true
+				zap = true
+				undead_miner = true
+				glacial_hunter = true
+				swampy = true
+				burned = true
+				primed_tnt_barrel = true
+				dead_beard = true
+				skeleton_lackey = true
+				zombie_lackey = true
+				scarab = true
 
 			[light_sources.settings.entities.actuallyadditions]
 				worm = true

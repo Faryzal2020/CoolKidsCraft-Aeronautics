@@ -118,3 +118,35 @@ rankXpPerRemainingMinute = 2.0
 # Default: 1.0
 # Range: 0.0 ~ 1000000.0
 rankXpPerDeliveredItem = 1.0
+
+[contractorOffers]
+	refreshIntervalMinutes = 30
+	generatedOfferCount = 6
+	minimumTimeLimitMinutes = 60
+	maximumTimeLimitMinutes = 180
+	maximumStarRewardBonusPercent = 10.0
+	maximumRankRewardBonusPercent = 10.0
+	demandBudgetSpurs = 640
+	priceMultiplier = 1.0
+	minimumStarDistanceMultiplier = 1.0
+	maximumStarDistanceMultiplier = 10.0
+
+[marketOffers]
+	refreshIntervalMinutes = 30
+	generatedOfferCount = 6
+	maximumPurchasableAmount = 6400
+	maximumBulkDiscountPercent = 10.0
+	priceMultiplier = 1.0
+
+[contractorRanks]
+	rank2RequiredXp = 100
+	rank3RequiredXp = 250
+	rank4RequiredXp = 500
+	rank5RequiredXp = 900
+	rank6RequiredXp = 1400
+	rank7RequiredXp = 2200
+	completionBaseXp = 1
+	completionXpPerStar = 20.0
+	completionXpPer100Blocks = 5.0
+	completionXpPerRemainingMinute = 2.0
+	completionXpPerDeliveredItem = 1.0

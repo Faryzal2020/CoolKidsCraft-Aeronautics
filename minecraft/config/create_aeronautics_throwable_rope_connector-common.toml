@@ -1,31 +1,43 @@
-[throwable_rope_connector]
+[throwing]
 	#Maximum distance in blocks that a thrown connector can travel before it fizzles and returns.
-	# Default: 20.0
+	#Default is 10.
+	#Create Simulated's server config max_rope_range is the absolute maximum this can ever use at runtime.
+	# Default: 10.0
 	# Range: 1.0 ~ 128.0
-	maxThrowDistance = 20.0
+	maxThrowDistance = 10.0
 	#Projectile launch velocity. Snowballs use 1.5.
 	# Default: 1.5
 	# Range: 0.1 ~ 5.0
 	throwVelocity = 1.5
+
+[launcher]
 	#Maximum distance in blocks that the Rope Connector Launcher can fire a connector before it fizzles and returns.
-	#Default is 40, matching Create Simulated's default max_rope_range.
-	#For launcher shots to connect successfully, the Simulated server config max_rope_range must match or exceed this value.
+	#Default is 20, intended as a step up from throwing by hand.
+	#Create Simulated's server config max_rope_range is the absolute maximum this can ever use at runtime.
+	# Default: 20.0
+	# Range: 1.0 ~ 1000.0
+	launcherMaxDistance = 20.0
+
+[mounted]
+	#Maximum distance in blocks that a Mounted Rope Launcher can fire a connector.
+	#Default is 40, matching Create Simulated's default max_rope_range in this pack.
+	#This can exceed the normal handheld launcher range because the mounted block creates the rope link itself.
+	#Create Simulated's server config max_rope_range is the absolute maximum this can ever use at runtime.
 	# Default: 40.0
 	# Range: 1.0 ~ 1000.0
-	launcherMaxDistance = 40.0
-	#If true, the item is only consumed after the connector is placed successfully. If false, it is consumed when thrown and refunded on failure.
+	mountedLauncherRange = 40.0
+	#Remove the remote rope connector block placed by the Mounted Rope Launcher when releasing its rope.
+	removePlacedConnectorOnRelease = true
+
+[general]
+	#If true, throwable connector ammo is only consumed after a successful attachment.
+	#This applies to hand throws, the handheld launcher, and the mounted launcher.
 	consumeOnSuccessOnly = true
-	#Cooldown applied after a successful throw.
-	# Default: 10
-	# Range: 0 ~ 200
-	cooldownTicks = 10
 	#Spawn particles at the placed connector on success.
 	playParticles = true
 	#Show action bar feedback when the item cannot be used.
 	showFailureMessages = true
-	#Render a client-side rope-like line from the player to the flying connector projectile.
+
+[visual]
+	#Render a client-side rope-like line for thrown, handheld-launched, and mounted-launched connector projectiles.
 	showProjectileRopeTrail = true
-	#Visual width in blocks for the client-side projectile rope trail. Default matches Simulated's 3-pixel rope model width.
-	# Default: 0.1875
-	# Range: 0.01 ~ 0.5
-	projectileRopeTrailWidth = 0.1875

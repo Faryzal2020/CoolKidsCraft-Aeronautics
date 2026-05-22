@@ -1,18 +1,18 @@
-filename = 'drivebywire-0.2.8.jar'
+filename = 'drivebywire-0.2.9.jar'
 name = 'Drive By Wire'
 side = 'server'
 x-prismlauncher-dependencies = []
 x-prismlauncher-loaders = [ 'neoforge' ]
 x-prismlauncher-mc-versions = [ '1.21.1' ]
 x-prismlauncher-release-type = 'release'
-x-prismlauncher-version-number = 'drivebywire-0.2.8.jar'
+x-prismlauncher-version-number = 'drivebywire-0.2.9.jar'
 
 [download]
-hash = '672b180c809ced7b08c1e076d683058838818356'
+hash = '73bb355605640b506b7eb67ef5e4bb0053fc16dd'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 8060911
+file-id = 8101676
 project-id = 1520378

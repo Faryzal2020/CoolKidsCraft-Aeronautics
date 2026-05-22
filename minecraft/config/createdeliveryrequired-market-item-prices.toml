@@ -1,9 +1,10 @@
 # Create Aeronautics: Delivery Required market item price config
-# Every listed item id maps to its base price in spurs.
-# Add modded items here explicitly; recipes are not used for price calculation.
-# Items not listed here are not priced by goggles and are not automatically assigned a value.
+# Every listed trade id maps to its base price in spurs.
+# Item ids use namespace:path, fluids use fluid:namespace:path, and Create potion fluids use potion:namespace:path.
+# Add modded entries here explicitly; recipes are not used for price calculation.
+# Entries not listed here are not priced by goggles and are not automatically assigned a value.
+
 [item_prices]
-"create:andesite" = 20
 "create:precision_mechanism" = 120
 "minecraft:blaze_rod" = 80
 "minecraft:bread" = 4
@@ -19,7 +20,7 @@
 "minecraft:glowstone_dust" = 16
 "minecraft:gold_ingot" = 60
 "minecraft:gunpowder" = 100
-"minecraft:hay_block" = 40
+"minecraft:hay_block" = 0
 "minecraft:iron_ingot" = 50
 "minecraft:lapis_lazuli" = 20
 "minecraft:leather" = 40
@@ -32,3 +33,5 @@
 "minecraft:sugar" = 10
 "minecraft:wheat" = 10
 "create:limestone" = 20
+"oritech:plastic_sheet" = 0
+"create:andesite_alloy" = 20

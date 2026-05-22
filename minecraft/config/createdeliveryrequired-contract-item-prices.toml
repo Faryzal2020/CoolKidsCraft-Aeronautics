@@ -1,7 +1,8 @@
 # Create Aeronautics: Delivery Required contract item price config
-# Every listed item id maps to its base price in spurs.
-# Add modded items here explicitly; recipes are not used for price calculation.
-# Items not listed here are not priced by goggles and are not automatically assigned a value.
+# Every listed trade id maps to its base price in spurs.
+# Item ids use namespace:path, fluids use fluid:namespace:path, and Create potion fluids use potion:namespace:path.
+# Add modded entries here explicitly; recipes are not used for price calculation.
+# Entries not listed here are not priced by goggles and are not automatically assigned a value.
 
 [item_prices]
 "minecraft:coal_block" = 1
@@ -29,9 +30,8 @@
 "minecraft:obsidian" = 2
 "aquaculture:neptunium_block" = 16
 "minecraft:prismarine_bricks" = 2
-"create:andesite_alloy" = 1
+"create:andesite_alloy" = 0
 "create:precision_mechanism" = 4
-"oritech:plastic" = 16
 "oritech:reinforced_carbon_sheet" = 16
 "oritech:processing_unit" = 64
 "create:brass_sheet" = 8
@@ -50,7 +50,8 @@
 "farmersdelight:cabbage_crate" = 1
 "farmersdelight:tomato_crate" = 1
 "farmersdelight:onion_crate" = 1
-"minecraft:hay_bale" = 1
 "farmersdelight:rice_bale" = 1
 "farmersdelight:rice_bag" = 1
 "farmersdelight:straw_bale" = 1
+"oritech:plastic_sheet" = 16
+"minecraft:hay_block" = 1

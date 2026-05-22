@@ -7,6 +7,8 @@ Ponder.tags((event) => {
             [
                     "createdeliveryrequired:contractor",
                     "createdeliveryrequired:market",
+                    "createdeliveryrequired:p2p_terminal",
+                    "createdeliveryrequired:p2p_link",
             ]
         );
 });

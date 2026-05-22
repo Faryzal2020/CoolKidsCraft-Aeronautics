@@ -14,7 +14,7 @@
 	jumpOffVelocity = 0.42
 	#Maximum angle from vertical (in degrees) at which a hanging rope segment can be grabbed for climbing.
 	#0 = only perfectly vertical ropes; 90 = any angle including horizontal. Increase to climb diagonal lines.
-	# Default: 31.79
+	# Default: 90.0
 	# Range: 0.0 ~ 90.0
 	maxClimbAngleFromVertical = 31.79
 
@@ -43,3 +43,31 @@
 	allowPlungerZipline = true
 	#Allow mantling onto the block above the rope when jumping off at its top end. When disabled, jumping off at the top performs a normal upward impulse instead.
 	allowBlockMantle = true
+
+#Advanced physics and targeting tuning. These affect how climbing feels and when you are forced off a rope.
+#Defaults preserve the standard behavior; change at your own risk.
+[advanced]
+	#How aggressively the spring drags you toward the rope each tick.
+	# Default: 0.55
+	# Range: 0.0 ~ 5.0
+	snapPull = 0.55
+	#Maximum per-tick velocity the snap spring can contribute.
+	# Default: 0.35
+	# Range: 0.0 ~ 5.0
+	snapVelocityCap = 0.35
+	#Distance (in blocks) from the rope at which external forces dismount you.
+	# Default: 3.0
+	# Range: 0.0 ~ 32.0
+	maxLeashDistance = 3.0
+	#How close (in blocks) to the lower endpoint counts as "at the bottom" for the grounded auto-dismount.
+	# Default: 0.6
+	# Range: 0.0 ~ 5.0
+	bottomDismountOffset = 0.6
+	#Ticks of ground contact at the bottom of a rope before you are auto-dismounted.
+	# Default: 5
+	# Range: 0 ~ 200
+	bottomGroundedDismountTicks = 5
+	#Raycast hitbox radius (in blocks) for rope hover detection. Larger values make ropes easier to aim at.
+	# Default: 0.25
+	# Range: 0.0 ~ 2.0
+	ropeHoverRadius = 0.25
