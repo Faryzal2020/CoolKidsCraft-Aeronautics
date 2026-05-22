@@ -18,7 +18,7 @@ generatedMaximumTravelDistanceBlocks = 3800
 #Minimum random contract time limit in minutes.
 # Default: 60
 # Range: 1 ~ 1440
-minimumTimeLimitMinutes = 60
+minimumTimeLimitMinutes = 10
 #Maximum random contract time limit in minutes.
 # Default: 120
 # Range: 1 ~ 1440
@@ -26,7 +26,7 @@ maximumTimeLimitMinutes = 180
 #Total spur value of items demanded per contract slot per refresh. demand = budget / itemPrice.
 # Default: 1000000
 # Range: > 1
-demandBudgetSpurs = 1000000
+demandBudgetSpurs = 720
 #Multiplier applied to all contract item prices loaded from the price list. Default 1.0 = no change.
 # Default: 1.0
 # Range: 0.0 ~ 1000.0
@@ -46,7 +46,7 @@ minimumStarDistanceMultiplier = 1.0
 #Distance multiplier for the hardest normal star rating.
 # Default: 2.0
 # Range: 0.05 ~ 10.0
-maximumStarDistanceMultiplier = 10.0
+maximumStarDistanceMultiplier = 3.0
 #Minimum number of item-storage blocks a marked sub-level must contain before delivery contents are accepted. Counts chests, Create Item Vaults, compatible modded vaults/shipping containers, and other blocks exposing item inventories. Set to 0 to disable this requirement.
 # Default: 0
 # Range: 0 ~ 1000000
@@ -76,7 +76,7 @@ generatedMaximumPickupDistanceBlocks = 3500
 #Maximum amount that can be bought from a market offer.
 # Default: 103680
 # Range: 1 ~ 103680
-maximumPurchasableAmount = 103680
+maximumPurchasableAmount = 1036
 #Multiplier applied to all market item prices loaded from the price list. Default 1.0 = no change.
 # Default: 3.0
 # Range: 0.0 ~ 1000.0
