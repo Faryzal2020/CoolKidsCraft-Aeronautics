@@ -84,6 +84,7 @@
 /minecraft/config/just_enough_crafting_tree_recipe_cache
 /minecraft/config/jei/*
 /minecraft/config/euphoria_patcher/data.json
+/minecraft/config/konkrete
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
@@ -126,4 +127,5 @@ update.sh
 /minecraft/mods/autorestarter*
 /minecraft/config/vsfluidlink-server.toml
 /minecraft/config/autorestarter-common.toml
+/minecraft/backup*
 

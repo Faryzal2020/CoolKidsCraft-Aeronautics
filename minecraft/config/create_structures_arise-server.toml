@@ -48,7 +48,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 120
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 15
+		separation = 20
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -66,7 +66,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 120
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 2
+		separation = 5
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -156,7 +156,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 100
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 20
+		separation = 50
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -282,7 +282,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 120
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 70
+		separation = 90
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -300,7 +300,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 100
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 70
+		separation = 90
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -318,7 +318,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 90
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 30
+		separation = 50
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -336,7 +336,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 90
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 15
+		separation = 35
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -354,7 +354,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 100
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 10
+		separation = 35
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -372,7 +372,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 90
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 15
+		separation = 25
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -426,7 +426,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 180
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 10
+		separation = 20
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.
@@ -498,7 +498,7 @@
 		#Average chunk spacing for this structure before the global spawn multiplier is applied. Must be greater than separation.
 		spacing = 90
 		#Minimum chunk separation for this structure. Must be lower than spacing.
-		separation = 10
+		separation = 20
 		#Dimension IDs where this structure may generate. Empty list means all dimensions are allowed unless blacklisted.
 		dimension_whitelist = []
 		#Dimension IDs where this structure must not generate. Entries here override the whitelist.

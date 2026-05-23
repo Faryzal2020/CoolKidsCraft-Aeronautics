@@ -21,6 +21,41 @@
         "result": "deny"
     },
     {
+        "mob": "productivebees:configurable_bee",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:bee",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "distantfriends:friend",
+        "mincount": {
+            "amount": 1,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": "minecraft:enderman",
+        "dimension": "minecraft:overworld",
+        "mincount": {
+            "amount": 5,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
         "mob": "iceandfire:pixie",
         "dimension": "minecraft:overworld",
         "mincount": {
