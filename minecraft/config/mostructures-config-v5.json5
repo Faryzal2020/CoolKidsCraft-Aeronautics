@@ -23,13 +23,13 @@
     },
     "lighthouse": {
       "activated": true,
-      "separation": 14,
-      "spacing": 24
+      "separation": 25,
+      "spacing": 40
     },
     "air_balloon": {
       "activated": true,
-      "separation": 12,
-      "spacing": 22
+      "separation": 25,
+      "spacing": 40
     },
     "killer_bunny_castle": {
       "activated": true,
@@ -43,63 +43,63 @@
     },
     "abandoned_church": {
       "activated": true,
-      "separation": 20,
-      "spacing": 33
+      "separation": 40,
+      "spacing": 53
     },
     "sphinx": {
       "activated": true,
-      "separation": 16,
-      "spacing": 24
+      "separation": 40,
+      "spacing": 60
     },
     "barn_house": {
       "activated": true,
-      "separation": 16,
-      "spacing": 32
+      "separation": 46,
+      "spacing": 52
     },
     "pillager_mines": {
       "activated": true,
-      "separation": 27,
-      "spacing": 40
+      "separation": 57,
+      "spacing": 60
     },
     "pirate_ship": {
       "activated": true,
-      "separation": 16,
-      "spacing": 32
+      "separation": 56,
+      "spacing": 62
     },
     "tavern": {
       "activated": true,
-      "separation": 16,
-      "spacing": 26
+      "separation": 35,
+      "spacing": 56
     },
     "moai": {
       "activated": true,
-      "separation": 15,
-      "spacing": 17
+      "separation": 65,
+      "spacing": 77
     },
     "the_castle_in_the_sky": {
       "activated": true,
-      "separation": 22,
-      "spacing": 32
+      "separation": 52,
+      "spacing": 62
     },
     "ice_tower": {
       "activated": true,
-      "separation": 20,
-      "spacing": 28
+      "separation": 40,
+      "spacing": 58
     },
     "villager_market": {
       "activated": true,
-      "separation": 16,
-      "spacing": 32
+      "separation": 36,
+      "spacing": 62
     },
     "big_pyramid": {
       "activated": true,
-      "separation": 25,
-      "spacing": 32
+      "separation": 45,
+      "spacing": 52
     },
     "pillager_factory": {
       "activated": true,
-      "separation": 16,
-      "spacing": 34
+      "separation": 46,
+      "spacing": 64
     }
   }
 }
