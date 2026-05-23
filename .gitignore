@@ -85,6 +85,8 @@
 /minecraft/config/jei/*
 /minecraft/config/euphoria_patcher/data.json
 /minecraft/config/konkrete
+/minecraft/enxv*/
+/minecraft/config/exposure-client.toml
 
 # --- Server-Generated Files (Keep these safe) ---
 /minecraft/eula.txt
@@ -128,4 +130,5 @@ update.sh
 /minecraft/config/vsfluidlink-server.toml
 /minecraft/config/autorestarter-common.toml
 /minecraft/backup*
+/minecraft/config/worldedit/
 
