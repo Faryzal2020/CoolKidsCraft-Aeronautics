@@ -14,7 +14,7 @@ GitHub Repository: [NEED TO MAKE ONE]
 	// Here you can find all structures that aren't villages or outposts.
 	"other": {
 		"mimic_desert": true,
-		"wreckage_ocean": true
+		"wreckage_ocean": false
 	},
 	// Here you can find all pillager outposts.
 	"towers": {
