@@ -5,7 +5,7 @@
 setlocal EnableExtensions
 
 :: --- Configuration ---
-set "NEOFORGE_VERSION=21.1.228"
+set "NEOFORGE_VERSION=21.1.230"
 set "INSTALLER=neoforge-%NEOFORGE_VERSION%-installer.jar"
 set "NEOFORGE_URL=https://maven.neoforged.net/releases/net/neoforged/neoforge/%NEOFORGE_VERSION%/neoforge-%NEOFORGE_VERSION%-installer.jar"
 

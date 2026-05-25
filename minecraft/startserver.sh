@@ -6,7 +6,7 @@
 set -euo pipefail
 
 # --- Configuration ---
-NEOFORGE_VERSION="21.1.228"
+NEOFORGE_VERSION="21.1.230"
 INSTALLER="neoforge-$NEOFORGE_VERSION-installer.jar"
 NEOFORGE_URL="https://maven.neoforged.net/releases/net/neoforged/neoforge/$NEOFORGE_VERSION/neoforge-$NEOFORGE_VERSION-installer.jar"
 
