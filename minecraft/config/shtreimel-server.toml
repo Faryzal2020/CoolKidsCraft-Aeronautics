@@ -1,0 +1,213 @@
+#Shtreimel . server-only operator add-on.
+[shtreimel]
+
+	#Observability
+	[shtreimel.observability]
+		#Maximum lifecycle log lines (add/remove) per dimension per minute.
+		# Default: 60
+		# Range: 0 ~ 6000
+		logRatePerMinute = 60
+		#Emit sub-level add/remove log lines at INFO; otherwise DEBUG.
+		logLifecycleAtInfo = true
+
+	#Heuristic ranking soft-caps. A signal at or above its cap normalizes to 1.0.
+	[shtreimel.ranking]
+
+		[shtreimel.ranking.weights]
+			# Default: 1.0
+			# Range: 0.0 ~ 100.0
+			volume = 1.0
+			# Default: 0.5
+			# Range: 0.0 ~ 100.0
+			footprint = 0.5
+			# Default: 1.0
+			# Range: 0.0 ~ 100.0
+			loadedChunks = 1.0
+			# Default: 1.5
+			# Range: 0.0 ~ 100.0
+			blockEntities = 1.5
+			# Default: 0.75
+			# Range: 0.0 ~ 100.0
+			trackingPlayers = 0.75
+			# Default: 0.5
+			# Range: 0.0 ~ 100.0
+			linearSpeed = 0.5
+			# Default: 0.5
+			# Range: 0.0 ~ 100.0
+			angularSpeed = 0.5
+			# Default: 1.0
+			# Range: 0.0 ~ 100.0
+			entitiesInBoundingBox = 1.0
+
+		[shtreimel.ranking.softCaps]
+			# Default: 262144.0
+			# Range: 1.0 ~ 1.0E12
+			volume = 262144.0
+			# Default: 4096.0
+			# Range: 1.0 ~ 1.0E9
+			footprint = 4096.0
+			# Default: 64
+			# Range: 1 ~ 100000
+			loadedChunks = 64
+			# Default: 64
+			# Range: 1 ~ 100000
+			blockEntities = 64
+			# Default: 8
+			# Range: 1 ~ 1000
+			trackingPlayers = 8
+			# Default: 20.0
+			# Range: 0.1 ~ 1000.0
+			linearSpeed = 20.0
+			# Default: 6.28
+			# Range: 0.01 ~ 1000.0
+			angularSpeed = 6.28
+			# Default: 32
+			# Range: 1 ~ 100000
+			entitiesInBoundingBox = 32
+
+	#Snapshot writer. 0 disables. Snapshots land in <world>/shtreimel/snapshots/.
+	[shtreimel.snapshots]
+		# Default: 0
+		# Range: 0 ~ 86400
+		intervalSeconds = 0
+		# Default: 48
+		# Range: 1 ~ 100000
+		keepCount = 48
+		#Format(s) to write when a snapshot is dumped. JSON|CSV|BOTH.
+		#Allowed Values: JSON, CSV, BOTH
+		format = "JSON"
+
+	#Audit logging
+	[shtreimel.audit]
+		#Append destructive audit lines to <world>/shtreimel/audit.log in addition to the server log.
+		fileEnabled = true
+		#Soft size cap for the audit log file before rotation.
+		# Default: 10485760
+		# Range: > 4096
+		fileMaxBytes = 10485760
+
+	#Destructive command safeguards
+	[shtreimel.delete]
+		#If true, /shtreimel delete subcommands require an explicit --confirm flag.
+		requireConfirm = true
+		#If true, deleting a named sub-level requires re-typing the name as a confirm token.
+		requireNameConfirm = false
+
+	#Lag autotuner. Records per-dimension EWMA samples in a ring buffer. 
+	#Run /shtreimel lag autotune to print recommended thresholds based on observed history.
+	[shtreimel.lag]
+		#Master switch for the heat detector.
+		enabled = true
+		#Per-dimension physics-slice EWMA above which the detector starts naming suspects, in milliseconds. 
+		#Default 5.0 ms is well below a 50 ms tick budget; tune lower if you want earlier warnings.
+		# Default: 5.0
+		# Range: 0.1 ~ 50.0
+		ewmaThresholdMs = 5.0
+		#Minimum seconds between heat scans. The detector returns immediately if this hasn't elapsed 
+		#since the last scan, so the per-tick cost on a healthy server is one config read.
+		# Default: 30
+		# Range: 1 ~ 3600
+		scanCooldownSeconds = 30
+		#Minimum seconds before the same sub-level can be named again. Prevents log spam.
+		# Default: 300
+		# Range: 10 ~ 86400
+		repeatCooldownSeconds = 300
+
+		[shtreimel.lag.autotune]
+			#Master switch for the autotuner sample recorder. Has near-zero cost when off.
+			recordSamples = true
+			#Seconds between recorded samples. Lower means a denser history at higher memory cost.
+			# Default: 60
+			# Range: 5 ~ 3600
+			sampleIntervalSeconds = 60
+			#How many minutes of history to retain in the ring buffer.
+			# Default: 1440
+			# Range: 60 ~ 10080
+			bufferMinutes = 1440
+
+	#Pre-removal warning. Audits a sub-level's full state ONE tick before Sable removes it 
+	#(invalid mass tracker / NaN bounds / queued for removal). Cheap; capped per tick.
+	[shtreimel.preRemoval]
+		enabled = true
+		#Max sub-levels scanned per tick. Cap protects giant plotgrids from burst work.
+		# Default: 4
+		# Range: 1 ~ 256
+		scanPerTickCap = 4
+		#Seconds before the same sub-level can warn again.
+		# Default: 60
+		# Range: 1 ~ 86400
+		repeatCooldownSeconds = 60
+
+	#Optional mixins. Each is off by default; defaultRequire=0 so a Sable refactor 
+	#silently no-ops rather than breaking the server.
+	[shtreimel.mixins]
+		#Enrich /shtreimel physics-stats with per-tick (awake, total, asleep) body counts 
+		#via a mixin into Sable's PhysicsPipeline.physicsTick.
+		bodyCountsEnabled = false
+		#Audit Sable's NaN-recovery attempts (SubLevelPhysicsSystem#recoverSubLevel). 
+		#Useful forensics when contraptions silently get removed.
+		nanRecoveryAuditEnabled = false
+		#Capture the call stack class that triggered each ServerSubLevelContainer#removeSubLevel 
+		#so audit lines distinguish player-deleted from Sable-evicted.
+		removalReasonContextEnabled = false
+		#Capture the contraption being processed inside Create's ContraptionCollider.collideEntities. 
+		#When the server crashes inside that path (e.g. propeller-collision NPEs from Aeronautics), 
+		#the Shtreimel crash header prints the contraption's coordinates and entity id. Requires 
+		#Create at runtime; safe to leave on for servers without Create (the mixin no-ops).
+		createContraptionContextEnabled = true
+
+	#Per-body freeze: pin a sub-level's pose without dimension-wide pause. 
+	#Cheap unless many sub-levels are frozen simultaneously.
+	[shtreimel.freeze]
+		#Max simultaneously-frozen sub-levels per dimension. Bounded so a runaway 
+		#freeze script cannot induce per-tick work spikes.
+		# Default: 16
+		# Range: 1 ~ 1024
+		maxConcurrent = 16
+		#Persist the frozen-set across server restarts to <world>/shtreimel/state/frozen.json.
+		persist = true
+
+	#Watch command
+	[shtreimel.watch]
+		# Default: 30
+		# Range: 1 ~ 3600
+		defaultDurationSeconds = 30
+		# Default: 600
+		# Range: 1 ~ 86400
+		maxDurationSeconds = 600
+		#Minimum ticks between events delivered to a watcher. Prevents spam from a velocity-spinning sub-level.
+		# Default: 2
+		# Range: 1 ~ 200
+		minTicksBetweenEvents = 2
+
+	#Audit query commands
+	[shtreimel.auditQuery]
+		# Default: 50
+		# Range: 1 ~ 10000
+		defaultLimit = 50
+		# Default: 1000
+		# Range: 1 ~ 100000
+		maxLimit = 1000
+
+	#Sub-level archive (save/restore the NBT of a single plot)
+	[shtreimel.archive]
+		#Max archives to retain per sub-level UUID before pruning oldest.
+		# Default: 16
+		# Range: 1 ~ 4096
+		maxPerUuid = 16
+		#Hard cap across all sub-levels.
+		# Default: 1024
+		# Range: 1 ~ 100000
+		maxTotal = 1024
+
+	#Crash report enrichment
+	[shtreimel.crash]
+		#Register a CrashReportCallables header that lists loaded sub-levels and physics EWMA.
+		headerEnabled = true
+		#Apply the optional fallback mixin into Sable's SubLevelPhysicsSystem.tick crash path. 
+		#Off by default; fragile against upstream Sable refactors.
+		mixinEnabled = false
+		#Maximum sub-levels enumerated in crash output per dimension.
+		# Default: 64
+		# Range: 1 ~ 4096
+		subLevelLimit = 64
