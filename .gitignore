@@ -115,14 +115,20 @@ update.sh
 /minecraft/config/market_presets/
 /minecraft/config/openloader/packs/
 /minecraft/config/spark/activity.json
+/minecraft/config/yes_steve_model-server.toml
 /minecraft/config/yes_steve_model/auth/
 /minecraft/config/yes_steve_model/custom/
 /minecraft/config/yes_steve_model/export/
+/minecraft/config/yes_steve_model/builtin/
+/minecraft/config/yes_steve_model/cache/
 /minecraft/command_history.txt
-/minecraft/auto_restart
+/minecraft/auto_restart/
 /minecraft/config/yes_steve_model/cache/
 /minecraft/config/jei/world/server*
 /minecraft/config/auto_restart-server.toml
+/minecraft/config/c2me.toml
+/minecraft/config/quark-common.toml
+/minecraft/config/worldedit/worldedit.properties
 /minecraft/easy_npc/
 /minecraft/ldlib2/
 /minecraft/mods/servercore*
@@ -131,4 +137,6 @@ update.sh
 /minecraft/config/autorestarter-common.toml
 /minecraft/backup*
 /minecraft/config/worldedit/
+/minecraft/runserver.sh
+/minecraft/config/create_power_loader-server.toml
 
