@@ -1,0 +1,35 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:ignited_berserker",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.ignited_berserker",
+                 "color":  "#FF8C00"
+             },
+    "display":  {
+                    "y_offset":  0,
+                    "scale":  0.8
+                },
+    "sim_cost":  512,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:nether_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.ignited_berserker",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:dying_ember",
+                                 "count":  2
+                             }
+                         ]
+}

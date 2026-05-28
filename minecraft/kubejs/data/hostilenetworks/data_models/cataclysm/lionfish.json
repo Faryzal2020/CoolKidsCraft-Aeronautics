@@ -1,0 +1,40 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:lionfish",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.lionfish",
+                 "color":  "#FFA570"
+             },
+    "display":  {
+                    "y_offset":  0,
+                    "scale":  0.9
+                },
+    "sim_cost":  512,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.lionfish",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:lionfish",
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "minecraft:bone_meal",
+                                 "optional":  true,
+                                 "count":  2
+                             }
+                         ]
+}

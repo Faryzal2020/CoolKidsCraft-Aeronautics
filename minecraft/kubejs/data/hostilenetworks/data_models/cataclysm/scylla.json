@@ -1,0 +1,44 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:scylla",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.scylla",
+                 "color":  "#008B8B"
+             },
+    "display":  {
+                    "y_offset":  -0.3,
+                    "scale":  0.33
+                },
+    "sim_cost":  4096,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.scylla",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:lacrima",
+                                 "count":  4
+                             },
+                             {
+                                 "id":  "cataclysm:essence_of_the_storm",
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:music_disc_scylla",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}

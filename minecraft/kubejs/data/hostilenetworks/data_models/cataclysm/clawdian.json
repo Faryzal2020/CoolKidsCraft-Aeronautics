@@ -1,0 +1,40 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:clawdian",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.clawdian",
+                 "color":  "#D2691E"
+             },
+    "display":  {
+                    "y_offset":  0,
+                    "scale":  0.55
+                },
+    "sim_cost":  2048,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.clawdian",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:chitin_claw",
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:lacrima",
+                                 "optional":  true,
+                                 "count":  2
+                             }
+                         ]
+}

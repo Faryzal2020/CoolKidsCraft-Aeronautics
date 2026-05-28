@@ -1,0 +1,35 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:ender_golem",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.ender_golem",
+                 "color":  "#4B0082"
+             },
+    "display":  {
+                    "y_offset":  -0.2,
+                    "scale":  0.45
+                },
+    "sim_cost":  2048,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:end_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.ender_golem",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:void_core",
+                                 "count":  1
+                             }
+                         ]
+}

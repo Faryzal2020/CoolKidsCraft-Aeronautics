@@ -1,0 +1,36 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:deepling_brute",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.deepling_brute",
+                 "color":  "#1F4E5B"
+             },
+    "display":  {
+                    "y_offset":  0,
+                    "scale":  0.7
+                },
+    "sim_cost":  512,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.deepling_brute",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "minecraft:nautilus_shell",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}

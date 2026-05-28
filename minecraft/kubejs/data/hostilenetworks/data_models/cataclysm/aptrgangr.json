@@ -1,0 +1,49 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:aptrgangr",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.aptrgangr",
+                 "color":  "#5A6565"
+             },
+    "display":  {
+                    "y_offset":  -0.1,
+                    "scale":  0.5
+                },
+    "sim_cost":  2048,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.aptrgangr",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "minecraft:bone",
+                                 "count":  4
+                             },
+                             {
+                                 "id":  "minecraft:rotten_flesh",
+                                 "count":  4
+                             },
+                             {
+                                 "id":  "cataclysm:strange_key",
+                                 "optional":  true,
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:black_steel_ingot",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}

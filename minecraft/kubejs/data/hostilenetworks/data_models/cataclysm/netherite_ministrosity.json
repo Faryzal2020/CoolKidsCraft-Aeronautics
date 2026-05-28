@@ -1,0 +1,36 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:netherite_ministrosity",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.netherite_ministrosity",
+                 "color":  "#4A4A4A"
+             },
+    "display":  {
+                    "y_offset":  0,
+                    "scale":  0.7
+                },
+    "sim_cost":  512,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:nether_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.netherite_ministrosity",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:netherite_effigy",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}

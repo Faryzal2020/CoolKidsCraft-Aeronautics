@@ -1,0 +1,45 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:kobolediator",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.kobolediator",
+                 "color":  "#CD853F"
+             },
+    "display":  {
+                    "y_offset":  -0.1,
+                    "scale":  0.6
+                },
+    "sim_cost":  2048,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:overworld_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.kobolediator",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:kobolediator_skull",
+                                 "optional":  true,
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:koboleton_bone",
+                                 "count":  3
+                             },
+                             {
+                                 "id":  "cataclysm:ancient_metal_ingot",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}

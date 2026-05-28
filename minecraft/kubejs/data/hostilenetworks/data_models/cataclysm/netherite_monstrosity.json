@@ -1,0 +1,49 @@
+﻿{
+    "neoforge:conditions":  [
+                                {
+                                    "type":  "neoforge:mod_loaded",
+                                    "modid":  "cataclysm"
+                                }
+                            ],
+    "entity":  "cataclysm:netherite_monstrosity",
+    "variants":  [
+
+                 ],
+    "name":  {
+                 "translate":  "entity.cataclysm.netherite_monstrosity",
+                 "color":  "#2E1E1E"
+             },
+    "display":  {
+                    "y_offset":  -0.5,
+                    "scale":  0.22
+                },
+    "sim_cost":  4096,
+    "input":  {
+                  "item":  "hostilenetworks:prediction_matrix"
+              },
+    "base_drop":  {
+                      "id":  "hostilenetworks:nether_prediction",
+                      "count":  1
+                  },
+    "trivia":  "hostilenetworks.trivia.netherite_monstrosity",
+    "fabricator_drops":  [
+                             {
+                                 "id":  "cataclysm:infernal_forge",
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:monstrous_horn",
+                                 "count":  2
+                             },
+                             {
+                                 "id":  "cataclysm:lava_power_cell",
+                                 "optional":  true,
+                                 "count":  1
+                             },
+                             {
+                                 "id":  "cataclysm:music_disc_netherite_monstrosity",
+                                 "optional":  true,
+                                 "count":  1
+                             }
+                         ]
+}
